@@ -1,0 +1,602 @@
+/*
+Theme Name: Astra Child
+Theme URI: https://wpastra.com/
+Template: astra
+Author: Brainstorm Force
+Author URI: https://wpastra.com/about/?utm_source=theme_preview&utm_medium=author_link&utm_campaign=astra_theme
+Description: The Astra WordPress theme is lightning-fast and highly customizable. It has over 1 million downloads and the only theme in the world with 5,700+ five-star reviews! It’s ideal for professional web designers, solopreneurs, small businesses, eCommerce, membership sites and any type of website. It offers special features and templates so it works perfectly with all page builders like Spectra, Elementor, Beaver Builder, etc. Fast performance, clean code, mobile-first design and schema markup are all built-in, making the theme exceptionally SEO-friendly. It’s fully compatible with WooCommerce, SureCart and other eCommerce plugins and comes with lots of store-friendly features and templates. Astra also provides expert support for free users. A dedicated team of fully trained WordPress experts are on hand to help with every aspect of the theme. Try the live demo of Astra: https://zipwp.org/themes/astra/
+Tags: custom-menu,custom-logo,entertainment,one-column,two-columns,left-sidebar,e-commerce,right-sidebar,custom-colors,editor-style,featured-images,full-width-template,microformats,post-formats,rtl-language-support,theme-options,threaded-comments,translation-ready,blog
+Version: 4.11.0.1747583542
+Updated: 2025-05-18 17:52:22
+
+*/
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form .search-field {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px 0 0 20px;
+    width: 200px;
+}
+
+.search-form .search-submit {
+    background-color: #2A9D8F;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+}
+
+
+/* Preguntas   */
+body {
+    background-color: #f0f2f5;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.container-preguntas {
+    max-width: 80%;
+    min-width: 70%;
+    margin: 2rem auto 4rem;
+    padding: 0 1.5rem;
+}
+
+.preguntas-header {
+    background: linear-gradient(135deg, #2d89ef 0%, #1a5fb4 100%);
+    margin: -2rem -1.5rem 2rem;
+    padding: 2.5rem 2rem;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.preguntas-header h1 {
+    font-size: 2.2rem;
+    color: #fff;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-ask {
+    background-color: #fff;
+    color: #2d89ef;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+    /* This ensures the button stays right-aligned */
+}
+
+.btn-ask:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pregunta-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.pregunta-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+.pregunta-titulo {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a202c;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.pregunta-titulo:hover {
+    color: #2d89ef;
+}
+
+.pregunta-meta {
+    color: #718096;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pregunta-descripcion {
+    color: #4a5568;
+    margin: 1rem 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.pregunta-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: #4a5568;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.info-item {
+    background: #edf2f7;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: background-color 0.2s;
+}
+
+.info-item:hover {
+    background: #e2e8f0;
+}
+
+.no-questions {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #718096;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 768px) {
+    .preguntas-header {
+        padding: 2rem 1.5rem;
+        text-align: center;
+    }
+
+    .preguntas-header h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .btn-ask {
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .pregunta-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+
+    .pregunta-info {
+        gap: 0.8rem;
+    }
+}
+
+/* pregunta simple */
+.ap-votacion {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    user-select: none;
+    flex-direction: column;
+}
+
+/* Iconos con mejores estilos */
+.icono-megusta::before,
+.icono-nomegusta::before {
+    display: inline-block;
+    font-size: 1.5rem;
+    transition: transform 0.2s, color 0.2s;
+    cursor: pointer;
+}
+
+.icono-megusta:hover::before {
+    color: #2ecc71;
+    /* Verde suave */
+    transform: scale(1.1);
+}
+
+.icono-nomegusta:hover::before {
+    color: #e74c3c;
+    /* Rojo suave */
+    transform: scale(1.1);
+}
+
+/* Votado: resaltado */
+.votado::before {
+    color: #0a7;
+    font-weight: bold;
+}
+
+/* Deshabilitado: no clicable y tenue */
+.deshabilitado::before {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Conteo neto */
+.contador-votos-netos {
+    font-weight: bold;
+    font-size: 1.25rem;
+    min-width: 2rem;
+    text-align: center;
+}
+
+/* Tooltip básico */
+.tooltip {
+    position: relative;
+}
+
+.tooltip:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -1.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    white-space: nowrap;
+    z-index: 10;
+    opacity: 0.95;
+}
+
+.icono-megusta::before {
+    content: '👍';
+    /* O usa un ícono real con SVG o fuente */
+}
+
+.icono-nomegusta::before {
+    content: '👎';
+}
+
+.icono-megusta,
+.icono-nomegusta {
+    padding: 0.1rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.icono-megusta {
+    background-color: #e0f2fe;
+    color: #0284c7;
+    border-color: #bae6fd;
+}
+
+.icono-megusta:hover {
+    background-color: #bae6fd;
+}
+
+.icono-nomegusta {
+    background-color: #fee2e2;
+    color: #dc2626;
+    border-color: #fecaca;
+}
+
+.icono-nomegusta:hover {
+    background-color: #fecaca;
+}
+
+.moderation-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.moderation-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.moderation-message {
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.moderation-message.success {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.moderation-message.danger {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.moderation-message.error {
+    background-color: #fef2f2;
+    color: #b91c1c;
+}
+
+.moderation-message.info {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+.moderation-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.moderation-table th,
+.moderation-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+}
+
+.moderation-table th {
+    background-color: #f9fafb;
+    font-weight: 600;
+}
+
+.moderation-table tr:hover {
+    background-color: #f3f4f6;
+}
+
+.acciones .btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-right: 5px;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-preview {
+    background-color: #3b82f6;
+}
+
+.btn-preview:hover {
+    background-color: #2563eb;
+}
+
+.btn-approve {
+    background-color: #10b981;
+}
+
+.btn-approve:hover {
+    background-color: #059669;
+}
+
+.btn-delete {
+    background-color: #ef4444;
+}
+
+.btn-delete:hover {
+    background-color: #dc2626;
+}
+/**/
+.points-leaderboard {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.points-leaderboard h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #333;
+}
+
+.points-leaderboard ol {
+    list-style: decimal inside;
+    padding: 0;
+}
+
+.points-leaderboard li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.points-leaderboard li:last-child {
+    border-bottom: none;
+}
+
+.points-leaderboard .username {
+    font-weight: bold;
+    color: #222;
+}
+
+.points-leaderboard .points {
+    color: #666;
+}
+
+
+
+.gamipress-top10-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.gamipress-top10-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+    font-size: 1.1em;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.07);
+    padding: 16px 20px;
+    border: 1px solid #e5e7eb;
+    transition: box-shadow 0.25s, transform 0.25s, background 0.25s;
+}
+
+.gamipress-top10-item:hover {
+    box-shadow: 0 8px 24px rgba(44, 62, 80, 0.13);
+    transform: translateY(-3px) scale(1.02);
+    background: #f3f4f6;
+}
+
+.gamipress-top10-item .avatar {
+    margin-right: 14px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(44, 62, 80, 0.10);
+}
+
+.gamipress-top10-item .nombre {
+    font-weight: 600;
+    margin-right: 8px;
+    color: #1a202c;
+}
+
+.gamipress-top10-item .puntos {
+    color: #666;
+    margin-left: auto;
+    font-weight: 500;
+}
+
+
+/* mi perfil */
+.perfil-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.perfil-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.perfil-avatar img {
+    border: 3px solid #0073aa;
+    border-radius: 50%;
+}
+
+.perfil-info {
+    margin-left: 20px;
+}
+
+.perfil-info h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.perfil-info p {
+    color: #666;
+    margin: 5px 0 0;
+}
+
+.perfil-section {
+    margin-bottom: 30px;
+}
+
+.perfil-section h3 {
+    color: #0073aa;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.perfil-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.perfil-rango {
+    background-color: #eee;
+    padding: 10px;
+    border-left: 4px solid #7e57c2;
+    font-weight: bold;
+}
+
+.perfil-logros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logro-item {
+    background: #f4f4f4;
+    padding: 10px;
+    border-radius: 6px;
+    width: 120px;
+    text-align: center;
+}
+
+.logro-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.perfil-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: #0073aa;
+}
+
+.btn-primary:hover {
+    background-color: #005177;
+}
+
+.btn-secondary {
+    background-color: #f39c12;
+}
+
+.btn-secondary:hover {
+    background-color: #d68910;
+}
