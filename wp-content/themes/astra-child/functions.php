@@ -593,23 +593,77 @@ function mostrar_perfil_general($user)
             <h2><?php echo esc_html($user->display_name); ?></h2>
             <p><?php echo esc_html($user->user_email); ?></p>
         </div>
-
-        <div style="margin-top: 2rem;">
-            <h3>Puntos</h3>
-            <p><?php echo do_shortcode('[gamipress_user_points user_id="' . $user_id . '"]'); ?></p>
-
-            <h3>Rangos</h3>
-            <p><?php echo do_shortcode('[gamipress_user_rank user_id="' . $user_id . '"]'); ?></p>
-
-            <h3>Logros</h3>
-            <p><?php echo do_shortcode('[gamipress_user_achievements user_id="' . $user_id . '" type="all"]'); ?></p>
-        </div>
-
-        <div style="margin-top: 2rem;">
-            <h3>Últimas preguntas</h3>
-            <?php echo do_shortcode('[anspress user="' . $user_id . '" type="question" orderby="date" order="DESC" limit="5"]'); ?>
-        </div>
-    </div>
-
     <?php
 }
+
+function obtener_datos_gamipress_usuario($user_id) {
+    if (!$user_id || !get_userdata($user_id)) {
+        return null;
+    }
+
+    $datos = [];
+
+    // Tipos de puntos
+    $tipos_puntos = gamipress_get_points_types();
+    foreach ($tipos_puntos as $slug => $data) {
+        $cantidad = gamipress_get_user_points($user_id, $slug);
+        $page_url = get_post_type_archive_link($slug); // Enlace del archivo de puntos (si existe)
+        $icono_id = get_post_thumbnail_id($data['ID']);
+        $icono_url = $icono_id ? wp_get_attachment_url($icono_id) : '';
+
+        $datos['puntos'][$slug] = [
+            'nombre' => $data,
+            'cantidad' => $cantidad,
+            'enlace' => $page_url,
+            'icono' => $icono_url,
+        ];
+    }
+
+    // Tipos de rangos
+    $tipos_rangos = gamipress_get_rank_types();
+    foreach ($tipos_rangos as $slug => $data) {
+        $rango = gamipress_get_user_rank($user_id, $slug);
+        $post_id = $rango ? $rango->ID : 0;
+
+        $datos['rangos'][$slug] = [
+            'nombre' => $data,
+            'rango_actual' => $rango ? $rango->post_title : 'Sin rango',
+            'enlace' => $rango ? get_permalink($post_id) : '',
+            'icono' => $rango ? get_the_post_thumbnail_url($post_id) : '',
+        ];
+    }
+
+    // Tipos de logros
+    $tipos_logros = gamipress_get_achievement_types();
+    foreach ($tipos_logros as $slug => $data) {
+        $logros = gamipress_get_user_achievements([
+            'user_id' => $user_id,
+            'achievement_type' => $slug,
+            'limit' => -1,
+        ]);
+
+        $lista_logros = array_map(function($logro) {
+            return [
+                'titulo' => get_the_title($logro->post_id),
+                'enlace' => get_permalink($logro->post_id),
+                'icono' => get_the_post_thumbnail_url($logro->post_id),
+            ];
+        }, $logros);
+
+        $datos['logros'][$slug] = [
+            'nombre' => $data,
+            'lista' => $lista_logros,
+        ];
+    }
+
+    return $datos;
+}
+
+add_action('template_redirect', function() {
+    if (preg_match('#^/mi-perfil/([^/]+)/?#', $_SERVER['REQUEST_URI'], $matches)) {
+        $username = $matches[1];
+        $new_url = home_url('/perfil/' . $username . '/');
+        wp_redirect($new_url, 301);
+        exit;
+    }
+});
