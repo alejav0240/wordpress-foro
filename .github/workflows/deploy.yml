@@ -23,8 +23,6 @@ jobs:
       - name: Rsync WordPress (excluding uploads and wp-config.php)
         run: |
           rsync -az --delete \
-            --exclude 'wp-content/uploads/' \
-            --exclude 'wp-config.php' \
             --exclude '.git/' \
             ./ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/var/www/wordpress
 
