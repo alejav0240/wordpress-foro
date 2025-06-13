@@ -1,4 +1,4 @@
-name: Deploy to Droplet
+name: Deploy WordPress to Droplet
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Setup SSH
@@ -20,15 +20,20 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-      - name: Deploy code via rsync
+      - name: Rsync WordPress (excluding uploads and wp-config.php)
         run: |
-          rsync -az --delete ./ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/var/www/wordpress-foro
+          rsync -az --delete \
+            --exclude 'wp-content/uploads/' \
+            --exclude 'wp-config.php' \
+            --exclude '.git/' \
+            ./ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/var/www/wordpress
 
-      - name: Post-deploy tasks
+      - name: Set permissions and reload PHP-FPM
         run: |
           ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} <<EOF
-            cd /var/www/wordpress-foro
-            npm install
-            npm run build
-            pm2 restart app || pm2 start npm --name "app" -- start
+            cd /var/www/wordpress
+            chown -R www-data:www-data .
+            find . -type d -exec chmod 755 {} \;
+            find . -type f -exec chmod 644 {} \;
+            systemctl reload php8.1-fpm || systemctl reload php8.2-fpm || echo "PHP-FPM not reloaded"
           EOF
