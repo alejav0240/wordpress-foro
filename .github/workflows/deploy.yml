@@ -22,12 +22,12 @@ jobs:
 
       - name: Deploy code via rsync
         run: |
-          rsync -az --delete ./ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/var/www/mi-proyecto
+          rsync -az --delete ./ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/var/www/wordpress-foro
 
       - name: Post-deploy tasks
         run: |
           ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} <<EOF
-            cd /var/www/mi-proyecto
+            cd /var/www/wordpress-foro
             npm install
             npm run build
             pm2 restart app || pm2 start npm --name "app" -- start
