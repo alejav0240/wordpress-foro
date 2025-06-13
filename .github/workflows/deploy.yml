@@ -24,9 +24,9 @@ jobs:
         run: |
           rsync -az --delete ./ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/var/www/mi-proyecto
 
-      - name: Post-deploy: install deps and restart app
+      - name: Post-deploy tasks
         run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} <<EOF
             cd /var/www/mi-proyecto
             npm install
             npm run build
