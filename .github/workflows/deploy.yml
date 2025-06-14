@@ -24,7 +24,8 @@ jobs:
         run: |
           rsync -az --delete \
             --exclude '.git/' \
-            ./ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/var/www/wordpress
+            ./ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/var/www/wordpress-foro
+
 
       - name: Set permissions and reload PHP-FPM
         run: |
