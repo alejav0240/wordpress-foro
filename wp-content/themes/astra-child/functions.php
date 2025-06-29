@@ -722,42 +722,25 @@ function anspress_make_taxonomies_public() {
     }
 }
 
-add_filter('forminator_render_form_before_fields', 'llenar_combo_categorias_forminator', 10, 2);
+/**
+ * Filtra la consulta del Post Grid de UAG para mostrar solo las entradas del usuario logueado.
+ * El nombre del filtro (e.g., 'uagb_post_grid_query_args') es hipotético y debe confirmarse con la doc de UAG.
+ */
+function my_uagb_post_grid_logged_in_user_posts( $query_args, $attributes ) {
+    if ( is_user_logged_in() ) {
+        $current_user = wp_get_current_user();
 
-function llenar_combo_categorias_forminator($form_fields, $form_id)
-{
-    // Reemplaza con el ID real de tu formulario
-    if ($form_id != 153) {
-        return $form_fields;
-    }
-
-    foreach ($form_fields as &$field) {
-        // Verifica que el campo sea 'select' y tenga el ID del campo personalizado
-        if ($field['element_id'] === 'select-1' && $field['type'] === 'select') {
-
-            error_log('Hook ejecutado: cargando categorías');
-
-            $opciones = [];
-
-            $categorias = get_terms([
-                'taxonomy' => 'category', // Cambia por 'question_category' si usas otra taxonomía
-                'hide_empty' => false,
-            ]);
-
-            if (!is_wp_error($categorias)) {
-                foreach ($categorias as $cat) {
-                    $opciones[] = [
-                        'value' => $cat->term_id,
-                        'label' => $cat->name,
-                    ];
-                }
-            }
-
-            // Reemplaza las opciones
-            $field['options'] = $opciones;
+        // Opcional: Si quieres aplicar esto a un bloque UAG Post Grid específico.
+        // Necesitarías el block_id que está en tu código: "block_id":"32626711"
+        if ( isset( $attributes['block_id'] ) && '32626711' === $attributes['block_id'] ) {
+            $query_args['author'] = $current_user->ID;
+        } else {
+        //      // Si no usas el block_id, se aplicará a todos los UAG Post Grid
+            $query_args['author'] = $current_user->ID;
         }
+
+         $query_args['author'] = $current_user->ID; // Aplica a todos los UAG Post Grid
     }
-
-    return $form_fields;
+    return $query_args;
 }
-
+add_filter( 'uagb_post_grid_query_args', 'my_uagb_post_grid_logged_in_user_posts', 10, 2 ); // Reemplaza 'uagb_post_grid_query_args' con el filtro real

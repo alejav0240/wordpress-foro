@@ -2,10 +2,115 @@
 /* Template Name: Página de Preguntas Personalizada */
 get_header();
 ?>
-<div class="container-preguntas">
-  <div class="preguntas-header">
+<style>
+  .pagina-preguntas {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    min-height: 100vh;
+}
+
+.encabezado-preguntas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.encabezado-preguntas h1 {
+    font-size: 2.25rem;
+    color: #1a202c;
+    font-weight: 700;
+    margin: 0;
+}
+
+.boton-hacer-pregunta {
+    background-color: #ff002fa8;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.boton-hacer-pregunta:hover {
+    color: #fff;
+    background-color: #bf0628;
+}
+
+.lista-preguntas {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.pregunta-tarjeta {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: box-shadow 0.2s ease;
+}
+
+.pregunta-tarjeta:hover {
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.pregunta-cabecera {
+    margin-bottom: 0.75rem;
+}
+
+.titulo-pregunta {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #bf0628;
+    text-decoration: none;
+}
+
+.titulo-pregunta:hover {
+    text-decoration: underline;
+}
+
+.meta-pregunta {
+    font-size: 0.9rem;
+    color: #718096;
+    margin-top: 0.25rem;
+}
+
+.descripcion-pregunta {
+    font-size: 1rem;
+    color: #2d3748;
+    margin-top: 0.75rem;
+    line-height: 1.5;
+}
+
+.informacion-pregunta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.95rem;
+    color: #4a5568;
+    margin-top: 1rem;
+}
+
+.sin-preguntas {
+    text-align: center;
+    color: #4a5568;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+}
+
+</style>
+
+<div class="pagina-preguntas">
+  <div class="encabezado-preguntas">
     <h1>📚 Preguntas de la Comunidad</h1>
-    <a href="<?php echo site_url('/ask'); ?>" class="btn-ask">➕ Hacer una pregunta</a>
+    <a href="<?php echo esc_url(site_url('/ask')); ?>" class="boton-hacer-pregunta">
+      + Hacer una pregunta
+    </a>
   </div>
 
   <?php
@@ -16,48 +121,52 @@ get_header();
   ];
   $preguntas = new WP_Query($args);
 
-  if ($preguntas->have_posts()) :
-    while ($preguntas->have_posts()) : $preguntas->the_post();
+  if ($preguntas->have_posts()):
+    echo '<div class="lista-preguntas">';
+    while ($preguntas->have_posts()):
+      $preguntas->the_post();
+
       $autor = get_the_author();
       $fecha = get_the_date();
       $link = get_permalink();
       $votos = function_exists('ap_get_vote_count') ? ap_get_vote_count(get_the_ID()) : 0;
       $respuestas = function_exists('ap_get_answer_count') ? ap_get_answer_count(get_the_ID()) : 0;
+      $excerpt = wp_trim_words(get_the_content(), 25);
 
-      // Obtener categorías y etiquetas con seguridad
       $categorias = get_the_term_list(get_the_ID(), 'question_category', '', ', ');
       $etiquetas = get_the_term_list(get_the_ID(), 'question_tag', '', ', ');
-
-      $excerpt = wp_trim_words(get_the_content(), 25);
-  ?>
-      <div class="pregunta-card">
-        <div class="pregunta-header">
-          <a href="<?php echo esc_url($link); ?>" class="pregunta-titulo"><?php the_title(); ?></a>
-          <div class="pregunta-meta">
+      ?>
+      <article class="pregunta-tarjeta">
+        <header class="pregunta-cabecera">
+          <a href="<?php echo esc_url($link); ?>" class="titulo-pregunta">
+            <?php echo esc_html(get_the_title()); ?>
+          </a>
+          <div class="meta-pregunta">
             <span>Publicado por <strong><?php echo esc_html($autor); ?></strong></span> |
             <span><?php echo esc_html($fecha); ?></span>
           </div>
-        </div>
+        </header>
 
-        <div class="pregunta-body">
-          <p class="pregunta-descripcion"><?php echo esc_html($excerpt); ?></p>
-          <div class="pregunta-info">
+        <div class="contenido-pregunta">
+          <p class="descripcion-pregunta"><?php echo esc_html($excerpt); ?></p>
+          <div class="informacion-pregunta">
             <span class="info-item">🔼 <?php echo intval($votos); ?> votos</span>
             <span class="info-item">💬 <?php echo intval($respuestas); ?> respuestas</span>
-            <?php if (!is_wp_error($categorias) && $categorias) : ?>
+            <?php if (!is_wp_error($categorias) && $categorias): ?>
               <span class="info-item">📂 <?php echo $categorias; ?></span>
             <?php endif; ?>
-            <?php if (!is_wp_error($etiquetas) && $etiquetas) : ?>
+            <?php if (!is_wp_error($etiquetas) && $etiquetas): ?>
               <span class="info-item">🏷️ <?php echo $etiquetas; ?></span>
             <?php endif; ?>
           </div>
         </div>
-      </div>
-  <?php
+      </article>
+      <?php
     endwhile;
+    echo '</div>';
     wp_reset_postdata();
-  else :
-    echo "<p class='no-questions'>No hay preguntas aún.</p>";
+  else:
+    echo "<p class='sin-preguntas'>No hay preguntas aún.</p>";
   endif;
   ?>
 </div>

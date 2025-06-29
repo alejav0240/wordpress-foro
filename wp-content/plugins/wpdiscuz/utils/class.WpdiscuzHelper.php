@@ -947,7 +947,11 @@ class WpdiscuzHelper implements WpDiscuzConstants {
                     }
 
                     if (!$bp_has_avatar) {
-                        $url = $nameAndEmail["isUser"] ? $this->options->thread_layouts["defaultAvatarUrlForUser"] : $this->options->thread_layouts["defaultAvatarUrlForGuest"];
+                        if ($nameAndEmail["isUser"] && $this->options->thread_layouts["defaultAvatarUrlForUser"]) {
+                            $url = $this->options->thread_layouts["defaultAvatarUrlForUser"];
+                        } else if (!$nameAndEmail["isUser"] && $this->options->thread_layouts["defaultAvatarUrlForGuest"]) {
+                            $url = $this->options->thread_layouts["defaultAvatarUrlForGuest"];
+                        }
                     }
                 } else {
                     $url = $this->avatars[$nameAndEmail["email"]]["url"];

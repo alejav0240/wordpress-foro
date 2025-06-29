@@ -1,8 +1,8 @@
 <?php
-/* Template Name: Página Mis Preguntas */
+/* Template Name: Página Mis Respuestas */
 get_header(); ?>
 <style>
-    .pagina-mis-preguntas {
+.pagina-mis-respuestas {
     padding: 4rem 0;
     min-height: 100vh;
 }
@@ -30,11 +30,11 @@ get_header(); ?>
     color: #4a5568;
 }
 
-.seccion-preguntas {
+.seccion-respuestas {
     background: #ffffff;
     border-radius: 1rem;
-    padding: 2rem;
     margin-bottom: 1rem;
+    padding: 2rem;
     box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
 
@@ -51,7 +51,7 @@ get_header(); ?>
     font-weight: 600;
 }
 
-.boton-nueva-pregunta {
+.boton-nueva-respuesta {
     background-color: #ff002fa8;
     color: #fff;
     padding: 0.5rem 1rem;
@@ -61,17 +61,17 @@ get_header(); ?>
     transition: background-color 0.3s ease;
 }
 
-.boton-nueva-pregunta:hover {
+.boton-nueva-respuesta:hover {
     color: #fff;
     background-color: #bf0628;
 }
 
-.lista-preguntas {
+.lista-respuestas {
     display: grid;
     gap: 1rem;
 }
 
-.tarjeta-pregunta {
+.tarjeta-respuesta {
     background: #FDFAF7;
     padding: 1.25rem;
     border-radius: 0.75rem;
@@ -79,36 +79,36 @@ get_header(); ?>
     transition: background 0.2s, box-shadow 0.2s;
 }
 
-.tarjeta-pregunta:hover {
+.tarjeta-respuesta:hover {
     background: #ffffff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
-.titulo-pregunta {
+.titulo-respuesta {
     font-size: 1.2rem;
     font-weight: 600;
     color: #bf0628;
     text-decoration: none;
 }
 
-.titulo-pregunta:hover {
+.titulo-respuesta:hover {
     text-decoration: underline;
 }
 
-.fecha-pregunta {
+.fecha-respuesta {
     font-size: 0.9rem;
     color: #718096;
     margin-top: 0.25rem;
 }
 
-.resumen-pregunta {
+.resumen-respuesta {
     font-size: 1rem;
     color: #2d3748;
     margin-top: 0.5rem;
     line-height: 1.5;
 }
 
-.mensaje-sin-preguntas {
+.mensaje-sin-respuestas {
     text-align: center;
     color: #4a5568;
     font-size: 1rem;
@@ -116,7 +116,7 @@ get_header(); ?>
 
 </style>
 
-<div id="primary" class="pagina-mis-preguntas">
+<div id="primary" class="pagina-mis-respuestas">
     <main id="main" class="contenedor-pagina">
 
         <?php if (have_posts()):
@@ -131,18 +131,18 @@ get_header(); ?>
             <?php endwhile;
         endif; ?>
 
-        <section class="seccion-preguntas">
+        <section class="seccion-respuestas">
             <div class="encabezado-seccion">
                 <h2 class="titulo-seccion">
-                    <?php esc_html_e('Mis últimas preguntas', 'tu-textdomain'); ?>
+                    <?php esc_html_e('Mis últimas respuestas', 'tu-textdomain'); ?>
                 </h2>
-                <a href="/questions/ask/" class="boton-nueva-pregunta">+ Nueva Pregunta</a>
+                <a href="/questions/ask/" class="boton-nueva-respuesta">+ Nueva Respuesta</a>
             </div>
 
             <?php
             $current_user_id = get_current_user_id();
             $args = array(
-                'post_type' => 'question',
+                'post_type' => 'answer',
                 'posts_per_page' => 5,
                 'author' => $current_user_id,
                 'post_status' => 'publish',
@@ -151,18 +151,18 @@ get_header(); ?>
             $user_questions = new WP_Query($args);
 
             if ($user_questions->have_posts()):
-                echo '<div class="lista-preguntas">';
+                echo '<div class="lista-respuestas">';
                 while ($user_questions->have_posts()):
                     $user_questions->the_post(); ?>
 
-                    <article class="tarjeta-pregunta">
-                        <a href="<?php echo esc_url(get_permalink()); ?>" class="titulo-pregunta">
+                    <article class="tarjeta-respuesta">
+                        <a href="<?php echo esc_url(get_permalink()); ?>" class="titulo-respuesta">
                             <?php echo esc_html(get_the_title()); ?>
                         </a>
-                        <p class="fecha-pregunta">
+                        <p class="fecha-respuesta">
                             Publicada el <?php echo esc_html(get_the_date()); ?>
                         </p>
-                        <p class="resumen-pregunta">
+                        <p class="resumen-respuesta">
                             <?php echo esc_html(wp_trim_words(get_the_excerpt(), 20)); ?>
                         </p>
                     </article>
@@ -171,7 +171,7 @@ get_header(); ?>
                 echo '</div>';
                 wp_reset_postdata();
             else:
-                echo '<p class="mensaje-sin-preguntas">Aún no has publicado ninguna pregunta.</p>';
+                echo '<p class="mensaje-sin-respuestas">Aún no has publicado ninguna respuesta.</p>';
             endif;
             ?>
         </section>
