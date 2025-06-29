@@ -101,8 +101,8 @@ $this->dismissAddonNoteOnPage(); ?>
     <div style="max-width: 83%; padding: 15px; background: #ffffff; margin-bottom: 15px; box-sizing: border-box;">
         <a href="https://gvectors.com/product/wpdiscuz-addons-bundle/" target="_blank"
            title="<?php esc_attr_e("View wpDiscuz Addons Bundle", "wpdiscuz"); ?>"><img
-                    src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/bundle/wpdiscuz-bundle.png")); ?>"
-                    alt="<?php esc_attr_e("wpDiscuz Addons Bundle", "default"); ?>" style="width: 100%;"/></a>
+                src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/bundle/wpdiscuz-bundle.png")); ?>"
+                alt="<?php esc_attr_e("wpDiscuz Addons Bundle", "default"); ?>" style="width: 100%;"/></a>
     </div>
     <h3>&nbsp;</h3>
     <hr/>

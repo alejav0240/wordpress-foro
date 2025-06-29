@@ -4,18 +4,16 @@ namespace wpdFormAttr;
 
 use wpdFormAttr\FormConst\wpdFormConst;
 
-class Row
-{
+class Row {
 
-    public function dashboardForm($id, $args)
-    {
+    public function dashboardForm($id, $args) {
         $defaultArgs = [
             "column_type" => "full",
-            "row_order" => 0
+            "row_order"   => 0
         ];
-        $data = wp_parse_args($args, $defaultArgs);
-        $columnType = $data["column_type"];
-        $rowOrder = $data["row_order"];
+        $data        = wp_parse_args($args, $defaultArgs);
+        $columnType  = $data["column_type"];
+        $rowOrder    = $data["row_order"];
         ?>
         <div class="wpd-form-row-wrap" id="<?php echo $id; ?>">
             <input type="hidden"
@@ -39,14 +37,13 @@ class Row
         <?php
     }
 
-    private function renderRow($id, $args)
-    {
+    private function renderRow($id, $args) {
         $isTwoCol = $args["column_type"] === "two";
         ?>
         <div class="wpd-form-row-body <?php echo $isTwoCol ? "two-col" : ""; ?>">
             <?php
             if ($isTwoCol) {
-                $leftData = isset($args["left"]) ? $args["left"] : [];
+                $leftData  = isset($args["left"]) ? $args["left"] : [];
                 $rightData = isset($args["right"]) ? $args["right"] : [];
                 $this->renderCol($id, "left", $leftData);
                 $this->renderCol($id, "right", $rightData);
@@ -59,8 +56,7 @@ class Row
         <?php
     }
 
-    private function renderCol($id, $colName, $fields)
-    {
+    private function renderCol($id, $colName, $fields) {
         ?>
         <div class="wpd-form-col <?php echo esc_attr($colName); ?>-col">
             <div class="col-body">
@@ -85,13 +81,12 @@ class Row
         <?php
     }
 
-    public function renderFrontFormRow($args, $options, $currentUser, $uniqueId, $isMainForm)
-    {
+    public function renderFrontFormRow($args, $options, $currentUser, $uniqueId, $isMainForm) {
         ?>
         <div class="wpd-form-row">
             <?php
             if ($args["column_type"] === "two") {
-                $left = $args["left"];
+                $left  = $args["left"];
                 $right = $args["right"];
                 $this->renderFrontFormCol("left", $left, $options, $currentUser, $uniqueId, $isMainForm);
                 $this->renderFrontFormCol("right", $right, $options, $currentUser, $uniqueId, $isMainForm);
@@ -105,8 +100,7 @@ class Row
         <?php
     }
 
-    private function renderFrontFormCol($colName, $fields, $options, $currentUser, $uniqueId, $isMainForm)
-    {
+    private function renderFrontFormCol($colName, $fields, $options, $currentUser, $uniqueId, $isMainForm) {
         ?>
         <div class="wpd-form-col-<?php echo esc_attr($colName); ?>">
             <?php
@@ -123,17 +117,16 @@ class Row
         <?php
     }
 
-    public function sanitizeRowData($data, &$fields)
-    {
+    public function sanitizeRowData($data, &$fields) {
         if (isset($data["full"])) {
-            $data["full"] = is_array($data["full"]) ? $data["full"] : [];
-            $data["full"] = $this->callFieldSanitize($data["full"], $fields);
+            $data["full"]        = is_array($data["full"]) ? $data["full"] : [];
+            $data["full"]        = $this->callFieldSanitize($data["full"], $fields);
             $data["column_type"] = "full";
         } else if (isset($data["left"]) || isset($data["right"])) {
-            $data["left"] = isset($data["left"]) && is_array($data["left"]) ? $data["left"] : [];
-            $data["right"] = isset($data["right"]) && is_array($data["right"]) ? $data["right"] : [];
-            $data["left"] = $this->callFieldSanitize($data["left"], $fields);
-            $data["right"] = $this->callFieldSanitize($data["right"], $fields);
+            $data["left"]        = isset($data["left"]) && is_array($data["left"]) ? $data["left"] : [];
+            $data["right"]       = isset($data["right"]) && is_array($data["right"]) ? $data["right"] : [];
+            $data["left"]        = $this->callFieldSanitize($data["left"], $fields);
+            $data["right"]       = $this->callFieldSanitize($data["right"], $fields);
             $data["column_type"] = "two";
         } else {
             return null;
@@ -146,8 +139,7 @@ class Row
         return $data;
     }
 
-    private function callFieldSanitize($args, &$fields)
-    {
+    private function callFieldSanitize($args, &$fields) {
         $allowedFieldsType = $this->allowedFieldsType();
         foreach ($args as $fieldName => $fieldData) {
             if (!isset($fieldData["type"]) && !$fieldData["type"]) {
@@ -155,14 +147,14 @@ class Row
             }
             $callableClass = str_replace("\\\\", "\\", $fieldData["type"]);
             if (in_array($callableClass, $allowedFieldsType, true) && is_callable($callableClass . "::getInstance")) {
-                $field = call_user_func($callableClass . "::getInstance");
+                $field        = call_user_func($callableClass . "::getInstance");
                 $fieldNewName = $this->changeFieldName($fieldName, $fieldData);
                 if ($fieldNewName !== $fieldName) {
-                    $args = $this->chageArrayKey($args, $fieldName, $fieldNewName);
-                    $args[$fieldNewName] = $field->sanitizeFieldData($fieldData);
+                    $args                  = $this->chageArrayKey($args, $fieldName, $fieldNewName);
+                    $args[$fieldNewName]   = $field->sanitizeFieldData($fieldData);
                     $fields[$fieldNewName] = $field->sanitizeFieldData($fieldData);
                 } else {
-                    $args[$fieldName] = $field->sanitizeFieldData($fieldData);
+                    $args[$fieldName]   = $field->sanitizeFieldData($fieldData);
                     $fields[$fieldName] = $field->sanitizeFieldData($fieldData);
                 }
             }
@@ -170,8 +162,7 @@ class Row
         return $args;
     }
 
-    private function changeFieldName($fieldName, $fieldData)
-    {
+    private function changeFieldName($fieldName, $fieldData) {
         if (isset($fieldData["meta_key"])) {
             $metaKey = sanitize_text_field(trim($fieldData["meta_key"]));
             if ($metaKey && $fieldName !== $metaKey) {
@@ -184,8 +175,7 @@ class Row
         return $fieldName;
     }
 
-    private function chagePostRatingKey($oldName, $newName, $fieldData)
-    {
+    private function chagePostRatingKey($oldName, $newName, $fieldData) {
         if (str_replace("\\\\", "\\", $fieldData["type"]) === "wpdFormAttr\Field\RatingField" && isset($fieldData["meta_key_replace"]) && $fieldData["meta_key_replace"]) {
             if ($wpdiscuzRatingCount = $this->getPostRatingMeta()) {
                 foreach ($wpdiscuzRatingCount as $k => $row) {
@@ -199,8 +189,7 @@ class Row
         }
     }
 
-    private function replaceMetaKeyInDB($oldKey, $newKey, $fieldData)
-    {
+    private function replaceMetaKeyInDB($oldKey, $newKey, $fieldData) {
         global $wpdb;
         if (isset($fieldData["meta_key_replace"]) && $fieldData["meta_key_replace"]) {
             $sql = $wpdb->prepare("UPDATE `{$wpdb->commentmeta}` SET `meta_key` = %s WHERE `meta_key` = %s", $newKey, $oldKey);
@@ -212,27 +201,24 @@ class Row
         }
     }
 
-    private function getPostRatingMeta()
-    {
+    private function getPostRatingMeta() {
         global $wpdb;
         $sql = $wpdb->prepare("SELECT `post_id`,`meta_value` FROM `{$wpdb->postmeta}` WHERE `meta_key` = %s", wpdFormConst::WPDISCUZ_RATING_COUNT);
         return $wpdb->get_results($sql, ARRAY_A);
     }
 
-    private function chageArrayKey($array, $oldKey, $newKey)
-    {
-        $keys = array_keys($array);
-        $values = array_values($array);
+    private function chageArrayKey($array, $oldKey, $newKey) {
+        $keys        = array_keys($array);
+        $values      = array_values($array);
         $oldKeyIndex = array_search($oldKey, $keys);
         if (is_numeric($oldKeyIndex)) {
             $keys[$oldKeyIndex] = $newKey;
-            $array = array_combine($keys, $values);
+            $array              = array_combine($keys, $values);
         }
         return $array;
     }
 
-    public function allowedFieldsType()
-    {
+    public function allowedFieldsType() {
         $allowedFieldsType = [
             "wpdFormAttr\Field\DefaultField\Name",
             "wpdFormAttr\Field\DefaultField\Email",

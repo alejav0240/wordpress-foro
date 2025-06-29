@@ -188,21 +188,21 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_ignore_subscription"><?php esc_html_e("Ignore subscription", "wpdiscuz"); ?></label>
+                    for="wc_ignore_subscription"><?php esc_html_e("Ignore subscription", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text" name="wc_ignore_subscription" id="wc_ignore_subscription"
                                    value="<?php echo esc_attr($this->phrases["wc_ignore_subscription"]); ?>"/></td>
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_confirm_email"><?php esc_html_e("Confirm your subscription", "wpdiscuz"); ?></label>
+                    for="wc_confirm_email"><?php esc_html_e("Confirm your subscription", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text" name="wc_confirm_email" id="wc_confirm_email"
                                    value="<?php echo esc_attr($this->phrases["wc_confirm_email"]); ?>"/></td>
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_comfirm_success_message"><?php esc_html_e("You've successfully confirmed your subscription.", "wpdiscuz"); ?></label>
+                    for="wc_comfirm_success_message"><?php esc_html_e("You've successfully confirmed your subscription.", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><textarea name="wc_comfirm_success_message"
                                       id="wc_comfirm_success_message"><?php echo esc_attr($this->phrases["wc_comfirm_success_message"]); ?></textarea>

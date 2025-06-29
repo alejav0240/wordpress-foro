@@ -32,6 +32,47 @@ function gamipress_h5p_content_complete( $data, $result_id, $content_id, $user_i
         $content_id
     ) );
 
+    // Get the content tag
+    $content_tags = $wpdb->get_results( $wpdb->prepare(
+            "SELECT t.tag_id 
+            FROM {$wpdb->prefix}h5p_contents_tags AS t
+            WHERE t.content_id = %d",
+            $content_id,
+        ) );
+
+    if ( ! empty( $content_tags ) ) {
+        
+        foreach ( $content_tags as $tag ) {
+            // Trigger complete any content of a tag
+            do_action( 'gamipress_h5p_complete_content_tag', $result_id, $user_id, $content_id, $content_type, $data, $tag->tag_id );
+
+            // At 100% score events
+            if( isset( $data['score'] ) && isset( $data['max_score'] ) && $data['score'] >= $data['max_score'] ) {
+
+                // Trigger complete any content at maximum score of a tag
+                do_action( 'gamipress_h5p_max_complete_content_tag', $result_id, $user_id, $content_id, $content_type, $data, $tag->tag_id ); //5
+            }
+
+            // Score events
+            if( isset( $data['score'] ) ) {
+
+                // Trigger complete any content with a minimum score of a tag
+                do_action( 'gamipress_h5p_complete_content_min_score_tag', $result_id, $user_id, $content_id, $content_type, $data['score'], $data, $tag->tag_id ); //6
+                // Trigger complete any content with a maximum score of a tag
+                do_action( 'gamipress_h5p_complete_content_max_score_tag', $result_id, $user_id, $content_id, $content_type, $data['score'], $data, $tag->tag_id ); //6
+                // Trigger complete any content on a range of scores of a tag
+                do_action( 'gamipress_h5p_complete_content_between_score_tag', $result_id, $user_id, $content_id, $content_type, $data['score'], $data, $tag->tag_id  ); //6
+                // Trigger complete any content with a minimum percentage of a tag
+                do_action( 'gamipress_h5p_complete_content_min_percentage_tag', $result_id, $user_id, $content_id, $content_type, $data['score'], $data['max_score'], $data, $tag->tag_id  ); //7
+                // Trigger complete any content with a maximum percentage of a tag
+                do_action( 'gamipress_h5p_complete_content_max_percentage_tag', $result_id, $user_id, $content_id, $content_type, $data['score'], $data['max_score'], $data, $tag->tag_id  );//7
+                // Trigger complete any content on a range of percentages of a tag
+                do_action( 'gamipress_h5p_complete_content_between_percentage_tag', $result_id, $user_id, $content_id, $content_type, $data['score'], $data['max_score'], $data, $tag->tag_id  );//7
+
+            }
+        }
+    }
+
     // Trigger complete any content
     do_action( 'gamipress_h5p_complete_content', $result_id, $user_id, $content_id, $content_type, $data );
 

@@ -99,14 +99,14 @@ if (!$isMuExists) {
                 <th><label for="wmuIsImagesAllowed">Enable Image uploader</label>
                 </th>
                 <td><input type="checkbox" checked='checked' value="1" name="" id="wmuIsImagesAllowed"/> &nbsp; <img
-                            src="<?php echo plugins_url(WPDISCUZ_DIR_NAME . "/options/addons/images/image.png") ?>"/>
+                        src="<?php echo plugins_url(WPDISCUZ_DIR_NAME . "/options/addons/images/image.png") ?>"/>
                 </td>
             </tr>
             <tr scope="row">
                 <th><label for="wmuIsVideosAllowed">Enable Video and Audio uploader</label>
                 </th>
                 <td><input type="checkbox" checked='checked' value="1" name="" id="wmuIsVideosAllowed"/> &nbsp; <img
-                            src="<?php echo plugins_url(WPDISCUZ_DIR_NAME . "/options/addons/images/video.png") ?>"/>
+                        src="<?php echo plugins_url(WPDISCUZ_DIR_NAME . "/options/addons/images/video.png") ?>"/>
                 </td>
             </tr>
             <tr scope="row">
@@ -116,7 +116,7 @@ if (!$isMuExists) {
                         uploader allows to attach non-image and non-video files like zip, doc, pdf, txt...</p>
                 </th>
                 <td><input type="checkbox" checked='checked' value="1" name="" id="wmuIsFilesAllowed"/> &nbsp; <img
-                            src="<?php echo plugins_url(WPDISCUZ_DIR_NAME . "/options/addons/images/file.png") ?>"/>
+                        src="<?php echo plugins_url(WPDISCUZ_DIR_NAME . "/options/addons/images/file.png") ?>"/>
                 </td>
             </tr>
             <tr scope="row">
@@ -127,8 +127,8 @@ if (!$isMuExists) {
                         and so on...</p>
                 </th>
                 <td><input type="checkbox" checked='checked' value="1" name="" id="wmuIsEmbed"/> &nbsp;&nbsp; <img
-                            src="<?php echo plugins_url(WPDISCUZ_DIR_NAME . "/options/addons/images/html5-youtub-player.png") ?>"
-                            style="vertical-align:middle; height:65px;" title="Player Screenshot"/>
+                        src="<?php echo plugins_url(WPDISCUZ_DIR_NAME . "/options/addons/images/html5-youtub-player.png") ?>"
+                        style="vertical-align:middle; height:65px;" title="Player Screenshot"/>
                 </td>
             </tr>
             <tr scope="row" class="tr-wmuIsEmbedContent">
@@ -138,8 +138,8 @@ if (!$isMuExists) {
                         auto-embed function which converts site content</p>
                 </th>
                 <td><input type="checkbox" value="1" name="" id="wmuIsEmbedContent"/> &nbsp;&nbsp; <img
-                            src="<?php echo plugins_url(WPDISCUZ_DIR_NAME . "/options/addons/images/embedded-content.png") ?>"
-                            style="vertical-align:middle; height:250px;" title="Embedded Content Screenshot"/>
+                        src="<?php echo plugins_url(WPDISCUZ_DIR_NAME . "/options/addons/images/embedded-content.png") ?>"
+                        style="vertical-align:middle; height:250px;" title="Embedded Content Screenshot"/>
                 </td>
             </tr>
             <tr scope="row">
@@ -150,8 +150,8 @@ if (!$isMuExists) {
                         .webm or .ogg, it'll convert link to HTML5 video player.</p>
                 </th>
                 <td><input type="checkbox" checked='checked' value="1" name="" id="wmuIsHtml5Video"/> &nbsp; <img
-                            src="<?php echo plugins_url(WPDISCUZ_DIR_NAME . "/options/addons/images/html5-video-player.png") ?>"
-                            style="vertical-align:middle; height:70px;" title="Player Screenshot"/>
+                        src="<?php echo plugins_url(WPDISCUZ_DIR_NAME . "/options/addons/images/html5-video-player.png") ?>"
+                        style="vertical-align:middle; height:70px;" title="Player Screenshot"/>
                 </td>
                 </td>
             </tr>
@@ -159,8 +159,8 @@ if (!$isMuExists) {
                 <th><label for="wmuIsHtml5Audio">Enable HTML5 audio player</label>
                 </th>
                 <td><input type="checkbox" checked='checked' value="1" name="" id="wmuIsHtml5Audio"/> &nbsp; <img
-                            src="<?php echo plugins_url(WPDISCUZ_DIR_NAME . "/options/addons/images/html5-audio-player.png") ?>"
-                            style="vertical-align:middle;" title="Player Screenshot"/>
+                        src="<?php echo plugins_url(WPDISCUZ_DIR_NAME . "/options/addons/images/html5-audio-player.png") ?>"
+                        style="vertical-align:middle;" title="Player Screenshot"/>
                 </td>
             </tr>
             <tr scope="row">

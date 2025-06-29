@@ -14,7 +14,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_social_login_agreement_label"><?php esc_html_e("Social login agreement label", "wpdiscuz"); ?></label>
+                    for="wc_social_login_agreement_label"><?php esc_html_e("Social login agreement label", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_social_login_agreement_label"]); ?>"
@@ -22,7 +22,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_social_login_agreement_desc"><?php esc_html_e("Social login agreement  description", "wpdiscuz"); ?></label>
+                    for="wc_social_login_agreement_desc"><?php esc_html_e("Social login agreement  description", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><textarea id="wc_social_login_agreement_desc"
                                       name="wc_social_login_agreement_desc"><?php echo esc_html($this->phrases["wc_social_login_agreement_desc"]); ?></textarea>
@@ -30,7 +30,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_agreement_button_disagree"><?php esc_html_e("Disagree", "wpdiscuz"); ?></label></th>
+                    for="wc_agreement_button_disagree"><?php esc_html_e("Disagree", "wpdiscuz"); ?></label></th>
             <td colspan="3"><input type="text" id="wc_agreement_button_disagree" name="wc_agreement_button_disagree"
                                    value="<?php echo esc_attr($this->phrases["wc_agreement_button_disagree"]); ?>"></td>
         </tr>

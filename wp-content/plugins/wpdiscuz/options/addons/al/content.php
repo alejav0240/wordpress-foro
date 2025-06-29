@@ -153,10 +153,10 @@ if (!$isAlExists) {
                                 <p style="font-size:12px; color:#999; margin:0px;">Total count of votes</p>
                             </div>
                             <div><input placeholder="Badge Icon" name="" value="fa-user" type="text"> <label><input
-                                            name="" value="1" checked="" type="checkbox"> Enable</label>
+                                        name="" value="1" checked="" type="checkbox"> Enable</label>
                             </div>
                             <div><input placeholder="Custom Label" name="" value="Member" type="text"> <label><input
-                                            name="" value="1" checked="" type="checkbox"> Enable</label>
+                                        name="" value="1" checked="" type="checkbox"> Enable</label>
                             </div>
                         </div>
                         <div class="wv_level_box">
@@ -167,7 +167,7 @@ if (!$isAlExists) {
                                 <p style="font-size:12px; color:#999; margin:0px;">Total count of votes</p>
                             </div>
                             <div><input placeholder="Badge Icon" name="" value="fa-star" type="text"> <label><input
-                                            name="" value="1" checked="" type="checkbox"> Enable</label>
+                                        name="" value="1" checked="" type="checkbox"> Enable</label>
                             </div>
                             <div><input placeholder="Custom Label" name="" value="Active Member" type="text">
                                 <label><input name="" value="1" checked="" type="checkbox"> Enable</label>
@@ -209,7 +209,7 @@ if (!$isAlExists) {
                                 <p style="font-size:12px; color:#999; margin:0px;">Total count of votes</p>
                             </div>
                             <div><input placeholder="Badge Icon" name="" value="fa-trophy" type="text"> <label><input
-                                            name="" value="1" checked="" type="checkbox"> Enable</label>
+                                        name="" value="1" checked="" type="checkbox"> Enable</label>
                             </div>
                             <div><input placeholder="Custom Label" name="" value="Famed Member" type="text">
                                 <label><input name="" value="1" checked="" type="checkbox"> Enable</label>

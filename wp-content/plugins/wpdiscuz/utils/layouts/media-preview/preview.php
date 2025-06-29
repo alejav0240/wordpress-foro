@@ -8,6 +8,6 @@ if (!defined('ABSPATH')) {
     <div class="wmu-preview-remove">
         <img class="wmu-preview-img" src="[PREVIEW_ICON]">
         <div class="wmu-file-name">[PREVIEW_FILENAME]</div>
-<!--        <div class="wmu-delete">&nbsp;</div>-->
+        <!--        <div class="wmu-delete">&nbsp;</div>-->
     </div>
 </div>

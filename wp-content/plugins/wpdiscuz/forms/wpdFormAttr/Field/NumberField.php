@@ -4,11 +4,9 @@ namespace wpdFormAttr\Field;
 
 use wpdFormAttr\Tools\Sanitizer;
 
-class NumberField extends Field
-{
+class NumberField extends Field {
 
-    protected function dashboardForm()
-    {
+    protected function dashboardForm() {
         ?>
         <div class="wpd-field-body" style="display: <?php echo esc_attr($this->display); ?>">
             <div class="wpd-field-option wpdiscuz-item">
@@ -48,7 +46,7 @@ class NumberField extends Field
             <div class="wpd-field-option">
                 <div class="input-group">
                     <label for="<?php echo esc_attr($this->fieldInputName); ?>[icon]"><span
-                                class="input-group-addon"></span> <?php esc_html_e("Field icon", "wpdiscuz"); ?>
+                            class="input-group-addon"></span> <?php esc_html_e("Field icon", "wpdiscuz"); ?>
                         :</label>
                     <input data-placement="bottom" class="icp icp-auto"
                            value="<?php echo esc_attr($this->fieldData["icon"]); ?>" type="text"
@@ -116,26 +114,24 @@ class NumberField extends Field
         <?php
     }
 
-    public function editCommentHtml($key, $value, $data, $comment)
-    {
+    public function editCommentHtml($key, $value, $data, $comment) {
         if (!$this->isShowForUser($data) || ($comment->comment_parent && !$data["is_show_sform"])) {
             return "";
         }
-        $html = "<tr class='" . esc_attr($key) . "-wrapper wpd-edit-number'><td class='first'>";
-        $html .= "<label for='" . esc_attr($key) . "'>" . esc_html($data["name"]) . ": </label>";
-        $html .= "</td><td>";
-        $html .= "<div class='wpdiscuz-item'>";
+        $html     = "<tr class='" . esc_attr($key) . "-wrapper wpd-edit-number'><td class='first'>";
+        $html     .= "<label for='" . esc_attr($key) . "'>" . esc_html($data["name"]) . ": </label>";
+        $html     .= "</td><td>";
+        $html     .= "<div class='wpdiscuz-item'>";
         $required = $this->isValidateRequired($data) ? "required='required' aria-required='true'" : "";
-        $min = is_numeric($data["min"]) ? "min='" . $data["min"] . "'" : "";
-        $max = is_numeric($data["max"]) ? "max='" . $data["max"] . "'" : "";
-        $html .= "<input " . $required . " class='wpd-field wpd-field-number' type='number' id='" . esc_attr($key) . "' value='" . esc_attr($value) . "'  name='" . esc_attr($key) . "'  " . $min . " " . $max . ">";
-        $html .= "</div>";
-        $html .= "</td></tr>";
+        $min      = is_numeric($data["min"]) ? "min='" . $data["min"] . "'" : "";
+        $max      = is_numeric($data["max"]) ? "max='" . $data["max"] . "'" : "";
+        $html     .= "<input " . $required . " class='wpd-field wpd-field-number' type='number' id='" . esc_attr($key) . "' value='" . esc_attr($value) . "'  name='" . esc_attr($key) . "'  " . $min . " " . $max . ">";
+        $html     .= "</div>";
+        $html     .= "</td></tr>";
         return $html;
     }
 
-    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm)
-    {
+    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm) {
         if (!$this->isShowForUser($args, $currentUser) || (!$isMainForm && !$args["is_show_sform"])) {
             return;
         }
@@ -150,8 +146,8 @@ class NumberField extends Field
             <?php } ?>
             <?php
             $required = $args["required"] ? "required='required' aria-required='true'" : "";
-            $min = is_numeric($args["min"]) ? "min='" . $args["min"] . "'" : "";
-            $max = is_numeric($args["max"]) ? "max='" . $args["max"] . "'" : "";
+            $min      = is_numeric($args["min"]) ? "min='" . $args["min"] . "'" : "";
+            $max      = is_numeric($args["max"]) ? "max='" . $args["max"] . "'" : "";
             ?>
             <input id="<?php echo esc_attr($name) . "-" . $uniqueId; ?>" <?php echo $required; ?>
                    class="<?php echo esc_attr($name); ?> wpd-field wpd-field-number" type="number"
@@ -161,14 +157,13 @@ class NumberField extends Field
                    class="wpdlb"><?php echo esc_html__($args["name"], "wpdiscuz") . (!empty($args["required"]) ? "*" : ""); ?></label>
             <?php if ($args["desc"]) { ?>
                 <div class="wpd-field-desc"><i
-                            class="far fa-question-circle"></i><span><?php echo $args["desc"]; ?></span></div>
+                        class="far fa-question-circle"></i><span><?php echo $args["desc"]; ?></span></div>
             <?php } ?>
         </div>
         <?php
     }
 
-    public function frontHtml($value, $args)
-    {
+    public function frontHtml($value, $args) {
         if (!$this->isShowForUser($args)) {
             return "";
         }
@@ -178,8 +173,7 @@ class NumberField extends Field
         return $html;
     }
 
-    public function validateFieldData($fieldName, $args, $options, $currentUser)
-    {
+    public function validateFieldData($fieldName, $args, $options, $currentUser) {
         $value = Sanitizer::sanitize(INPUT_POST, $fieldName, FILTER_SANITIZE_NUMBER_INT);
         if ($this->isValidateRequired($args, $currentUser) && !$value && $args["required"]) {
             wp_die(esc_html__($args["name"], "wpdiscuz") . " : " . esc_html__("field is required!", "wpdiscuz"));
@@ -195,12 +189,11 @@ class NumberField extends Field
         return $value;
     }
 
-    public function sanitizeFieldData($data)
-    {
-        $cleanData = [];
+    public function sanitizeFieldData($data) {
+        $cleanData         = [];
         $cleanData["type"] = sanitize_text_field($data["type"]);
         if (isset($data["name"])) {
-            $name = sanitize_text_field(trim(strip_tags($data["name"])));
+            $name              = sanitize_text_field(trim(strip_tags($data["name"])));
             $cleanData["name"] = $name ? $name : $this->fieldDefaultData["name"];
         }
         if (isset($data["desc"])) {
@@ -252,21 +245,20 @@ class NumberField extends Field
         return wp_parse_args($cleanData, $this->fieldDefaultData);
     }
 
-    protected function initDefaultData()
-    {
+    protected function initDefaultData() {
         $this->fieldDefaultData = [
-            "name" => "",
-            "desc" => "",
-            "values" => [],
-            "icon" => "",
-            "required" => "0",
-            "loc" => "bottom",
-            "min" => "",
-            "max" => "",
-            "is_show_sform" => 0,
+            "name"               => "",
+            "desc"               => "",
+            "values"             => [],
+            "icon"               => "",
+            "required"           => "0",
+            "loc"                => "bottom",
+            "min"                => "",
+            "max"                => "",
+            "is_show_sform"      => 0,
             "is_show_on_comment" => 1,
-            "show_for_guests" => 1,
-            "show_for_users" => 1,
+            "show_for_guests"    => 1,
+            "show_for_users"     => 1,
         ];
     }
 

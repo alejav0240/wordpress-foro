@@ -4,8 +4,7 @@ if (!defined("ABSPATH")) {
     exit();
 }
 
-class WpdiscuzAddons implements WpDiscuzConstants
-{
+class WpdiscuzAddons implements WpDiscuzConstants {
 
     /**
      * @var WpdiscuzOptions
@@ -16,8 +15,7 @@ class WpdiscuzAddons implements WpDiscuzConstants
 
     private $tips;
 
-    public function __construct($options)
-    {
+    public function __construct($options) {
 
         if (is_admin() || !wp_doing_ajax()) {
 
@@ -34,8 +32,7 @@ class WpdiscuzAddons implements WpDiscuzConstants
     }
 
 
-    public function addonsMenu()
-    {
+    public function addonsMenu() {
         add_submenu_page(self::PAGE_WPDISCUZ,
             "&raquo; " . esc_html__("Addons", "wpdiscuz"),
             "&raquo; " . esc_html__("Addons", "wpdiscuz"),
@@ -45,227 +42,224 @@ class WpdiscuzAddons implements WpDiscuzConstants
         );
     }
 
-    public function addonsPage()
-    {
+    public function addonsPage() {
         include_once WPDISCUZ_DIR_PATH . "/options/html-addons.php";
     }
 
-    private function initAddons()
-    {
+    private function initAddons() {
         $this->addons = [
-            "bundle" => [
-                "version" => "7.0.0",
+            "bundle"              => [
+                "version"  => "7.0.0",
                 "requires" => "7.0.0",
-                "class" => "Bundle",
-                "title" => "Addons Bundle",
-                "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/bundle/header.png"),
-                "desc" => esc_html__("All 16 addons in one bundle. Save 90% and get Unlimited Site License with one year premium support.", "wpdiscuz"),
-                "url" => "https://gvectors.com/product/wpdiscuz-addons-bundle/",
+                "class"    => "Bundle",
+                "title"    => "Addons Bundle",
+                "thumb"    => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/bundle/header.png"),
+                "desc"     => esc_html__("All 16 addons in one bundle. Save 90% and get Unlimited Site License with one year premium support.", "wpdiscuz"),
+                "url"      => "https://gvectors.com/product/wpdiscuz-addons-bundle/",
             ],
-            "notifications" => [
-                "version" => "1.0.0",
+            "notifications"       => [
+                "version"  => "1.0.0",
                 "requires" => "7.3.7",
-                "class" => "WunDBManager",
-                "title" => "User Notifications",
-                "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/notifications/header.png"),
-                "desc" => esc_html__("Ads a real-time user notification system and web push notifications in your website.", "wpdiscuz"),
-                "url" => "https://gvectors.com/product/wpdiscuz-user-notifications/",
+                "class"    => "WunDBManager",
+                "title"    => "User Notifications",
+                "thumb"    => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/notifications/header.png"),
+                "desc"     => esc_html__("Ads a real-time user notification system and web push notifications in your website.", "wpdiscuz"),
+                "url"      => "https://gvectors.com/product/wpdiscuz-user-notifications/",
             ],
-            "buddypress" => [
-                "version" => "1.0.2",
+            "buddypress"          => [
+                "version"  => "1.0.2",
                 "requires" => "7.2.0",
-                "class" => "wpDiscuzBPIntegration",
-                "title" => "BuddyPress Integration",
-                "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/buddypress/header.png"),
-                "desc" => esc_html__("Integrates wpDiscuz with BuddyPress plugin. Profile Tabs, Notifications, Activities, etc...", "wpdiscuz"),
-                "url" => "https://gvectors.com/product/wpdiscuz-buddypress-integration/",
+                "class"    => "wpDiscuzBPIntegration",
+                "title"    => "BuddyPress Integration",
+                "thumb"    => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/buddypress/header.png"),
+                "desc"     => esc_html__("Integrates wpDiscuz with BuddyPress plugin. Profile Tabs, Notifications, Activities, etc...", "wpdiscuz"),
+                "url"      => "https://gvectors.com/product/wpdiscuz-buddypress-integration/",
             ],
-            "voice" => [
-                "version" => "1.0.0",
+            "voice"               => [
+                "version"  => "1.0.0",
                 "requires" => "7.2.0",
-                "class" => "wpDiscuzAudioComment",
-                "title" => "Voice Commenting",
-                "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/voice/header.png"),
-                "desc" => esc_html__("Allows to discuss with your voice in the comment section. Adds a microphone button to the comment form.", "wpdiscuz"),
-                "url" => "https://gvectors.com/product/wpdiscuz-voice-commenting/",
+                "class"    => "wpDiscuzAudioComment",
+                "title"    => "Voice Commenting",
+                "thumb"    => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/voice/header.png"),
+                "desc"     => esc_html__("Allows to discuss with your voice in the comment section. Adds a microphone button to the comment form.", "wpdiscuz"),
+                "url"      => "https://gvectors.com/product/wpdiscuz-voice-commenting/",
             ],
-            "tenor" => [
-                "version" => "1.0.4",
+            "tenor"               => [
+                "version"  => "1.0.4",
                 "requires" => "7.2.0",
-                "class" => "wpDiscuzTenorIntegration",
-                "title" => "Tenor GIFs Integration",
-                "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/tenor/header.png"),
-                "desc" => esc_html__("Adds Tenor [GIF] button and opens popup where you can search for gifs and insert them in comment content.", "wpdiscuz"),
-                "url" => "https://gvectors.com/product/wpdiscuz-tenor-integration/",
+                "class"    => "wpDiscuzTenorIntegration",
+                "title"    => "Tenor GIFs Integration",
+                "thumb"    => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/tenor/header.png"),
+                "desc"     => esc_html__("Adds Tenor [GIF] button and opens popup where you can search for gifs and insert them in comment content.", "wpdiscuz"),
+                "url"      => "https://gvectors.com/product/wpdiscuz-tenor-integration/",
             ],
-            "giphy" => [
-                "version" => "1.0.0",
+            "giphy"               => [
+                "version"  => "1.0.0",
                 "requires" => "7.2.0",
-                "class" => "wpDiscuzGiphyIntegration",
-                "title" => "GIPHY Integration",
-                "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/giphy/header.png"),
-                "desc" => esc_html__("Adds Giphy [GIF] button and opens popup where you can search for gifs and insert them in comment content.", "wpdiscuz"),
-                "url" => "https://gvectors.com/product/wpdiscuz-giphy-integration/",
+                "class"    => "wpDiscuzGiphyIntegration",
+                "title"    => "GIPHY Integration",
+                "thumb"    => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/giphy/header.png"),
+                "desc"     => esc_html__("Adds Giphy [GIF] button and opens popup where you can search for gifs and insert them in comment content.", "wpdiscuz"),
+                "url"      => "https://gvectors.com/product/wpdiscuz-giphy-integration/",
             ],
-            "uploader" => [
-                "version" => "7.0.0",
+            "uploader"            => [
+                "version"  => "7.0.0",
                 "requires" => "7.0.0",
-                "class" => "WpdiscuzMediaUploader",
-                "title" => "Media Uploader",
-                "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/uploader/header.png"),
-                "desc" => esc_html__("Extended comment attachment system. Allows to upload images, videos, audios and other file types.", "wpdiscuz"),
-                "url" => "https://gvectors.com/product/wpdiscuz-media-uploader/",
+                "class"    => "WpdiscuzMediaUploader",
+                "title"    => "Media Uploader",
+                "thumb"    => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/uploader/header.png"),
+                "desc"     => esc_html__("Extended comment attachment system. Allows to upload images, videos, audios and other file types.", "wpdiscuz"),
+                "url"      => "https://gvectors.com/product/wpdiscuz-media-uploader/",
             ],
-            "embeds" => [
-                "version" => "1.0.0",
+            "embeds"              => [
+                "version"  => "1.0.0",
                 "requires" => "7.0.0",
-                "class" => "WpdiscuzEmbeds",
-                "title" => "Embeds",
-                "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/embeds/header.png"),
-                "desc" => esc_html__("Allows to embed lots of video, social network, audio and photo content providers URLs in comment content.", "wpdiscuz"),
-                "url" => "https://gvectors.com/product/wpdiscuz-embeds/",
+                "class"    => "WpdiscuzEmbeds",
+                "title"    => "Embeds",
+                "thumb"    => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/embeds/header.png"),
+                "desc"     => esc_html__("Allows to embed lots of video, social network, audio and photo content providers URLs in comment content.", "wpdiscuz"),
+                "url"      => "https://gvectors.com/product/wpdiscuz-embeds/",
             ],
-            "syntax" => [
-                "version" => "1.0.0",
+            "syntax"              => [
+                "version"  => "1.0.0",
                 "requires" => "7.0.0",
-                "class" => "wpDiscuzSyntaxHighlighter",
-                "title" => "Syntax Highlighter",
-                "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/syntax/header.png"),
-                "desc" => esc_html__("Syntax highlighting for comments, automatic language detection and multi-language code highlighting.", "wpdiscuz"),
-                "url" => "https://gvectors.com/product/wpdiscuz-syntax-highlighter/",
+                "class"    => "wpDiscuzSyntaxHighlighter",
+                "title"    => "Syntax Highlighter",
+                "thumb"    => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/syntax/header.png"),
+                "desc"     => esc_html__("Syntax highlighting for comments, automatic language detection and multi-language code highlighting.", "wpdiscuz"),
+                "url"      => "https://gvectors.com/product/wpdiscuz-syntax-highlighter/",
             ],
             "frontend-moderation" => [
-                "version" => "7.0.0",
+                "version"  => "7.0.0",
                 "requires" => "7.0.0",
-                "class" => "wpDiscuzFrontEndModeration",
-                "title" => "Front-end Moderation",
-                "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/frontend-moderation/header.png"),
-                "desc" => esc_html__("All in one powerful yet simple admin toolkit to moderate comments on front-end.", "wpdiscuz"),
-                "url" => "https://gvectors.com/product/wpdiscuz-frontend-moderation/",
+                "class"    => "wpDiscuzFrontEndModeration",
+                "title"    => "Front-end Moderation",
+                "thumb"    => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/frontend-moderation/header.png"),
+                "desc"     => esc_html__("All in one powerful yet simple admin toolkit to moderate comments on front-end.", "wpdiscuz"),
+                "url"      => "https://gvectors.com/product/wpdiscuz-frontend-moderation/",
             ],
-            "emoticons" => [
-                "version" => "7.0.0",
+            "emoticons"           => [
+                "version"  => "7.0.0",
                 "requires" => "7.0.0",
-                "class" => "wpDiscuzSmile",
-                "title" => "Emoticons",
-                "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/emoticons/header.png"),
-                "desc" => esc_html__("Brings an ocean of emotions to your comments. It comes with an awesome smile package.", "wpdiscuz"),
-                "url" => "https://gvectors.com/product/wpdiscuz-emoticons/",
+                "class"    => "wpDiscuzSmile",
+                "title"    => "Emoticons",
+                "thumb"    => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/emoticons/header.png"),
+                "desc"     => esc_html__("Brings an ocean of emotions to your comments. It comes with an awesome smile package.", "wpdiscuz"),
+                "url"      => "https://gvectors.com/product/wpdiscuz-emoticons/",
             ],
-            "recaptcha" => [
-                "version" => "7.0.0",
+            "recaptcha"           => [
+                "version"  => "7.0.0",
                 "requires" => "7.0.0",
-                "class" => "WpdiscuzRecaptcha",
-                "title" => "Invisible reCAPTCHA v3",
-                "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/recaptcha/header.png"),
-                "desc" => esc_html__("Adds Invisible reCAPTCHA on all comment forms. Stops spam and bot comments with reCAPTCHA version 3", "wpdiscuz"),
-                "url" => "https://gvectors.com/product/wpdiscuz-recaptcha/",
+                "class"    => "WpdiscuzRecaptcha",
+                "title"    => "Invisible reCAPTCHA v3",
+                "thumb"    => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/recaptcha/header.png"),
+                "desc"     => esc_html__("Adds Invisible reCAPTCHA on all comment forms. Stops spam and bot comments with reCAPTCHA version 3", "wpdiscuz"),
+                "url"      => "https://gvectors.com/product/wpdiscuz-recaptcha/",
             ],
-            "author-info" => [
-                "version" => "7.0.0",
+            "author-info"         => [
+                "version"  => "7.0.0",
                 "requires" => "7.0.0",
-                "class" => "WpdiscuzCommentAuthorInfo",
-                "title" => "Comment Author Info",
-                "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/author-info/header.png"),
-                "desc" => esc_html__("Extended information about comment author with Profile, Activity, Votes and Subscriptions Tabs on pop-up window.", "wpdiscuz"),
-                "url" => "https://gvectors.com/product/wpdiscuz-comment-author-info/",
+                "class"    => "WpdiscuzCommentAuthorInfo",
+                "title"    => "Comment Author Info",
+                "thumb"    => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/author-info/header.png"),
+                "desc"     => esc_html__("Extended information about comment author with Profile, Activity, Votes and Subscriptions Tabs on pop-up window.", "wpdiscuz"),
+                "url"      => "https://gvectors.com/product/wpdiscuz-comment-author-info/",
             ],
-            "report-flagging" => [
-                "version" => "7.0.0",
+            "report-flagging"     => [
+                "version"  => "7.0.0",
                 "requires" => "7.0.0",
-                "class" => "wpDiscuzFlagComment",
-                "title" => "Report and Flagging",
-                "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/report/header.png"),
-                "desc" => esc_html__("Comment reporting tools. Auto-moderates comments based on number of flags and dislikes.", "wpdiscuz"),
-                "url" => "https://gvectors.com/product/wpdiscuz-report-flagging/",
+                "class"    => "wpDiscuzFlagComment",
+                "title"    => "Report and Flagging",
+                "thumb"    => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/report/header.png"),
+                "desc"     => esc_html__("Comment reporting tools. Auto-moderates comments based on number of flags and dislikes.", "wpdiscuz"),
+                "url"      => "https://gvectors.com/product/wpdiscuz-report-flagging/",
             ],
-            "online-users" => [
-                "version" => "7.0.0",
+            "online-users"        => [
+                "version"  => "7.0.0",
                 "requires" => "7.0.0",
-                "class" => "WpdiscuzOnlineUsers",
-                "title" => "Online Users",
-                "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/online-users/header.png"),
-                "desc" => esc_html__("Real-time online user checking, pop-up notification of new online users and online/offline badges.", "wpdiscuz"),
-                "url" => "https://gvectors.com/product/wpdiscuz-online-users/",
+                "class"    => "WpdiscuzOnlineUsers",
+                "title"    => "Online Users",
+                "thumb"    => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/online-users/header.png"),
+                "desc"     => esc_html__("Real-time online user checking, pop-up notification of new online users and online/offline badges.", "wpdiscuz"),
+                "url"      => "https://gvectors.com/product/wpdiscuz-online-users/",
             ],
-            "private" => [
-                "version" => "7.0.0",
+            "private"             => [
+                "version"  => "7.0.0",
                 "requires" => "7.0.0",
-                "class" => "wpDiscuzPrivateComment",
-                "title" => "Private Comments",
-                "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/private/header.png"),
-                "desc" => esc_html__("Allows to create private comment threads. Rich management options in dashboard by user roles.", "wpdiscuz"),
-                "url" => "https://gvectors.com/product/wpdiscuz-private-comments/",
+                "class"    => "wpDiscuzPrivateComment",
+                "title"    => "Private Comments",
+                "thumb"    => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/private/header.png"),
+                "desc"     => esc_html__("Allows to create private comment threads. Rich management options in dashboard by user roles.", "wpdiscuz"),
+                "url"      => "https://gvectors.com/product/wpdiscuz-private-comments/",
             ],
-            "subscriptions" => [
-                "version" => "7.0.0",
+            "subscriptions"       => [
+                "version"  => "7.0.0",
                 "requires" => "7.0.0",
-                "class" => "wpdSubscribeManager",
-                "title" => "Subscription Manager",
-                "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/subscriptions/header.png"),
-                "desc" => esc_html__("Total control over comment subscriptions. Full list, monitor, manage, filter, unsubscribe, confirm...", "wpdiscuz"),
-                "url" => "https://gvectors.com/product/wpdiscuz-subscribe-manager/",
+                "class"    => "wpdSubscribeManager",
+                "title"    => "Subscription Manager",
+                "thumb"    => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/subscriptions/header.png"),
+                "desc"     => esc_html__("Total control over comment subscriptions. Full list, monitor, manage, filter, unsubscribe, confirm...", "wpdiscuz"),
+                "url"      => "https://gvectors.com/product/wpdiscuz-subscribe-manager/",
             ],
-            "ads-manager" => [
-                "version" => "7.0.0",
+            "ads-manager"         => [
+                "version"  => "7.0.0",
                 "requires" => "7.0.0",
-                "class" => "WpdiscuzAdsManager",
-                "title" => "Ads Manager",
-                "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/ads-manager/header.png"),
-                "desc" => esc_html__("A full-fledged tool-kit for advertising in comment section of your website. Separate banner and ad managment.", "wpdiscuz"),
-                "url" => "https://gvectors.com/product/wpdiscuz-ads-manager/",
+                "class"    => "WpdiscuzAdsManager",
+                "title"    => "Ads Manager",
+                "thumb"    => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/ads-manager/header.png"),
+                "desc"     => esc_html__("A full-fledged tool-kit for advertising in comment section of your website. Separate banner and ad managment.", "wpdiscuz"),
+                "url"      => "https://gvectors.com/product/wpdiscuz-ads-manager/",
             ],
-            "user-mention" => [
-                "version" => "7.0.0",
+            "user-mention"        => [
+                "version"  => "7.0.0",
                 "requires" => "7.0.0",
-                "class" => "WpdiscuzUCM",
-                "title" => "User &amp; Comment Mentioning",
-                "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/user-mention/header.png"),
-                "desc" => esc_html__("Allows to mention comments and users in comment text using #comment-id and @username tags.", "wpdiscuz"),
-                "url" => "https://gvectors.com/product/wpdiscuz-user-comment-mentioning/",
+                "class"    => "WpdiscuzUCM",
+                "title"    => "User &amp; Comment Mentioning",
+                "thumb"    => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/user-mention/header.png"),
+                "desc"     => esc_html__("Allows to mention comments and users in comment text using #comment-id and @username tags.", "wpdiscuz"),
+                "url"      => "https://gvectors.com/product/wpdiscuz-user-comment-mentioning/",
             ],
-            "likers" => [
-                "version" => "7.0.0",
+            "likers"              => [
+                "version"  => "7.0.0",
                 "requires" => "7.0.0",
-                "class" => "WpdiscuzVoters",
-                "title" => "Advanced Likers",
-                "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/likers/header.png"),
-                "desc" => esc_html__("See comment likers and voters of each comment. Adds user reputation and badges based on received likes.", "wpdiscuz"),
-                "url" => "https://gvectors.com/product/wpdiscuz-advanced-likers/",
+                "class"    => "WpdiscuzVoters",
+                "title"    => "Advanced Likers",
+                "thumb"    => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/likers/header.png"),
+                "desc"     => esc_html__("See comment likers and voters of each comment. Adds user reputation and badges based on received likes.", "wpdiscuz"),
+                "url"      => "https://gvectors.com/product/wpdiscuz-advanced-likers/",
             ],
-            "search" => [
-                "version" => "7.0.0",
+            "search"              => [
+                "version"  => "7.0.0",
                 "requires" => "7.0.0",
-                "class" => "wpDiscuzCommentSearch",
-                "title" => "Comment Search",
-                "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/search/header.png"),
-                "desc" => esc_html__("AJAX powered front-end comment search. It starts searching while you type search words. ", "wpdiscuz"),
-                "url" => "https://gvectors.com/product/wpdiscuz-comment-search/",
+                "class"    => "wpDiscuzCommentSearch",
+                "title"    => "Comment Search",
+                "thumb"    => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/search/header.png"),
+                "desc"     => esc_html__("AJAX powered front-end comment search. It starts searching while you type search words. ", "wpdiscuz"),
+                "url"      => "https://gvectors.com/product/wpdiscuz-comment-search/",
             ],
-            "widgets" => [
-                "version" => "7.0.0",
+            "widgets"             => [
+                "version"  => "7.0.0",
                 "requires" => "7.0.0",
-                "class" => "wpDiscuzWidgets",
-                "title" => "wpDiscuz Widgets",
-                "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/widgets/header.png"),
-                "desc" => esc_html__("Most voted comments, Active comment threads, Most commented posts, Active comment authors", "wpdiscuz"),
-                "url" => "https://gvectors.com/product/wpdiscuz-widgets/",
+                "class"    => "wpDiscuzWidgets",
+                "title"    => "wpDiscuz Widgets",
+                "thumb"    => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/widgets/header.png"),
+                "desc"     => esc_html__("Most voted comments, Active comment threads, Most commented posts, Active comment authors", "wpdiscuz"),
+                "url"      => "https://gvectors.com/product/wpdiscuz-widgets/",
             ],
-            "mycred" => [
-                "version" => "7.0.0",
+            "mycred"              => [
+                "version"  => "7.0.0",
                 "requires" => "7.0.0",
-                "class" => "myCRED_Hook_wpDiscuz_Vote",
-                "title" => "myCRED Integration",
-                "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/mycred/header.png"),
-                "desc" => esc_html__("Integrates myCRED Badges and Ranks. Converts wpDiscuz comment votes/likes to myCRED points. ", "wpdiscuz"),
-                "url" => "https://gvectors.com/product/wpdiscuz-mycred/",
+                "class"    => "myCRED_Hook_wpDiscuz_Vote",
+                "title"    => "myCRED Integration",
+                "thumb"    => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/mycred/header.png"),
+                "desc"     => esc_html__("Integrates myCRED Badges and Ranks. Converts wpDiscuz comment votes/likes to myCRED points. ", "wpdiscuz"),
+                "url"      => "https://gvectors.com/product/wpdiscuz-mycred/",
             ],
         ];
     }
 
-    public function refreshAddonPage()
-    {
-        $lastHash = get_option("wpdiscuz-addon-note-dismissed");
+    public function refreshAddonPage() {
+        $lastHash    = get_option("wpdiscuz-addon-note-dismissed");
         $currentHash = $this->addonHash();
         if ($lastHash !== $currentHash) {
             ?>
@@ -276,8 +270,7 @@ class WpdiscuzAddons implements WpDiscuzConstants
         }
     }
 
-    public function addonHash()
-    {
+    public function addonHash() {
         $viewed = "BuddyPress Integration, Tenor GIFs Integration, Voice Commenting, GIPHY Integration, User Notifications";
 //		foreach ($this->addons as $key => $addon) {
 //			$viewed .= $addon["title"] . ",";
@@ -288,14 +281,12 @@ class WpdiscuzAddons implements WpDiscuzConstants
     }
 
 
-    public function dismissAddonNoteOnPage()
-    {
+    public function dismissAddonNoteOnPage() {
         $hash = $this->addonHash();
         update_option("wpdiscuz-addon-note-dismissed", $hash);
     }
 
-    public function dismissAddonNote()
-    {
+    public function dismissAddonNote() {
         check_ajax_referer("dismiss-wpdiscuz-addon-note", "_wpnonce");
         if (current_user_can('manage_options')) {
             $hash = $this->addonHash();
@@ -304,15 +295,13 @@ class WpdiscuzAddons implements WpDiscuzConstants
         exit();
     }
 
-    public function adminNotices()
-    {
+    public function adminNotices() {
         if (current_user_can("manage_options")) {
             $this->addonNote(); //To-do Menu [count] notification
         }
     }
 
-    private function addonNote()
-    {
+    private function addonNote() {
         if ((!empty($_GET["page"]) && in_array($_GET["page"], [
                     self::PAGE_WPDISCUZ,
                     self::PAGE_SETTINGS,
@@ -320,9 +309,9 @@ class WpdiscuzAddons implements WpDiscuzConstants
                     self::PAGE_TOOLS,
                     self::PAGE_ADDONS,
                 ])) || strpos($_SERVER["REQUEST_URI"], "edit.php?post_type=wpdiscuz_form") !== false) {
-            $lastHash = get_option("wpdiscuz-addon-note-dismissed");
+            $lastHash      = get_option("wpdiscuz-addon-note-dismissed");
             $lastHashArray = explode(",", $lastHash);
-            $currentHash = "BuddyPress Integration, Tenor GIFs Integration, Voice Commenting, GIPHY Integration, User Notifications";
+            $currentHash   = "BuddyPress Integration, Tenor GIFs Integration, Voice Commenting, GIPHY Integration, User Notifications";
             if ($lastHash !== $currentHash && (!in_array("BuddyPress Integration", $lastHashArray) || !in_array("Tenor GIFs Integration", $lastHashArray) || !in_array("Voice Commenting", $lastHashArray) || !in_array("GIPHY Integration", $lastHashArray) || !in_array("User Notifications", $lastHashArray))
             ) {
                 ?>
@@ -347,7 +336,7 @@ class WpdiscuzAddons implements WpDiscuzConstants
                                    style="color:#444; text-decoration:none;"
                                    title="<?php esc_attr_e("Go to the addon page", "wpdiscuz"); ?>">wpDiscuz - User
                                     Notifications <br><span
-                                            style="width: 60%; margin: 0; font-size: 12px; line-height: 15px; display: block; padding-top: 5px;">Adds a real-time user notification system to your site, so users can receive updates and notifications directly on your website as they happen (when someone likes your comment, rates your post, mentions you, replies to your comment).</span></a>
+                                        style="width: 60%; margin: 0; font-size: 12px; line-height: 15px; display: block; padding-top: 5px;">Adds a real-time user notification system to your site, so users can receive updates and notifications directly on your website as they happen (when someone likes your comment, rates your post, mentions you, replies to your comment).</span></a>
                             </div>
                         <?php endif; ?>
                         <!--	                    --><?php //if(!in_array("GIPHY Integration", $lastHashArray)):                          ?>
@@ -369,7 +358,7 @@ class WpdiscuzAddons implements WpDiscuzConstants
                         <div style="clear:both;"></div>
                     </div>
                     <p>&nbsp;&nbsp;&nbsp;<a
-                                href="<?php echo esc_url_raw(admin_url("admin.php?page=" . self::PAGE_ADDONS)); ?>"><?php esc_html_e("Go to wpDiscuz Addons subMenu"); ?>
+                            href="<?php echo esc_url_raw(admin_url("admin.php?page=" . self::PAGE_ADDONS)); ?>"><?php esc_html_e("Go to wpDiscuz Addons subMenu"); ?>
                             &raquo;</a></p>
                     <?php wp_nonce_field("dismiss-wpdiscuz-addon-note"); ?>
                 </div>
@@ -379,93 +368,90 @@ class WpdiscuzAddons implements WpDiscuzConstants
     }
 
 
-    private function initTips()
-    {
+    private function initTips() {
         $this->tips = [
-            "custom-form" => [
+            "custom-form"         => [
                 "title" => esc_html__("Custom Comment Forms", "wpdiscuz"),
-                "text" => esc_html__("You can create custom comment forms with wpDiscuz. wpDiscuz 4 comes with custom comment forms and fields. You can create custom comment forms for each post type, each form can beceated with different form fields, for eaxample: text, dropdown, rating, checkboxes, etc...", "wpdiscuz"),
+                "text"  => esc_html__("You can create custom comment forms with wpDiscuz. wpDiscuz 4 comes with custom comment forms and fields. You can create custom comment forms for each post type, each form can beceated with different form fields, for eaxample: text, dropdown, rating, checkboxes, etc...", "wpdiscuz"),
                 "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/tips/custom-form.png"),
-                "url" => admin_url() . "edit.php?post_type=wpdiscuz_form",
+                "url"   => admin_url() . "edit.php?post_type=wpdiscuz_form",
             ],
-            "emoticons" => [
+            "emoticons"           => [
                 "title" => esc_html__("Emoticons", "wpdiscuz"),
-                "text" => esc_html__("You can add more emotions to your comments using wpDiscuz Emoticons addon.", "wpdiscuz"),
+                "text"  => esc_html__("You can add more emotions to your comments using wpDiscuz Emoticons addon.", "wpdiscuz"),
                 "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/emoticons/header.png"),
-                "url" => "https://gvectors.com/product/wpdiscuz-emoticons/",
+                "url"   => "https://gvectors.com/product/wpdiscuz-emoticons/",
             ],
-            "ads-manager" => [
+            "ads-manager"         => [
                 "title" => esc_html__("Ads Manager", "wpdiscuz"),
-                "text" => esc_html__("Increase your income using ad banners. Comment area is the most active sections for advertising. wpDiscuz Ads Manager addon is designed to help you add banners and control ads in this section.", "wpdiscuz"),
+                "text"  => esc_html__("Increase your income using ad banners. Comment area is the most active sections for advertising. wpDiscuz Ads Manager addon is designed to help you add banners and control ads in this section.", "wpdiscuz"),
                 "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/ads-manager/header.png"),
-                "url" => "https://gvectors.com/product/wpdiscuz-ads-manager/",
+                "url"   => "https://gvectors.com/product/wpdiscuz-ads-manager/",
             ],
-            "user-mention" => [
+            "user-mention"        => [
                 "title" => esc_html__("User and Comment Mentioning", "wpdiscuz"),
-                "text" => esc_html__("Using wpDiscuz User &amp; Comment Mentioning addon you can allow commenters mention comments and users in comment text using #comment-id and @username tags.", "wpdiscuz"),
+                "text"  => esc_html__("Using wpDiscuz User &amp; Comment Mentioning addon you can allow commenters mention comments and users in comment text using #comment-id and @username tags.", "wpdiscuz"),
                 "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/user-mention/header.png"),
-                "url" => "https://gvectors.com/product/wpdiscuz-user-comment-mentioning/",
+                "url"   => "https://gvectors.com/product/wpdiscuz-user-comment-mentioning/",
             ],
-            "likers" => [
+            "likers"              => [
                 "title" => esc_html__("Advanced Likers", "wpdiscuz"),
-                "text" => esc_html__("wpDiscuz Advanced Likers addon displays likers and voters of each comment. Adds user reputation and badges based on received likes.", "wpdiscuz"),
+                "text"  => esc_html__("wpDiscuz Advanced Likers addon displays likers and voters of each comment. Adds user reputation and badges based on received likes.", "wpdiscuz"),
                 "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/likers/header.png"),
-                "url" => "https://gvectors.com/product/wpdiscuz-advanced-likers/",
+                "url"   => "https://gvectors.com/product/wpdiscuz-advanced-likers/",
             ],
-            "report-flagging" => [
+            "report-flagging"     => [
                 "title" => esc_html__("Report and Flagging", "wpdiscuz"),
-                "text" => esc_html__("Let your commenters help you to determine and remove spam comments. wpDiscuz Report and Flagging addon comes with comment reporting tools. Automaticaly auto-moderates comments based on number of flags and dislikes.", "wpdiscuz"),
+                "text"  => esc_html__("Let your commenters help you to determine and remove spam comments. wpDiscuz Report and Flagging addon comes with comment reporting tools. Automaticaly auto-moderates comments based on number of flags and dislikes.", "wpdiscuz"),
                 "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/report/header.png"),
-                "url" => "https://gvectors.com/product/wpdiscuz-report-flagging/",
+                "url"   => "https://gvectors.com/product/wpdiscuz-report-flagging/",
             ],
-            "translate" => [
+            "translate"           => [
                 "title" => esc_html__("Comment Translate", "wpdiscuz"),
-                "text" => esc_html__("In most cases the big part of your visitors are not a native speakers of your language. Make your comments comprehensible for all visitors using wpDiscuz Comment Translation addon. It adds smart and intuitive AJAX 'Translate' button with 60 language translation options. Uses free translation API.", "wpdiscuz"),
+                "text"  => esc_html__("In most cases the big part of your visitors are not a native speakers of your language. Make your comments comprehensible for all visitors using wpDiscuz Comment Translation addon. It adds smart and intuitive AJAX 'Translate' button with 60 language translation options. Uses free translation API.", "wpdiscuz"),
                 "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/translate/header.png"),
-                "url" => "https://gvectors.com/product/wpdiscuz-comment-translation/",
+                "url"   => "https://gvectors.com/product/wpdiscuz-comment-translation/",
             ],
-            "search" => [
+            "search"              => [
                 "title" => esc_html__("Comment Search", "wpdiscuz"),
-                "text" => esc_html__("You can let website visitor search in comments. It's always more attractive to find a comment about something that interest you. Using wpDiscuz Comment Search addon you'll get a nice, AJAX powered front-end comment search form above comment list.", "wpdiscuz"),
+                "text"  => esc_html__("You can let website visitor search in comments. It's always more attractive to find a comment about something that interest you. Using wpDiscuz Comment Search addon you'll get a nice, AJAX powered front-end comment search form above comment list.", "wpdiscuz"),
                 "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/search/header.png"),
-                "url" => "https://gvectors.com/product/wpdiscuz-comment-search/",
+                "url"   => "https://gvectors.com/product/wpdiscuz-comment-search/",
             ],
-            "widgets" => [
+            "widgets"             => [
                 "title" => esc_html__("wpDiscuz Widgets", "wpdiscuz"),
-                "text" => esc_html__("More Comment Widgets! Most voted comments, Active comment threads, Most commented posts, Active comment authors widgets are available in wpDiscuz Widgets Addon", "wpdiscuz"),
+                "text"  => esc_html__("More Comment Widgets! Most voted comments, Active comment threads, Most commented posts, Active comment authors widgets are available in wpDiscuz Widgets Addon", "wpdiscuz"),
                 "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/widgets/header.png"),
-                "url" => "https://gvectors.com/product/wpdiscuz-widgets/",
+                "url"   => "https://gvectors.com/product/wpdiscuz-widgets/",
             ],
             "frontend-moderation" => [
                 "title" => esc_html__("Front-end Moderation", "wpdiscuz"),
-                "text" => esc_html__("You can moderate comments on front-end using all in one powerful yet simple wpDiscuz Frontend Moderation addon.", "wpdiscuz"),
+                "text"  => esc_html__("You can moderate comments on front-end using all in one powerful yet simple wpDiscuz Frontend Moderation addon.", "wpdiscuz"),
                 "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/frontend-moderation/header.png"),
-                "url" => "https://gvectors.com/product/wpdiscuz-frontend-moderation/",
+                "url"   => "https://gvectors.com/product/wpdiscuz-frontend-moderation/",
             ],
-            "uploader" => [
+            "uploader"            => [
                 "title" => esc_html__("Media Uploader", "wpdiscuz"),
-                "text" => esc_html__("You can let website visitors attach images and files to comments and embed video/audio content using wpDiscuz Media Uploader addon.", "wpdiscuz"),
+                "text"  => esc_html__("You can let website visitors attach images and files to comments and embed video/audio content using wpDiscuz Media Uploader addon.", "wpdiscuz"),
                 "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/uploader/header.png"),
-                "url" => "https://gvectors.com/product/wpdiscuz-media-uploader/",
+                "url"   => "https://gvectors.com/product/wpdiscuz-media-uploader/",
             ],
-            "recaptcha" => [
+            "recaptcha"           => [
                 "title" => esc_html__("Google ReCaptcha", "wpdiscuz"),
-                "text" => esc_html__("Advanced spam protection with wpDiscuz Google reCAPTCHA addon. This addon adds No-CAPTCHA reCAPTCHA on all comment forms. Stops spam and bot comments.", "wpdiscuz"),
+                "text"  => esc_html__("Advanced spam protection with wpDiscuz Google reCAPTCHA addon. This addon adds No-CAPTCHA reCAPTCHA on all comment forms. Stops spam and bot comments.", "wpdiscuz"),
                 "thumb" => plugins_url(WPDISCUZ_DIR_NAME . "/assets/addons/recaptcha/header.png"),
-                "url" => "https://gvectors.com/product/wpdiscuz-recaptcha/",
+                "url"   => "https://gvectors.com/product/wpdiscuz-recaptcha/",
             ],
         ];
     }
 
-    public function dismissTipNote()
-    {
+    public function dismissTipNote() {
         $hash = $this->tipHash();
         update_option("wpdiscuz-tip-note-dismissed", $hash);
         exit();
     }
 
-    public function tipHash()
-    {
+    public function tipHash() {
         $viewed = "BuddyPress Integration, Tenor GIFs Integration, Voice Commenting, GIPHY Integration, wpDiscuz - User Notifications";
 //		foreach ($this->tips as $key => $tip) {
 //			$viewed .= $tip["title"] . ",";
@@ -475,8 +461,7 @@ class WpdiscuzAddons implements WpDiscuzConstants
         return $hash;
     }
 
-    public function tipDisplayed()
-    {
+    public function tipDisplayed() {
         $tipTtile = substr(strip_tags($_GET["tip"]), 0, 100);
         $lastHash = get_option("wpdiscuz-tip-note-dismissed");
         if ($lastHash) {
@@ -485,20 +470,18 @@ class WpdiscuzAddons implements WpDiscuzConstants
             $lastHashArray = [];
         }
         $lastHashArray[] = $tipTtile;
-        $hash = implode(",", $lastHashArray);
+        $hash            = implode(",", $lastHashArray);
 
         return $hash;
     }
 
     /* Check addons licenses */
 
-    public function addonsCheck()
-    {
+    public function addonsCheck() {
         $this->check();
     }
 
-    private function check()
-    {
+    private function check() {
         if (WpdiscuzHelper::getRealIPAddr() === "127.0.0.1") {
             return;
         }
@@ -524,16 +507,16 @@ class WpdiscuzAddons implements WpDiscuzConstants
             '^fgntvat\-[\j|-]+\.xvafgn\.pbz',
         ];
         $url_data = parse_url(get_bloginfo("url"));
-        $domain = preg_replace('|^www\.|is', "", $url_data["host"]);
+        $domain   = preg_replace('|^www\.|is', "", $url_data["host"]);
         foreach ($patterns as $pattern) {
             if (preg_match('@' . str_rot13($pattern) . '@is', $domain)) {
                 return;
             }
         }
         $ischecked = get_transient('wpdiscuz_addons_check');
-        if(!$ischecked){
-           set_transient('wpdiscuz_addons_check', true, WEEK_IN_SECONDS);
-        }else{
+        if (!$ischecked) {
+            set_transient('wpdiscuz_addons_check', true, WEEK_IN_SECONDS);
+        } else {
             return;
         }
         $plugins = [];
@@ -544,9 +527,9 @@ class WpdiscuzAddons implements WpDiscuzConstants
                 $instance = $wpdiscuzAM->apimanager;
             }
             $plugins["wpdiscuz-ads-manager"] = [
-                "file" => "wpdiscuz-ads-manager/class-WpdiscuzAdsManager.php",
+                "file"     => "wpdiscuz-ads-manager/class-WpdiscuzAdsManager.php",
                 "instance" => $instance,
-                "name" => "wpDiscuz - Ads Manager",
+                "name"     => "wpDiscuz - Ads Manager",
             ];
         }
         if (is_plugin_active("wpdiscuz-advanced-likers/class.WpdiscuzVoters.php")) {
@@ -556,9 +539,9 @@ class WpdiscuzAddons implements WpDiscuzConstants
                 $instance = $wpDiscuzVoters->apimanager;
             }
             $plugins["wpdiscuz-advanced-likers"] = [
-                "file" => "wpdiscuz-advanced-likers/class.WpdiscuzVoters.php",
+                "file"     => "wpdiscuz-advanced-likers/class.WpdiscuzVoters.php",
                 "instance" => $instance,
-                "name" => "wpDiscuz - Advanced Liking",
+                "name"     => "wpDiscuz - Advanced Liking",
             ];
         }
         if (is_plugin_active("wpdiscuz-comment-author-info/wpdiscuz-comment-author-info.php")) {
@@ -568,9 +551,9 @@ class WpdiscuzAddons implements WpDiscuzConstants
                 $instance = $wpdiscuzCommentAuthorInfo->apimanager;
             }
             $plugins["wpdiscuz-comment-author-info"] = [
-                "file" => "wpdiscuz-comment-author-info/wpdiscuz-comment-author-info.php",
+                "file"     => "wpdiscuz-comment-author-info/wpdiscuz-comment-author-info.php",
                 "instance" => $instance,
-                "name" => "wpDiscuz - Comment Author Info",
+                "name"     => "wpDiscuz - Comment Author Info",
             ];
         }
         if (is_plugin_active("wpdiscuz-comment-search/wpDiscuzCommentSearch.php")) {
@@ -580,9 +563,9 @@ class WpdiscuzAddons implements WpDiscuzConstants
                 $instance = $wpDiscuzCommentSearch->apimanager;
             }
             $plugins["wpdiscuz-comment-search"] = [
-                "file" => "wpdiscuz-comment-search/wpDiscuzCommentSearch.php",
+                "file"     => "wpdiscuz-comment-search/wpDiscuzCommentSearch.php",
                 "instance" => $instance,
-                "name" => "wpDiscuz - Comment Search",
+                "name"     => "wpDiscuz - Comment Search",
             ];
         }
         if (is_plugin_active("wpdiscuz-comment-translation/wpdiscuz-translate.php")) {
@@ -592,9 +575,9 @@ class WpdiscuzAddons implements WpDiscuzConstants
                 $instance = $wpDiscuzTranslate->apimanager;
             }
             $plugins["wpdiscuz-comment-translation"] = [
-                "file" => "wpdiscuz-comment-translation/wpdiscuz-translate.php",
+                "file"     => "wpdiscuz-comment-translation/wpdiscuz-translate.php",
                 "instance" => $instance,
-                "name" => "wpDiscuz - Comment Translation",
+                "name"     => "wpDiscuz - Comment Translation",
             ];
         }
         if (is_plugin_active("wpdiscuz-embeds/wpdiscuz-embeds.php")) {
@@ -604,9 +587,9 @@ class WpdiscuzAddons implements WpDiscuzConstants
                 $instance = $wpdiscuzEmbeds->apimanager;
             }
             $plugins["wpdiscuz-embeds"] = [
-                "file" => "wpdiscuz-embeds/wpdiscuz-embeds.php",
+                "file"     => "wpdiscuz-embeds/wpdiscuz-embeds.php",
                 "instance" => $instance,
-                "name" => "wpDiscuz - Embeds",
+                "name"     => "wpDiscuz - Embeds",
             ];
         }
         if (is_plugin_active("wpdiscuz-emoticons/wpDiscuzSmile.php")) {
@@ -616,9 +599,9 @@ class WpdiscuzAddons implements WpDiscuzConstants
                 $instance = $wpDiscuzSmile->apimanager;
             }
             $plugins["wpdiscuz-emoticons"] = [
-                "file" => "wpdiscuz-emoticons/wpDiscuzSmile.php",
+                "file"     => "wpdiscuz-emoticons/wpDiscuzSmile.php",
                 "instance" => $instance,
-                "name" => "wpDiscuz - Emoticons",
+                "name"     => "wpDiscuz - Emoticons",
             ];
         }
         if (is_plugin_active("wpdiscuz-frontend-moderation/class.wpDiscuzFrontEndModeration.php")) {
@@ -628,9 +611,9 @@ class WpdiscuzAddons implements WpDiscuzConstants
                 $instance = $wpDiscuzFrontEndModeration->apimanager;
             }
             $plugins["wpdiscuz-frontend-moderation"] = [
-                "file" => "wpdiscuz-frontend-moderation/class.wpDiscuzFrontEndModeration.php",
+                "file"     => "wpdiscuz-frontend-moderation/class.wpDiscuzFrontEndModeration.php",
                 "instance" => $instance,
-                "name" => "wpDiscuz - Front-end Moderation",
+                "name"     => "wpDiscuz - Front-end Moderation",
             ];
         }
         if (is_plugin_active("wpdiscuz-media-uploader/class.WpdiscuzMediaUploader.php")) {
@@ -640,9 +623,9 @@ class WpdiscuzAddons implements WpDiscuzConstants
                 $instance = $wpdiscuzMU->apimanager;
             }
             $plugins["wpdiscuz-media-uploader"] = [
-                "file" => "wpdiscuz-media-uploader/class.WpdiscuzMediaUploader.php",
+                "file"     => "wpdiscuz-media-uploader/class.WpdiscuzMediaUploader.php",
                 "instance" => $instance,
-                "name" => "wpDiscuz - Media Uploader",
+                "name"     => "wpDiscuz - Media Uploader",
             ];
         }
         if (is_plugin_active("wpdiscuz-mycred/wpdiscuz-mc.php")) {
@@ -652,9 +635,9 @@ class WpdiscuzAddons implements WpDiscuzConstants
                 $instance = $wpdiscuzMycredIntegrationApi;
             }
             $plugins["wpdiscuz-mycred"] = [
-                "file" => "wpdiscuz-mycred/wpdiscuz-mc.php",
+                "file"     => "wpdiscuz-mycred/wpdiscuz-mc.php",
                 "instance" => $instance,
-                "name" => "wpDiscuz - myCRED Integration",
+                "name"     => "wpDiscuz - myCRED Integration",
             ];
         }
         if (is_plugin_active("wpdiscuz-online-users/wpdiscuz-ou.php")) {
@@ -664,9 +647,9 @@ class WpdiscuzAddons implements WpDiscuzConstants
                 $instance = $wpdiscuzOU->apimanager;
             }
             $plugins["wpdiscuz-online-users"] = [
-                "file" => "wpdiscuz-online-users/wpdiscuz-ou.php",
+                "file"     => "wpdiscuz-online-users/wpdiscuz-ou.php",
                 "instance" => $instance,
-                "name" => "wpDiscuz - Online Users",
+                "name"     => "wpDiscuz - Online Users",
             ];
         }
         if (is_plugin_active("wpdiscuz-private-comments/wpDiscuzPrivateComment.php")) {
@@ -676,9 +659,9 @@ class WpdiscuzAddons implements WpDiscuzConstants
                 $instance = $wpDiscuzPrivateComment->apimanager;
             }
             $plugins["wpdiscuz-private-comments"] = [
-                "file" => "wpdiscuz-private-comments/wpDiscuzPrivateComment.php",
+                "file"     => "wpdiscuz-private-comments/wpDiscuzPrivateComment.php",
                 "instance" => $instance,
-                "name" => "wpDiscuz - Private Comments",
+                "name"     => "wpDiscuz - Private Comments",
             ];
         }
         if (is_plugin_active("wpdiscuz-recaptcha/wpDiscuzReCaptcha.php")) {
@@ -688,9 +671,9 @@ class WpdiscuzAddons implements WpDiscuzConstants
                 $instance = $wpDiscuzReCaptcha->apimanager;
             }
             $plugins["wpdiscuz-recaptcha"] = [
-                "file" => "wpdiscuz-recaptcha/wpDiscuzReCaptcha.php",
+                "file"     => "wpdiscuz-recaptcha/wpDiscuzReCaptcha.php",
                 "instance" => $instance,
-                "name" => "wpDiscuz - Google reCAPTCHA",
+                "name"     => "wpDiscuz - Google reCAPTCHA",
             ];
         }
         if (is_plugin_active("wpdiscuz-report-flagging/wpDiscuzFlagComment.php")) {
@@ -700,9 +683,9 @@ class WpdiscuzAddons implements WpDiscuzConstants
                 $instance = $wpDiscuzFlagComment->apimanager;
             }
             $plugins["wpdiscuz-report-flagging"] = [
-                "file" => "wpdiscuz-report-flagging/wpDiscuzFlagComment.php",
+                "file"     => "wpdiscuz-report-flagging/wpDiscuzFlagComment.php",
                 "instance" => $instance,
-                "name" => "wpDiscuz - Report and Flagging",
+                "name"     => "wpDiscuz - Report and Flagging",
             ];
         }
         if (is_plugin_active("wpdiscuz-subscribe-manager/wpdSubscribeManager.php")) {
@@ -712,9 +695,9 @@ class WpdiscuzAddons implements WpDiscuzConstants
                 $instance = $wpdiscuzSubscribeManager->apimanager;
             }
             $plugins["wpdiscuz-subscribe-manager"] = [
-                "file" => "wpdiscuz-subscribe-manager/wpdSubscribeManager.php",
+                "file"     => "wpdiscuz-subscribe-manager/wpdSubscribeManager.php",
                 "instance" => $instance,
-                "name" => "wpDiscuz - Subscription Manager",
+                "name"     => "wpDiscuz - Subscription Manager",
             ];
         }
         if (is_plugin_active("wpdiscuz-syntax-highlighter/wpDiscuzSyntaxHighlighter.php")) {
@@ -724,9 +707,9 @@ class WpdiscuzAddons implements WpDiscuzConstants
                 $instance = $wpDiscuzSyntaxHighlighter->apimanager;
             }
             $plugins["wpdiscuz-syntax-highlighter"] = [
-                "file" => "wpdiscuz-syntax-highlighter/wpDiscuzSyntaxHighlighter.php",
+                "file"     => "wpdiscuz-syntax-highlighter/wpDiscuzSyntaxHighlighter.php",
                 "instance" => $instance,
-                "name" => "wpDiscuz - Syntax Highlighter",
+                "name"     => "wpDiscuz - Syntax Highlighter",
             ];
         }
         if (is_plugin_active("wpdiscuz-user-comment-mentioning/WpdiscuzUCM.php")) {
@@ -736,9 +719,9 @@ class WpdiscuzAddons implements WpDiscuzConstants
                 $instance = $wpDiscuzUCM->apimanager;
             }
             $plugins["wpdiscuz-user-comment-mentioning"] = [
-                "file" => "wpdiscuz-user-comment-mentioning/WpdiscuzUCM.php",
+                "file"     => "wpdiscuz-user-comment-mentioning/WpdiscuzUCM.php",
                 "instance" => $instance,
-                "name" => "wpDiscuz - User & Comment Mentioning",
+                "name"     => "wpDiscuz - User & Comment Mentioning",
             ];
         }
         if (is_plugin_active("wpdiscuz-widgets/wpDiscuzWidgets.php")) {
@@ -748,9 +731,9 @@ class WpdiscuzAddons implements WpDiscuzConstants
                 $instance = $wpdiscuzWidgets->apimanager;
             }
             $plugins["wpdiscuz-widgets"] = [
-                "file" => "wpdiscuz-widgets/wpDiscuzWidgets.php",
+                "file"     => "wpdiscuz-widgets/wpDiscuzWidgets.php",
                 "instance" => $instance,
-                "name" => "wpDiscuz - Widgets",
+                "name"     => "wpDiscuz - Widgets",
             ];
         }
         if (is_plugin_active("wpdiscuz-buddypress-integration/wpDiscuzBPIntegration.php")) {
@@ -760,9 +743,9 @@ class WpdiscuzAddons implements WpDiscuzConstants
                 $instance = $wpDiscuzBPIntegration->apimanager;
             }
             $plugins["wpdiscuz-buddypress-integration"] = [
-                "file" => "wpdiscuz-buddypress-integration/wpDiscuzBPIntegration.php",
+                "file"     => "wpdiscuz-buddypress-integration/wpDiscuzBPIntegration.php",
                 "instance" => $instance,
-                "name" => "wpDiscuz - BuddyPress Integration",
+                "name"     => "wpDiscuz - BuddyPress Integration",
             ];
         }
         if (is_plugin_active("wpdiscuz-tenor-integration/wpDiscuzTenorIntegration.php")) {
@@ -772,9 +755,9 @@ class WpdiscuzAddons implements WpDiscuzConstants
                 $instance = $wpDiscuzTenorIntegration->apimanager;
             }
             $plugins["wpdiscuz-tenor-integration"] = [
-                "file" => "wpdiscuz-tenor-integration/wpDiscuzTenorIntegration.php",
+                "file"     => "wpdiscuz-tenor-integration/wpDiscuzTenorIntegration.php",
                 "instance" => $instance,
-                "name" => "wpDiscuz - Tenor GIFs Integration",
+                "name"     => "wpDiscuz - Tenor GIFs Integration",
             ];
         }
         if (is_plugin_active("wpdiscuz-giphy-integration/wpDiscuzGiphyIntegration.php")) {
@@ -784,9 +767,9 @@ class WpdiscuzAddons implements WpDiscuzConstants
                 $instance = $wpDiscuzGiphyIntegration->apimanager;
             }
             $plugins["wpdiscuz-giphy-integration"] = [
-                "file" => "wpdiscuz-giphy-integration/wpDiscuzGiphyIntegration.php",
+                "file"     => "wpdiscuz-giphy-integration/wpDiscuzGiphyIntegration.php",
                 "instance" => $instance,
-                "name" => "wpDiscuz - GIPHY Integration",
+                "name"     => "wpDiscuz - GIPHY Integration",
             ];
         }
         if (is_plugin_active("wpdiscuz-voice-commenting/wpdAudioComment.php")) {
@@ -796,9 +779,9 @@ class WpdiscuzAddons implements WpDiscuzConstants
                 $instance = $wpdiscuzAudioComment->apimanager;
             }
             $plugins["wpdiscuz-voice-commenting"] = [
-                "file" => "wpdiscuz-voice-commenting/wpdAudioComment.php",
+                "file"     => "wpdiscuz-voice-commenting/wpdAudioComment.php",
                 "instance" => $instance,
-                "name" => "wpDiscuz - Voice Commenting",
+                "name"     => "wpDiscuz - Voice Commenting",
             ];
         }
         if (is_plugin_active("wpdiscuz-user-notifications/wun-index.php")) {
@@ -808,49 +791,49 @@ class WpdiscuzAddons implements WpDiscuzConstants
                 $instance = $wpdiscuzUserNotifications->apimanager;
             }
             $plugins["wpdiscuz-user-notifications"] = [
-                "file" => "wpdiscuz-user-notifications/wun-index.php",
+                "file"     => "wpdiscuz-user-notifications/wun-index.php",
                 "instance" => $instance,
-                "name" => "wpDiscuz - User Notifications",
+                "name"     => "wpDiscuz - User Notifications",
             ];
         }
-        $checkedData = get_option("wpd_checked_data", []);
+        $checkedData       = get_option("wpd_checked_data", []);
         $deactivatePlugins = [];
-        $adminNotices = [];
+        $adminNotices      = [];
         foreach ($plugins as $key => $value) {
             $redpoint = (int)get_option("gvt_product_" . $key . "_redpoint", "0");
             if (!$redpoint) {
                 $checkedData[$key] = [
-                    "last_checked" => $this->getLastCheckedDate(),
+                    "last_checked"  => $this->getLastCheckedDate(),
                     "checked_count" => 0,
-                    "valid" => 1,
+                    "valid"         => 1,
                 ];
             } else if (isset($checkedData[$key])) {
                 $diff = $this->getLastCheckedDiff($checkedData[$key]["last_checked"]);
                 if ($checkedData[$key]["checked_count"] > 1) {
                     if ($diff->d >= 1 || (($diff->y || $diff->m) && !$diff->d)) {
                         $deactivatePlugins[] = $value["file"];
-                        $checkedData[$key] = [
-                            "last_checked" => $this->getLastCheckedDate(),
+                        $checkedData[$key]   = [
+                            "last_checked"  => $this->getLastCheckedDate(),
                             "checked_count" => $checkedData[$key]["checked_count"] + 1,
-                            "valid" => 0,
+                            "valid"         => 0,
                         ];
-                        $adminNotices[$key] = sprintf(__("%s addon was deactivated, because your license isn't valid.", "wpdiscuz"), $value["name"]);
+                        $adminNotices[$key]  = sprintf(__("%s addon was deactivated, because your license isn't valid.", "wpdiscuz"), $value["name"]);
                     }
                 } else if ($diff->m >= 1) {
-                    $deactivatePlugins[] = $value["file"];
-                    $checkedData[$key] = [
-                        "last_checked" => $this->getLastCheckedDate(),
+                    $deactivatePlugins[]              = $value["file"];
+                    $checkedData[$key]                = [
+                        "last_checked"  => $this->getLastCheckedDate(),
                         "checked_count" => $checkedData[$key]["checked_count"] + 1,
-                        "valid" => 0,
+                        "valid"         => 0,
                     ];
                     $adminNotices[$key . "_redpoint"] = sprintf(__("Something is wrong with %s addon license and files. Please activate it using its license key. If this addon has not been purchased and downloaded from the official gVectors.com website, it's probably hacked and may lead to lots of security issues.", "wpdiscuz"), $value["name"]);
-                    $adminNotices[$key] = sprintf(__("%s addon was deactivated, because your license isn't valid.", "wpdiscuz"), $value["name"]);
+                    $adminNotices[$key]               = sprintf(__("%s addon was deactivated, because your license isn't valid.", "wpdiscuz"), $value["name"]);
                 }
             } else {
                 $checkedData[$key] = [
-                    "last_checked" => $this->getLastCheckedDate(),
+                    "last_checked"  => $this->getLastCheckedDate(),
                     "checked_count" => 1,
-                    "valid" => 0,
+                    "valid"         => 0,
                 ];
             }
         }
@@ -864,16 +847,14 @@ class WpdiscuzAddons implements WpDiscuzConstants
         update_option("wpd_checked_data", $checkedData, "no");
     }
 
-    private function getLastCheckedDiff($date)
-    {
+    private function getLastCheckedDiff($date) {
         $now = new DateTime($this->getLastCheckedDate());
         $ago = new DateTime($date);
 
         return $now->diff($ago);
     }
 
-    private function getLastCheckedDate()
-    {
+    private function getLastCheckedDate() {
         return current_time("Y-m-d H:i:s");
     }
 }

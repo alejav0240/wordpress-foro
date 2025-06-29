@@ -120,9 +120,9 @@ if (!defined("ABSPATH")) {
     <div class="wpd-opt-input">
         <?php
         wp_dropdown_pages([
-            "name" => WpdiscuzCore::TAB_GENERAL . "[redirectPage]",
-            "selected" => $this->general["redirectPage"],
-            "show_option_none" => esc_html__("Do not redirect", "wpdiscuz"),
+            "name"              => WpdiscuzCore::TAB_GENERAL . "[redirectPage]",
+            "selected"          => $this->general["redirectPage"],
+            "show_option_none"  => esc_html__("Do not redirect", "wpdiscuz"),
             "option_none_value" => 0
         ]);
         ?>

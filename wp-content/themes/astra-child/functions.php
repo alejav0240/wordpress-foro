@@ -117,8 +117,10 @@ function handle_forminator_submission($form_id)
     $contenido = $meta_data['textarea-1']['value'] ?? 'Contenido de prueba para la nueva entrada.';
     $imagen_url = $meta_data['upload-1']['value']['file']['file_url'] ?? '';
     $archivos = $meta_data['upload-2']['value']['file']['file_url'] ?? [];
-    $categoria = $meta_data['select-1']['value'] ?? '';
+    $categoria_nombre = $meta_data['select-1']['value'] ?? '';
     $github_url = $meta_data['url-1']['value'] ?? '';
+
+    $termino = get_term_by('name', $categoria_nombre, 'category');
 
     // Agregar enlace a GitHub si se proporcionó
     if (!empty($github_url)) {
@@ -139,7 +141,7 @@ function handle_forminator_submission($form_id)
         'post_status' => 'pending',
         'post_author' => get_current_user_id(),
         'post_type' => 'post',
-        'post_category' => [$categoria],
+        'post_category' => $termino ? [$termino->term_id] : [],
     ]);
 
     if (is_wp_error($post_id)) {
@@ -573,8 +575,6 @@ function agregar_query_vars_personalizadas($vars)
 }
 add_filter('query_vars', 'agregar_query_vars_personalizadas');
 
-
-
 function mostrar_perfil_general($user)
 {
     if (!$user) {
@@ -667,3 +667,97 @@ add_action('template_redirect', function() {
         exit;
     }
 });
+
+// Intentar forzar la propiedad 'public' a true para los CPTs de AnsPress
+add_action( 'init', 'anspress_force_cpt_public_property', 999 ); // Prioridad alta para asegurar que se ejecute tarde
+
+function anspress_force_cpt_public_property() {
+    global $wp_post_types;
+
+    // Para el CPT de preguntas
+    if ( isset( $wp_post_types['question'] ) ) {
+        $wp_post_types['question']->public = true;
+        $wp_post_types['question']->publicly_queryable = true;
+        $wp_post_types['question']->exclude_from_search = false;
+        $wp_post_types['question']->show_ui = true;
+        $wp_post_types['question']->show_in_nav_menus = true;
+        $wp_post_types['question']->show_in_menu = true; // Para asegurar que aparezca en el menú de admin si no lo hace
+        $wp_post_types['question']->show_in_rest = true; // Si tu "Post Timeline" usa la API REST
+    }
+
+    // Para el CPT de respuestas (si también lo necesitas)
+    if ( isset( $wp_post_types['answer'] ) ) {
+        $wp_post_types['answer']->public = true;
+        $wp_post_types['answer']->publicly_queryable = true;
+        $wp_post_types['answer']->exclude_from_search = false;
+        $wp_post_types['answer']->show_ui = true;
+        $wp_post_types['answer']->show_in_nav_menus = true;
+        $wp_post_types['answer']->show_in_menu = true;
+        $wp_post_types['answer']->show_in_rest = true;
+    }
+}
+
+// Hacer que las taxonomías de AnsPress sean públicamente consultables y visibles
+add_action( 'init', 'anspress_make_taxonomies_public', 999 ); // Prioridad alta para ejecutar al final
+
+function anspress_make_taxonomies_public() {
+    global $wp_taxonomies;
+
+    // Para la taxonomía de categorías de preguntas
+    if ( isset( $wp_taxonomies['question_category'] ) ) {
+        $wp_taxonomies['question_category']->public = true;
+        $wp_taxonomies['question_category']->publicly_queryable = true;
+        $wp_taxonomies['question_category']->show_ui = true;
+        $wp_taxonomies['question_category']->show_in_nav_menus = true;
+        $wp_taxonomies['question_category']->show_in_rest = true; // Crucial si el frontend usa REST API
+    }
+
+    // Para la taxonomía de etiquetas de preguntas
+    if ( isset( $wp_taxonomies['question_tag'] ) ) {
+        $wp_taxonomies['question_tag']->public = true;
+        $wp_taxonomies['question_tag']->publicly_queryable = true;
+        $wp_taxonomies['question_tag']->show_ui = true;
+        $wp_taxonomies['question_tag']->show_in_nav_menus = true;
+        $wp_taxonomies['question_tag']->show_in_rest = true; // Crucial si el frontend usa REST API
+    }
+}
+
+add_filter('forminator_render_form_before_fields', 'llenar_combo_categorias_forminator', 10, 2);
+
+function llenar_combo_categorias_forminator($form_fields, $form_id)
+{
+    // Reemplaza con el ID real de tu formulario
+    if ($form_id != 153) {
+        return $form_fields;
+    }
+
+    foreach ($form_fields as &$field) {
+        // Verifica que el campo sea 'select' y tenga el ID del campo personalizado
+        if ($field['element_id'] === 'select-1' && $field['type'] === 'select') {
+
+            error_log('Hook ejecutado: cargando categorías');
+
+            $opciones = [];
+
+            $categorias = get_terms([
+                'taxonomy' => 'category', // Cambia por 'question_category' si usas otra taxonomía
+                'hide_empty' => false,
+            ]);
+
+            if (!is_wp_error($categorias)) {
+                foreach ($categorias as $cat) {
+                    $opciones[] = [
+                        'value' => $cat->term_id,
+                        'label' => $cat->name,
+                    ];
+                }
+            }
+
+            // Reemplaza las opciones
+            $field['options'] = $opciones;
+        }
+    }
+
+    return $form_fields;
+}
+

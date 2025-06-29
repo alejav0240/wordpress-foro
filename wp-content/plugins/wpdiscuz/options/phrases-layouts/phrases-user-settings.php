@@ -9,7 +9,7 @@ if (!defined("ABSPATH")) {
         <tbody>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_content_and_settings"><?php esc_html_e("My content and settings", "wpdiscuz"); ?></label>
+                    for="wc_content_and_settings"><?php esc_html_e("My content and settings", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_content_and_settings"]); ?>"
@@ -24,7 +24,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_user_settings_subscriptions"><?php esc_html_e("Subscriptions", "wpdiscuz"); ?></label>
+                    for="wc_user_settings_subscriptions"><?php esc_html_e("Subscriptions", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_user_settings_subscriptions"]); ?>"
@@ -39,7 +39,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_user_settings_response_to"><?php esc_html_e("In response to:", "wpdiscuz"); ?></label>
+                    for="wc_user_settings_response_to"><?php esc_html_e("In response to:", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_user_settings_response_to"]); ?>"
@@ -47,7 +47,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_user_settings_email_me_delete_links"><?php esc_html_e("Bulk management via email", "wpdiscuz"); ?></label>
+                    for="wc_user_settings_email_me_delete_links"><?php esc_html_e("Bulk management via email", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_user_settings_email_me_delete_links"]); ?>"
@@ -56,7 +56,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_user_settings_email_me_delete_links_desc"><?php esc_html_e('"Bulk management via email" description', "wpdiscuz"); ?></label>
+                    for="wc_user_settings_email_me_delete_links_desc"><?php esc_html_e('"Bulk management via email" description', "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><textarea type="text" name="wc_user_settings_email_me_delete_links_desc"
                                       id="wc_user_settings_email_me_delete_links_desc"><?php echo esc_html($this->phrases["wc_user_settings_email_me_delete_links_desc"]); ?></textarea>
@@ -64,14 +64,14 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_user_settings_no_data"><?php esc_html_e("No data found!", "wpdiscuz"); ?></label></th>
+                    for="wc_user_settings_no_data"><?php esc_html_e("No data found!", "wpdiscuz"); ?></label></th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_user_settings_no_data"]); ?>"
                                    name="wc_user_settings_no_data" id="wc_user_settings_no_data"/></td>
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_user_settings_request_deleting_comments"><?php esc_html_e("Delete all my comments", "wpdiscuz"); ?></label>
+                    for="wc_user_settings_request_deleting_comments"><?php esc_html_e("Delete all my comments", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_user_settings_request_deleting_comments"]); ?>"
@@ -80,7 +80,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_user_settings_cancel_subscriptions"><?php esc_html_e("Cancel all comment subscriptions", "wpdiscuz"); ?></label>
+                    for="wc_user_settings_cancel_subscriptions"><?php esc_html_e("Cancel all comment subscriptions", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_user_settings_cancel_subscriptions"]); ?>"
@@ -89,7 +89,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_user_settings_clear_cookie"><?php esc_html_e("Clear cookies with my personal data", "wpdiscuz"); ?></label>
+                    for="wc_user_settings_clear_cookie"><?php esc_html_e("Clear cookies with my personal data", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_user_settings_clear_cookie"]); ?>"
@@ -97,7 +97,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_user_settings_delete_links"><?php esc_html_e("Bulk management via email", "wpdiscuz"); ?></label>
+                    for="wc_user_settings_delete_links"><?php esc_html_e("Bulk management via email", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_user_settings_delete_links"]); ?>"
@@ -189,7 +189,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_user_settings_subscribed_to_replies"><?php esc_html_e("subscribed to this comment", "wpdiscuz"); ?></label>
+                    for="wc_user_settings_subscribed_to_replies"><?php esc_html_e("subscribed to this comment", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_user_settings_subscribed_to_replies"]); ?>"
@@ -198,7 +198,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_user_settings_subscribed_to_replies_own"><?php esc_html_e("subscribed to my comments", "wpdiscuz"); ?></label>
+                    for="wc_user_settings_subscribed_to_replies_own"><?php esc_html_e("subscribed to my comments", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_user_settings_subscribed_to_replies_own"]); ?>"
@@ -207,7 +207,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_user_settings_subscribed_to_all_comments"><?php esc_html_e("subscribed to all follow-up comments of this post", "wpdiscuz"); ?></label>
+                    for="wc_user_settings_subscribed_to_all_comments"><?php esc_html_e("subscribed to all follow-up comments of this post", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_user_settings_subscribed_to_all_comments"]); ?>"
@@ -216,7 +216,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_user_settings_check_email"><?php esc_html_e("Please check your email.", "wpdiscuz"); ?></label>
+                    for="wc_user_settings_check_email"><?php esc_html_e("Please check your email.", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_user_settings_check_email"]); ?>"
@@ -224,7 +224,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_user_settings_email_error"><?php esc_html_e("Error : Can't send email.", "wpdiscuz"); ?></label>
+                    for="wc_user_settings_email_error"><?php esc_html_e("Error : Can't send email.", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_user_settings_email_error"]); ?>"
@@ -232,14 +232,14 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_delete_this_comment"><?php esc_html_e("Delete this comment", "wpdiscuz"); ?></label>
+                    for="wc_delete_this_comment"><?php esc_html_e("Delete this comment", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text" value="<?php echo esc_attr($this->phrases["wc_delete_this_comment"]); ?>"
                                    name="wc_delete_this_comment" id="wc_delete_this_comment"/></td>
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_cancel_this_subscription"><?php esc_html_e("Cancel this subscription", "wpdiscuz"); ?></label>
+                    for="wc_cancel_this_subscription"><?php esc_html_e("Cancel this subscription", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_cancel_this_subscription"]); ?>"
@@ -247,13 +247,13 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_cancel_this_follow"><?php esc_html_e("Cancel this follow", "wpdiscuz"); ?></label></th>
+                    for="wc_cancel_this_follow"><?php esc_html_e("Cancel this follow", "wpdiscuz"); ?></label></th>
             <td colspan="3"><input type="text" value="<?php echo esc_attr($this->phrases["wc_cancel_this_follow"]); ?>"
                                    name="wc_cancel_this_follow" id="wc_cancel_this_follow"/></td>
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_confirm_comment_delete"><?php esc_html_e("Are you sure you want to delete this comment?", "wpdiscuz"); ?></label>
+                    for="wc_confirm_comment_delete"><?php esc_html_e("Are you sure you want to delete this comment?", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_confirm_comment_delete"]); ?>"
@@ -261,7 +261,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_confirm_cancel_subscription"><?php esc_html_e("Are you sure you want to cancel this subscription?", "wpdiscuz"); ?></label>
+                    for="wc_confirm_cancel_subscription"><?php esc_html_e("Are you sure you want to cancel this subscription?", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_confirm_cancel_subscription"]); ?>"
@@ -269,7 +269,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_confirm_cancel_follow"><?php esc_html_e("Are you sure you want to cancel this follow?", "wpdiscuz"); ?></label>
+                    for="wc_confirm_cancel_follow"><?php esc_html_e("Are you sure you want to cancel this follow?", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_confirm_cancel_follow"]); ?>"

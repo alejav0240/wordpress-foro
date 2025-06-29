@@ -2,11 +2,9 @@
 
 namespace wpdFormAttr\Field;
 
-class HTMLField extends Field
-{
+class HTMLField extends Field {
 
-    protected function dashboardForm()
-    {
+    protected function dashboardForm() {
         ?>
         <div class="wpd-field-body" style="display: <?php echo esc_attr($this->display); ?>">
             <div class="wpd-field-option wpdiscuz-item">
@@ -51,19 +49,17 @@ class HTMLField extends Field
         <?php
     }
 
-    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm)
-    {
+    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm) {
         if (!$this->isShowForUser($args, $currentUser) || !$isMainForm && !$args["is_show_sform"])
             return;
         echo $args["value"];
     }
 
-    public function sanitizeFieldData($data)
-    {
-        $cleanData = [];
+    public function sanitizeFieldData($data) {
+        $cleanData         = [];
         $cleanData["type"] = sanitize_text_field($data["type"]);
         if (isset($data["name"])) {
-            $name = sanitize_text_field(trim(strip_tags($data["name"])));
+            $name              = sanitize_text_field(trim(strip_tags($data["name"])));
             $cleanData["name"] = $name ? $name : $this->fieldDefaultData["name"];
         }
         if (isset($data["value"])) {
@@ -88,34 +84,30 @@ class HTMLField extends Field
         return wp_parse_args($cleanData, $this->fieldDefaultData);
     }
 
-    protected function initDefaultData()
-    {
+    protected function initDefaultData() {
         $this->fieldDefaultData = [
-            "name" => "",
-            "desc" => "",
-            "value" => "",
-            "required" => "0",
-            "loc" => "top",
+            "name"               => "",
+            "desc"               => "",
+            "value"              => "",
+            "required"           => "0",
+            "loc"                => "top",
             "is_show_on_comment" => "0",
-            "is_show_sform" => "1",
-            "no_insert_meta" => "1",
-            "show_for_guests" => 1,
-            "show_for_users" => 1,
+            "is_show_sform"      => "1",
+            "no_insert_meta"     => "1",
+            "show_for_guests"    => 1,
+            "show_for_users"     => 1,
         ];
     }
 
-    public function editCommentHtml($key, $value, $data, $comment)
-    {
+    public function editCommentHtml($key, $value, $data, $comment) {
 
     }
 
-    public function frontHtml($value, $args)
-    {
+    public function frontHtml($value, $args) {
 
     }
 
-    public function validateFieldData($fieldName, $args, $options, $currentUser)
-    {
+    public function validateFieldData($fieldName, $args, $options, $currentUser) {
 
     }
 

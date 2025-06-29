@@ -4,13 +4,11 @@ namespace wpdFormAttr\Field;
 
 use wpdFormAttr\Tools\Sanitizer;
 
-class CookiesConsent extends Field
-{
+class CookiesConsent extends Field {
 
     private $cookiesConsent;
 
-    protected function dashboardForm()
-    {
+    protected function dashboardForm() {
         ?>
         <div class="wpd-field-body" style="display: <?php echo esc_attr($this->display); ?>">
             <div class="wpd-field-option wpdiscuz-item">
@@ -42,19 +40,17 @@ class CookiesConsent extends Field
         <?php
     }
 
-    public function editCommentHtml($key, $value, $data, $comment)
-    {
+    public function editCommentHtml($key, $value, $data, $comment) {
 
     }
 
-    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm)
-    {
+    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm) {
         if ($currentUser->exists()) {
             return;
         }
-        $hasDesc = $args["desc"] ? true : false;
+        $hasDesc   = $args["desc"] ? true : false;
         $commenter = wp_get_current_commenter();
-        $consent = empty($commenter["comment_author_email"]) ? "" : " checked='checked'";
+        $consent   = empty($commenter["comment_author_email"]) ? "" : " checked='checked'";
         ?>
         <div class="wpdiscuz-item wpd-field-group wpd-field-checkbox wpd-field-cookies-consent wpd-field-single <?php echo "$name-wrapper" . ($hasDesc ? " wpd-has-desc" : ""); ?>">
             <div class="wpd-field-group-title">
@@ -75,15 +71,13 @@ class CookiesConsent extends Field
         <?php
     }
 
-    public function frontHtml($value, $args)
-    {
+    public function frontHtml($value, $args) {
 
     }
 
-    public function validateFieldData($fieldName, $args, $options, $currentUser)
-    {
+    public function validateFieldData($fieldName, $args, $options, $currentUser) {
         $this->cookiesConsent = filter_input(INPUT_POST, $fieldName, FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
-        $action = Sanitizer::sanitize(INPUT_POST, "action", "FILTER_SANITIZE_STRING");
+        $action               = Sanitizer::sanitize(INPUT_POST, "action", "FILTER_SANITIZE_STRING");
         if ($this->cookiesConsent === false && $action !== "wpdSaveEditedComment") {
             $past = time() - YEAR_IN_SECONDS;
             setcookie("comment_author_" . COOKIEHASH, " ", $past, "/", COOKIE_DOMAIN);
@@ -92,12 +86,11 @@ class CookiesConsent extends Field
         }
     }
 
-    public function sanitizeFieldData($data)
-    {
-        $cleanData = [];
+    public function sanitizeFieldData($data) {
+        $cleanData         = [];
         $cleanData["type"] = sanitize_text_field($data["type"]);
         if (isset($data["name"])) {
-            $name = sanitize_text_field(trim(strip_tags($data["name"])));
+            $name              = sanitize_text_field(trim(strip_tags($data["name"])));
             $cleanData["name"] = $name ? $name : $this->fieldDefaultData["name"];
         }
         if (isset($data["desc"])) {
@@ -109,24 +102,22 @@ class CookiesConsent extends Field
         return wp_parse_args($cleanData, $this->fieldDefaultData);
     }
 
-    protected function initDefaultData()
-    {
+    protected function initDefaultData() {
         $this->fieldDefaultData = [
-            "name" => "Cookies Consent",
-            "label" => esc_html__("Save my data for the next time I comment"),
-            "desc" => "Save my name, email, and website in this browser cookies for the next time I comment.",
-            "required" => "0",
-            "show_for_guests" => "1",
-            "show_for_users" => "0",
+            "name"               => "Cookies Consent",
+            "label"              => esc_html__("Save my data for the next time I comment"),
+            "desc"               => "Save my name, email, and website in this browser cookies for the next time I comment.",
+            "required"           => "0",
+            "show_for_guests"    => "1",
+            "show_for_users"     => "0",
             "is_show_on_comment" => "0",
-            "is_show_sform" => "1",
-            "no_insert_meta" => "1"
+            "is_show_sform"      => "1",
+            "no_insert_meta"     => "1"
         ];
         //  add_action('wpdiscuz_before_save_commentmeta', [$this, 'beforeSaveCommentmeta']);
     }
 
-    public function beforeSaveCommentmeta($comment)
-    {
+    public function beforeSaveCommentmeta($comment) {
         if ($this->cookiesConsent === false) {
             $past = time() - YEAR_IN_SECONDS;
             setcookie("comment_author_" . COOKIEHASH, " ", $past, "/", COOKIE_DOMAIN);

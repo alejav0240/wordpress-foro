@@ -6,8 +6,7 @@
 
 namespace wpdFormAttr\Login\twitter;
 
-class Consumer
-{
+class Consumer {
     /** @var string */
     public $key;
     /** @var string */
@@ -20,18 +19,16 @@ class Consumer
      * @param string $secret
      * @param null $callbackUrl
      */
-    public function __construct($key, $secret, $callbackUrl = null)
-    {
-        $this->key = $key;
-        $this->secret = $secret;
+    public function __construct($key, $secret, $callbackUrl = null) {
+        $this->key         = $key;
+        $this->secret      = $secret;
         $this->callbackUrl = $callbackUrl;
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return "Consumer[key=$this->key,secret=$this->secret]";
     }
 }

@@ -3,7 +3,7 @@ Contributors: gVectors Team
 Tags: comment, comments, ajax comments, comment form, comment fields
 Requires at least: 5.0
 Tested up to: 6.8
-Stable tag: 7.6.30
+Stable tag: 7.6.32
 Requires PHP: 5.6
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -189,6 +189,15 @@ Nothing will be lost!  **Comments - wpDiscuz** will show all old comments.
 
 Please don't forget delete all caches and purge CDN after the update.
 
+= Comments - wpDiscuz v7.6.32 - 24.06.2025 =
+
+* Fixed: An error when getting users' avatars
+
+= Comments - wpDiscuz v7.6.31 - 22.06.2025 =
+
+* Fixed: Potential security issue
+* Fixed: Issue with BuddyPress uploaded avatars
+
 = Comments - wpDiscuz v7.6.30 - 10.05.2025 =
 
 * Fixed: An issue with text domain loading
@@ -219,31 +228,3 @@ Please don't forget delete all caches and purge CDN after the update.
 
 * Fixed: wpDiscuz menu icons styling issues
 * Fixed: Undefined array key "is_rate_editable"
-
-= Comments - wpDiscuz v7.6.25 - 07.10.2024 =
-
-* Added: New function. isBanned() and checking if voter is banned or not
-* Added: New option to enable/disable rates editing
-* Added: New phrase for rate edit confirmation popup
-* Added: Rate edit functionality
-* Added: wpDiscuz icon on the backend and the admin bar menu items
-* Fixed: Vulnerability with WordPress social login
-
-= Comments - wpDiscuz v7.6.24 - 31.08.2024 =
-
-* Fixed: Hardcoded table prefix
-
-= Comments - wpDiscuz v7.6.23 - 24.08.2024 =
-
-* Fixed: Issue with "bulk delete comments" via link in the email
-
-= Comments - wpDiscuz v7.6.22 - 24.07.2024 =
-
-* Added: A new hook "wpdiscuz_generate_thumbnails_check" to disable thumbnails generation cron
-* Added: A new JS event on comment post "wpdiscuz_comment_posted"
-* Fixed: Filtering buttons now visible if there is at least one comment
-* Fixed: Security issue, if reach editor and quick tags are disabled clean all HTML from comment content
-
-= Comments - wpDiscuz v7.6.21 - 06.07.2024 =
-
-* Fixed: Regenerate comment attachments metadata via WP Cron

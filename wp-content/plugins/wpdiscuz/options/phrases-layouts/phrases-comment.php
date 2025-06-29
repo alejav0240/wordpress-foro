@@ -82,7 +82,7 @@ if (!defined("ABSPATH")) {
             ?>
             <tr valign="top">
                 <th scope="row"><label
-                            for="wc_blog_role_<?php echo esc_attr($roleName); ?>"><?php echo esc_html($phraseRoleLabel); ?></label>
+                        for="wc_blog_role_<?php echo esc_attr($roleName); ?>"><?php echo esc_html($phraseRoleLabel); ?></label>
                 </th>
                 <td><input type="text"
                            value="<?php echo esc_attr(isset($this->phrases["wc_blog_role_" . $roleName]) ? $this->phrases["wc_blog_role_" . $roleName] : $roleTitle); ?>"
@@ -104,7 +104,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_comment_edit_save_button"><?php esc_html_e("Save edited comment button text", "wpdiscuz"); ?></label>
+                    for="wc_comment_edit_save_button"><?php esc_html_e("Save edited comment button text", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_comment_edit_save_button"]); ?>"
@@ -112,7 +112,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_comment_edit_cancel_button"><?php esc_html_e("Cancel comment editing button text", "wpdiscuz"); ?></label>
+                    for="wc_comment_edit_cancel_button"><?php esc_html_e("Cancel comment editing button text", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_comment_edit_cancel_button"]); ?>"
@@ -120,19 +120,19 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_read_more"><?php esc_html_e("Comment read more link text", "wpdiscuz"); ?></label></th>
+                    for="wc_read_more"><?php esc_html_e("Comment read more link text", "wpdiscuz"); ?></label></th>
             <td colspan="3"><input type="text" value="<?php echo esc_attr($this->phrases["wc_read_more"]); ?>"
                                    name="wc_read_more" id="wc_read_more"/></td>
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_anonymous"><?php esc_html_e("Anonymous commenter name", "wpdiscuz"); ?></label></th>
+                    for="wc_anonymous"><?php esc_html_e("Anonymous commenter name", "wpdiscuz"); ?></label></th>
             <td colspan="3"><input type="text" value="<?php echo esc_attr($this->phrases["wc_anonymous"]); ?>"
                                    name="wc_anonymous" id="wc_anonymous"/></td>
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_stick_comment_btn_title"><?php esc_html_e("Stick button title", "wpdiscuz"); ?></label>
+                    for="wc_stick_comment_btn_title"><?php esc_html_e("Stick button title", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_stick_comment_btn_title"]); ?>"
@@ -150,7 +150,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_sticky_comment_icon_title"><?php esc_html_e("Sticky comment icon title", "wpdiscuz"); ?></label>
+                    for="wc_sticky_comment_icon_title"><?php esc_html_e("Sticky comment icon title", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_sticky_comment_icon_title"]); ?>"
@@ -158,7 +158,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_close_comment_btn_title"><?php esc_html_e("Close button title", "wpdiscuz"); ?></label>
+                    for="wc_close_comment_btn_title"><?php esc_html_e("Close button title", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_close_comment_btn_title"]); ?>"
@@ -176,7 +176,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_closed_comment_icon_title"><?php esc_html_e("Closed comment icon title", "wpdiscuz"); ?></label>
+                    for="wc_closed_comment_icon_title"><?php esc_html_e("Closed comment icon title", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_closed_comment_icon_title"]); ?>"

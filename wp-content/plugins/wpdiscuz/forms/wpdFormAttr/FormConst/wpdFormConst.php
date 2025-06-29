@@ -2,8 +2,7 @@
 
 namespace wpdFormAttr\FormConst;
 
-interface wpdFormConst
-{
+interface wpdFormConst {
 
     /* === OPTIONS NAMES === */
     const WPDISCUZ_FORMS_CONTENT_TYPE_REL = "wpdiscuz_form_content_type_rel";

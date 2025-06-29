@@ -4,11 +4,9 @@ namespace wpdFormAttr\Field;
 
 use wpdFormAttr\Tools\Sanitizer;
 
-class DateField extends Field
-{
+class DateField extends Field {
 
-    protected function dashboardForm()
-    {
+    protected function dashboardForm() {
         ?>
         <div class="wpd-field-body" style="display: <?php echo esc_attr($this->display); ?>">
             <div class="wpd-field-option wpdiscuz-item">
@@ -32,7 +30,7 @@ class DateField extends Field
             <div class="wpd-field-option">
                 <div class="input-group">
                     <label for="<?php echo esc_attr($this->fieldInputName); ?>[icon]"><span
-                                class="input-group-addon"></span> <?php esc_html_e("Field icon", "wpdiscuz"); ?>
+                            class="input-group-addon"></span> <?php esc_html_e("Field icon", "wpdiscuz"); ?>
                         :</label>
                     <input data-placement="bottom" class="icp icp-auto"
                            value="<?php echo esc_attr($this->fieldData["icon"]); ?>" type="text"
@@ -100,24 +98,22 @@ class DateField extends Field
         <?php
     }
 
-    public function editCommentHtml($key, $value, $data, $comment)
-    {
+    public function editCommentHtml($key, $value, $data, $comment) {
         if (!$this->isShowForUser($data) || ($comment->comment_parent && !$data["is_show_sform"])) {
             return "";
         }
-        $html = "<tr class='" . esc_attr($key) . "-wrapper wpd-edit-date'><td class='first'>";
-        $html .= "<label for='" . esc_attr($key) . "'>" . esc_html($data["name"]) . ": </label>";
-        $html .= "</td><td>";
-        $html .= "<div class='wpdiscuz-item'>";
+        $html     = "<tr class='" . esc_attr($key) . "-wrapper wpd-edit-date'><td class='first'>";
+        $html     .= "<label for='" . esc_attr($key) . "'>" . esc_html($data["name"]) . ": </label>";
+        $html     .= "</td><td>";
+        $html     .= "<div class='wpdiscuz-item'>";
         $required = $this->isValidateRequired($data) ? "required='required' aria-required='true'" : "";
-        $html .= "<input " . $required . " class='wpd-field wpd-field-date' type='date' id='" . esc_attr($key) . "' value='" . esc_attr($value) . "'  name='" . esc_attr($key) . "' pattern='^(1[0-2]|0[1-9])/(3[01]|[12][0-9]|0[1-9])/[0-9]{4}$' title='03/28/2016'>";
-        $html .= "</div>";
-        $html .= "</td></tr>";
+        $html     .= "<input " . $required . " class='wpd-field wpd-field-date' type='date' id='" . esc_attr($key) . "' value='" . esc_attr($value) . "'  name='" . esc_attr($key) . "' pattern='^(1[0-2]|0[1-9])/(3[01]|[12][0-9]|0[1-9])/[0-9]{4}$' title='03/28/2016'>";
+        $html     .= "</div>";
+        $html     .= "</td></tr>";
         return $html;
     }
 
-    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm)
-    {
+    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm) {
         if (!$this->isShowForUser($args, $currentUser) || (!$isMainForm && !$args["is_show_sform"])) {
             return;
         }
@@ -143,14 +139,13 @@ class DateField extends Field
                    class="wpdlb"><?php echo esc_attr($args["name"]) . (!empty($args["required"]) ? "*" : ""); ?></label>
             <?php if ($args["desc"]) { ?>
                 <div class="wpd-field-desc"><i
-                            class="far fa-question-circle"></i><span><?php echo esc_html($args["desc"]); ?></span></div>
+                        class="far fa-question-circle"></i><span><?php echo esc_html($args["desc"]); ?></span></div>
             <?php } ?>
         </div>
         <?php
     }
 
-    public function frontHtml($value, $args)
-    {
+    public function frontHtml($value, $args) {
         if (!$this->isShowForUser($args)) {
             return "";
         }
@@ -160,8 +155,7 @@ class DateField extends Field
         return $html;
     }
 
-    public function validateFieldData($fieldName, $args, $options, $currentUser)
-    {
+    public function validateFieldData($fieldName, $args, $options, $currentUser) {
         $value = Sanitizer::sanitize(INPUT_POST, $fieldName, "FILTER_SANITIZE_STRING");
         if ($value && !preg_match("@^[0-9]{4}-[0-9]{2}-[0-9]{2}$@is", $value)) {
             $value = "";
@@ -172,18 +166,17 @@ class DateField extends Field
         return $value;
     }
 
-    protected function initDefaultData()
-    {
+    protected function initDefaultData() {
         $this->fieldDefaultData = [
-            "name" => "",
-            "desc" => "",
-            "icon" => "fa-calendar-alt",
-            "required" => "0",
-            "loc" => "bottom",
+            "name"               => "",
+            "desc"               => "",
+            "icon"               => "fa-calendar-alt",
+            "required"           => "0",
+            "loc"                => "bottom",
             "is_show_on_comment" => 1,
-            "is_show_sform" => 1,
-            "show_for_guests" => 1,
-            "show_for_users" => 1,
+            "is_show_sform"      => 1,
+            "show_for_guests"    => 1,
+            "show_for_users"     => 1,
         ];
     }
 

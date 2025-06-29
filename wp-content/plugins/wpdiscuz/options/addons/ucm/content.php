@@ -90,7 +90,7 @@ if (!$isUcmExists) {
                     </th>
                     <td>
                         <input type="number" name="" min='0' value="150" id="ucm_text_length"/> <span
-                                style="display:inline-block; vertical-align:bottom; font-size:14px; padding:5px;">characters</span>
+                            style="display:inline-block; vertical-align:bottom; font-size:14px; padding:5px;">characters</span>
                     </td>
                 </tr>
                 <tr valign="top">
@@ -102,7 +102,7 @@ if (!$isUcmExists) {
                     </th>
                     <td>
                         <input type="number" name="" min='1' value="8" id="ucm_user_count"/> <span
-                                style="display:inline-block; vertical-align:bottom; font-size:14px; padding:5px;">items</span>
+                            style="display:inline-block; vertical-align:bottom; font-size:14px; padding:5px;">items</span>
                     </td>
                 </tr>
 

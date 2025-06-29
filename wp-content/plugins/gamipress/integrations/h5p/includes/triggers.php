@@ -25,41 +25,49 @@ function gamipress_h5p_activity_triggers( $triggers ) {
         'gamipress_h5p_complete_content'                                => __( 'Complete any interactive content', 'gamipress' ),
         'gamipress_h5p_complete_specific_content'                       => __( 'Complete a specific interactive content', 'gamipress' ),
         'gamipress_h5p_complete_specific_content_type'                  => __( 'Complete any interactive content of a specific type', 'gamipress' ),
+        'gamipress_h5p_complete_content_tag'                            => __( 'Complete any interactive content of a tag', 'gamipress' ),
 
         // At 100%
         'gamipress_h5p_max_complete_content'                            => __( 'Complete any interactive content at maximum score', 'gamipress' ),
         'gamipress_h5p_max_complete_specific_content'                   => __( 'Complete a specific interactive content at maximum score', 'gamipress' ),
         'gamipress_h5p_max_complete_specific_content_type'              => __( 'Complete any interactive content of a specific type at maximum score', 'gamipress' ),
+        'gamipress_h5p_max_complete_content_tag'                        => __( 'Complete any interactive content at maximum score of a tag', 'gamipress' ),
 
         // Min Score
         'gamipress_h5p_complete_content_min_score'                      => __( 'Complete any interactive content with a minimum score', 'gamipress' ),
         'gamipress_h5p_complete_specific_content_min_score'             => __( 'Complete a specific interactive content with a minimum score', 'gamipress' ),
         'gamipress_h5p_complete_specific_content_type_min_score'        => __( 'Complete any interactive content of a specific type with a minimum score', 'gamipress' ),
+        'gamipress_h5p_complete_content_min_score_tag'                  => __( 'Complete any interactive content with a minimum score of a tag', 'gamipress' ),
 
         // Max Score
         'gamipress_h5p_complete_content_max_score'                      => __( 'Complete any interactive content with a maximum score', 'gamipress' ),
         'gamipress_h5p_complete_specific_content_max_score'             => __( 'Complete a specific interactive content with a maximum score', 'gamipress' ),
         'gamipress_h5p_complete_specific_content_type_max_score'        => __( 'Complete any interactive content of a specific type with a maximum score', 'gamipress' ),
+        'gamipress_h5p_complete_content_max_score_tag'                  => __( 'Complete any interactive content with a maximum score of a tag', 'gamipress' ),
 
         // Between Score
         'gamipress_h5p_complete_content_between_score'                  => __( 'Complete any interactive content on a range of scores', 'gamipress' ),
         'gamipress_h5p_complete_specific_content_between_score'         => __( 'Complete a specific interactive content on a range of scores', 'gamipress' ),
         'gamipress_h5p_complete_specific_content_type_between_score'    => __( 'Complete any interactive content of a specific type on a range of scores', 'gamipress' ),
+        'gamipress_h5p_complete_content_between_score_tag'              => __( 'Complete any interactive content on a range of scores of a tag', 'gamipress' ),
 
         // Min percentage
         'gamipress_h5p_complete_content_min_percentage'                  => __( 'Complete any interactive content with a minimum percentage score', 'gamipress' ),
         'gamipress_h5p_complete_specific_content_min_percentage'         => __( 'Complete a specific interactive content with a minimum percentage score', 'gamipress' ),
         'gamipress_h5p_complete_specific_content_type_min_percentage'    => __( 'Complete any interactive content of a specific type with a minimum percentage score', 'gamipress' ),
+        'gamipress_h5p_complete_content_min_percentage_tag'              => __( 'Complete any interactive content with a minimum percentage score of a tag', 'gamipress' ),
         
         // Max percentage
         'gamipress_h5p_complete_content_max_percentage'                  => __( 'Complete any interactive content with a maximum percentage score', 'gamipress' ),
         'gamipress_h5p_complete_specific_content_max_percentage'         => __( 'Complete a specific interactive content with a maximum percentage score', 'gamipress' ),
         'gamipress_h5p_complete_specific_content_type_max_percentage'    => __( 'Complete any interactive content of a specific type with a maximum percentage score', 'gamipress' ),
+        'gamipress_h5p_complete_content_max_percentage_tag'              => __( 'Complete any interactive content with a maximum percentage score of a tag', 'gamipress' ),
 
         // Between percentage
         'gamipress_h5p_complete_content_between_percentage'                  => __( 'Complete any interactive content on a range of percentages scores', 'gamipress' ),
         'gamipress_h5p_complete_specific_content_between_percentage'         => __( 'Complete a specific interactive content on a range of percentages scores', 'gamipress' ),
         'gamipress_h5p_complete_specific_content_type_between_percentage'    => __( 'Complete any interactive content of a specific type on a range of percentages scores', 'gamipress' ),
+        'gamipress_h5p_complete_content_between_percentage_tag'              => __( 'Complete any interactive content on a range of percentages scores of a tag', 'gamipress' ),
     );
 
     return $triggers;
@@ -115,6 +123,10 @@ function gamipress_h5p_activity_trigger_label( $title, $requirement_id, $require
             if( $content_type !== '' )
                 return sprintf( __( 'Complete a %s with a score of %d or higher', 'gamipress' ), gamipress_h5p_get_content_type_title( $content_type ), $score );
             break;
+        case 'gamipress_h5p_complete_content_min_score_tag':
+            $achievement_post_id = absint( $requirement['achievement_post'] );
+            return sprintf( __( 'Completed an interactive content with a score of %d or higher of %s tag', 'gamipress' ), $score, gamipress_h5p_get_tag_title( $achievement_post_id ) );
+            break;
 
         // Max score
         case 'gamipress_h5p_complete_content_max_score':
@@ -127,6 +139,10 @@ function gamipress_h5p_activity_trigger_label( $title, $requirement_id, $require
         case 'gamipress_h5p_complete_specific_content_type_max_score':
             if( $content_type !== '' )
                 return sprintf( __( 'Complete a %s with a score of %d or lower', 'gamipress' ), gamipress_h5p_get_content_type_title( $content_type ), $score );
+            break;
+        case 'gamipress_h5p_complete_content_max_score_tag':
+            $achievement_post_id = absint( $requirement['achievement_post'] );
+            return sprintf( __( 'Completed an interactive content with a score of %d or lower of %s tag', 'gamipress' ), $score, gamipress_h5p_get_tag_title( $achievement_post_id ) );
             break;
 
         // Between score
@@ -141,6 +157,10 @@ function gamipress_h5p_activity_trigger_label( $title, $requirement_id, $require
             if( $content_type !== '' )
                 return sprintf( __( 'Complete a %s with a score between %d and %d', 'gamipress' ), gamipress_h5p_get_content_type_title( $content_type ), $min_score, $max_score );
             break;
+        case 'gamipress_h5p_complete_content_between_score_tag':
+            $achievement_post_id = absint( $requirement['achievement_post'] );
+            return sprintf( __( 'Completed an interactive content with a score between %d and %d of %s tag', 'gamipress' ), $min_score, $max_score, gamipress_h5p_get_tag_title( $achievement_post_id ) );
+            break;
 
         // Min percentage
         case 'gamipress_h5p_complete_content_min_percentage':
@@ -153,6 +173,10 @@ function gamipress_h5p_activity_trigger_label( $title, $requirement_id, $require
         case 'gamipress_h5p_complete_specific_content_type_min_percentage':
             if( $content_type !== '' )
                 return sprintf( __( 'Complete a %s with a percentage score of %d or higher', 'gamipress' ), gamipress_h5p_get_content_type_title( $content_type ), $percentage );
+            break;
+        case 'gamipress_h5p_complete_content_min_percentage_tag':
+            $achievement_post_id = absint( $requirement['achievement_post'] );
+            return sprintf( __( 'Completed an interactive content with a percentage score of %d or higher of %s tag', 'gamipress' ), $percentage, gamipress_h5p_get_tag_title( $achievement_post_id ) );
             break;
 
         // Max percentage
@@ -167,6 +191,10 @@ function gamipress_h5p_activity_trigger_label( $title, $requirement_id, $require
             if( $content_type !== '' )
                 return sprintf( __( 'Complete a %s with a percentage score of %d or lower', 'gamipress' ), gamipress_h5p_get_content_type_title( $content_type ), $percentage );
             break;
+        case 'gamipress_h5p_complete_content_max_percentage_tag':
+            $achievement_post_id = absint( $requirement['achievement_post'] );
+            return sprintf( __( 'Completed an interactive content with a percentage score of %d or lower of %s tag', 'gamipress' ), $percentage, gamipress_h5p_get_tag_title( $achievement_post_id ) );
+            break;
 
         // Between percentages
         case 'gamipress_h5p_complete_content_between_percentage':
@@ -179,6 +207,10 @@ function gamipress_h5p_activity_trigger_label( $title, $requirement_id, $require
         case 'gamipress_h5p_complete_specific_content_type_between_percentage':
             if( $content_type !== '' )
                 return sprintf( __( 'Complete a %s with a percentage score between %d and %d', 'gamipress' ), gamipress_h5p_get_content_type_title( $content_type ), $min_percentage, $max_percentage );
+            break;
+        case 'gamipress_h5p_complete_content_between_percentage_tag':
+            $achievement_post_id = absint( $requirement['achievement_post'] );
+            return sprintf( __( 'Completed an interactive content with a percentage score between %d and %d of %s tag', 'gamipress' ), $min_percentage, $max_percentage, gamipress_h5p_get_tag_title( $achievement_post_id ) );
             break;
 
 
@@ -206,6 +238,15 @@ function gamipress_h5p_specific_activity_triggers( $specific_activity_triggers )
     $specific_activity_triggers['gamipress_h5p_complete_specific_content_min_percentage'] = array( 'h5p_contents' );
     $specific_activity_triggers['gamipress_h5p_complete_specific_content_max_percentage'] = array( 'h5p_contents' );
     $specific_activity_triggers['gamipress_h5p_complete_specific_content_between_percentage'] = array( 'h5p_contents' );
+    // Tags
+    $specific_activity_triggers['gamipress_h5p_complete_content_tag'] = array( 'h5p_tags' );
+    $specific_activity_triggers['gamipress_h5p_max_complete_content_tag'] = array( 'h5p_tags' );
+    $specific_activity_triggers['gamipress_h5p_complete_content_min_score_tag'] = array( 'h5p_tags' );
+    $specific_activity_triggers['gamipress_h5p_complete_content_max_score_tag'] = array( 'h5p_tags' );
+    $specific_activity_triggers['gamipress_h5p_complete_content_between_score_tag'] = array( 'h5p_tags' );
+    $specific_activity_triggers['gamipress_h5p_complete_content_min_percentage_tag'] = array( 'h5p_tags' );
+    $specific_activity_triggers['gamipress_h5p_complete_content_max_percentage_tag'] = array( 'h5p_tags' );
+    $specific_activity_triggers['gamipress_h5p_complete_content_between_percentage_tag'] = array( 'h5p_tags' );
 
     return $specific_activity_triggers;
 
@@ -224,6 +265,8 @@ function gamipress_h5p_specific_activity_trigger_label( $specific_activity_trigg
 
     $specific_activity_trigger_labels['gamipress_h5p_complete_specific_content'] = __( 'Complete %s', 'gamipress' );
     $specific_activity_trigger_labels['gamipress_h5p_max_complete_specific_content'] = __( 'Complete %s at maximum score', 'gamipress' );
+    $specific_activity_trigger_labels['gamipress_h5p_complete_content_tag'] = __( 'Complete content of %s tag', 'gamipress' );
+    $specific_activity_trigger_labels['gamipress_h5p_max_complete_content_tag'] = __( 'Complete content at maximum score of %s tag', 'gamipress' );
 
     return $specific_activity_trigger_labels;
 }
@@ -259,6 +302,22 @@ function gamipress_h5p_specific_activity_trigger_post_title( $post_title, $speci
                 $post_title = $content_title;
             }
             break;
+        case 'gamipress_h5p_complete_content_tag':
+        case 'gamipress_h5p_max_complete_content_tag':
+        case 'gamipress_h5p_complete_content_min_score_tag':
+        case 'gamipress_h5p_complete_content_max_score_tag':
+        case 'gamipress_h5p_complete_content_between_score_tag':
+        case 'gamipress_h5p_complete_content_min_percentage_tag':
+        case 'gamipress_h5p_complete_content_max_percentage_tag':
+        case 'gamipress_h5p_complete_content_between_percentage_tag':
+            if( absint( $specific_id ) !== 0 ) {
+
+                // Get the tag title
+                $tag_title = gamipress_h5p_get_tag_title( $specific_id );
+
+                $post_title = $tag_title;
+            }
+            break;
     }
 
     return $post_title;
@@ -289,6 +348,14 @@ function gamipress_h5p_specific_activity_trigger_permalink( $permalink, $specifi
         case 'gamipress_h5p_complete_specific_content_min_percentage':
         case 'gamipress_h5p_complete_specific_content_max_percentage':
         case 'gamipress_h5p_complete_specific_content_between_percentage':
+        case 'gamipress_h5p_complete_content_tag':
+        case 'gamipress_h5p_max_complete_content_tag':
+        case 'gamipress_h5p_complete_content_min_score_tag':
+        case 'gamipress_h5p_complete_content_max_score_tag':
+        case 'gamipress_h5p_complete_content_between_score_tag':
+        case 'gamipress_h5p_complete_content_min_percentage_tag':
+        case 'gamipress_h5p_complete_content_max_percentage_tag':
+        case 'gamipress_h5p_complete_content_between_percentage_tag':
             $permalink = '';
             break;
     }
@@ -315,34 +382,42 @@ function gamipress_h5p_trigger_get_user_id( $user_id, $trigger, $args ) {
         case 'gamipress_h5p_complete_content':
         case 'gamipress_h5p_complete_specific_content':
         case 'gamipress_h5p_complete_specific_content_type':
+        case 'gamipress_h5p_complete_content_tag':
         // At 100%
         case 'gamipress_h5p_max_complete_content':
         case 'gamipress_h5p_max_complete_specific_content':
         case 'gamipress_h5p_max_complete_specific_content_type':
+        case 'gamipress_h5p_max_complete_content_tag':
         // Min score
         case 'gamipress_h5p_complete_content_min_score':
         case 'gamipress_h5p_complete_specific_content_min_score':
         case 'gamipress_h5p_complete_specific_content_type_min_score':
+        case 'gamipress_h5p_complete_content_min_score_tag':
         // Max score
         case 'gamipress_h5p_complete_content_max_score':
         case 'gamipress_h5p_complete_specific_content_max_score':
         case 'gamipress_h5p_complete_specific_content_type_max_score':
+        case 'gamipress_h5p_complete_content_max_score_tag':
         // Between score
         case 'gamipress_h5p_complete_content_between_score':
         case 'gamipress_h5p_complete_specific_content_between_score':
         case 'gamipress_h5p_complete_specific_content_type_between_score':
+        case 'gamipress_h5p_complete_content_between_score_tag':
         // Min percentage
         case 'gamipress_h5p_complete_content_min_percentage':
         case 'gamipress_h5p_complete_specific_content_min_percentage':
         case 'gamipress_h5p_complete_specific_content_type_min_percentage':
+        case 'gamipress_h5p_complete_content_min_percentage_tag':
         // Max percentage
         case 'gamipress_h5p_complete_content_max_percentage':
         case 'gamipress_h5p_complete_specific_content_max_percentage':
         case 'gamipress_h5p_complete_specific_content_type_max_percentage':
+        case 'gamipress_h5p_complete_content_max_percentage_tag':
         // Between percentage
         case 'gamipress_h5p_complete_content_between_percentage':
         case 'gamipress_h5p_complete_specific_content_between_percentage':
         case 'gamipress_h5p_complete_specific_content_type_between_percentage':
+        case 'gamipress_h5p_complete_content_between_percentage_tag':
             
             $user_id = $args[1];
             break;
@@ -377,6 +452,20 @@ function gamipress_h5p_specific_trigger_get_id( $specific_id, $trigger = '', $ar
         case 'gamipress_h5p_complete_specific_content_between_percentage':
             $specific_id = $args[2];
             break;
+        case 'gamipress_h5p_complete_content_tag':
+        case 'gamipress_h5p_max_complete_content_tag':
+            $specific_id = $args[5];
+            break;
+        case 'gamipress_h5p_complete_content_min_score_tag':
+        case 'gamipress_h5p_complete_content_max_score_tag':
+        case 'gamipress_h5p_complete_content_between_score_tag':
+            $specific_id = $args[6];
+            break;
+        case 'gamipress_h5p_complete_content_min_percentage_tag':
+        case 'gamipress_h5p_complete_content_max_percentage_tag':
+        case 'gamipress_h5p_complete_content_between_percentage_tag':
+            $specific_id = $args[7];
+        
     }
 
     return $specific_id;
@@ -448,7 +537,38 @@ function gamipress_h5p_log_event_trigger_meta_data( $log_meta, $user_id, $trigge
             $log_meta['content_type'] = $args[3];
             $log_meta['score'] = $args[4];
             $log_meta['max_score'] = $args[5];
-            $log_meta['percentage'] = ( absint( $args[4] ) / absint( $args[5] ) ) * 100;;
+            $log_meta['percentage'] = ( absint( $args[4] ) / absint( $args[5] ) ) * 100;
+            break;
+        // Tags
+        case 'gamipress_h5p_complete_content_tag':
+        case 'gamipress_h5p_max_complete_content_tag':
+             // Add the result ID, content ID and the content type
+            $log_meta['result_id'] = $args[0];
+            $log_meta['content_id'] = $args[2];
+            $log_meta['content_type'] = $args[3];
+            $log_meta['tag'] = $args[5];
+            break;
+        case 'gamipress_h5p_complete_content_min_score_tag':
+        case 'gamipress_h5p_complete_content_max_score_tag':
+        case 'gamipress_h5p_complete_content_between_score_tag':
+            // Add the result ID, content ID, the content type and the score
+            $log_meta['result_id'] = $args[0];
+            $log_meta['content_id'] = $args[2];
+            $log_meta['content_type'] = $args[3];
+            $log_meta['score'] = $args[4];
+            $log_meta['tag'] = $args[6];
+            break;
+        case 'gamipress_h5p_complete_content_min_percentage_tag':
+        case 'gamipress_h5p_complete_content_max_percentage_tag':
+        case 'gamipress_h5p_complete_content_between_percentage_tag':
+            // Add the result ID, content ID, the content type, the score and maximum score
+            $log_meta['result_id'] = $args[0];
+            $log_meta['content_id'] = $args[2];
+            $log_meta['content_type'] = $args[3];
+            $log_meta['score'] = $args[4];
+            $log_meta['max_score'] = $args[5];
+            $log_meta['percentage'] = ( absint( $args[4] ) / absint( $args[5] ) ) * 100;
+            $log_meta['tag'] = $args[7];
             break;
     }
 
@@ -485,10 +605,12 @@ function gamipress_h5p_log_extra_data_fields( $fields, $log_id, $type ) {
         case 'gamipress_h5p_complete_content':
         case 'gamipress_h5p_complete_specific_content':
         case 'gamipress_h5p_complete_specific_content_type':
+        case 'gamipress_h5p_complete_content_tag':
             // At 100%
         case 'gamipress_h5p_max_complete_content':
         case 'gamipress_h5p_max_complete_specific_content':
         case 'gamipress_h5p_max_complete_specific_content_type':
+        case 'gamipress_h5p_max_complete_content_tag':
 
             $fields[] = array(
                 'name' 	            => __( 'Result', 'gamipress' ),
@@ -529,26 +651,32 @@ function gamipress_h5p_log_extra_data_fields( $fields, $log_id, $type ) {
         case 'gamipress_h5p_complete_content_min_score':
         case 'gamipress_h5p_complete_specific_content_min_score':
         case 'gamipress_h5p_complete_specific_content_type_min_score':
+        case 'gamipress_h5p_complete_content_min_score_tag':
         // Max score
         case 'gamipress_h5p_complete_content_max_score':
         case 'gamipress_h5p_complete_specific_content_max_score':
         case 'gamipress_h5p_complete_specific_content_type_max_score':
+        case 'gamipress_h5p_complete_content_max_score_tag':
         // Between score
         case 'gamipress_h5p_complete_content_between_score':
         case 'gamipress_h5p_complete_specific_content_between_score':
         case 'gamipress_h5p_complete_specific_content_type_between_score':
+        case 'gamipress_h5p_complete_content_between_score_tag':
         // Min percentage
         case 'gamipress_h5p_complete_content_min_percentage':
         case 'gamipress_h5p_complete_specific_content_min_percentage':
         case 'gamipress_h5p_complete_specific_content_type_min_percentage':
+        case 'gamipress_h5p_complete_content_min_percentage_tag':
         // Max percentage
         case 'gamipress_h5p_complete_content_max_percentage':
         case 'gamipress_h5p_complete_specific_content_max_percentage':
         case 'gamipress_h5p_complete_specific_content_type_max_percentage':
+        case 'gamipress_h5p_complete_content_max_percentage_tag':
         // Between percentage
         case 'gamipress_h5p_complete_content_between_percentage':
         case 'gamipress_h5p_complete_specific_content_between_percentage':
         case 'gamipress_h5p_complete_specific_content_type_between_percentage':
+        case 'gamipress_h5p_complete_content_between_percentage_tag':
     
             $fields[] = array(
                 'name' 	            => __( 'Result', 'gamipress' ),
@@ -601,14 +729,17 @@ function gamipress_h5p_log_extra_data_fields( $fields, $log_id, $type ) {
         case 'gamipress_h5p_complete_content_min_percentage':
         case 'gamipress_h5p_complete_specific_content_min_percentage':
         case 'gamipress_h5p_complete_specific_content_type_min_percentage':
+        case 'gamipress_h5p_complete_content_min_percentage_tag':
             // Max percentage
         case 'gamipress_h5p_complete_content_max_percentage':
         case 'gamipress_h5p_complete_specific_content_max_percentage':
         case 'gamipress_h5p_complete_specific_content_type_max_percentage':
+        case 'gamipress_h5p_complete_content_max_percentage_tag':
             // Between percentage
         case 'gamipress_h5p_complete_content_between_percentage':
         case 'gamipress_h5p_complete_specific_content_between_percentage':
         case 'gamipress_h5p_complete_specific_content_type_between_percentage':
+        case 'gamipress_h5p_complete_content_between_percentage_tag':
             $fields[] = array(
                 'name' 	            => __( 'Percentage Score', 'gamipress' ),
                 'desc' 	            => __( 'Percentage score attached to this log.', 'gamipress' ),

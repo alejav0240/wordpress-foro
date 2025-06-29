@@ -57,6 +57,7 @@ function gamipress_acf_user_field_update_listener( $meta_id, $object_id, $meta_k
     do_action( 'gamipress_acf_update_specific_user_field_specific_value', $user_id, $meta_id, $post_id, $meta_value, $object_id );
 
 }
+add_action( 'added_user_meta', 'gamipress_acf_user_field_update_listener', 10, 4 );
 add_action( 'updated_user_meta', 'gamipress_acf_user_field_update_listener', 10, 4 );
 
 /**
@@ -110,4 +111,5 @@ function gamipress_acf_post_field_update_listener( $meta_id, $object_id, $meta_k
     do_action( 'gamipress_acf_update_specific_post_field_specific_value', $user_id, $meta_id, $post_id, $meta_value, $object_id );
 
 }
+add_action( 'added_post_meta', 'gamipress_acf_post_field_update_listener', 10, 4 );
 add_action( 'updated_post_meta', 'gamipress_acf_post_field_update_listener', 10, 4 );

@@ -341,6 +341,10 @@ function gamipress_post_visit_listener() {
     // Website daily visit
     // ---------------------------
 
+    if ( ! is_singular() ) {
+		return;
+    }
+    
     global $post;
 
     // Bail if in admin area

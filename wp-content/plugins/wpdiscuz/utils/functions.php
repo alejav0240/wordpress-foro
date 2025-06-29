@@ -1,27 +1,27 @@
 <?php
 
-if ( ! defined( "ABSPATH" ) ) {
-	exit();
+if (!defined("ABSPATH")) {
+    exit();
 }
 
 function wpDiscuz() {
-	return WpdiscuzCore::getInstance();
+    return WpdiscuzCore::getInstance();
 }
 
 function wpdiscuzGetOptions() {
-	$wpDiscuz   = wpDiscuz();
-	$optionsObj = $wpDiscuz->getOptions();
+    $wpDiscuz   = wpDiscuz();
+    $optionsObj = $wpDiscuz->getOptions();
 
-	return $optionsObj->getOptions();
+    return $optionsObj->getOptions();
 }
 
-function wpDiscuzGetOption( $key, $tab = null ) {
-	$wpDiscuz   = wpDiscuz();
-	$optionsObj = $wpDiscuz->getOptions();
+function wpDiscuzGetOption($key, $tab = null) {
+    $wpDiscuz   = wpDiscuz();
+    $optionsObj = $wpDiscuz->getOptions();
 
-	return $optionsObj->getOption( $key, $tab );
+    return $optionsObj->getOption($key, $tab);
 }
 
 function wpDiscuzHelperOptimization() {
-	return wpDiscuz()->helperOptimization;
+    return wpDiscuz()->helperOptimization;
 }

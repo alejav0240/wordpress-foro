@@ -8,12 +8,12 @@ if ($pageCount && $pageCount > 1) {
         $start = $page - $lrItemsCount > 0 ? $page - $lrItemsCount : 0;
         $start = (($page + $lrItemsCount) >= $pageCount) ? ($pageCount - (2 * $lrItemsCount + 1)) : $start;
         $start = $start > 0 ? $start : 0;
-        $end = $page + $lrItemsCount < $pageCount ? $page + $lrItemsCount : $pageCount;
-        $end = $end < 2 * $lrItemsCount ? 2 * $lrItemsCount : $end;
-        $end = $end < $pageCount - 1 ? $end : $pageCount - 1;
+        $end   = $page + $lrItemsCount < $pageCount ? $page + $lrItemsCount : $pageCount;
+        $end   = $end < 2 * $lrItemsCount ? 2 * $lrItemsCount : $end;
+        $end   = $end < $pageCount - 1 ? $end : $pageCount - 1;
     } else {
         $start = 0;
-        $end = $pageCount < (2 * $lrItemsCount) ? $pageCount - 1 : 2 * $lrItemsCount;
+        $end   = $pageCount < (2 * $lrItemsCount) ? $pageCount - 1 : 2 * $lrItemsCount;
     }
     ?>
     <div class='wpd-pagination'>

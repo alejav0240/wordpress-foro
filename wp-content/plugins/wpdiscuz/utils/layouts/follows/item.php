@@ -8,7 +8,7 @@ if (!defined("ABSPATH")) {
         <div class="wpd-item-link wpd-comment-meta">
             <i class="fas fa-user"></i> &nbsp; <span class="wpd-fl-name"><?php echo esc_html($fName); ?></span> &nbsp;&nbsp;
             <br><i class="fas fa-calendar-alt"></i> &nbsp; <span
-                    class="wpd-fl-date"><?php echo esc_html($postedDate); ?></span>
+                class="wpd-fl-date"><?php echo esc_html($postedDate); ?></span>
         </div>
     </div>
     <div class="wpd-item-right">

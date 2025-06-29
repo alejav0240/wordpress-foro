@@ -14,7 +14,7 @@ if (!defined("ABSPATH")) {
     <div class="wpd-opt-doc" style="padding-top: 10px;">
         <a href="https://wpdiscuz.com/docs/wpdiscuz-7/plugin-settings/comment-content-and-media/"
            title="<?php esc_attr_e("Read the documentation", "wpdiscuz") ?>" target="_blank"><i
-                    class="far fa-question-circle"></i></a>
+                class="far fa-question-circle"></i></a>
     </div>
 </div>
 <!-- Option end -->
@@ -239,10 +239,10 @@ if (!defined("ABSPATH")) {
                class="wmu-number" style="width: 80px;"/> <span style="vertical-align:middle;">MB</span>
         <p style="padding-top:0px;">
             <?php
-            $uploadMaxFilesizeInMB = $this->wmuUploadMaxFileSize / (1024 * 1024);
-            $postMaxSizeInMB = $this->wmuPostMaxSize / (1024 * 1024);
+            $uploadMaxFilesizeInMB  = $this->wmuUploadMaxFileSize / (1024 * 1024);
+            $postMaxSizeInMB        = $this->wmuPostMaxSize / (1024 * 1024);
             $uploadMaxFilesizeStyle = $this->content["wmuMaxFileSize"] > $uploadMaxFilesizeInMB ? "style='color:#f00;'" : "";
-            $postMaxSizeStyle = $uploadMaxFilesizeInMB > $postMaxSizeInMB || $this->content["wmuMaxFileSize"] > $postMaxSizeInMB ? "style='color:#f00;'" : "";
+            $postMaxSizeStyle       = $uploadMaxFilesizeInMB > $postMaxSizeInMB || $this->content["wmuMaxFileSize"] > $postMaxSizeInMB ? "style='color:#f00;'" : "";
             ?>
             <span <?php echo $uploadMaxFilesizeStyle; ?>><?php echo esc_html__("Server 'upload_max_filesize' is ", "wpdiscuz") . $uploadMaxFilesizeInMB . "MB<br/>"; ?></span>
             <span <?php echo $postMaxSizeStyle; ?>><?php echo esc_html__("Server 'post_max_size' is ", "wpdiscuz") . $postMaxSizeInMB . "MB"; ?></span>
@@ -304,20 +304,20 @@ if (!defined("ABSPATH")) {
     </div>
     <div class="wpd-opt-input">
         <?php
-        $allImageSizes = get_intermediate_image_sizes();
+        $allImageSizes   = get_intermediate_image_sizes();
         $additionalSizes = wp_get_additional_image_sizes();
         foreach ($allImageSizes as $imageSize) {
-            $sizeWidth = 0;
+            $sizeWidth  = 0;
             $sizeHeight = 0;
             if (in_array($imageSize, $this->getDefaultThumbnailSizes())) {
-                $sizeWidth = intval(get_option("{$imageSize}_size_w"));
+                $sizeWidth  = intval(get_option("{$imageSize}_size_w"));
                 $sizeHeight = intval(get_option("{$imageSize}_size_h"));
             } else if (isset($additionalSizes[$imageSize])) {
-                $sizeWidth = $additionalSizes[$imageSize]["width"];
+                $sizeWidth  = $additionalSizes[$imageSize]["width"];
                 $sizeHeight = $additionalSizes[$imageSize]["height"];
             }
             $disabled = "";
-            $checked = checked(in_array($imageSize, $this->content["wmuThumbnailSizes"]), true, false);
+            $checked  = checked(in_array($imageSize, $this->content["wmuThumbnailSizes"]), true, false);
             if (!$sizeWidth && !$sizeHeight) {
                 $disabled = "disabled='disabled'";
             }

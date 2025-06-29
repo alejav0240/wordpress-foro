@@ -5,46 +5,46 @@ if (!defined("ABSPATH")) {
 
 $wmuIsActive = apply_filters("wpdiscuz_mu_isactive", false);
 
-$cirComments = [];
+$cirComments    = [];
 $cirImagesCount = 0;
-$cirDisabled = "disabled";
-$dcoComments = [];
+$cirDisabled    = "disabled";
+$dcoComments    = [];
 $dcoImagesCount = 0;
-$dcoDisabled = "disabled";
+$dcoDisabled    = "disabled";
 
 if ($wmuIsActive) {
 
     /* ===== Comment Images Reloaded ===== */
-    $cirComments = get_comments(
+    $cirComments    = get_comments(
         [
-            "count" => true,
+            "count"      => true,
             "meta_query" => [
                 [
-                    "key" => "comment_image_reloaded",
-                    "value" => "",
+                    "key"     => "comment_image_reloaded",
+                    "value"   => "",
                     "compare" => "!="
                 ]
             ]
         ]
     );
     $cirImagesCount = intval($cirComments);
-    $cirDisabled = $cirImagesCount ? "" : "disabled";
+    $cirDisabled    = $cirImagesCount ? "" : "disabled";
 
     /* ===== DCO Comment Attachment ===== */
-    $dcoComments = get_comments(
+    $dcoComments    = get_comments(
         [
-            "count" => true,
+            "count"      => true,
             "meta_query" => [
                 [
-                    "key" => "attachment_id",
-                    "value" => "",
+                    "key"     => "attachment_id",
+                    "value"   => "",
                     "compare" => "!="
                 ]
             ]
         ]
     );
     $dcoImagesCount = intval($dcoComments);
-    $dcoDisabled = $dcoImagesCount ? "" : "disabled='disabled'";
+    $dcoDisabled    = $dcoImagesCount ? "" : "disabled='disabled'";
 }
 ?>
 <div class="wpdtool-accordion-item">

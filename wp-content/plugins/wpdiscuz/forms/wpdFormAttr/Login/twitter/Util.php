@@ -6,15 +6,13 @@
 
 namespace wpdFormAttr\Login\twitter;
 
-class Util
-{
+class Util {
     /**
      * @param $input
      *
      * @return array|mixed|string
      */
-    public static function urlencodeRfc3986($input)
-    {
+    public static function urlencodeRfc3986($input) {
         $output = "";
         if (is_array($input)) {
             $output = array_map([__NAMESPACE__ . '\Util', 'urlencodeRfc3986'], $input);
@@ -29,8 +27,7 @@ class Util
      *
      * @return string
      */
-    public static function urldecodeRfc3986($string)
-    {
+    public static function urldecodeRfc3986($string) {
         return urldecode($string);
     }
 
@@ -43,8 +40,7 @@ class Util
      *
      * @return array
      */
-    public static function parseParameters($input)
-    {
+    public static function parseParameters($input) {
         if (!is_string($input)) {
             return [];
         }
@@ -53,9 +49,9 @@ class Util
 
         $parameters = [];
         foreach ($pairs as $pair) {
-            $split = explode('=', $pair, 2);
+            $split     = explode('=', $pair, 2);
             $parameter = Util::urldecodeRfc3986($split[0]);
-            $value = isset($split[1]) ? Util::urldecodeRfc3986($split[1]) : "";
+            $value     = isset($split[1]) ? Util::urldecodeRfc3986($split[1]) : "";
 
             if (isset($parameters[$parameter])) {
                 // We have already recieved parameter(s) with this name, so add to the list
@@ -80,14 +76,13 @@ class Util
      *
      * @return string
      */
-    public static function buildHttpQuery(array $params)
-    {
+    public static function buildHttpQuery(array $params) {
         if (empty($params)) {
             return "";
         }
 
         // Urlencode both keys and values
-        $keys = Util::urlencodeRfc3986(array_keys($params));
+        $keys   = Util::urlencodeRfc3986(array_keys($params));
         $values = Util::urlencodeRfc3986(array_values($params));
         $params = array_combine($keys, $values);
 

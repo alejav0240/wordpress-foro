@@ -424,6 +424,24 @@ if ( ! class_exists( 'Astra_Sites' ) ) :
 		}
 
 		/**
+		 * Check if WooPayments is configured and connected to Stripe.
+		 *
+		 * @since 4.4.24
+		 * @return bool True if WooPayments is active and connected to Stripe, false otherwise.
+		 */
+		public static function is_woo_payments_configured() {
+			// Check if WCPay account is connected to Stripe.
+			if ( class_exists( 'WC_Payments' ) && method_exists( 'WC_Payments', 'get_account_service' ) ) {
+				$account_service = WC_Payments::get_account_service();
+				if ( method_exists( $account_service, 'is_stripe_connected' ) ) {
+					return $account_service->is_stripe_connected();
+				}
+			}
+
+			return false;
+		}
+
+		/**
 		 * Add astra sites analytics data.
 		 *
 		 * @param array $stats stats array.
@@ -433,12 +451,18 @@ if ( ! class_exists( 'Astra_Sites' ) ) :
 			$stats['plugin_data']['astra_sites'] = array(
 				'version'        => defined( 'ASTRA_PRO_SITES_NAME' ) ? 'premium' : 'free',
 				'site_language'  => get_locale(),
+				'plugin_version' => defined( 'ASTRA_SITES_VER' ) ? ASTRA_SITES_VER : 'unknown',
 				'page_builder'   => Astra_Sites_Page::get_instance()->get_setting( 'page_builder' ),
 				'boolean_values' => array(
 					'import_complete'                => 'yes' === get_option( 'astra_sites_import_complete' ),
 					'woopayments_included'           => Astra_Sites_Page::get_instance()->get_setting( 'woopayments_included' ),
+					'was_woopayments_referred'       => Astra_Sites_Page::get_instance()->get_setting( 'woopayments_ref' ),
 					'woopayments_banner_clicked'     => Astra_Sites_Page::get_instance()->get_setting( 'woopayments_banner_clicked' ),
 					'woopayments_onboarding_clicked' => Astra_Sites_Page::get_instance()->get_setting( 'woopayments_onboarding_clicked' ),
+					'woopayments_configured'         => self::is_woo_payments_configured(),
+				),
+				'numeric_values' => array(
+					'woopayments_banner_dismissed_count' => Astra_Sites_Page::get_instance()->get_setting( 'woopayments_banner_dismissed_count' ),
 				),
 			);
 
@@ -739,14 +763,17 @@ if ( ! class_exists( 'Astra_Sites' ) ) :
 				);
 			}
 
-			$data = array(
+			$error = isset( $_POST['error'] ) ? json_decode( stripslashes( sanitize_text_field( $_POST['error'] ) ), true ) : array();
+			$data  = array(
 				'id' => $id,
 				'import_attempts' => isset( $_POST['try-again-count'] ) ? absint( $_POST['try-again-count'] ) : 0,
-				'import_status' => isset( $_POST['status'] ) ? sanitize_text_field( $_POST['status'] ) : 'true',
-				'type' => isset( $_POST['type'] ) ? sanitize_text_field( $_POST['type'] ) : 'astra-sites',
-				'page_builder'   => isset( $_POST['page_builder'] ) ? sanitize_text_field( $_POST['page_builder'] ) : 'gutenberg',
-				'template_type'  => isset( $_POST['template_type'] ) ? sanitize_text_field( $_POST['template_type'] ) : '',
-				'failure_reason' => isset( $_POST['failure_reason'] ) ? sanitize_text_field( $_POST['failure_reason'] ) : '',
+				'import_status'   => isset( $_POST['status'] ) ? sanitize_text_field( $_POST['status'] ) : 'true',
+				'type'            => isset( $_POST['type'] ) ? sanitize_text_field( $_POST['type'] ) : 'astra-sites',
+				'page_builder'    => isset( $_POST['page_builder'] ) ? sanitize_text_field( $_POST['page_builder'] ) : 'gutenberg',
+				'template_type'   => isset( $_POST['template_type'] ) ? sanitize_text_field( $_POST['template_type'] ) : '',
+				'failure_reason'  => is_array( $error ) && isset( $error['primaryText'] ) ? sanitize_text_field( $error['primaryText'] ) : '',
+				'secondary_text'  => is_array( $error ) && isset( $error['secondaryText'] ) ? sanitize_text_field( $error['secondaryText'] ) : '',
+				'error_text'      => is_array( $error ) && isset( $error['errorText'] ) ? sanitize_text_field( $error['errorText'] ) : '',
 			);
 
 			$result = Astra_Sites_Reporting::get_instance()->report( $data );

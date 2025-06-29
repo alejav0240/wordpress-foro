@@ -2,11 +2,9 @@
 
 namespace wpdFormAttr\Tools;
 
-class Sanitizer
-{
+class Sanitizer {
 
-    public static function sanitize($action, $variable_name, $filter, $default = "")
-    {
+    public static function sanitize($action, $variable_name, $filter, $default = "") {
         if ($filter === "FILTER_SANITIZE_STRING" || $filter === "FILTER_SANITIZE_TEXTAREA") {
             $glob = INPUT_POST === $action ? $_POST : $_GET;
             if (key_exists($variable_name, $glob)) {

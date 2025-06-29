@@ -4,11 +4,9 @@ namespace wpdFormAttr\Field;
 
 use wpdFormAttr\Tools\Sanitizer;
 
-class RatingField extends Field
-{
+class RatingField extends Field {
 
-    protected function dashboardForm()
-    {
+    protected function dashboardForm() {
         ?>
         <div class="wpd-field-body" style="display: <?php echo esc_attr($this->display); ?>">
             <div class="wpd-field-option wpdiscuz-item">
@@ -41,7 +39,7 @@ class RatingField extends Field
             <div class="wpd-field-option">
                 <div class="input-group">
                     <label for="<?php echo esc_attr($this->fieldInputName); ?>[icon]"><span
-                                class="input-group-addon"></span> <?php esc_html_e("Field icon", "wpdiscuz"); ?>
+                            class="input-group-addon"></span> <?php esc_html_e("Field icon", "wpdiscuz"); ?>
                         :</label>
                     <input data-placement="bottom" class="icp icp-auto"
                            value="<?php echo esc_attr(isset($this->fieldData["icon"]) ? $this->fieldData["icon"] : "fas fa-star"); ?>"
@@ -102,22 +100,21 @@ class RatingField extends Field
         <?php
     }
 
-    public function editCommentHtml($key, $value, $data, $comment)
-    {
+    public function editCommentHtml($key, $value, $data, $comment) {
         if ($comment->comment_parent || !$this->isShowForUser($data)) {
             return "";
         }
-        $html = "<tr class='" . esc_attr($key) . "-wrapper wpd-edit-rating'><td class='first'>";
-        $html .= "<label for='" . esc_attr($key) . "'>" . esc_html($data["name"]) . ": </label>";
-        $html .= "</td><td>";
+        $html     = "<tr class='" . esc_attr($key) . "-wrapper wpd-edit-rating'><td class='first'>";
+        $html     .= "<label for='" . esc_attr($key) . "'>" . esc_html($data["name"]) . ": </label>";
+        $html     .= "</td><td>";
         $uniqueId = uniqid();
         $required = $this->isValidateRequired($data) ? " wpd-required-group " : "";
-        $html .= "<div class='wpdiscuz-item wpd-field-group wpd-field-rating " . esc_attr($required) . "'>";
-        $html .= "<fieldset class='wpdiscuz-rating'>";
+        $html     .= "<div class='wpdiscuz-item wpd-field-group wpd-field-rating " . esc_attr($required) . "'>";
+        $html     .= "<fieldset class='wpdiscuz-rating'>";
         for ($i = 5; $i >= 1; $i--) {
             $checked = ($i == $value) ? " checked='checked'" : "";
-            $html .= "<input type='radio' id='wpdiscuz-star_" . esc_attr($uniqueId) . "_" . esc_attr($i) . "' name='" . esc_attr($key) . "' value='" . esc_attr($i) . "'$checked/>";
-            $html .= "<label class=' a full fa " . esc_attr($data["icon"]) . "' for='wpdiscuz-star_" . esc_attr($uniqueId) . "_" . esc_attr($i) . "' title='" . esc_attr($i) . "'></label>";
+            $html    .= "<input type='radio' id='wpdiscuz-star_" . esc_attr($uniqueId) . "_" . esc_attr($i) . "' name='" . esc_attr($key) . "' value='" . esc_attr($i) . "'$checked/>";
+            $html    .= "<label class=' a full fa " . esc_attr($data["icon"]) . "' for='wpdiscuz-star_" . esc_attr($uniqueId) . "_" . esc_attr($i) . "' title='" . esc_attr($i) . "'></label>";
         }
         $html .= "</fieldset>";
         $html .= "</div>";
@@ -125,11 +122,10 @@ class RatingField extends Field
         return $html;
     }
 
-    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm)
-    {
+    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm) {
         if (!$isMainForm || !$this->isShowForUser($args, $currentUser))
             return;
-        $hasDesc = $args["desc"] ? true : false;
+        $hasDesc  = $args["desc"] ? true : false;
         $required = $args["required"] ? " wpd-required-group" : "";
         $uniqueId = uniqid($uniqueId);
         ?>
@@ -138,7 +134,7 @@ class RatingField extends Field
                 <?php esc_html_e($args["name"], "wpdiscuz"); ?>
                 <?php if ($args["desc"]) { ?>
                     <div class="wpd-field-desc"><i
-                                class="far fa-question-circle"></i><span><?php echo esc_html($args["desc"]); ?></span>
+                            class="far fa-question-circle"></i><span><?php echo esc_html($args["desc"]); ?></span>
                     </div>
                 <?php } ?>
             </div>
@@ -162,8 +158,7 @@ class RatingField extends Field
         <?php
     }
 
-    public function frontHtml($value, $args)
-    {
+    public function frontHtml($value, $args) {
         if (!$this->isShowForUser($args)) {
             return "";
         }
@@ -171,15 +166,14 @@ class RatingField extends Field
         $html .= "<div class='wpd-cf-label'>" . esc_html($args["name"]) . " : </div><div class='wpd-cf-value'>";
         for ($i = 0; $i < 5; $i++) {
             $colorClass = ($i < $value) ? " wcf-active-star " : " wcf-pasiv-star ";
-            $fa = strpos(trim($args["icon"]), " ") ? $args["icon"] : "fas " . $args["icon"];
-            $html .= "<i class='" . esc_attr($fa) . " " . esc_attr($colorClass) . "' aria-hidden='true'></i>&nbsp;";
+            $fa         = strpos(trim($args["icon"]), " ") ? $args["icon"] : "fas " . $args["icon"];
+            $html       .= "<i class='" . esc_attr($fa) . " " . esc_attr($colorClass) . "' aria-hidden='true'></i>&nbsp;";
         }
         $html .= "</div></div>";
         return $html;
     }
 
-    public function validateFieldData($fieldName, $args, $options, $currentUser)
-    {
+    public function validateFieldData($fieldName, $args, $options, $currentUser) {
         $value = Sanitizer::sanitize(INPUT_POST, $fieldName, FILTER_SANITIZE_NUMBER_INT);
         if ($this->isValidateRequired($args, $currentUser) && !$value && $args["required"]) {
             wp_die(esc_html__($args["name"], "wpdiscuz") . " : " . esc_html__("field is required!", "wpdiscuz"));
@@ -187,18 +181,17 @@ class RatingField extends Field
         return $value;
     }
 
-    protected function initDefaultData()
-    {
+    protected function initDefaultData() {
         $this->fieldDefaultData = [
-            "name" => "",
-            "nameForTotal" => "",
-            "desc" => "",
-            "required" => "0",
-            "loc" => "top",
-            "icon" => "fas fa-star",
+            "name"               => "",
+            "nameForTotal"       => "",
+            "desc"               => "",
+            "required"           => "0",
+            "loc"                => "top",
+            "icon"               => "fas fa-star",
             "is_show_on_comment" => 1,
-            "show_for_guests" => 1,
-            "show_for_users" => 1,
+            "show_for_guests"    => 1,
+            "show_for_users"     => 1,
         ];
     }
 

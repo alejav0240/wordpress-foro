@@ -29,16 +29,14 @@ namespace wpdFormAttr\Field\DefaultField\ReCaptcha\RequestMethod;
 /**
  * Convenience wrapper around the cURL functions to allow mocking.
  */
-class Curl
-{
+class Curl {
 
     /**
      * @see http://php.net/curl_init
      * @param string $url
      * @return resource cURL handle
      */
-    public function init($url = null)
-    {
+    public function init($url = null) {
         return curl_init($url);
     }
 
@@ -48,8 +46,7 @@ class Curl
      * @param array $options
      * @return bool
      */
-    public function setoptArray($ch, array $options)
-    {
+    public function setoptArray($ch, array $options) {
         return curl_setopt_array($ch, $options);
     }
 
@@ -58,8 +55,7 @@ class Curl
      * @param resource $ch
      * @return mixed
      */
-    public function exec($ch)
-    {
+    public function exec($ch) {
         return curl_exec($ch);
     }
 
@@ -67,8 +63,7 @@ class Curl
      * @see http://php.net/curl_close
      * @param resource $ch
      */
-    public function close($ch)
-    {
+    public function close($ch) {
         curl_close($ch);
     }
 }

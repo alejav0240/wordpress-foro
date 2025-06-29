@@ -29,8 +29,7 @@ namespace wpdFormAttr\Field\DefaultField\ReCaptcha;
 /**
  * Stores and formats the parameters for the request to the reCAPTCHA service.
  */
-class RequestParameters
-{
+class RequestParameters {
     /**
      * The shared key between your site and reCAPTCHA.
      * @var string
@@ -63,12 +62,11 @@ class RequestParameters
      * @param string $remoteIp User's IP address.
      * @param string $version Version of this client library.
      */
-    public function __construct($secret, $response, $remoteIp = null, $version = null)
-    {
-        $this->secret = $secret;
+    public function __construct($secret, $response, $remoteIp = null, $version = null) {
+        $this->secret   = $secret;
         $this->response = $response;
         $this->remoteIp = $remoteIp;
-        $this->version = $version;
+        $this->version  = $version;
     }
 
     /**
@@ -76,8 +74,7 @@ class RequestParameters
      *
      * @return array Array formatted parameters.
      */
-    public function toArray()
-    {
+    public function toArray() {
         $params = array('secret' => $this->secret, 'response' => $this->response);
 
         if (!is_null($this->remoteIp)) {
@@ -96,8 +93,7 @@ class RequestParameters
      *
      * @return string Query string formatted parameters.
      */
-    public function toQueryString()
-    {
+    public function toQueryString() {
         return http_build_query($this->toArray(), "", '&');
     }
 }

@@ -44,7 +44,8 @@ function gamipress_h5p_check_if_meets_requirements( $requirement_id, $trigger, $
     // If is minimum score trigger, rules engine needs to check the minimum score
     if( $return && ( $trigger === 'gamipress_h5p_complete_content_min_score'
             || $trigger === 'gamipress_h5p_complete_specific_content_min_score'
-            || $trigger === 'gamipress_h5p_complete_specific_content_type_min_score' ) ) {
+            || $trigger === 'gamipress_h5p_complete_specific_content_type_min_score'
+            || $trigger === 'gamipress_h5p_complete_content_min_score_tag' ) ) {
 
         $score = absint( $args[4] );
 
@@ -57,7 +58,8 @@ function gamipress_h5p_check_if_meets_requirements( $requirement_id, $trigger, $
     // If is maximum score trigger, rules engine needs to check the maximum score
     if( $return && ( $trigger === 'gamipress_h5p_complete_content_max_score'
             || $trigger === 'gamipress_h5p_complete_specific_content_max_score'
-            || $trigger === 'gamipress_h5p_complete_specific_content_type_max_score' ) ) {
+            || $trigger === 'gamipress_h5p_complete_specific_content_type_max_score'
+            || $trigger === 'gamipress_h5p_complete_content_max_score_tag' ) ) {
 
         $score = absint( $args[4] );
 
@@ -70,7 +72,8 @@ function gamipress_h5p_check_if_meets_requirements( $requirement_id, $trigger, $
     // If is between score trigger, rules engine needs to check if score is between range of scores
     if( $return && ( $trigger === 'gamipress_h5p_complete_content_between_score'
             || $trigger === 'gamipress_h5p_complete_specific_content_between_score'
-            || $trigger === 'gamipress_h5p_complete_specific_content_type_between_score' ) ) {
+            || $trigger === 'gamipress_h5p_complete_specific_content_type_between_score'
+            || $trigger === 'gamipress_h5p_complete_content_between_score_tag' ) ) {
 
         $score = absint( $args[4] );
 
@@ -84,7 +87,8 @@ function gamipress_h5p_check_if_meets_requirements( $requirement_id, $trigger, $
     // If is minimum percentage trigger, rules engine needs to check the minimum percentage
     if( $return && ( $trigger === 'gamipress_h5p_complete_content_min_percentage'
             || $trigger === 'gamipress_h5p_complete_specific_content_min_percentage'
-            || $trigger === 'gamipress_h5p_complete_specific_content_type_min_percentage' ) ) {
+            || $trigger === 'gamipress_h5p_complete_specific_content_type_min_percentage'
+            || $trigger === 'gamipress_h5p_complete_content_min_percentage_tag' ) ) {
 
         $score = absint( $args[4] );
         $max_score = absint( $args[5] );
@@ -99,7 +103,8 @@ function gamipress_h5p_check_if_meets_requirements( $requirement_id, $trigger, $
     // If is maximum percentage trigger, rules engine needs to check the minimum percentage
     if( $return && ( $trigger === 'gamipress_h5p_complete_content_max_percentage'
             || $trigger === 'gamipress_h5p_complete_specific_content_max_percentage'
-            || $trigger === 'gamipress_h5p_complete_specific_content_type_max_percentage' ) ) {
+            || $trigger === 'gamipress_h5p_complete_specific_content_type_max_percentage'
+            || $trigger === 'gamipress_h5p_complete_content_max_percentage_tag' ) ) {
 
         $score = absint( $args[4] );
         $max_score = absint( $args[5] );
@@ -114,7 +119,8 @@ function gamipress_h5p_check_if_meets_requirements( $requirement_id, $trigger, $
     // If is between percentage trigger, rules engine needs to check the minimum and maximum percentage
     if( $return && ( $trigger === 'gamipress_h5p_complete_content_between_percentage'
             || $trigger === 'gamipress_h5p_complete_specific_content_between_percentage'
-            || $trigger === 'gamipress_h5p_complete_specific_content_type_between_percentage' ) ) {
+            || $trigger === 'gamipress_h5p_complete_specific_content_type_between_percentage'
+            || $trigger === 'gamipress_h5p_complete_content_between_percentage_tag' ) ) {
 
         $score = absint( $args[4] );
         $max_score = absint( $args[5] );

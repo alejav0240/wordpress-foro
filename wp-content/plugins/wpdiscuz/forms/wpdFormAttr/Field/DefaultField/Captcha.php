@@ -7,15 +7,13 @@ use wpdFormAttr\Field\Field;
 use wpdFormAttr\Field\DefaultField\ReCaptcha;
 use wpdFormAttr\Tools\Sanitizer;
 
-class Captcha extends Field
-{
+class Captcha extends Field {
 
     protected $name = wpdFormConst::WPDISCUZ_FORMS_CAPTCHA_FIELD;
     protected $isDefault = true;
     private $reCaptcha;
 
-    protected function dashboardForm()
-    {
+    protected function dashboardForm() {
         ?>
         <div class="wpd-field-body" style="display: <?php echo esc_attr($this->display); ?>">
             <a href="<?php echo esc_url_raw(admin_url("admin.php?page=" . \WpdiscuzCore::PAGE_SETTINGS . "&wpd_tab=" . \WpdiscuzCore::TAB_RECAPTCHA)); ?>"><?php esc_html_e("reCAPTCHA Settings", "wpdiscuz"); ?></a>
@@ -26,19 +24,17 @@ class Captcha extends Field
         <?php
     }
 
-    private function initRecaptcha($generalOptions)
-    {
+    private function initRecaptcha($generalOptions) {
         $secretKey = apply_filters("wpdiscuz_recaptcha_secret", $generalOptions->recaptcha["secretKey"]);
         try {
-            $requestMethod = $this->createRequestMethod($generalOptions);
+            $requestMethod   = $this->createRequestMethod($generalOptions);
             $this->reCaptcha = new ReCaptcha\ReCaptcha($secretKey, $requestMethod);
         } catch (\RuntimeException $ex) {
             wp_die("reCAPTCHA Exception : " . $ex->getMessage());
         }
     }
 
-    private function createRequestMethod($generalOptions)
-    {
+    private function createRequestMethod($generalOptions) {
         if ($generalOptions->recaptcha["requestMethod"] !== "auto") {
             if ($generalOptions->recaptcha["requestMethod"] === "socket") {
                 return new ReCaptcha\RequestMethod\SocketPost();
@@ -62,11 +58,10 @@ class Captcha extends Field
         }
     }
 
-    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm)
-    {
+    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm) {
         $version = apply_filters("wpdiscuz_recaptcha_version", $options->recaptcha["version"]);
-        $key = apply_filters("wpdiscuz_recaptcha_site_key", $options->recaptcha["siteKey"]);
-        $secret = apply_filters("wpdiscuz_recaptcha_secret", $options->recaptcha["secretKey"]);
+        $key     = apply_filters("wpdiscuz_recaptcha_site_key", $options->recaptcha["siteKey"]);
+        $secret  = apply_filters("wpdiscuz_recaptcha_secret", $options->recaptcha["secretKey"]);
         if ($this->isShowCaptcha($currentUser->ID, $options) && $key && $secret && $version === "2.0") {
             ?>
             <div class="wpd-field-captcha wpdiscuz-item">
@@ -80,9 +75,8 @@ class Captcha extends Field
         do_action("wpdiscuz_captcha_field", $args, $currentUser, $uniqueId, $isMainForm);
     }
 
-    public function sanitizeFieldData($data)
-    {
-        $cleanData = [];
+    public function sanitizeFieldData($data) {
+        $cleanData         = [];
         $cleanData["type"] = $data["type"];
         if (isset($data["show_for_guests"])) {
             $cleanData["show_for_guests"] = intval($data["show_for_guests"]);
@@ -93,24 +87,23 @@ class Captcha extends Field
         return wp_parse_args($cleanData, $this->fieldDefaultData);
     }
 
-    public function validateFieldData($fieldName, $args, $options, $currentUser)
-    {
+    public function validateFieldData($fieldName, $args, $options, $currentUser) {
         if ($currentUser && $this->isShowCaptcha($currentUser->ID, $options)) {
             $this->initRecaptcha($options);
             $recaptchaResponse = Sanitizer::sanitize(INPUT_POST, "g-recaptcha-response", "FILTER_SANITIZE_STRING");
-            $resp = $this->reCaptchaVerify($recaptchaResponse, $options, "wpdiscuz/addComment");
+            $resp              = $this->reCaptchaVerify($recaptchaResponse, $options, "wpdiscuz/addComment");
             if (!$resp->isSuccess()) {
                 $errorMesage = esc_html__("reCAPTCHA  verification failed.", "wpdiscuz");
-                $errors = $resp->getErrorCodes();
+                $errors      = $resp->getErrorCodes();
                 if ($errors) {
-                    $errorMesage = "";
+                    $errorMesage  = "";
                     $errorMesages = [
-                        "missing-input-secret" => esc_html__("The secret parameter is missing.", "wpdiscuz"),
-                        "invalid-input-secret" => esc_html__("The secret parameter is invalid or malformed.", "wpdiscuz"),
+                        "missing-input-secret"   => esc_html__("The secret parameter is missing.", "wpdiscuz"),
+                        "invalid-input-secret"   => esc_html__("The secret parameter is invalid or malformed.", "wpdiscuz"),
                         "missing-input-response" => esc_html__("The response parameter is missing.", "wpdiscuz"),
                         "invalid-input-response" => esc_html__("The response parameter is invalid or malformed.", "wpdiscuz"),
-                        "bad-request" => esc_html__("The request is invalid or malformed.", "wpdiscuz"),
-                        "timeout-or-duplicate" => esc_html__("The response is no longer valid: either is too old or has been used previously.", "wpdiscuz"),
+                        "bad-request"            => esc_html__("The request is invalid or malformed.", "wpdiscuz"),
+                        "timeout-or-duplicate"   => esc_html__("The response is no longer valid: either is too old or has been used previously.", "wpdiscuz"),
                     ];
                     foreach ($errors as $error) {
                         if (isset($errorMesages[$error])) {
@@ -125,11 +118,10 @@ class Captcha extends Field
         }
     }
 
-    public function subscribtionRecaptchaHtml($options)
-    {
+    public function subscribtionRecaptchaHtml($options) {
         $version = apply_filters("wpdiscuz_recaptcha_version", $options->recaptcha["version"]);
-        $key = apply_filters("wpdiscuz_recaptcha_site_key", $options->recaptcha["siteKey"]);
-        $secret = apply_filters("wpdiscuz_recaptcha_secret", $options->recaptcha["secretKey"]);
+        $key     = apply_filters("wpdiscuz_recaptcha_site_key", $options->recaptcha["siteKey"]);
+        $secret  = apply_filters("wpdiscuz_recaptcha_secret", $options->recaptcha["secretKey"]);
         if (!is_user_logged_in() && $options->recaptcha["isShowOnSubscribeForm"] && $key && $secret) {
             if ($version === "2.0") {
                 ?>
@@ -150,9 +142,8 @@ class Captcha extends Field
         }
     }
 
-    public function reCaptchaValidate($options)
-    {
-        $valid = true;
+    public function reCaptchaValidate($options) {
+        $valid             = true;
         $recaptchaResponse = Sanitizer::sanitize(INPUT_POST, "g-recaptcha-response", "FILTER_SANITIZE_STRING");
         $this->initRecaptcha($options);
         if ($recaptchaResponse) {
@@ -166,26 +157,24 @@ class Captcha extends Field
         return $valid;
     }
 
-    protected function initDefaultData()
-    {
+    protected function initDefaultData() {
         $this->fieldDefaultData = [
-            "name" => "",
-            "desc" => "",
+            "name"            => "",
+            "desc"            => "",
             "show_for_guests" => "0",
-            "show_for_users" => "0"
+            "show_for_users"  => "0"
         ];
     }
 
-    private function reCaptchaVerify($token, $options, $action = "")
-    {
+    private function reCaptchaVerify($token, $options, $action = "") {
         $recaptchaVersion = apply_filters("wpdiscuz_recaptcha_version", $options->recaptcha["version"]);
         if ($recaptchaVersion === "2.0") {
             $resp = $this->reCaptcha->verify($token, $this->getIP());
         } else {
             $score = apply_filters("wpdiscuz_recaptcha_score", $options->recaptcha["score"]);
-            if($score <= 0){
+            if ($score <= 0) {
                 $score = 0.5;
-            }elseif ($score >= 1){
+            } elseif ($score >= 1) {
                 $score = 0.9;
             }
             $resp = $this->reCaptcha->setExpectedAction($action)
@@ -195,8 +184,7 @@ class Captcha extends Field
         return $resp;
     }
 
-    private function getIP()
-    {
+    private function getIP() {
         $ip = "";
         if (!empty($_SERVER["HTTP_CLIENT_IP"])) {
             $ip = $_SERVER["HTTP_CLIENT_IP"];
@@ -212,18 +200,15 @@ class Captcha extends Field
      * check if the captcha field show or not
      * @return type boolean
      */
-    public function isShowCaptcha($isUserLoggedIn, $options)
-    {
+    public function isShowCaptcha($isUserLoggedIn, $options) {
         return ($isUserLoggedIn && $options->recaptcha["showForUsers"]) || (!$isUserLoggedIn && $options->recaptcha["showForGuests"]);
     }
 
-    public function editCommentHtml($key, $value, $data, $comment)
-    {
+    public function editCommentHtml($key, $value, $data, $comment) {
 
     }
 
-    public function frontHtml($value, $args)
-    {
+    public function frontHtml($value, $args) {
 
     }
 

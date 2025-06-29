@@ -3,22 +3,22 @@ if (!defined("ABSPATH")) {
     exit();
 }
 
-$action = isset($_POST["action"]) ? sanitize_text_field($_POST["action"]) : "";
+$action      = isset($_POST["action"]) ? sanitize_text_field($_POST["action"]) : "";
 $currentUser = self::getCurrentUser();
 if ($currentUser && $currentUser->ID) {
-    $currentUserId = $currentUser->ID;
+    $currentUserId    = $currentUser->ID;
     $currentUserEmail = $currentUser->user_email;
 } else {
-    $currentUserId = 0;
+    $currentUserId    = 0;
     $currentUserEmail = isset($_COOKIE["comment_author_email_" . COOKIEHASH]) ? sanitize_email($_COOKIE["comment_author_email_" . COOKIEHASH]) : "";
 }
 
 if ($action && $currentUserEmail) {
-    $page = isset($_POST["page"]) ? intval($_POST["page"]) : 0;
+    $page         = isset($_POST["page"]) ? intval($_POST["page"]) : 0;
     $lrItemsCount = 3;
-    $perPage = apply_filters("wpdiscuz_content_per_page", 3);
-    $offset = $page * $perPage;
-    $args = ["number" => $perPage, "status" => "all", "user_id" => "", "author_email" => "", "offset" => $offset];
+    $perPage      = apply_filters("wpdiscuz_content_per_page", 3);
+    $offset       = $page * $perPage;
+    $args         = ["number" => $perPage, "status" => "all", "user_id" => "", "author_email" => "", "offset" => $offset];
 
     if ($currentUserId) {
         $args["user_id"] = $currentUserId;
@@ -30,10 +30,10 @@ if ($action && $currentUserEmail) {
         $items = get_comments($args);
         if ($items && is_array($items)) {
             $args["number"] = null;
-            $args["count"] = true;
-            $allComments = get_comments($args);
-            $pCount = intval($allComments / $perPage);
-            $pageCount = ($allComments % $perPage == 0) ? $pCount : $pCount + 1;
+            $args["count"]  = true;
+            $allComments    = get_comments($args);
+            $pCount         = intval($allComments / $perPage);
+            $pageCount      = ($allComments % $perPage == 0) ? $pCount : $pCount + 1;
             foreach ($items as $k => $item) {
                 include WPDISCUZ_DIR_PATH . "/utils/layouts/activity/item.php";
             }

@@ -4,11 +4,9 @@ namespace wpdFormAttr\Field;
 
 use wpdFormAttr\Tools\Sanitizer;
 
-class RadioField extends Field
-{
+class RadioField extends Field {
 
-    protected function dashboardForm()
-    {
+    protected function dashboardForm() {
         ?>
         <div class="wpd-field-body" style="display: <?php echo esc_attr($this->display); ?>">
             <div class="wpd-field-option wpdiscuz-item">
@@ -101,29 +99,27 @@ class RadioField extends Field
         <?php
     }
 
-    public function editCommentHtml($key, $value, $data, $comment)
-    {
+    public function editCommentHtml($key, $value, $data, $comment) {
         if (!$this->isShowForUser($data) || ($comment->comment_parent && !$data["is_show_sform"])) {
             return "";
         }
-        $html = "<tr class='" . esc_attr($key) . "-wrapper wpd-edit-radio'><td class='first'>";
-        $html .= "<label for='" . esc_attr($key) . "'>" . esc_html($data["name"]) . ": </label>";
-        $html .= "</td><td>";
+        $html     = "<tr class='" . esc_attr($key) . "-wrapper wpd-edit-radio'><td class='first'>";
+        $html     .= "<label for='" . esc_attr($key) . "'>" . esc_html($data["name"]) . ": </label>";
+        $html     .= "</td><td>";
         $required = $this->isValidateRequired($data) ? " wpd-required-group" : "";
-        $html .= "<div class='wpdiscuz-item" . esc_attr($required) . " wpd-field-group'>";
+        $html     .= "<div class='wpdiscuz-item" . esc_attr($required) . " wpd-field-group'>";
         foreach ($data["values"] as $index => $val) {
             $uniqueId = uniqid();
-            $checked = $value == $val ? " checked='checked' " : "";
-            $index = $index + 1;
-            $html .= "<div class='wpd-item'><input $checked id='" . esc_attr($key) . "-" . esc_attr($index) . "_" . esc_attr($uniqueId) . "' type='radio' name='" . esc_attr($key) . "' value='" . esc_attr($index) . "' class='" . esc_attr($key) . " wpd-field wpd-field-radio'> <label class='wpd-field-label wpd-cursor-pointer' for='" . esc_attr($key) . "-" . esc_attr($index) . "_" . esc_attr($uniqueId) . "'>" . esc_html($val) . "</label></div>";
+            $checked  = $value == $val ? " checked='checked' " : "";
+            $index    = $index + 1;
+            $html     .= "<div class='wpd-item'><input $checked id='" . esc_attr($key) . "-" . esc_attr($index) . "_" . esc_attr($uniqueId) . "' type='radio' name='" . esc_attr($key) . "' value='" . esc_attr($index) . "' class='" . esc_attr($key) . " wpd-field wpd-field-radio'> <label class='wpd-field-label wpd-cursor-pointer' for='" . esc_attr($key) . "-" . esc_attr($index) . "_" . esc_attr($uniqueId) . "'>" . esc_html($val) . "</label></div>";
         }
         $html .= "</div>";
         $html .= "</td></tr>";
         return $html;
     }
 
-    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm)
-    {
+    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm) {
         if (empty($args["values"]) || !$this->isShowForUser($args, $currentUser) || (!$isMainForm && !$args["is_show_sform"]))
             return;
         $hasDesc = $args["desc"] ? true : false;
@@ -134,7 +130,7 @@ class RadioField extends Field
                 <?php esc_html_e($args["name"], "wpdiscuz"); ?>
                 <?php if ($args["desc"]) { ?>
                     <div class="wpd-field-desc"><i
-                                class="far fa-question-circle"></i><span><?php echo esc_html($args["desc"]); ?></span>
+                            class="far fa-question-circle"></i><span><?php echo esc_html($args["desc"]); ?></span>
                     </div>
                 <?php } ?>
             </div>
@@ -158,8 +154,7 @@ class RadioField extends Field
         <?php
     }
 
-    public function frontHtml($value, $args)
-    {
+    public function frontHtml($value, $args) {
         if (!$this->isShowForUser($args)) {
             return "";
         }
@@ -169,8 +164,7 @@ class RadioField extends Field
         return $html;
     }
 
-    public function validateFieldData($fieldName, $args, $options, $currentUser)
-    {
+    public function validateFieldData($fieldName, $args, $options, $currentUser) {
         $value = Sanitizer::sanitize(INPUT_POST, $fieldName, FILTER_VALIDATE_INT);
         if (is_int($value) && $value > 0 && key_exists($value - 1, $args["values"])) {
             $value = $args["values"][$value - 1];

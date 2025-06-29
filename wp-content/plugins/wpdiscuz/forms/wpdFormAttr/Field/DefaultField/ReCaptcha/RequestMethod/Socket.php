@@ -30,8 +30,7 @@ namespace wpdFormAttr\Field\DefaultField\ReCaptcha\RequestMethod;
  * Convenience wrapper around native socket and file functions to allow for
  * mocking.
  */
-class Socket
-{
+class Socket {
     private $handle = null;
 
     /**
@@ -45,8 +44,7 @@ class Socket
      * @param float $timeout
      * @return resource
      */
-    public function fsockopen($hostname, $port = -1, &$errno = 0, &$errstr = "", $timeout = null)
-    {
+    public function fsockopen($hostname, $port = -1, &$errno = 0, &$errstr = "", $timeout = null) {
         $this->handle = fsockopen($hostname, $port, $errno, $errstr, (is_null($timeout) ? ini_get("default_socket_timeout") : $timeout));
 
         if ($this->handle != false && $errno === 0 && $errstr === "") {
@@ -63,8 +61,7 @@ class Socket
      * @param int $length
      * @return int | bool
      */
-    public function fwrite($string, $length = null)
-    {
+    public function fwrite($string, $length = null) {
         return fwrite($this->handle, $string, (is_null($length) ? strlen($string) : $length));
     }
 
@@ -75,8 +72,7 @@ class Socket
      * @param int $length
      * @return string
      */
-    public function fgets($length = null)
-    {
+    public function fgets($length = null) {
         return fgets($this->handle, $length);
     }
 
@@ -86,8 +82,7 @@ class Socket
      * @see http://php.net/feof
      * @return bool
      */
-    public function feof()
-    {
+    public function feof() {
         return feof($this->handle);
     }
 
@@ -97,8 +92,7 @@ class Socket
      * @see http://php.net/fclose
      * @return bool
      */
-    public function fclose()
-    {
+    public function fclose() {
         return fclose($this->handle);
     }
 }

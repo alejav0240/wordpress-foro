@@ -1,0 +1,156 @@
+{
+    "_declaration": {
+      "_attributes": {
+        "version": "1.0",
+        "encoding": "UTF-8",
+        "standalone": "yes"
+      }
+    },
+    "facturaComputarizadaCompraVenta": {
+      "_attributes": {
+        "xsi:noNamespaceSchemaLocation": "facturaComputarizadaCompraVenta.xsd",
+        "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance"
+      },
+      "cabecera": {
+        "nitEmisor": {
+          "_text": "1003579028"
+        },
+        "razonSocialEmisor": {
+          "_text": "Carlos Loza"
+        },
+        "municipio": {
+          "_text": "La Paz"
+        },
+        "telefono": {
+          "_text": "78595684"
+        },
+        "numeroFactura": {
+          "_text": "1"
+        },
+        "cuf": {
+          "_text": "44AAEC00DBD34C53C3E2CCE1A3FA7AF1E2A08606A667A75AC82F24C74"
+        },
+        "cufd": {
+          "_text": "BQUE+QytqQUDBKVUFOSVRPQkxVRFZNVFVJBMDAwMDAwM"
+        },
+        "codigoSucursal": {
+          "_text": "0"
+        },
+        "direccion": {
+          "_text": "AV. JORGE LOPEZ #123"
+        },
+        "codigoPuntoVenta": {
+          "_attributes": {
+            "xsi:nil": "true"
+          }
+        },
+        "fechaEmision": {
+          "_text": "2021-10-06T16:03:48.675"
+        },
+        "nombreRazonSocial": {
+          "_text": "Mi razon social"
+        },
+        "codigoTipoDocumentoIdentidad": {
+          "_text": "1"
+        },
+        "numeroDocumento": {
+          "_text": "5115889"
+        },
+        "complemento": {
+          "_attributes": {
+            "xsi:nil": "true"
+          }
+        },
+        "codigoCliente": {
+          "_text": "51158891"
+        },
+        "codigoMetodoPago": {
+          "_text": "1"
+        },
+        "numeroTarjeta": {
+          "_attributes": {
+            "xsi:nil": "true"
+          }
+        },
+        "montoTotal": {
+          "_text": "99"
+        },
+        "montoTotalSujetoIva": {
+          "_text": "99"
+        },
+        "codigoMoneda": {
+          "_text": "1"
+        },
+        "tipoCambio": {
+          "_text": "1"
+        },
+        "montoTotalMoneda": {
+          "_text": "99"
+        },
+        "montoGiftCard": {
+          "_attributes": {
+            "xsi:nil": "true"
+          }
+        },
+        "descuentoAdicional": {
+          "_text": "1"
+        },
+        "codigoExcepcion": {
+          "_attributes": {
+            "xsi:nil": "true"
+          }
+        },
+        "cafc": {
+          "_attributes": {
+            "xsi:nil": "true"
+          }
+        },
+        "leyenda": {
+          "_text": "Ley N° 453: Tienes derecho a recibir información sobre las características y contenidos de los\nservicios que utilices.\n"
+        },
+        "usuario": {
+          "_text": "pperez"
+        },
+        "codigoDocumentoSector": {
+          "_text": "1"
+        }
+      },
+      "detalle": {
+        "actividadEconomica": {
+          "_text": "451010"
+        },
+        "codigoProductoSin": {
+          "_text": "49111"
+        },
+        "codigoProducto": {
+          "_text": "JN-131231"
+        },
+        "descripcion": {
+          "_text": "MI PRODUCTO O SERVICIO"
+        },
+        "cantidad": {
+          "_text": "1"
+        },
+        "unidadMedida": {
+          "_text": "1"
+        },
+        "precioUnitario": {
+          "_text": "100"
+        },
+        "montoDescuento": {
+          "_text": "0"
+        },
+        "subTotal": {
+          "_text": "100"
+        },
+        "numeroSerie": {
+          "_text": "124548"
+        },
+        "numeroImei": {
+          "_attributes": {
+            "xsi:nil": "true"
+          }
+        }
+      }
+    }
+  }

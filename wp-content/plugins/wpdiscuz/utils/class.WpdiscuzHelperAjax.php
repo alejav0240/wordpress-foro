@@ -3,8 +3,7 @@ if (!defined("ABSPATH")) {
     exit();
 }
 
-class WpdiscuzHelperAjax implements WpDiscuzConstants
-{
+class WpdiscuzHelperAjax implements WpDiscuzConstants {
 
     private $options;
 
@@ -19,12 +18,11 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
      */
     private $wpdiscuzForm;
 
-    public function __construct($options, $dbManager, $helper, $helperEmail, $wpdiscuzForm)
-    {
-        $this->options = $options;
-        $this->dbManager = $dbManager;
-        $this->helper = $helper;
-        $this->helperEmail = $helperEmail;
+    public function __construct($options, $dbManager, $helper, $helperEmail, $wpdiscuzForm) {
+        $this->options      = $options;
+        $this->dbManager    = $dbManager;
+        $this->helper       = $helper;
+        $this->helperEmail  = $helperEmail;
         $this->wpdiscuzForm = $wpdiscuzForm;
         add_action("wp_ajax_wpdStickComment", [&$this, "stickComment"]);
         add_action("wp_ajax_wpdCloseThread", [&$this, "closeThread"]);
@@ -75,27 +73,26 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         add_action("wp_ajax_wpdResetFieldsRatings", [&$this, "resetFieldsRatings"]);
     }
 
-    public function stickComment()
-    {
+    public function stickComment() {
         $this->helper->validateNonce();
-        $postId = WpdiscuzHelper::sanitize(INPUT_POST, "postId", FILTER_SANITIZE_NUMBER_INT, 0);
+        $postId    = WpdiscuzHelper::sanitize(INPUT_POST, "postId", FILTER_SANITIZE_NUMBER_INT, 0);
         $commentId = WpdiscuzHelper::sanitize(INPUT_POST, "commentId", FILTER_SANITIZE_NUMBER_INT, 0);
         if ($postId && $commentId) {
-            $comment = get_comment($commentId);
+            $comment             = get_comment($commentId);
             $userCanStickComment = current_user_can("moderate_comments");
             if (!$userCanStickComment) {
-                $post = get_post($postId);
-                $currentUser = WpdiscuzHelper::getCurrentUser();
+                $post                = get_post($postId);
+                $currentUser         = WpdiscuzHelper::getCurrentUser();
                 $userCanStickComment = $post && isset($post->post_author) && $currentUser && isset($currentUser->ID) && $post->post_author == $currentUser->ID;
             }
             if ($userCanStickComment && $comment && isset($comment->comment_ID) && $comment->comment_ID && !$comment->comment_parent) {
                 $commentarr = ["comment_ID" => $commentId];
                 if ($comment->comment_type === self::WPDISCUZ_STICKY_COMMENT) {
                     $commentarr["comment_type"] = WpdiscuzCore::$DEFAULT_COMMENT_TYPE;
-                    $response = esc_html($this->options->getPhrase("wc_stick_comment", ["comment" => $comment]));
+                    $response                   = esc_html($this->options->getPhrase("wc_stick_comment", ["comment" => $comment]));
                 } else {
                     $commentarr["comment_type"] = self::WPDISCUZ_STICKY_COMMENT;
-                    $response = esc_html($this->options->getPhrase("wc_unstick_comment", ["comment" => $comment]));
+                    $response                   = esc_html($this->options->getPhrase("wc_unstick_comment", ["comment" => $comment]));
                 }
                 $commentarr["wpdiscuz_comment_update"] = true;
                 if (wp_update_comment(wp_slash($commentarr))) {
@@ -106,23 +103,22 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         }
     }
 
-    public function closeThread()
-    {
+    public function closeThread() {
         $this->helper->validateNonce();
-        $postId = WpdiscuzHelper::sanitize(INPUT_POST, "postId", FILTER_SANITIZE_NUMBER_INT, 0);
+        $postId    = WpdiscuzHelper::sanitize(INPUT_POST, "postId", FILTER_SANITIZE_NUMBER_INT, 0);
         $commentId = WpdiscuzHelper::sanitize(INPUT_POST, "commentId", FILTER_SANITIZE_NUMBER_INT, 0);
         if ($postId && $commentId) {
-            $comment = get_comment($commentId);
+            $comment             = get_comment($commentId);
             $userCanCloseComment = current_user_can("moderate_comments");
             if (!$userCanCloseComment) {
-                $post = get_post($postId);
-                $currentUser = WpdiscuzHelper::getCurrentUser();
+                $post                = get_post($postId);
+                $currentUser         = WpdiscuzHelper::getCurrentUser();
                 $userCanCloseComment = !empty($post->post_author) && !empty($currentUser->ID) && $post->post_author == $currentUser->ID;
             }
             if ($userCanCloseComment && !empty($comment->comment_ID) && !$comment->comment_parent) {
                 $children = $comment->get_children([
-                    "format" => "flat",
-                    "status" => "all",
+                    "format"  => "flat",
+                    "status"  => "all",
                     "post_id" => $postId,
                 ]);
                 $response = [];
@@ -146,10 +142,9 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         }
     }
 
-    public function deactivate()
-    {
+    public function deactivate() {
         $response = ["code" => 0];
-        $json = filter_input(INPUT_POST, "deactivateData");
+        $json     = filter_input(INPUT_POST, "deactivateData");
         if ($json) {
             parse_str($json, $data);
             if (isset($data["never_show"]) && ($v = intval($data["never_show"]))) {
@@ -157,20 +152,20 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
                 $response["code"] = "dismiss_and_deactivate";
             } else if (isset($data["deactivation_reason"]) && ($reason = trim($data["deactivation_reason"]))) {
                 if ($reason !== "I'll reactivate it later") {
-                    $pluginData = get_plugin_data(WPDISCUZ_DIR_PATH . "/class.WpdiscuzCore.php");
-                    $blogTitle = get_option("blogname");
-                    $to = "feedback@wpdiscuz.com";
-                    $subject = "[wpDiscuz Feedback - " . $pluginData["Version"] . "] - " . $reason;
-                    $headers = [];
+                    $pluginData  = get_plugin_data(WPDISCUZ_DIR_PATH . "/class.WpdiscuzCore.php");
+                    $blogTitle   = get_option("blogname");
+                    $to          = "feedback@wpdiscuz.com";
+                    $subject     = "[wpDiscuz Feedback - " . $pluginData["Version"] . "] - " . $reason;
+                    $headers     = [];
                     $contentType = "text/html";
-                    $fromName = html_entity_decode($blogTitle, ENT_QUOTES);
-                    $siteUrl = get_site_url();
-                    $parsedUrl = parse_url($siteUrl);
-                    $domain = isset($parsedUrl["host"]) ? WpdiscuzHelper::fixEmailFrom($parsedUrl["host"]) : "";
-                    $fromEmail = "no-reply@" . $domain;
-                    $headers[] = "Content-Type:  $contentType; charset=UTF-8";
-                    $headers[] = "From: " . $fromName . " <" . $fromEmail . "> \r\n";
-                    $message = "<strong>Deactivation subject:</strong> " . $reason . "\r\n" . "<br/>";
+                    $fromName    = html_entity_decode($blogTitle, ENT_QUOTES);
+                    $siteUrl     = get_site_url();
+                    $parsedUrl   = parse_url($siteUrl);
+                    $domain      = isset($parsedUrl["host"]) ? WpdiscuzHelper::fixEmailFrom($parsedUrl["host"]) : "";
+                    $fromEmail   = "no-reply@" . $domain;
+                    $headers[]   = "Content-Type:  $contentType; charset=UTF-8";
+                    $headers[]   = "From: " . $fromName . " <" . $fromEmail . "> \r\n";
+                    $message     = "<strong>Deactivation subject:</strong> " . $reason . "\r\n" . "<br/>";
                     if (isset($data["deactivation_reason_desc"]) && ($reasonDesc = trim($data["deactivation_reason_desc"]))) {
                         $message .= "<strong>Deactivation reason:</strong> " . $reasonDesc . "\r\n" . "<br/>";
                     }
@@ -179,12 +174,12 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
                             $response["code"] = "send_and_deactivate";
                             wp_die(json_encode($response));
                         }
-                        $to = "support@wpdiscuz.com";
+                        $to      = "support@wpdiscuz.com";
                         $message .= "<strong>Feedback Email:</strong> " . $feedback_email . "\r\n" . "<br/>";
                     }
                     $subject = html_entity_decode($subject, ENT_QUOTES);
                     $message = html_entity_decode($message, ENT_QUOTES);
-                    $sent = wp_mail($to, $subject, do_shortcode($message), $headers);
+                    $sent    = wp_mail($to, $subject, do_shortcode($message), $headers);
                 }
                 $response["code"] = "send_and_deactivate";
             }
@@ -195,17 +190,16 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
     /**
      * Import subscriptions from "Subscribe To Comments Reloaded" plugin
      */
-    public function importSTCR()
-    {
+    public function importSTCR() {
         $this->helper->validateNonce();
         $response = ["progress" => 0];
         $stcrData = isset($_POST["stcrData"]) ? sanitize_textarea_field($_POST["stcrData"]) : "";
         if ($stcrData) {
             parse_str($stcrData, $data);
-            $limit = 50;
-            $step = isset($data["stcr-step"]) ? intval($data["stcr-step"]) : 0;
+            $limit                  = 50;
+            $step                   = isset($data["stcr-step"]) ? intval($data["stcr-step"]) : 0;
             $stcrSubscriptionsCount = isset($data["stcr-subscriptions-count"]) ? intval($data["stcr-subscriptions-count"]) : 0;
-            $nonce = isset($data["wpd-stcr-subscriptions"]) ? trim($data["wpd-stcr-subscriptions"]) : "";
+            $nonce                  = isset($data["wpd-stcr-subscriptions"]) ? trim($data["wpd-stcr-subscriptions"]) : "";
             if (wp_verify_nonce($nonce, "wc_tools_form") && $stcrSubscriptionsCount) {
                 $offset = $limit * $step;
                 if ($limit && $offset >= 0) {
@@ -213,8 +207,8 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
                     if ($subscriptions) {
                         $this->dbManager->addStcrSubscriptions($subscriptions);
                         ++$step;
-                        $response["step"] = $step;
-                        $progress = $offset ? $offset * 100 / $stcrSubscriptionsCount : $limit * 100 / $stcrSubscriptionsCount;
+                        $response["step"]     = $step;
+                        $progress             = $offset ? $offset * 100 / $stcrSubscriptionsCount : $limit * 100 / $stcrSubscriptionsCount;
                         $response["progress"] = ($prg = intval($progress)) > 100 ? 100 : $prg;
                     } else {
                         $response["progress"] = 100;
@@ -228,17 +222,16 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
     /**
      * Import subscriptions from "Lightweight Subscribe To Comments" plugin
      */
-    public function importLSTC()
-    {
+    public function importLSTC() {
         $this->helper->validateNonce();
         $response = ["progress" => 0];
         $lstcData = isset($_POST["lstcData"]) ? sanitize_textarea_field($_POST["lstcData"]) : "";
         if ($lstcData) {
             parse_str($lstcData, $data);
-            $limit = 50;
-            $step = isset($data["lstc-step"]) ? intval($data["lstc-step"]) : 0;
+            $limit                  = 50;
+            $step                   = isset($data["lstc-step"]) ? intval($data["lstc-step"]) : 0;
             $lstcSubscriptionsCount = isset($data["lstc-subscriptions-count"]) ? intval($data["lstc-subscriptions-count"]) : 0;
-            $nonce = isset($data["wpd-lstc-subscriptions"]) ? trim($data["wpd-lstc-subscriptions"]) : "";
+            $nonce                  = isset($data["wpd-lstc-subscriptions"]) ? trim($data["wpd-lstc-subscriptions"]) : "";
             if (wp_verify_nonce($nonce, "wc_tools_form") && $lstcSubscriptionsCount) {
                 $offset = $limit * $step;
                 if ($limit && $offset >= 0) {
@@ -246,8 +239,8 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
                     if ($subscriptions) {
                         $this->dbManager->addLstcSubscriptions($subscriptions);
                         ++$step;
-                        $response["step"] = $step;
-                        $progress = $offset ? $offset * 100 / $lstcSubscriptionsCount : $limit * 100 / $lstcSubscriptionsCount;
+                        $response["step"]     = $step;
+                        $progress             = $offset ? $offset * 100 / $lstcSubscriptionsCount : $limit * 100 / $lstcSubscriptionsCount;
                         $response["progress"] = ($prg = intval($progress)) > 100 ? 100 : $prg;
                     } else {
                         $response["progress"] = 100;
@@ -258,10 +251,9 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         wp_die(json_encode($response));
     }
 
-    public function deleteComment()
-    {
+    public function deleteComment() {
         $this->helper->validateNonce();
-        $commentId = WpdiscuzHelper::sanitize(INPUT_POST, "id", FILTER_SANITIZE_NUMBER_INT, 0);
+        $commentId   = WpdiscuzHelper::sanitize(INPUT_POST, "id", FILTER_SANITIZE_NUMBER_INT, 0);
         $currentUser = WpdiscuzHelper::getCurrentUser();
         if ($commentId && !empty($currentUser->ID) && $this->options->login["showActivityTab"] && ($comment = get_comment($commentId)) && intval($currentUser->ID) === intval($comment->user_id)) {
             wp_delete_comment($commentId, true);
@@ -269,21 +261,19 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         }
     }
 
-    public function deleteSubscription()
-    {
+    public function deleteSubscription() {
         $this->helper->validateNonce();
         $subscriptionId = WpdiscuzHelper::sanitize(INPUT_POST, "id", FILTER_SANITIZE_NUMBER_INT, 0);
-        $currentUser = WpdiscuzHelper::getCurrentUser();
+        $currentUser    = WpdiscuzHelper::getCurrentUser();
         if ($subscriptionId && !empty($currentUser->ID) && $this->options->login["showSubscriptionsTab"] && ($subscription = $this->dbManager->getSubscriptionById($subscriptionId)) && $currentUser->user_email === $subscription->email) {
             $this->dbManager->unsubscribeById($subscriptionId);
             $this->helper->getSubscriptionsPage();
         }
     }
 
-    public function deleteFollow()
-    {
+    public function deleteFollow() {
         $this->helper->validateNonce();
-        $followId = WpdiscuzHelper::sanitize(INPUT_POST, "id", FILTER_SANITIZE_NUMBER_INT, 0);
+        $followId    = WpdiscuzHelper::sanitize(INPUT_POST, "id", FILTER_SANITIZE_NUMBER_INT, 0);
         $currentUser = WpdiscuzHelper::getCurrentUser();
         if ($followId && !empty($currentUser->ID) && $this->options->login["showFollowsTab"] && ($follow = $this->dbManager->getFollowById($followId)) && $currentUser->ID === intval($follow->follower_id)) {
             $this->dbManager->unfollowById($followId);
@@ -292,26 +282,25 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         }
     }
 
-    public function guestAction()
-    {
+    public function guestAction() {
         $this->helper->validateNonce();
-        $guestEmail = isset($_COOKIE["comment_author_email_" . COOKIEHASH]) ? $_COOKIE["comment_author_email_" . COOKIEHASH] : "";
+        $guestEmail  = isset($_COOKIE["comment_author_email_" . COOKIEHASH]) ? $_COOKIE["comment_author_email_" . COOKIEHASH] : "";
         $guestAction = WpdiscuzHelper::sanitize(INPUT_POST, "guestAction", "FILTER_SANITIZE_STRING");
-        $postId = WpdiscuzHelper::sanitize(INPUT_POST, "postId", FILTER_SANITIZE_NUMBER_INT);
-        $post = get_post($postId);
-        $response = [
-            "code" => 0,
+        $postId      = WpdiscuzHelper::sanitize(INPUT_POST, "postId", FILTER_SANITIZE_NUMBER_INT);
+        $post        = get_post($postId);
+        $response    = [
+            "code"    => 0,
             "message" => "<div class='wpd-guest-action-message wpd-guest-action-error'>" . esc_html($this->options->getPhrase("wc_user_settings_email_error")) . "</div>"
         ];
         if ($post && $guestEmail) {
             $hashValue = $this->helperEmail->generateUserActionHash($guestEmail);
-            $mainUrl = home_url("/wpdiscuzsubscription/");
-            $link = "";
-            $message = "";
-            $siteUrl = get_site_url();
+            $mainUrl   = home_url("/wpdiscuzsubscription/");
+            $link      = "";
+            $message   = "";
+            $siteUrl   = get_site_url();
             $blogTitle = html_entity_decode(get_option("blogname"), ENT_QUOTES);
             if ($guestAction === "deletecomments") {
-                $link = $mainUrl . "deletecomments/?key=$hashValue";
+                $link    = $mainUrl . "deletecomments/?key=$hashValue";
                 $subject = $this->options->getPhrase("wc_user_settings_delete_all_comments");
                 $message = $this->options->getPhrase("wc_user_settings_delete_all_comments_message");
                 if (strpos($message, "[DELETE_COMMENTS_URL]") !== false) {
@@ -319,7 +308,7 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
                 }
             } elseif ($guestAction === "deleteSubscriptions") {
                 $subject = $this->options->getPhrase("wc_user_settings_delete_all_subscriptions");
-                $link = $mainUrl . "/deleteSubscriptions/?key=$hashValue";
+                $link    = $mainUrl . "/deleteSubscriptions/?key=$hashValue";
                 $message = $this->options->getPhrase("wc_user_settings_delete_all_subscriptions_message");
                 if (strpos($message, "[DELETE_SUBSCRIPTIONS_URL]") !== false) {
                     $message = str_replace("[DELETE_SUBSCRIPTIONS_URL]", $link, $message);
@@ -330,34 +319,33 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
             $message = str_replace(["[SITE_URL]", "[BLOG_TITLE]"], [$siteUrl, $blogTitle], $message);
 
             if ($this->helperEmail->userActionMail($guestEmail, $subject, $message)) {
-                $response["code"] = 1;
-                $parts = explode("@", $guestEmail);
-                $guestEmail = substr($parts[0], 0, min(1, strlen($parts[0]) - 1)) . str_repeat("*", max(1, strlen($parts[0]) - 1)) . "@" . $parts[1];
+                $response["code"]    = 1;
+                $parts               = explode("@", $guestEmail);
+                $guestEmail          = substr($parts[0], 0, min(1, strlen($parts[0]) - 1)) . str_repeat("*", max(1, strlen($parts[0]) - 1)) . "@" . $parts[1];
                 $response["message"] = "<div class='wpd-guest-action-message wpd-guest-action-success'>" . esc_html($this->options->getPhrase("wc_user_settings_check_email")) . " ($guestEmail)" . "</div>";
             }
         }
         wp_die(json_encode($response));
     }
 
-    public function followUser()
-    {
+    public function followUser() {
         $this->helper->validateNonce();
-        $postId = WpdiscuzHelper::sanitize(INPUT_POST, "postId", FILTER_SANITIZE_NUMBER_INT, 0);
+        $postId    = WpdiscuzHelper::sanitize(INPUT_POST, "postId", FILTER_SANITIZE_NUMBER_INT, 0);
         $commentId = WpdiscuzHelper::sanitize(INPUT_POST, "commentId", FILTER_SANITIZE_NUMBER_INT, 0);
         if ($postId && $commentId) {
             $comment = get_comment($commentId);
             if ($comment && $comment->comment_author_email) {
                 $currentUser = WpdiscuzHelper::getCurrentUser();
                 if ($currentUser && $currentUser->ID) {
-                    $args = [
-                        "post_id" => $comment->comment_post_ID,
-                        "user_id" => $comment->user_id,
-                        "user_email" => $comment->comment_author_email,
-                        "user_name" => $comment->comment_author,
-                        "follower_id" => $currentUser->ID,
+                    $args         = [
+                        "post_id"        => $comment->comment_post_ID,
+                        "user_id"        => $comment->user_id,
+                        "user_email"     => $comment->comment_author_email,
+                        "user_name"      => $comment->comment_author,
+                        "follower_id"    => $currentUser->ID,
                         "follower_email" => $currentUser->user_email,
-                        "follower_name" => $currentUser->display_name,
-                        "confirm" => $this->options->subscription["disableFollowConfirmForUsers"],
+                        "follower_name"  => $currentUser->display_name,
+                        "confirm"        => $this->options->subscription["disableFollowConfirmForUsers"],
                     ];
                     $followExists = $this->dbManager->isFollowExists($comment->comment_author_email, $currentUser->user_email);
                     if ($followExists) {
@@ -370,9 +358,9 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
                         } else { // follow exists but not confirmed yet, send confirm email again if neccessary
                             if ($this->options->subscription["disableFollowConfirmForUsers"]) {
                                 $this->dbManager->confirmFollow($followExists["id"], $followExists["activation_key"]);
-                                $response["code"] = "wc_follow_success";
+                                $response["code"]        = "wc_follow_success";
                                 $response["followClass"] = "wpd-follow-active";
-                                $response["followTip"] = esc_attr($this->options->getPhrase("wc_unfollow_user", ["comment" => $comment]));
+                                $response["followTip"]   = esc_attr($this->options->getPhrase("wc_unfollow_user", ["comment" => $comment]));
                                 do_action("wpdiscuz_follow_added", $args);
                             } else {
                                 $this->followConfirmAction($comment->comment_post_ID, $followExists["id"], $followExists["activation_key"], $args["follower_email"]);
@@ -383,13 +371,13 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
                         $followData = $this->dbManager->addNewFollow($args);
                         if ($followData) {
                             if ($this->options->subscription["disableFollowConfirmForUsers"]) {
-                                $response = [];
-                                $response["code"] = "wc_follow_success";
+                                $response                = [];
+                                $response["code"]        = "wc_follow_success";
                                 $response["followClass"] = "wpd-follow-active";
-                                $response["followTip"] = esc_attr($this->options->getPhrase("wc_unfollow_user", ["comment" => $comment]));
+                                $response["followTip"]   = esc_attr($this->options->getPhrase("wc_unfollow_user", ["comment" => $comment]));
                                 do_action("wpdiscuz_follow_added", $args);
                                 $response["callbackFunctions"] = [];
-                                $response = apply_filters("wpdiscuz_ajax_callbacks", $response, $action = "wpdFollowUser");
+                                $response                      = apply_filters("wpdiscuz_ajax_callbacks", $response, $action = "wpdFollowUser");
                                 wp_send_json_success($response);
                             } else {
                                 $this->followConfirmAction($comment->comment_post_ID, $followData["id"], $followData["activation_key"], $args["follower_email"]);
@@ -407,8 +395,7 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         }
     }
 
-    private function followConfirmAction($postId, $id, $key, $email)
-    {
+    private function followConfirmAction($postId, $id, $key, $email) {
         $send = $this->helperEmail->followConfirmEmail($postId, $id, $key, $email);
         if ($send) {
             wp_send_json_success(["code" => "wc_follow_email_confirm"]);
@@ -418,32 +405,31 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         }
     }
 
-    public function regenerateVoteMetas()
-    {
+    public function regenerateVoteMetas() {
         $this->helper->validateNonce();
-        $response = ["progress" => 0];
+        $response           = ["progress" => 0];
         $voteRegenerateData = isset($_POST["voteRegenerateData"]) ? $_POST["voteRegenerateData"] : "";
         if ($voteRegenerateData) {
             parse_str($voteRegenerateData, $data);
-            $limit = !empty($data["vote-regenerate-limit"]) ? intval($data["vote-regenerate-limit"]) : 500;
-            $step = !empty($data["vote-regenerate-step"]) ? intval($data["vote-regenerate-step"]) : 0;
-            $voteRegenerateCount = !empty($data["vote-regenerate-count"]) ? intval($data["vote-regenerate-count"]) : 0;
+            $limit                 = !empty($data["vote-regenerate-limit"]) ? intval($data["vote-regenerate-limit"]) : 500;
+            $step                  = !empty($data["vote-regenerate-step"]) ? intval($data["vote-regenerate-step"]) : 0;
+            $voteRegenerateCount   = !empty($data["vote-regenerate-count"]) ? intval($data["vote-regenerate-count"]) : 0;
             $voteRegenerateStartId = !empty($data["vote-regenerate-start-id"]) ? intval($data["vote-regenerate-start-id"]) : 0;
-            $nonce = !empty($data["wpd-vote-regenerate"]) ? trim($data["wpd-vote-regenerate"]) : "";
+            $nonce                 = !empty($data["wpd-vote-regenerate"]) ? trim($data["wpd-vote-regenerate"]) : "";
             if (wp_verify_nonce($nonce, "wc_tools_form") && $voteRegenerateCount && $voteRegenerateStartId >= 0 && $limit) {
                 $voteRegenerateVoteData = $this->dbManager->getVoteRegenerateData($voteRegenerateStartId, $limit);
                 if ($voteRegenerateVoteData) {
                     $this->dbManager->regenerateVoteMetas($voteRegenerateVoteData);
                     ++$step;
-                    $progress = $step * $limit * 100 / $voteRegenerateCount;
+                    $progress             = $step * $limit * 100 / $voteRegenerateCount;
                     $response["progress"] = ($p = intval($progress)) > 100 ? 100 : $p;
-                    $response["startId"] = $voteRegenerateVoteData[count($voteRegenerateVoteData) - 1];
+                    $response["startId"]  = $voteRegenerateVoteData[count($voteRegenerateVoteData) - 1];
                     if ($response["progress"] == 100) {
                         update_option(self::OPTION_SLUG_SHOW_VOTE_REG_MESSAGE, "0");
                     }
                 } else {
                     $response["progress"] = 100;
-                    $response["startId"] = 0;
+                    $response["startId"]  = 0;
                     update_option(self::OPTION_SLUG_SHOW_VOTE_REG_MESSAGE, "0");
                 }
                 $response["step"] = $step;
@@ -452,32 +438,31 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         wp_die(json_encode($response));
     }
 
-    public function regenerateClosedComments()
-    {
+    public function regenerateClosedComments() {
         $this->helper->validateNonce();
-        $response = ["progress" => 0];
+        $response             = ["progress" => 0];
         $closedRegenerateData = isset($_POST["closedRegenerateData"]) ? sanitize_textarea_field($_POST["closedRegenerateData"]) : "";
         if ($closedRegenerateData) {
             parse_str($closedRegenerateData, $data);
-            $limit = !empty($data["closed-regenerate-limit"]) ? intval($data["closed-regenerate-limit"]) : 500;
-            $step = isset($data["closed-regenerate-step"]) ? intval($data["closed-regenerate-step"]) : 0;
-            $closedRegenerateCount = isset($data["closed-regenerate-count"]) ? intval($data["closed-regenerate-count"]) : 0;
+            $limit                   = !empty($data["closed-regenerate-limit"]) ? intval($data["closed-regenerate-limit"]) : 500;
+            $step                    = isset($data["closed-regenerate-step"]) ? intval($data["closed-regenerate-step"]) : 0;
+            $closedRegenerateCount   = isset($data["closed-regenerate-count"]) ? intval($data["closed-regenerate-count"]) : 0;
             $closedRegenerateStartId = isset($data["closed-regenerate-start-id"]) ? intval($data["closed-regenerate-start-id"]) : 0;
-            $nonce = isset($data["wpd-closed-regenerate"]) ? trim($data["wpd-closed-regenerate"]) : "";
+            $nonce                   = isset($data["wpd-closed-regenerate"]) ? trim($data["wpd-closed-regenerate"]) : "";
             if (wp_verify_nonce($nonce, "wc_tools_form") && $closedRegenerateCount && $closedRegenerateStartId >= 0 && $limit) {
                 $closedRegenerateClosedData = $this->dbManager->getClosedRegenerateData($closedRegenerateStartId, $limit);
                 if ($closedRegenerateClosedData) {
                     $this->dbManager->regenerateClosedComments($closedRegenerateClosedData);
                     ++$step;
-                    $progress = $step * $limit * 100 / $closedRegenerateCount;
+                    $progress             = $step * $limit * 100 / $closedRegenerateCount;
                     $response["progress"] = ($p = intval($progress)) > 100 ? 100 : $p;
-                    $response["startId"] = $closedRegenerateClosedData[count($closedRegenerateClosedData) - 1];
+                    $response["startId"]  = $closedRegenerateClosedData[count($closedRegenerateClosedData) - 1];
                     if ($response["progress"] == 100) {
                         update_option(self::OPTION_SLUG_SHOW_CLOSED_REG_MESSAGE, "0");
                     }
                 } else {
                     $response["progress"] = 100;
-                    $response["startId"] = 0;
+                    $response["startId"]  = 0;
                     update_option(self::OPTION_SLUG_SHOW_CLOSED_REG_MESSAGE, "0");
                 }
                 $response["step"] = $step;
@@ -486,31 +471,30 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         wp_die(json_encode($response));
     }
 
-    public function regenerateVoteData()
-    {
-        $response = ["progress" => 0];
+    public function regenerateVoteData() {
+        $response           = ["progress" => 0];
         $regenerateVoteData = isset($_POST["regenerateVoteData"]) ? sanitize_textarea_field($_POST["regenerateVoteData"]) : "";
         if ($regenerateVoteData) {
             parse_str($regenerateVoteData, $data);
-            $limit = !empty($data["regenerate-vote-data-limit"]) ? intval($data["regenerate-vote-data-limit"]) : 500;
-            $step = isset($data["regenerate-vote-data-step"]) ? intval($data["regenerate-vote-data-step"]) : 0;
-            $regenerateVoteDataCount = isset($data["regenerate-vote-data-count"]) ? intval($data["regenerate-vote-data-count"]) : 0;
+            $limit                     = !empty($data["regenerate-vote-data-limit"]) ? intval($data["regenerate-vote-data-limit"]) : 500;
+            $step                      = isset($data["regenerate-vote-data-step"]) ? intval($data["regenerate-vote-data-step"]) : 0;
+            $regenerateVoteDataCount   = isset($data["regenerate-vote-data-count"]) ? intval($data["regenerate-vote-data-count"]) : 0;
             $regenerateVoteDataStartId = isset($data["regenerate-vote-data-start-id"]) ? intval($data["regenerate-vote-data-start-id"]) : 0;
-            $nonce = isset($data["wpd-regenerate-vote-data"]) ? trim($data["wpd-regenerate-vote-data"]) : "";
+            $nonce                     = isset($data["wpd-regenerate-vote-data"]) ? trim($data["wpd-regenerate-vote-data"]) : "";
             if (wp_verify_nonce($nonce, "wc_tools_form") && $regenerateVoteDataCount && $regenerateVoteDataStartId >= 0 && $limit) {
                 $voteDataRegenerateData = $this->dbManager->getVoteDataRegenerateData($regenerateVoteDataStartId, $limit);
                 if ($voteDataRegenerateData) {
                     $this->dbManager->regenerateVoteData($voteDataRegenerateData);
                     ++$step;
-                    $progress = $step * $limit * 100 / $regenerateVoteDataCount;
+                    $progress             = $step * $limit * 100 / $regenerateVoteDataCount;
                     $response["progress"] = ($p = intval($progress)) > 100 ? 100 : $p;
-                    $response["startId"] = $voteDataRegenerateData[count($voteDataRegenerateData) - 1];
+                    $response["startId"]  = $voteDataRegenerateData[count($voteDataRegenerateData) - 1];
                     if ($response["progress"] == 100) {
                         update_option(self::OPTION_SLUG_SHOW_VOTE_DATA_REG_MESSAGE, "0");
                     }
                 } else {
                     $response["progress"] = 100;
-                    $response["startId"] = 0;
+                    $response["startId"]  = 0;
                     update_option(self::OPTION_SLUG_SHOW_VOTE_DATA_REG_MESSAGE, "0");
                 }
                 $response["step"] = $step;
@@ -519,8 +503,7 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         wp_die(json_encode($response));
     }
 
-    public function syncCommenterData()
-    {
+    public function syncCommenterData() {
         $this->helper->validateNonce();
         $syncCommenterData = !empty($_POST["syncCommenterData"]) ? sanitize_textarea_field($_POST["syncCommenterData"]) : "";
         if ($syncCommenterData) {
@@ -535,32 +518,31 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         wp_send_json_error();
     }
 
-    public function rebuildRatings()
-    {
+    public function rebuildRatings() {
         $this->helper->validateNonce();
-        $response = ["progress" => 0];
+        $response       = ["progress" => 0];
         $rebuildRatings = isset($_POST["rebuildRatings"]) ? sanitize_textarea_field($_POST["rebuildRatings"]) : "";
         if ($rebuildRatings) {
             parse_str($rebuildRatings, $data);
-            $step = isset($data["rebuild-ratings-step"]) ? intval($data["rebuild-ratings-step"]) : 0;
-            $rebuildRatingsCount = isset($data["rebuild-ratings-count"]) ? intval($data["rebuild-ratings-count"]) : 0;
+            $step                  = isset($data["rebuild-ratings-step"]) ? intval($data["rebuild-ratings-step"]) : 0;
+            $rebuildRatingsCount   = isset($data["rebuild-ratings-count"]) ? intval($data["rebuild-ratings-count"]) : 0;
             $rebuildRatingsStartId = isset($data["rebuild-ratings-start-id"]) ? intval($data["rebuild-ratings-start-id"]) : 0;
-            $nonce = isset($data["wpd-rebuild-ratings"]) ? trim($data["wpd-rebuild-ratings"]) : "";
+            $nonce                 = isset($data["wpd-rebuild-ratings"]) ? trim($data["wpd-rebuild-ratings"]) : "";
             if (wp_verify_nonce($nonce, "wc_tools_form") && $rebuildRatingsCount && $rebuildRatingsStartId >= 0) {
-                $limit = 1;
+                $limit              = 1;
                 $rebuildRatingsData = $this->dbManager->getRebuildRatingsData($rebuildRatingsStartId, $limit);
                 if ($rebuildRatingsData) {
                     $this->dbManager->rebuildRatings($rebuildRatingsData);
                     ++$step;
-                    $progress = $step * $limit * 100 / $rebuildRatingsCount;
+                    $progress             = $step * $limit * 100 / $rebuildRatingsCount;
                     $response["progress"] = ($p = intval($progress)) > 100 ? 100 : $p;
-                    $response["startId"] = $rebuildRatingsData[count($rebuildRatingsData) - 1]["meta_id"];
+                    $response["startId"]  = $rebuildRatingsData[count($rebuildRatingsData) - 1]["meta_id"];
                     if ($response["progress"] == 100) {
                         update_option(self::OPTION_SLUG_SHOW_RATING_REBUIL_MSG, "0");
                     }
                 } else {
                     $response["progress"] = 100;
-                    $response["startId"] = 0;
+                    $response["startId"]  = 0;
                     update_option(self::OPTION_SLUG_SHOW_RATING_REBUIL_MSG, "0");
                 }
                 $response["step"] = $step;
@@ -569,8 +551,7 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         wp_die(json_encode($response));
     }
 
-    public function fixTables()
-    {
+    public function fixTables() {
         $this->helper->validateNonce();
         $fixTables = isset($_POST["fixTables"]) ? sanitize_textarea_field($_POST["fixTables"]) : "";
         if ($fixTables) {
@@ -587,12 +568,11 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
     /**
      * loads the comment content on click via ajax
      */
-    public function readMore()
-    {
+    public function readMore() {
         $commentId = WpdiscuzHelper::sanitize(INPUT_POST, "commentId", FILTER_SANITIZE_NUMBER_INT, 0);
         if ($commentId) {
             $comment = get_comment($commentId);
-            $form = $this->wpdiscuzForm->getForm($comment->comment_post_ID);
+            $form    = $this->wpdiscuzForm->getForm($comment->comment_post_ID);
             if ($form->isUserCanSeeComments(WpdiscuzHelper::getCurrentUser(), $comment->comment_post_ID)) {
                 $commentContent = $this->helper->filterCommentText($comment->comment_content);
                 if ($this->options->content["enableImageConversion"]) {
@@ -600,20 +580,20 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
                 }
                 $commentContent = apply_filters("comment_text", $commentContent, $comment, ["is_wpdiscuz_comment" => true]);
                 $commentContent = apply_filters("wpdiscuz_after_read_more", $commentContent, $comment, ["is_wpdiscuz_comment" => true]);
-                $inlineContent = "";
+                $inlineContent  = "";
                 if ($inlineFormID = intval(get_comment_meta($comment->comment_ID, self::META_KEY_FEEDBACK_FORM_ID, true))) {
-                    $feedbackForm = $this->dbManager->getFeedbackForm($inlineFormID);
+                    $feedbackForm  = $this->dbManager->getFeedbackForm($inlineFormID);
                     $inlineContent = "<div class='wpd-inline-feedback-wrapper'><span class='wpd-inline-feedback-info'>" . esc_html($this->options->getPhrase("wc_feedback_content_text")) . "</span> <i class=\"fas fa-quote-left\"></i>" . wp_trim_words($feedbackForm->content, apply_filters("wpdiscuz_feedback_content_words_count", 20)) . "&quot;  <a class='wpd-feedback-content-link' data-feedback-content-id='{$feedbackForm->id}' href='#wpd-inline-{$feedbackForm->id}'>" . esc_html($this->options->getPhrase("wc_read_more")) . "</a></div>";
                 }
                 $components = $this->helper->getComponents($form->getTheme(), $form->getLayout());
-                $response = [
-                    "message" => str_replace(["{TEXT_WRAPPER_CLASSES}", "{TEXT}"], [
+                $response   = [
+                    "message"           => str_replace(["{TEXT_WRAPPER_CLASSES}", "{TEXT}"], [
                         "wpd-comment-text",
                         $inlineContent . $commentContent
                     ], $components["text.html"]),
                     "callbackFunctions" => [],
                 ];
-                $response = apply_filters("wpdiscuz_ajax_callbacks", $response, $action = "wpdReadMore");
+                $response   = apply_filters("wpdiscuz_ajax_callbacks", $response, $action = "wpdReadMore");
                 wp_send_json_success($response);
             } else {
                 wp_send_json_error("error");
@@ -626,8 +606,7 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
     /**
      * redirect first commenter to the selected page from options
      */
-    public function redirect()
-    {
+    public function redirect() {
         $commentId = WpdiscuzHelper::sanitize(INPUT_POST, "commentId", FILTER_SANITIZE_NUMBER_INT, 0);
         if ($this->options->general["redirectPage"] && $commentId) {
             $comment = get_comment($commentId);
@@ -640,8 +619,7 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         }
     }
 
-    public function voteOnComment()
-    {
+    public function voteOnComment() {
         $this->helper->validateNonce();
         if ($this->helper->isBanned()) {
             wp_send_json_error("wc_banned_user");
@@ -652,7 +630,7 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         }
 
         $commentId = WpdiscuzHelper::sanitize(INPUT_POST, "commentId", FILTER_SANITIZE_NUMBER_INT, 0);
-        $voteType = WpdiscuzHelper::sanitize(INPUT_POST, "voteType", FILTER_SANITIZE_NUMBER_INT, 0);
+        $voteType  = WpdiscuzHelper::sanitize(INPUT_POST, "voteType", FILTER_SANITIZE_NUMBER_INT, 0);
 
         if ($commentId && $voteType && ($voteType != -1 || ($voteType == -1 && $this->options->thread_layouts["enableDislikeButton"]))) {
             if ($isUserLoggedIn) {
@@ -661,7 +639,7 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
                 $userIdOrIp = md5($this->helper->getRealIPAddr());
             }
             $isUserVoted = $this->dbManager->isUserVoted($userIdOrIp, $commentId);
-            $comment = get_comment($commentId);
+            $comment     = get_comment($commentId);
             if (!$isUserLoggedIn && md5($comment->comment_author_IP) == $userIdOrIp) {
                 wp_send_json_error("wc_deny_voting_from_same_ip");
             }
@@ -671,10 +649,10 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
             $response = [];
             if ($isUserVoted != "") {
                 $isUserVotedInt = intval($isUserVoted);
-                $vote = $isUserVotedInt + $voteType;
+                $vote           = $isUserVotedInt + $voteType;
                 if (($vote >= -1 && $vote <= 1) || ($vote == 2 && !$this->options->thread_layouts["enableDislikeButton"])) {
                     if ($vote == 2) {
-                        $vote = 0;
+                        $vote     = 0;
                         $voteType = -1;
                     }
                     $this->dbManager->updateVoteType($userIdOrIp, $commentId, $vote, current_time("timestamp"));
@@ -698,14 +676,14 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
                     update_comment_meta($commentId, self::META_KEY_VOTES_SEPARATE, $votesSeparate);
                     do_action("wpdiscuz_update_vote", $voteType, $isUserVoted, $comment);
                     if ($this->options->thread_layouts["votingButtonsStyle"]) {
-                        $response["buttonsStyle"] = "separate";
-                        $response["likeCount"] = esc_html($votesSeparate["like"]);
-                        $response["likeCountHumanReadable"] = esc_html($this->helper->getNumber($votesSeparate["like"]));
-                        $response["dislikeCount"] = esc_html(-$votesSeparate["dislike"]);
+                        $response["buttonsStyle"]              = "separate";
+                        $response["likeCount"]                 = esc_html($votesSeparate["like"]);
+                        $response["likeCountHumanReadable"]    = esc_html($this->helper->getNumber($votesSeparate["like"]));
+                        $response["dislikeCount"]              = esc_html(-$votesSeparate["dislike"]);
                         $response["dislikeCountHumanReadable"] = esc_html($this->helper->getNumber(-$votesSeparate["dislike"]));
                     } else {
-                        $response["buttonsStyle"] = "total";
-                        $response["votes"] = esc_html($voteCount);
+                        $response["buttonsStyle"]       = "total";
+                        $response["votes"]              = esc_html($voteCount);
                         $response["votesHumanReadable"] = esc_html($this->helper->getNumber($voteCount));
                     }
                     $response["curUserReaction"] = $vote;
@@ -726,21 +704,21 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
                 update_comment_meta($commentId, self::META_KEY_VOTES_SEPARATE, $votesSeparate);
                 do_action("wpdiscuz_add_vote", $voteType, $comment);
                 if ($this->options->thread_layouts["votingButtonsStyle"]) {
-                    $response["buttonsStyle"] = "separate";
-                    $response["likeCount"] = esc_html($votesSeparate["like"]);
-                    $response["likeCountHumanReadable"] = esc_html($this->helper->getNumber($votesSeparate["like"]));
-                    $response["dislikeCount"] = esc_html(-$votesSeparate["dislike"]);
+                    $response["buttonsStyle"]              = "separate";
+                    $response["likeCount"]                 = esc_html($votesSeparate["like"]);
+                    $response["likeCountHumanReadable"]    = esc_html($this->helper->getNumber($votesSeparate["like"]));
+                    $response["dislikeCount"]              = esc_html(-$votesSeparate["dislike"]);
                     $response["dislikeCountHumanReadable"] = esc_html($this->helper->getNumber(-$votesSeparate["dislike"]));
                 } else {
-                    $response["buttonsStyle"] = "total";
-                    $response["votes"] = esc_html($voteCount);
+                    $response["buttonsStyle"]       = "total";
+                    $response["votes"]              = esc_html($voteCount);
                     $response["votesHumanReadable"] = esc_html($this->helper->getNumber($voteCount));
                 }
                 $response["curUserReaction"] = $voteType;
             }
             $response["callbackFunctions"] = [];
-            $response = apply_filters("wpdiscuz_ajax_callbacks", $response, $action = "wpdVoteOnComment");
-            $response = apply_filters("wpdiscuz_comment_vote", $response);
+            $response                      = apply_filters("wpdiscuz_ajax_callbacks", $response, $action = "wpdVoteOnComment");
+            $response                      = apply_filters("wpdiscuz_comment_vote", $response);
             if ($this->options->thread_display["mostVotedByDefault"]) {
                 do_action("wpdiscuz_reset_comments_cache", $comment->comment_post_ID);
             } else {
@@ -753,12 +731,11 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         }
     }
 
-    public function getInlineCommentForm()
-    {
+    public function getInlineCommentForm() {
         $post_id = WpdiscuzHelper::sanitize(INPUT_POST, "postId", FILTER_SANITIZE_NUMBER_INT, 0);
         if ($post_id && apply_filters("wpdiscuz_enable_feedback_shortcode_button", true) && $this->dbManager->postHasFeedbackForms($post_id)) {
             $currentUser = WpdiscuzHelper::getCurrentUser();
-            $form = $this->wpdiscuzForm->getForm($post_id);
+            $form        = $this->wpdiscuzForm->getForm($post_id);
             if ($form->isUserCanComment($currentUser, $post_id)) {
                 $response = "<div class='wpd-inline-form'>";
                 $response .= "<form method='post' class='wpd_inline_comm_form' autocomplete='off'>";
@@ -780,35 +757,34 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         }
     }
 
-    public function getLastInlineComments()
-    {
+    public function getLastInlineComments() {
         $inline_form_id = WpdiscuzHelper::sanitize(INPUT_POST, "inline_form_id", FILTER_SANITIZE_NUMBER_INT, 0);
         if ($inline_form_id && apply_filters("wpdiscuz_enable_feedback_shortcode_button", true) && ($inline_form = $this->dbManager->getFeedbackForm($inline_form_id))) {
-            $args = [
-                "orderby" => $this->options->thread_display["orderCommentsBy"],
-                "order" => "DESC",
-                "number" => 3,
-                "status" => !$this->options->wp["isPaginate"] && current_user_can("moderate_comments") ? "all" : "approve",
+            $args     = [
+                "orderby"    => $this->options->thread_display["orderCommentsBy"],
+                "order"      => "DESC",
+                "number"     => 3,
+                "status"     => !$this->options->wp["isPaginate"] && current_user_can("moderate_comments") ? "all" : "approve",
                 "meta_query" => [
                     [
-                        "key" => self::META_KEY_FEEDBACK_FORM_ID,
-                        "value" => $inline_form->id,
+                        "key"     => self::META_KEY_FEEDBACK_FORM_ID,
+                        "value"   => $inline_form->id,
                         "compare" => "=",
                     ],
                 ],
             ];
             $comments = get_comments($args);
-            $content = "";
+            $content  = "";
             if ($comments) {
                 $content .= "<div class='wpd-last-inline-comments-wrapper'>";
                 $content .= "<div class='wpd-last-inline-comments'>";
                 foreach ($comments as $k => $comment) {
-                    $content .= "<div class='wpd-last-inline-comment' data-inline-comment-id='" . esc_attr($comment->comment_ID) . "'>";
-                    $content .= "<div>";
-                    $content .= "<span class='wpd-last-inline-comment-author-avatar'>" . get_avatar($comment->comment_author_email, 16) . "</span>";
-                    $content .= "<span class='wpd-last-inline-comment-author-name'>" . esc_html($comment->comment_author) . "</span>";
-                    $content .= "<span class='wpd-last-inline-comment-date'>" . esc_html($this->helper->dateDiff($comment->comment_date_gmt)) . "</span>";
-                    $content .= "</div>";
+                    $content        .= "<div class='wpd-last-inline-comment' data-inline-comment-id='" . esc_attr($comment->comment_ID) . "'>";
+                    $content        .= "<div>";
+                    $content        .= "<span class='wpd-last-inline-comment-author-avatar'>" . get_avatar($comment->comment_author_email, 16) . "</span>";
+                    $content        .= "<span class='wpd-last-inline-comment-author-name'>" . esc_html($comment->comment_author) . "</span>";
+                    $content        .= "<span class='wpd-last-inline-comment-date'>" . esc_html($this->helper->dateDiff($comment->comment_date_gmt)) . "</span>";
+                    $content        .= "</div>";
                     $commentContent = function_exists("mb_substr") ? mb_substr($comment->comment_content, 0, 85) : substr($comment->comment_content, 0, 85);
                     if (strlen($comment->comment_content) > strlen($commentContent)) {
                         $commentContent .= "&nbsp;<a href='" . get_comment_link($comment) . "' class='wpd-load-inline-comment' title='" . esc_html__("Read More", "wpdiscuz") . "'>[...]</a>";
@@ -831,17 +807,16 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
     /**
      * get comment text from db
      */
-    public function editComment()
-    {
+    public function editComment() {
         $this->helper->validateNonce();
         $commentId = WpdiscuzHelper::sanitize(INPUT_POST, "commentId", FILTER_SANITIZE_NUMBER_INT, 0);
         if ($commentId) {
             $comment = get_comment($commentId);
-            $postID = $comment->comment_post_ID;
-            $form = $this->wpdiscuzForm->getForm($postID);
+            $postID  = $comment->comment_post_ID;
+            $form    = $this->wpdiscuzForm->getForm($postID);
             $form->initFormFields();
-            $currentUser = WpdiscuzHelper::getCurrentUser();
-            $highLevelUser = current_user_can("moderate_comments");
+            $currentUser          = WpdiscuzHelper::getCurrentUser();
+            $highLevelUser        = current_user_can("moderate_comments");
             $isCurrentUserCanEdit = $this->helper->isCommentEditable($comment) && $this->helper->canUserEditComment($comment, $currentUser);
             if (!intval(get_comment_meta($comment->comment_ID, self::META_KEY_CLOSED, true)) && ($highLevelUser || $isCurrentUserCanEdit)) {
                 wp_send_json_success($form->renderEditFrontCommentForm($comment));
@@ -853,10 +828,9 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         }
     }
 
-    public function userRate()
-    {
+    public function userRate() {
         $this->helper->validateNonce();
-        $rating = WpdiscuzHelper::sanitize(INPUT_POST, "rating", FILTER_SANITIZE_NUMBER_INT, 0);
+        $rating  = WpdiscuzHelper::sanitize(INPUT_POST, "rating", FILTER_SANITIZE_NUMBER_INT, 0);
         $post_id = WpdiscuzHelper::sanitize(INPUT_POST, "postId", FILTER_SANITIZE_NUMBER_INT, 0);
         /**
          * @var $form \wpdFormAttr\Form
@@ -870,7 +844,7 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
                 $rateId = $this->dbManager->isUserRated($currentUser->ID, "", $post_id);
                 if (!$rateId || ($rateId && $formOptions["is_rate_editable"])) {
                     $this->dbManager->addRate($post_id, $currentUser->ID, "", $rating, current_time("timestamp"), $rateId);
-                    $data = $this->dbManager->getPostRatingData($post_id);
+                    $data  = $this->dbManager->getPostRatingData($post_id);
                     $votes = 0;
                     foreach ($data as $value) {
                         $votes += $value;
@@ -891,7 +865,7 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
                 $rateId = $this->dbManager->isUserRated(0, $userIp, $post_id);
                 if (!$rateId || ($rateId && $formOptions["is_rate_editable"])) {
                     $this->dbManager->addRate($post_id, 0, $userIp, $rating, current_time("timestamp"), $rateId);
-                    $data = $this->dbManager->getPostRatingData($post_id);
+                    $data  = $this->dbManager->getPostRatingData($post_id);
                     $votes = 0;
                     foreach ($data as $value) {
                         $votes += $value;
@@ -915,10 +889,9 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         }
     }
 
-    public function unsubscribe()
-    {
+    public function unsubscribe() {
         $this->helper->validateNonce();
-        $sid = WpdiscuzHelper::sanitize(INPUT_POST, "sid", FILTER_SANITIZE_NUMBER_INT, 0);
+        $sid  = WpdiscuzHelper::sanitize(INPUT_POST, "sid", FILTER_SANITIZE_NUMBER_INT, 0);
         $skey = WpdiscuzHelper::sanitize(INPUT_POST, "skey", "FILTER_SANITIZE_STRING");
         if ($sid && $skey) {
             $this->dbManager->unsubscribe($sid, $skey);
@@ -927,8 +900,7 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         wp_send_json_error("Something is wrong");
     }
 
-    public function wpd_stat_brief()
-    {
+    public function wpd_stat_brief() {
         check_ajax_referer("wpd-option-nonce", "security");
         if (!current_user_can("manage_options")) {
             wp_send_json_error("Permission denied");
@@ -936,8 +908,7 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         wp_send_json_success(["all" => esc_html($this->dbManager->getCommentsCount()), "inline" => esc_html($this->dbManager->getInlineCommentsCount()), "threads" => esc_html($this->dbManager->getThreadsCount()), "replies" => esc_html($this->dbManager->getRepliesCount()), "users" => esc_html($this->dbManager->getUserCommentersCount()), "guests" => esc_html($this->dbManager->getGuestCommentersCount())]);
     }
 
-    public function wpd_stat_subs()
-    {
+    public function wpd_stat_subs() {
         check_ajax_referer("wpd-option-nonce", "security");
         if (!current_user_can("manage_options")) {
             wp_die("Permission denied");
@@ -974,20 +945,19 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         wp_die(ob_get_clean());
     }
 
-    public function wpd_stat_graph()
-    {
+    public function wpd_stat_graph() {
         check_ajax_referer("wpd-option-nonce", "security");
         if (!current_user_can("manage_options")) {
             wp_send_json_error("Permission denied");
         }
         $interval = WpdiscuzHelper::sanitize(INPUT_POST, "interval", "FILTER_SANITIZE_STRING");
         if ($interval) {
-            $all = $this->dbManager->getGraphAllComments($interval);
-            $inline = $this->dbManager->getGraphInlineComments($interval);
+            $all        = $this->dbManager->getGraphAllComments($interval);
+            $inline     = $this->dbManager->getGraphInlineComments($interval);
             $diffInline = array_diff(array_keys($all), array_keys($inline));
-            $diffAll = array_diff(array_keys($inline), array_keys($all));
+            $diffAll    = array_diff(array_keys($inline), array_keys($all));
             $combInline = array_combine($diffInline, array_pad([], count($diffInline), 0));
-            $combAll = array_combine($diffAll, array_pad([], count($diffAll), 0));
+            $combAll    = array_combine($diffAll, array_pad([], count($diffAll), 0));
             foreach ($combAll as $key => $val) {
                 $all[$key] = $val;
             }
@@ -997,8 +967,8 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
             ksort($all);
             ksort($inline);
             $data = [
-                "el" => "<canvas id='wpdChart'></canvas>",
-                "all" => array_values($all),
+                "el"     => "<canvas id='wpdChart'></canvas>",
+                "all"    => array_values($all),
                 "inline" => array_values($inline),
                 "labels" => array_map(function ($v) {
                     return esc_html(date("d M", $v));
@@ -1009,15 +979,14 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         wp_send_json_error();
     }
 
-    public function wpd_stat_user()
-    {
+    public function wpd_stat_user() {
         check_ajax_referer("wpd-option-nonce", "security");
         if (!current_user_can("manage_options")) {
             wp_send_json_error("Permission denied");
         }
         $orderby = WpdiscuzHelper::sanitize(INPUT_POST, "orderby", "FILTER_SANITIZE_STRING");
-        $order = WpdiscuzHelper::sanitize(INPUT_POST, "order", "FILTER_SANITIZE_STRING");
-        $page = WpdiscuzHelper::sanitize(INPUT_POST, "page", "FILTER_SANITIZE_STRING");
+        $order   = WpdiscuzHelper::sanitize(INPUT_POST, "order", "FILTER_SANITIZE_STRING");
+        $page    = WpdiscuzHelper::sanitize(INPUT_POST, "page", "FILTER_SANITIZE_STRING");
         if ($orderby && $order && $page) {
             ob_start();
             ?>
@@ -1053,9 +1022,9 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
                     </th>
                 </tr>
                 <?php
-                $data = [];
+                $data        = [];
                 $activeUsers = $this->dbManager->getActiveUsers($orderby, $order, $page);
-                $more = false;
+                $more        = false;
                 if (count($activeUsers) > 6) {
                     $more = true;
                     array_pop($activeUsers);
@@ -1085,13 +1054,12 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         wp_send_json_error(esc_html__("Something is wrong"));
     }
 
-    public function searchOption()
-    {
+    public function searchOption() {
         $search = WpdiscuzHelper::sanitize(INPUT_POST, "s", "FILTER_SANITIZE_STRING");
         if ($search) {
             $optionsObject = $this->options;
-            $settings = $this->options->settingsArray();
-            $result = [];
+            $settings      = $this->options->settingsArray();
+            $result        = [];
             foreach ($settings as $type) {
                 foreach ($type as $tabKey => $tab) {
                     foreach ($tab["options"] as $optKey => $val) {
@@ -1136,8 +1104,7 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         }
     }
 
-    public function resetPostRating()
-    {
+    public function resetPostRating() {
         check_ajax_referer("wpd-reset-rating", "security");
         $postId = WpdiscuzHelper::sanitize(INPUT_POST, "postId", FILTER_SANITIZE_NUMBER_INT, 0);
         if ($postId) {
@@ -1152,8 +1119,7 @@ class WpdiscuzHelperAjax implements WpDiscuzConstants
         wp_send_json_error();
     }
 
-    public function resetFieldsRatings()
-    {
+    public function resetFieldsRatings() {
         check_ajax_referer("wpd-reset-rating", "security");
         $postId = WpdiscuzHelper::sanitize(INPUT_POST, "postId", FILTER_SANITIZE_NUMBER_INT, 0);
         if ($postId) {

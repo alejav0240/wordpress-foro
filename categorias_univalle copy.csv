@@ -1,0 +1,22 @@
+tipo,nombre_categoria,descripcion
+publicacion,Artículos de Investigación,Publicaciones sobre trabajos académicos y científicos.
+publicacion,Proyectos de Aula,Desarrollos realizados en el contexto de asignaturas.
+publicacion,Proyecto de Grado,Avances y entregas del proyecto final de carrera.
+publicacion,Aplicaciones Web,Presentación de sistemas web funcionales.
+publicacion,Aplicaciones Móviles,Apps creadas para Android o iOS.
+publicacion,Sistemas Distribuidos,Desarrollo de arquitecturas distribuidas y microservicios.
+publicacion,Soluciones con IoT / Robótica,Proyectos con sensores actuadores y controladores.
+publicacion,Juegos y Realidad Virtual,Proyectos interactivos de VR AR o videojuegos.
+publicacion,Estadísticas y Datos,Análisis con herramientas estadísticas Python o R.
+publicacion,Machine Learning / IA,Modelos predictivos clasificadores aprendizaje automático.
+publicacion,Seguridad Informática,Protocolos firewalls criptografía protección de sistemas.
+publicacion,Frameworks Web,Tecnologías como React Angular Laravel etc.
+publicacion,APIs y Servicios REST,Desarrollo e integración de APIs.
+publicacion,Pruebas y Calidad de Software,Estrategias de testing automatizado o manual.
+publicacion,Innovaciones Tecnológicas,Nuevas herramientas plataformas o metodologías emergentes.
+publicacion,Guías paso a paso,Tutoriales y walkthroughs sobre temas técnicos.
+publicacion,Recursos didácticos,Material útil para el aprendizaje (libros links PDFs).
+publicacion,Buenas prácticas,Recomendaciones y estándares de desarrollo.
+publicacion,Concursos / Hackathons,Experiencias en eventos tecnológicos.
+publicacion,Actividades Estudiantiles,Difusión de actividades organizadas por estudiantes.
+publicacion,Experiencias Profesionales,Testimonios de prácticas trabajos o egresados.

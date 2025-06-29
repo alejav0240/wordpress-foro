@@ -32,7 +32,7 @@ if (wp_is_block_theme()) {
         </h2><br>
         <?php
         $currentUser = WpdiscuzHelper::getCurrentUser();
-        $userEmail = isset($_COOKIE["comment_author_email_" . COOKIEHASH]) ? $_COOKIE["comment_author_email_" . COOKIEHASH] : "";
+        $userEmail   = isset($_COOKIE["comment_author_email_" . COOKIEHASH]) ? $_COOKIE["comment_author_email_" . COOKIEHASH] : "";
         if ($currentUser->exists()) {
             $userEmail = $currentUser->user_email;
         }

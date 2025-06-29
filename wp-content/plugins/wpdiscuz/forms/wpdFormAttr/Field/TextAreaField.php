@@ -4,11 +4,9 @@ namespace wpdFormAttr\Field;
 
 use wpdFormAttr\Tools\Sanitizer;
 
-class TextAreaField extends Field
-{
+class TextAreaField extends Field {
 
-    protected function dashboardForm()
-    {
+    protected function dashboardForm() {
         ?>
         <div class="wpd-field-body" style="display: <?php echo esc_attr($this->display); ?>">
             <div class="wpd-field-option wpdiscuz-item">
@@ -88,24 +86,22 @@ class TextAreaField extends Field
         <?php
     }
 
-    public function editCommentHtml($key, $value, $data, $comment)
-    {
+    public function editCommentHtml($key, $value, $data, $comment) {
         if (!$this->isShowForUser($data) || ($comment->comment_parent && !$data["is_show_sform"])) {
             return "";
         }
-        $html = "<tr class='" . esc_attr($key) . "-wrapper wpd-edit-textarea'><td class='first'>";
-        $html .= "<label for='" . esc_attr($key) . "'>" . esc_html($data["name"]) . ": </label>";
-        $html .= "</td><td>";
-        $html .= "<div class='wpdiscuz-item'>";
+        $html     = "<tr class='" . esc_attr($key) . "-wrapper wpd-edit-textarea'><td class='first'>";
+        $html     .= "<label for='" . esc_attr($key) . "'>" . esc_html($data["name"]) . ": </label>";
+        $html     .= "</td><td>";
+        $html     .= "<div class='wpdiscuz-item'>";
         $required = $this->isValidateRequired($data) ? "required='required' aria-required='true'" : "";
-        $html .= "<textarea  $required class='wpd-field wpd-field-textarea' id='" . esc_attr($key) . "'  name='" . esc_attr($key) . "'>" . esc_html($value) . "</textarea>";
-        $html .= "</div>";
-        $html .= "</td></tr>";
+        $html     .= "<textarea  $required class='wpd-field wpd-field-textarea' id='" . esc_attr($key) . "'  name='" . esc_attr($key) . "'>" . esc_html($value) . "</textarea>";
+        $html     .= "</div>";
+        $html     .= "</td></tr>";
         return $html;
     }
 
-    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm)
-    {
+    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm) {
         if (!$this->isShowForUser($args, $currentUser) || (!$isMainForm && !$args["is_show_sform"])) {
             return;
         }
@@ -113,21 +109,20 @@ class TextAreaField extends Field
         <div class="wpdiscuz-item <?php echo "$name-wrapper"; ?>">
             <?php $required = $args["required"] ? "required='required' aria-required='true'" : ""; ?>
             <textarea
-                    id="<?php echo esc_attr($name) . "-" . $uniqueId; ?>" <?php echo $required; ?> class="<?php echo esc_attr($name); ?> wpd-field wpd-field-textarea"
-                    name="<?php echo esc_attr($name); ?>" value=""
-                    placeholder="<?php echo esc_attr__($args["name"], "wpdiscuz") . (!empty($args["required"]) ? "*" : ""); ?>"></textarea>
+                id="<?php echo esc_attr($name) . "-" . $uniqueId; ?>" <?php echo $required; ?> class="<?php echo esc_attr($name); ?> wpd-field wpd-field-textarea"
+                name="<?php echo esc_attr($name); ?>" value=""
+                placeholder="<?php echo esc_attr__($args["name"], "wpdiscuz") . (!empty($args["required"]) ? "*" : ""); ?>"></textarea>
             <label for="<?php echo esc_attr($name) . "-" . $uniqueId; ?>"
                    class="wpdlb"><?php echo esc_attr__($args["name"], "wpdiscuz") . (!empty($args["required"]) ? "*" : ""); ?></label>
             <?php if ($args["desc"]) { ?>
                 <div class="wpd-field-desc"><i
-                            class="far fa-question-circle"></i><span><?php echo esc_html($args["desc"]); ?></span></div>
+                        class="far fa-question-circle"></i><span><?php echo esc_html($args["desc"]); ?></span></div>
             <?php } ?>
         </div>
         <?php
     }
 
-    public function frontHtml($value, $args)
-    {
+    public function frontHtml($value, $args) {
         if (!$this->isShowForUser($args)) {
             return "";
         }
@@ -137,8 +132,7 @@ class TextAreaField extends Field
         return $html;
     }
 
-    public function validateFieldData($fieldName, $args, $options, $currentUser)
-    {
+    public function validateFieldData($fieldName, $args, $options, $currentUser) {
         $value = Sanitizer::sanitize(INPUT_POST, $fieldName, "FILTER_SANITIZE_TEXTAREA");
         if ($this->isValidateRequired($args, $currentUser) && !$value && $args["required"]) {
             wp_die(esc_html__($args["name"], "wpdiscuz") . " : " . esc_html__("field is required!", "wpdiscuz"));

@@ -39,9 +39,11 @@ function gamipress_h5p_requirement_object( $requirement, $requirement_id ) {
         && ( $requirement['trigger_type'] === 'gamipress_h5p_complete_content_min_score'
             || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_min_score'
             || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_type_min_score'
+            || $requirement['trigger_type'] === 'gamipress_h5p_complete_content_min_score_tag'
             || $requirement['trigger_type'] === 'gamipress_h5p_complete_content_max_score'
             || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_max_score'
-            || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_type_max_score' ) ) {
+            || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_type_max_score' 
+            || $requirement['trigger_type'] === 'gamipress_h5p_complete_content_max_score_tag' ) ) {
 
         // Min/max score
         $requirement['h5p_score'] = get_post_meta( $requirement_id, '_gamipress_h5p_score', true );
@@ -50,7 +52,8 @@ function gamipress_h5p_requirement_object( $requirement, $requirement_id ) {
     if( isset( $requirement['trigger_type'] )
         && ( $requirement['trigger_type'] === 'gamipress_h5p_complete_content_between_score'
             || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_between_score'
-            || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_type_between_score' ) ) {
+            || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_type_between_score'
+            || $requirement['trigger_type'] === 'gamipress_h5p_complete_content_between_score_tag' ) ) {
 
         // Between score
         $requirement['h5p_min_score'] = get_post_meta( $requirement_id, '_gamipress_h5p_min_score', true );
@@ -62,9 +65,11 @@ function gamipress_h5p_requirement_object( $requirement, $requirement_id ) {
         && ( $requirement['trigger_type'] === 'gamipress_h5p_complete_content_min_percentage'
             || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_min_percentage'
             || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_type_min_percentage'
+            || $requirement['trigger_type'] === 'gamipress_h5p_complete_content_min_percentage_tag'
             || $requirement['trigger_type'] === 'gamipress_h5p_complete_content_max_percentage'
             || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_max_percentage'
-            || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_type_max_percentage' ) ) {
+            || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_type_max_percentage'
+            || $requirement['trigger_type'] === 'gamipress_h5p_complete_content_max_percentage_tag' ) ) {
 
         // Percentage score
         $requirement['h5p_percentage'] = get_post_meta( $requirement_id, '_gamipress_h5p_percentage', true );
@@ -73,7 +78,8 @@ function gamipress_h5p_requirement_object( $requirement, $requirement_id ) {
     if( isset( $requirement['trigger_type'] )
         && ( $requirement['trigger_type'] === 'gamipress_h5p_complete_content_between_percentage'
             || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_between_percentage'
-            || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_type_between_percentage' ) ) {
+            || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_type_between_percentage'
+            || $requirement['trigger_type'] === 'gamipress_h5p_complete_content_between_percentage_tag' ) ) {
 
         // Percentage score
         $requirement['h5p_min_percentage'] = get_post_meta( $requirement_id, '_gamipress_h5p_min_percentage', true );
@@ -164,9 +170,11 @@ function gamipress_h5p_ajax_update_requirement( $requirement_id, $requirement ) 
         && ( $requirement['trigger_type'] === 'gamipress_h5p_complete_content_min_score'
             || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_min_score'
             || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_type_min_score'
+            || $requirement['trigger_type'] === 'gamipress_h5p_complete_content_min_score_tag'
             || $requirement['trigger_type'] === 'gamipress_h5p_complete_content_max_score'
             || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_max_score'
-            || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_type_max_score' ) ) {
+            || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_type_max_score'
+            || $requirement['trigger_type'] === 'gamipress_h5p_complete_content_max_score_tag' ) ) {
 
         // Min/max score
         update_post_meta( $requirement_id, '_gamipress_h5p_score', $requirement['h5p_score'] );
@@ -175,7 +183,8 @@ function gamipress_h5p_ajax_update_requirement( $requirement_id, $requirement ) 
     if( isset( $requirement['trigger_type'] )
         && ( $requirement['trigger_type'] === 'gamipress_h5p_complete_content_between_score'
             || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_between_score'
-            || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_type_between_score' ) ) {
+            || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_type_between_score'
+            || $requirement['trigger_type'] === 'gamipress_h5p_complete_content_between_score_tag' ) ) {
 
         // Between score
         update_post_meta( $requirement_id, '_gamipress_h5p_min_score', $requirement['h5p_min_score'] );
@@ -187,9 +196,11 @@ function gamipress_h5p_ajax_update_requirement( $requirement_id, $requirement ) 
         && ( $requirement['trigger_type'] === 'gamipress_h5p_complete_content_min_percentage'
             || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_min_percentage'
             || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_type_min_percentage'
+            || $requirement['trigger_type'] === 'gamipress_h5p_complete_content_min_percentage_tag'
             || $requirement['trigger_type'] === 'gamipress_h5p_complete_content_max_percentage'
             || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_max_percentage'
-            || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_type_max_percentage' ) ) {
+            || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_type_max_percentage'
+            || $requirement['trigger_type'] === 'gamipress_h5p_complete_content_max_percentage_tag' ) ) {
 
         // Percentage score
         update_post_meta( $requirement_id, '_gamipress_h5p_percentage', $requirement['h5p_percentage'] );
@@ -198,7 +209,8 @@ function gamipress_h5p_ajax_update_requirement( $requirement_id, $requirement ) 
     if( isset( $requirement['trigger_type'] )
         && ( $requirement['trigger_type'] === 'gamipress_h5p_complete_content_between_percentage'
             || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_between_percentage'
-            || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_type_between_percentage' ) ) {
+            || $requirement['trigger_type'] === 'gamipress_h5p_complete_specific_content_type_between_percentage'
+            || $requirement['trigger_type'] === 'gamipress_h5p_complete_content_between_percentage_tag' ) ) {
 
         // Percentage score
         update_post_meta( $requirement_id, '_gamipress_h5p_min_percentage', $requirement['h5p_min_percentage'] );

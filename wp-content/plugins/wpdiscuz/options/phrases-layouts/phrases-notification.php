@@ -9,13 +9,13 @@ if (!defined("ABSPATH")) {
         <tbody>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_subscribed_to"><?php esc_html_e("You're subscribed to", "wpdiscuz"); ?></label></th>
+                    for="wc_subscribed_to"><?php esc_html_e("You're subscribed to", "wpdiscuz"); ?></label></th>
             <td colspan="3"><input type="text" value="<?php echo esc_attr($this->phrases["wc_subscribed_to"]); ?>"
                                    name="wc_subscribed_to" id="wc_subscribed_to"/></td>
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_subscribe_message"><?php esc_html_e("You've successfully subscribed.", "wpdiscuz"); ?></label>
+                    for="wc_subscribe_message"><?php esc_html_e("You've successfully subscribed.", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><textarea name="wc_subscribe_message"
                                       id="wc_subscribe_message"><?php echo esc_html($this->phrases["wc_subscribe_message"]); ?></textarea>
@@ -23,7 +23,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_unsubscribe_message"><?php esc_html_e("You've successfully unsubscribed.", "wpdiscuz"); ?></label>
+                    for="wc_unsubscribe_message"><?php esc_html_e("You've successfully unsubscribed.", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><textarea name="wc_unsubscribe_message"
                                       id="wc_unsubscribe_message"><?php echo esc_html($this->phrases["wc_unsubscribe_message"]); ?></textarea>
@@ -32,7 +32,7 @@ if (!defined("ABSPATH")) {
         <?php if (class_exists("Prompt_Comment_Form_Handling") && $this->subscription["usePostmaticForCommentNotification"]) { ?>
             <tr valign="top">
                 <th scope="row"><label
-                            for="wc_postmatic_subscription_label"><?php esc_html_e("Postmatic subscription label", "wpdiscuz"); ?></label>
+                        for="wc_postmatic_subscription_label"><?php esc_html_e("Postmatic subscription label", "wpdiscuz"); ?></label>
                 </th>
                 <td colspan="3"><input type="text"
                                        value="<?php echo esc_attr($this->phrases["wc_postmatic_subscription_label"]); ?>"
@@ -47,7 +47,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_login_please"><?php esc_html_e("Please %s to comment", "wpdiscuz"); ?></label></th>
+                    for="wc_login_please"><?php esc_html_e("Please %s to comment", "wpdiscuz"); ?></label></th>
             <td colspan="3"><input type="text" value="<?php echo esc_attr($this->phrases["wc_login_please"]); ?>"
                                    name="wc_login_please" id="wc_login_please"/></td>
         </tr>
@@ -65,7 +65,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_to_post_comment_text"><?php esc_html_e("To post a comment", "wpdiscuz"); ?></label></th>
+                    for="wc_to_post_comment_text"><?php esc_html_e("To post a comment", "wpdiscuz"); ?></label></th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_to_post_comment_text"]); ?>"
                                    name="wc_to_post_comment_text" id="wc_to_post_comment_text"/></td>
@@ -92,7 +92,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_awaiting_for_approval"><?php esc_html_e("Awaiting for approval", "wpdiscuz"); ?></label>
+                    for="wc_awaiting_for_approval"><?php esc_html_e("Awaiting for approval", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_awaiting_for_approval"]); ?>"
@@ -100,7 +100,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_roles_cannot_comment_message"><?php esc_html_e("Message if commenting disabled by user role", "wpdiscuz"); ?></label>
+                    for="wc_roles_cannot_comment_message"><?php esc_html_e("Message if commenting disabled by user role", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_roles_cannot_comment_message"]); ?>"

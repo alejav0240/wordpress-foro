@@ -249,12 +249,14 @@ function ct_delete_object_relationships( $object_id ) {
 
     global $ct_table, $ct_relationships, $wpdb;
 
+    // Checks if relationship table exists
     if( ! isset( $ct_relationships[$ct_table->name] ) ) {
         return false;
     }
 
     $r = $ct_relationships[$ct_table->name];
 
+    // Delete all object relationships
     $wpdb->query( $wpdb->prepare(
         "DELETE FROM {$ct_table->db->table_name} WHERE {$r->object_id} = %d",
         $object_id

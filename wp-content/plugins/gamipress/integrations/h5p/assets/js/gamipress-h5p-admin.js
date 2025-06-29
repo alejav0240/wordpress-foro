@@ -29,9 +29,11 @@
         if( trigger_type === 'gamipress_h5p_complete_content_min_score'
             || trigger_type === 'gamipress_h5p_complete_specific_content_min_score'
             || trigger_type === 'gamipress_h5p_complete_specific_content_type_min_score'
+            || trigger_type === 'gamipress_h5p_complete_content_min_score_tag'
             || trigger_type === 'gamipress_h5p_complete_content_max_score'
             || trigger_type === 'gamipress_h5p_complete_specific_content_max_score'
-            || trigger_type === 'gamipress_h5p_complete_specific_content_type_max_score' ) {
+            || trigger_type === 'gamipress_h5p_complete_specific_content_type_max_score'
+            || trigger_type === 'gamipress_h5p_complete_content_max_score_tag' ) {
             score_input.show();
         } else {
             score_input.hide();
@@ -39,7 +41,8 @@
 
         if( trigger_type === 'gamipress_h5p_complete_content_between_score'
             || trigger_type === 'gamipress_h5p_complete_specific_content_between_score'
-            || trigger_type === 'gamipress_h5p_complete_specific_content_type_between_score' ) {
+            || trigger_type === 'gamipress_h5p_complete_specific_content_type_between_score'
+            || trigger_type === 'gamipress_h5p_complete_content_between_score_tag' ) {
             min_score_input.show();
             max_score_input.show();
         } else {
@@ -50,9 +53,11 @@
         if( trigger_type === 'gamipress_h5p_complete_content_min_percentage'
             || trigger_type === 'gamipress_h5p_complete_specific_content_min_percentage'
             || trigger_type === 'gamipress_h5p_complete_specific_content_type_min_percentage'
+            || trigger_type === 'gamipress_h5p_complete_content_min_percentage_tag'
             || trigger_type === 'gamipress_h5p_complete_content_max_percentage'
             || trigger_type === 'gamipress_h5p_complete_specific_content_max_percentage'
-            || trigger_type === 'gamipress_h5p_complete_specific_content_type_max_percentage' ) {
+            || trigger_type === 'gamipress_h5p_complete_specific_content_type_max_percentage'
+            || trigger_type === 'gamipress_h5p_complete_content_max_percentage_tag' ) {
             percentage_input.show();
         } else {
             percentage_input.hide();
@@ -60,7 +65,8 @@
 
         if( trigger_type === 'gamipress_h5p_complete_content_between_percentage'
             || trigger_type === 'gamipress_h5p_complete_specific_content_between_percentage'
-            || trigger_type === 'gamipress_h5p_complete_specific_content_type_between_percentage' ) {
+            || trigger_type === 'gamipress_h5p_complete_specific_content_type_between_percentage'
+            || trigger_type === 'gamipress_h5p_complete_content_between_percentage_tag' ) {
             min_percentage_input.show();
             max_percentage_input.show();
         } else {
@@ -99,9 +105,11 @@
         if( trigger_type === 'gamipress_h5p_complete_content_min_score'
             || trigger_type === 'gamipress_h5p_complete_specific_content_min_score'
             || trigger_type === 'gamipress_h5p_complete_specific_content_type_min_score'
+            || trigger_type === 'gamipress_h5p_complete_content_min_score_tag'
             || trigger_type === 'gamipress_h5p_complete_content_max_score'
             || trigger_type === 'gamipress_h5p_complete_specific_content_max_score'
-            || trigger_type === 'gamipress_h5p_complete_specific_content_type_max_score' ) {
+            || trigger_type === 'gamipress_h5p_complete_specific_content_type_max_score'
+            || trigger_type === 'gamipress_h5p_complete_content_max_score_tag' ) {
             score_input.show();
         } else {
             score_input.hide();
@@ -109,7 +117,8 @@
 
         if( trigger_type === 'gamipress_h5p_complete_content_between_score'
             || trigger_type === 'gamipress_h5p_complete_specific_content_between_score'
-            || trigger_type === 'gamipress_h5p_complete_specific_content_type_between_score' ) {
+            || trigger_type === 'gamipress_h5p_complete_specific_content_type_between_score'
+            || trigger_type === 'gamipress_h5p_complete_content_between_score_tag' ) {
             min_score_input.show();
             max_score_input.show();
         } else {
@@ -120,9 +129,11 @@
         if( trigger_type === 'gamipress_h5p_complete_content_min_percentage'
             || trigger_type === 'gamipress_h5p_complete_specific_content_min_percentage'
             || trigger_type === 'gamipress_h5p_complete_specific_content_type_min_percentage'
+            || trigger_type === 'gamipress_h5p_complete_content_min_percentage_tag'
             || trigger_type === 'gamipress_h5p_complete_content_max_percentage'
             || trigger_type === 'gamipress_h5p_complete_specific_content_max_percentage'
-            || trigger_type === 'gamipress_h5p_complete_specific_content_type_max_percentage' ) {
+            || trigger_type === 'gamipress_h5p_complete_specific_content_type_max_percentage'
+            || trigger_type === 'gamipress_h5p_complete_content_max_percentage_tag' ) {
             percentage_input.show();
         } else {
             percentage_input.hide();
@@ -130,7 +141,8 @@
 
         if( trigger_type === 'gamipress_h5p_complete_content_between_percentage'
             || trigger_type === 'gamipress_h5p_complete_specific_content_between_percentage'
-            || trigger_type === 'gamipress_h5p_complete_specific_content_type_between_percentage' ) {
+            || trigger_type === 'gamipress_h5p_complete_specific_content_type_between_percentage'
+            || trigger_type === 'gamipress_h5p_complete_content_between_percentage_tag' ) {
             min_percentage_input.show();
             max_percentage_input.show();
         } else {
@@ -156,15 +168,18 @@
         if( requirement_details.trigger_type === 'gamipress_h5p_complete_content_min_score'
             || requirement_details.trigger_type === 'gamipress_h5p_complete_specific_content_min_score'
             || requirement_details.trigger_type === 'gamipress_h5p_complete_specific_content_type_min_score'
+            || requirement_details.trigger_type === 'gamipress_h5p_complete_content_min_score_tag'
             || requirement_details.trigger_type === 'gamipress_h5p_complete_content_max_score'
             || requirement_details.trigger_type === 'gamipress_h5p_complete_specific_content_max_score'
-            || requirement_details.trigger_type === 'gamipress_h5p_complete_specific_content_type_max_score' ) {
+            || requirement_details.trigger_type === 'gamipress_h5p_complete_specific_content_type_max_score'
+            || requirement_details.trigger_type === 'gamipress_h5p_complete_content_max_score_tag' ) {
             requirement_details.h5p_score = requirement.find( '.h5p-score input' ).val();
         }
 
         if( requirement_details.trigger_type === 'gamipress_h5p_complete_content_between_score'
             || requirement_details.trigger_type === 'gamipress_h5p_complete_specific_content_between_score'
-            || requirement_details.trigger_type === 'gamipress_h5p_complete_specific_content_type_between_score' ) {
+            || requirement_details.trigger_type === 'gamipress_h5p_complete_specific_content_type_between_score'
+            || requirement_details.trigger_type === 'gamipress_h5p_complete_content_between_score_tag' ) {
             requirement_details.h5p_min_score = requirement.find( '.h5p-min-score input' ).val();
             requirement_details.h5p_max_score = requirement.find( '.h5p-max-score input' ).val();
         }
@@ -172,15 +187,18 @@
         if( requirement_details.trigger_type === 'gamipress_h5p_complete_content_min_percentage'
             || requirement_details.trigger_type === 'gamipress_h5p_complete_specific_content_min_percentage'
             || requirement_details.trigger_type === 'gamipress_h5p_complete_specific_content_type_min_percentage'
+            || requirement_details.trigger_type === 'gamipress_h5p_complete_content_min_percentage_tag'
             || requirement_details.trigger_type === 'gamipress_h5p_complete_content_max_percentage'
             || requirement_details.trigger_type === 'gamipress_h5p_complete_specific_content_max_percentage'
-            || requirement_details.trigger_type === 'gamipress_h5p_complete_specific_content_type_max_percentage' ) {
+            || requirement_details.trigger_type === 'gamipress_h5p_complete_specific_content_type_max_percentage'
+            || requirement_details.trigger_type === 'gamipress_h5p_complete_content_max_percentage_tag' ) {
             requirement_details.h5p_percentage = requirement.find( '.h5p-percentage input' ).val();
         }
 
         if( requirement_details.trigger_type === 'gamipress_h5p_complete_content_between_percentage'
             || requirement_details.trigger_type === 'gamipress_h5p_complete_specific_content_between_percentage'
-            || requirement_details.trigger_type === 'gamipress_h5p_complete_specific_content_type_between_percentage' ) {
+            || requirement_details.trigger_type === 'gamipress_h5p_complete_specific_content_type_between_percentage'
+            || requirement_details.trigger_type === 'gamipress_h5p_complete_content_between_percentage_tag' ) {
             requirement_details.h5p_min_percentage = requirement.find( '.h5p-min-percentage input' ).val();
             requirement_details.h5p_max_percentage = requirement.find( '.h5p-max-percentage input' ).val();
         }

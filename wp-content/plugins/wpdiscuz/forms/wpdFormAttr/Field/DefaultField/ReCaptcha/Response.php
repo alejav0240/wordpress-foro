@@ -29,8 +29,7 @@ namespace wpdFormAttr\Field\DefaultField\ReCaptcha;
 /**
  * The response returned from the service.
  */
-class Response
-{
+class Response {
     /**
      * Success or failure.
      * @var boolean
@@ -79,19 +78,18 @@ class Response
      * @param string $json
      * @return \ReCaptcha\Response
      */
-    public static function fromJson($json)
-    {
+    public static function fromJson($json) {
         $responseData = json_decode($json, true);
 
         if (!$responseData) {
             return new Response(false, array(ReCaptcha::E_INVALID_JSON));
         }
 
-        $hostname = isset($responseData['hostname']) ? $responseData['hostname'] : null;
-        $challengeTs = isset($responseData['challenge_ts']) ? $responseData['challenge_ts'] : null;
+        $hostname       = isset($responseData['hostname']) ? $responseData['hostname'] : null;
+        $challengeTs    = isset($responseData['challenge_ts']) ? $responseData['challenge_ts'] : null;
         $apkPackageName = isset($responseData['apk_package_name']) ? $responseData['apk_package_name'] : null;
-        $score = isset($responseData['score']) ? floatval($responseData['score']) : null;
-        $action = isset($responseData['action']) ? $responseData['action'] : null;
+        $score          = isset($responseData['score']) ? floatval($responseData['score']) : null;
+        $action         = isset($responseData['action']) ? $responseData['action'] : null;
 
         if (isset($responseData['success']) && $responseData['success'] == true) {
             return new Response(true, array(), $hostname, $challengeTs, $apkPackageName, $score, $action);
@@ -115,15 +113,14 @@ class Response
      * @param strong $action
      * @param array $errorCodes
      */
-    public function __construct($success, array $errorCodes = array(), $hostname = null, $challengeTs = null, $apkPackageName = null, $score = null, $action = null)
-    {
-        $this->success = $success;
-        $this->hostname = $hostname;
-        $this->challengeTs = $challengeTs;
+    public function __construct($success, array $errorCodes = array(), $hostname = null, $challengeTs = null, $apkPackageName = null, $score = null, $action = null) {
+        $this->success        = $success;
+        $this->hostname       = $hostname;
+        $this->challengeTs    = $challengeTs;
         $this->apkPackageName = $apkPackageName;
-        $this->score = $score;
-        $this->action = $action;
-        $this->errorCodes = $errorCodes;
+        $this->score          = $score;
+        $this->action         = $action;
+        $this->errorCodes     = $errorCodes;
     }
 
     /**
@@ -131,8 +128,7 @@ class Response
      *
      * @return boolean
      */
-    public function isSuccess()
-    {
+    public function isSuccess() {
         return $this->success;
     }
 
@@ -141,8 +137,7 @@ class Response
      *
      * @return array
      */
-    public function getErrorCodes()
-    {
+    public function getErrorCodes() {
         return $this->errorCodes;
     }
 
@@ -151,8 +146,7 @@ class Response
      *
      * @return string
      */
-    public function getHostname()
-    {
+    public function getHostname() {
         return $this->hostname;
     }
 
@@ -161,8 +155,7 @@ class Response
      *
      * @return string
      */
-    public function getChallengeTs()
-    {
+    public function getChallengeTs() {
         return $this->challengeTs;
     }
 
@@ -171,8 +164,7 @@ class Response
      *
      * @return string
      */
-    public function getApkPackageName()
-    {
+    public function getApkPackageName() {
         return $this->apkPackageName;
     }
 
@@ -181,8 +173,7 @@ class Response
      *
      * @return float
      */
-    public function getScore()
-    {
+    public function getScore() {
         return $this->score;
     }
 
@@ -191,21 +182,19 @@ class Response
      *
      * @return string
      */
-    public function getAction()
-    {
+    public function getAction() {
         return $this->action;
     }
 
-    public function toArray()
-    {
+    public function toArray() {
         return array(
-            'success' => $this->isSuccess(),
-            'hostname' => $this->getHostname(),
-            'challenge_ts' => $this->getChallengeTs(),
+            'success'          => $this->isSuccess(),
+            'hostname'         => $this->getHostname(),
+            'challenge_ts'     => $this->getChallengeTs(),
             'apk_package_name' => $this->getApkPackageName(),
-            'score' => $this->getScore(),
-            'action' => $this->getAction(),
-            'error-codes' => $this->getErrorCodes(),
+            'score'            => $this->getScore(),
+            'action'           => $this->getAction(),
+            'error-codes'      => $this->getErrorCodes(),
         );
     }
 }

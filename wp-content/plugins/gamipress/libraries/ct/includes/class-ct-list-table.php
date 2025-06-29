@@ -182,6 +182,28 @@ if ( ! class_exists( 'CT_List_Table' ) ) :
         }
 
         /**
+         * Displays extra controls between bulk actions and pagination.
+         *
+         * @since 1.0.0
+         *
+         * @param string $which
+         */
+        protected function extra_tablenav( $which ) {
+
+            global $ct_table;
+
+            /**
+             * Extra table nav
+             *
+             * @since 1.0.0
+             *
+             * @param string $which The location of the extra table nav markup: 'top' or 'bottom'.
+             */
+            do_action( "manage_{$ct_table->name}_extra_tablenav", $which );
+
+        }
+
+        /**
          *
          * @return array
          */

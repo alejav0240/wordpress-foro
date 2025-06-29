@@ -5,17 +5,17 @@ if (!defined("ABSPATH")) {
 
 /* ===== CLOSED COMMNETS ===== */
 $closedRegenerateDataCount = intval($this->dbManager->getClosedRegenerateCount());
-$disabledClosed = $closedRegenerateDataCount ? "" : "disabled='disabled'";
+$disabledClosed            = $closedRegenerateDataCount ? "" : "disabled='disabled'";
 /* ===== CLOSED COMMNETS ===== */
 
 /* ===== VOTE DATA ===== */
 $voteDataRegenerateCount = intval($this->dbManager->getVoteDataRegenerateCount());
-$disabledVoteData = $voteDataRegenerateCount ? "" : "disabled='disabled'";
+$disabledVoteData        = $voteDataRegenerateCount ? "" : "disabled='disabled'";
 /* ===== VOTE DATA ===== */
 
 /* ===== VOTE META ===== */
 $voteRegenerateDataCount = intval($this->dbManager->getVoteRegenerateCount());
-$disabledVoteMeta = $voteRegenerateDataCount ? "" : "disabled='disabled'";
+$disabledVoteMeta        = $voteRegenerateDataCount ? "" : "disabled='disabled'";
 /* ===== VOTE META ===== */
 /* ===== SYNCRONIZE ===== */
 $showSyncMessage = intval(get_option(self::OPTION_SLUG_SHOW_SYNC_COMMENTERS_MESSAGE));

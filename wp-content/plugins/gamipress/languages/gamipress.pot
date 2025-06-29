@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gamipress\n"
 "Report-Msgid-Bugs-To: https://tsunoa.com/\n"
-"POT-Creation-Date: 2024-10-11 13:13+0200\n"
+"POT-Creation-Date: 2025-06-11 10:01+0200\n"
 "PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tsunoa (https://tsunoa.com/)\n"
 "Language-Team: Tsunoa <contact@tsunoa.com>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: libraries\n"
 
 #: assets/js/gamipress-blocks.js:1 assets/js/gamipress-blocks.min.js:1
-#: includes/admin.php:442 includes/admin/pages/dashboard.php:229
+#: includes/admin.php:445 includes/admin/pages/dashboard.php:229
 #: includes/admin/pages/settings.php:141 includes/admin/pages/settings.php:147
 #: includes/admin/plugins.php:30 includes/admin/plugins.php:33
 #: includes/admin/tools/import-export-settings.php:24
@@ -77,7 +77,7 @@ msgstr ""
 #: includes/admin/tools/bulk-revokes.php:228
 #: includes/admin/tools/import-export-earnings.php:53
 #: includes/admin/tools/import-export-setup.php:53
-#: includes/admin/tools/reset-data.php:38 includes/admin/users.php:206
+#: includes/admin/tools/reset-data.php:38 includes/admin/users.php:204
 #: includes/functions/rank-types.php:186 includes/functions/rank-types.php:193
 #: includes/privacy/exporters/user-data.php:136
 #: includes/shortcodes/gamipress_earnings.php:61
@@ -108,41 +108,42 @@ msgstr ""
 msgid "Ranks"
 msgstr ""
 
-#: includes/admin.php:95 includes/admin.php:120 includes/admin.php:247
+#: includes/admin.php:95 includes/admin.php:120 includes/admin.php:258
 #: includes/admin/pages/dashboard.php:22
 msgid "Dashboard"
 msgstr ""
 
-#: includes/admin.php:146 includes/admin.php:402
+#: includes/admin.php:146 includes/admin.php:413
 #: includes/admin/pages/support.php:42
 msgid "Help / Support"
 msgstr ""
 
-#: includes/admin.php:147 includes/admin.php:410
+#: includes/admin.php:147 includes/admin.php:421
+msgid "Assets"
+msgstr ""
+
+#: includes/admin.php:157 includes/admin.php:453
 #: includes/admin/pages/settings.php:188 includes/admin/plugins.php:67
 msgid "Add-ons"
 msgstr ""
 
-#: includes/admin.php:148 includes/admin.php:418
-msgid "Assets"
-msgstr ""
-
-#: includes/admin.php:165 includes/admin.php:450
-msgid "Clear Cache"
-msgstr ""
-
-#: includes/admin.php:184 includes/admin.php:476
+#: includes/admin.php:175 includes/admin.php:195 includes/admin.php:479
+#: includes/admin.php:510
 msgid "New"
 msgstr ""
 
-#: includes/admin.php:186 includes/admin.php:481
+#: includes/admin.php:177 includes/admin.php:484
 msgid "Try AutomatorWP!"
 msgstr ""
 
-#: includes/admin.php:258 includes/admin/pages/dashboard.php:247
+#: includes/admin.php:197 includes/admin.php:515
+msgid "Try ShortLinks Pro!"
+msgstr ""
+
+#: includes/admin.php:269 includes/admin/pages/dashboard.php:247
 #: includes/admin/tools/reset-data.php:34
-#: includes/admin/tools/system-info.php:357 includes/post-types.php:287
-#: includes/post-types.php:293 includes/post-types.php:299
+#: includes/admin/tools/system-info.php:357 includes/post-types.php:293
+#: includes/post-types.php:299 includes/post-types.php:305
 #: includes/shortcodes/gamipress_points_types.php:20
 #: integrations/buddyboss/includes/community/includes/admin.php:96
 #: integrations/buddyboss/includes/community/includes/admin.php:343
@@ -151,17 +152,17 @@ msgstr ""
 msgid "Points Types"
 msgstr ""
 
-#: includes/admin.php:291 includes/admin/tools/reset-data.php:31
-#: includes/admin/tools/system-info.php:362 includes/post-types.php:390
-#: includes/post-types.php:396 includes/post-types.php:402
+#: includes/admin.php:302 includes/admin/tools/reset-data.php:31
+#: includes/admin/tools/system-info.php:362 includes/post-types.php:396
+#: includes/post-types.php:402 includes/post-types.php:408
 #: integrations/buddyboss/includes/community/includes/admin.php:377
 #: integrations/buddypress/includes/admin.php:377
 msgid "Achievement Types"
 msgstr ""
 
-#: includes/admin.php:324 includes/admin/tools/reset-data.php:37
-#: includes/admin/tools/system-info.php:367 includes/post-types.php:459
-#: includes/post-types.php:465 includes/post-types.php:471
+#: includes/admin.php:335 includes/admin/tools/reset-data.php:37
+#: includes/admin/tools/system-info.php:367 includes/post-types.php:465
+#: includes/post-types.php:471 includes/post-types.php:477
 #: integrations/buddyboss/includes/community/includes/admin.php:198
 #: integrations/buddyboss/includes/community/includes/admin.php:452
 #: integrations/buddypress/includes/admin.php:198
@@ -169,52 +170,53 @@ msgstr ""
 msgid "Rank Types"
 msgstr ""
 
-#: includes/admin.php:369 includes/admin/pages/dashboard.php:252
-#: includes/admin/users.php:470 includes/custom-tables.php:35
-#: includes/custom-tables.php:48 includes/privacy/erasers/user-earnings.php:24
+#: includes/admin.php:380 includes/admin/pages/dashboard.php:252
+#: includes/admin/users.php:466 includes/custom-tables/user-earnings.php:23
+#: includes/custom-tables/user-earnings.php:26
+#: includes/privacy/erasers/user-earnings.php:24
 #: includes/privacy/exporters/user-earnings.php:24
 #: includes/privacy/exporters/user-earnings.php:77
 #: includes/shortcodes/gamipress_earnings.php:20
 msgid "User Earnings"
 msgstr ""
 
-#: includes/admin.php:377 includes/admin/pages/dashboard.php:251
+#: includes/admin.php:388 includes/admin/pages/dashboard.php:251
 #: includes/admin/settings/logs.php:25 includes/admin/tools/reset-data.php:40
 #: includes/compatibility/1.2.8.php:250 includes/compatibility/1.2.8.php:256
-#: includes/compatibility/1.2.8.php:262 includes/custom-tables.php:97
-#: includes/custom-tables.php:107 includes/shortcodes/gamipress_logs.php:20
+#: includes/compatibility/1.2.8.php:262 includes/custom-tables/logs.php:23
+#: includes/custom-tables/logs.php:25 includes/shortcodes/gamipress_logs.php:20
 msgid "Logs"
 msgstr ""
 
-#: includes/admin.php:426 includes/admin/pages/licenses.php:254
+#: includes/admin.php:429 includes/admin/pages/licenses.php:254
 #: includes/admin/pages/licenses.php:261
 msgid "Licenses"
 msgstr ""
 
-#: includes/admin.php:434 includes/admin/pages/add-ons.php:41
+#: includes/admin.php:437 includes/admin/pages/add-ons.php:41
 #: includes/admin/pages/dashboard.php:230 includes/admin/pages/tools.php:128
 #: includes/admin/pages/tools.php:134
 msgid "Tools"
 msgstr ""
 
-#: includes/admin.php:507 includes/admin/meta-boxes/achievement-type.php:29
+#: includes/admin.php:541 includes/admin/meta-boxes/achievement-type.php:29
 #: includes/admin/meta-boxes/points-type.php:32
 #: includes/admin/meta-boxes/rank-type.php:29
 msgid "Singular Name"
 msgstr ""
 
-#: includes/admin.php:511 includes/admin/achievements.php:42
+#: includes/admin.php:545 includes/admin/achievements.php:42
 #: includes/admin/ranks.php:67
 msgid "Image"
 msgstr ""
 
-#: includes/admin.php:524 includes/admin/meta-boxes/achievement-type.php:34
+#: includes/admin.php:558 includes/admin/meta-boxes/achievement-type.php:34
 #: includes/admin/meta-boxes/points-type.php:37
 #: includes/admin/meta-boxes/rank-type.php:34
 msgid "Plural Name"
 msgstr ""
 
-#: includes/admin.php:525 includes/admin/meta-boxes/achievement-type.php:39
+#: includes/admin.php:559 includes/admin/meta-boxes/achievement-type.php:39
 #: includes/admin/meta-boxes/points-type.php:42
 #: includes/admin/meta-boxes/rank-type.php:39
 #: includes/admin/tools/import-export-achievements.php:55
@@ -223,20 +225,20 @@ msgstr ""
 msgid "Slug"
 msgstr ""
 
-#: includes/admin.php:555 includes/admin/achievements.php:85
+#: includes/admin.php:589 includes/admin/achievements.php:85
 #: includes/admin/ranks.php:127
 #, php-format
 msgid "&#8220;%s&#8221; (Edit)"
 msgstr ""
 
-#: includes/admin.php:729
+#: includes/admin.php:764
 #, php-format
 msgid "Thank you for using <a href=\"%1$s\" target=\"_blank\">GamiPress</a>! Please leave us a <a href=\"%2$s\" target=\"_blank\">%3$s</a> rating on WordPress.org"
 msgstr ""
 
 #: includes/admin/achievements.php:38 includes/admin/ranks.php:61
-#: includes/custom-tables/user-earnings.php:329
-#: includes/custom-tables/user-earnings.php:336
+#: includes/custom-tables/user-earnings.php:350
+#: includes/custom-tables/user-earnings.php:357
 msgid "Name"
 msgstr ""
 
@@ -303,7 +305,7 @@ msgid "Visit the <a href=\"%s\">documentation</a> on the GamiPress website."
 msgstr ""
 
 #: includes/admin/contextual-help.php:37
-#: includes/admin/meta-boxes/requirements.php:66 includes/post-types.php:391
+#: includes/admin/meta-boxes/requirements.php:66 includes/post-types.php:397
 #: includes/shortcodes/gamipress_inline_last_achievements_earned.php:51
 #: includes/shortcodes/gamipress_last_achievements_earned.php:54
 msgid "Achievement Type"
@@ -315,13 +317,13 @@ msgstr ""
 #: includes/admin/requirements.php:77 includes/admin/tools/bulk-awards.php:45
 #: includes/admin/tools/bulk-revokes.php:45
 #: includes/admin/tools/import-export-earnings.php:250
-#: includes/compatibility/1.2.8.php:1027 includes/post-types.php:288
+#: includes/compatibility/1.2.8.php:1027 includes/post-types.php:294
 #: integrations/easy-digital-downloads/includes/admin.php:49
 #: integrations/woocommerce/includes/admin.php:49
 msgid "Points Type"
 msgstr ""
 
-#: includes/admin/contextual-help.php:43 includes/post-types.php:460
+#: includes/admin/contextual-help.php:43 includes/post-types.php:466
 #: includes/shortcodes/gamipress_inline_user_rank.php:53
 #: includes/shortcodes/gamipress_user_rank.php:53
 msgid "Rank Type"
@@ -355,8 +357,9 @@ msgstr ""
 #: includes/admin/tools/import-export-earnings.php:35
 #: includes/admin/tools/import-export-setup.php:35
 #: includes/admin/tools/reset-data.php:35
-#: includes/custom-tables/user-earnings.php:396 includes/post-types.php:324
+#: includes/custom-tables/user-earnings.php:417 includes/post-types.php:285
 #: includes/post-types.php:330 includes/post-types.php:336
+#: includes/post-types.php:342
 msgid "Points Awards"
 msgstr ""
 
@@ -373,8 +376,9 @@ msgstr ""
 #: includes/admin/tools/import-export-earnings.php:36
 #: includes/admin/tools/import-export-setup.php:36
 #: includes/admin/tools/reset-data.php:36
-#: includes/custom-tables/user-earnings.php:397 includes/post-types.php:358
+#: includes/custom-tables/user-earnings.php:418 includes/post-types.php:286
 #: includes/post-types.php:364 includes/post-types.php:370
+#: includes/post-types.php:376
 msgid "Points Deductions"
 msgstr ""
 
@@ -439,8 +443,9 @@ msgstr ""
 #: includes/admin/tools/import-export-earnings.php:45
 #: includes/admin/tools/import-export-setup.php:45
 #: includes/admin/tools/reset-data.php:33
-#: includes/custom-tables/user-earnings.php:390 includes/post-types.php:427
+#: includes/custom-tables/user-earnings.php:411 includes/post-types.php:287
 #: includes/post-types.php:433 includes/post-types.php:439
+#: includes/post-types.php:445
 msgid "Steps"
 msgstr ""
 
@@ -490,8 +495,9 @@ msgstr ""
 #: includes/admin/contextual-help.php:134
 #: includes/admin/meta-boxes/requirements-ui.php:34
 #: includes/admin/settings/email.php:376 includes/admin/tools/reset-data.php:39
-#: includes/custom-tables/user-earnings.php:403 includes/post-types.php:496
+#: includes/custom-tables/user-earnings.php:424 includes/post-types.php:288
 #: includes/post-types.php:502 includes/post-types.php:508
+#: includes/post-types.php:514
 msgid "Rank Requirements"
 msgstr ""
 
@@ -564,43 +570,43 @@ msgstr ""
 msgid "Nothing to show :)"
 msgstr ""
 
-#: includes/admin/meta-boxes.php:350
+#: includes/admin/meta-boxes.php:352
 #: includes/admin/meta-boxes/requirements-ui.php:481
-#: includes/admin/users.php:516
+#: includes/admin/users.php:510
 msgid "Choose an achievement type"
 msgstr ""
 
-#: includes/admin/meta-boxes.php:368
+#: includes/admin/meta-boxes.php:370
 #: includes/admin/meta-boxes/requirements-ui.php:388
 #: includes/admin/tools/bulk-awards.php:25
 #: includes/admin/tools/bulk-revokes.php:25
 msgid "Choose a points type"
 msgstr ""
 
-#: includes/admin/meta-boxes.php:386
+#: includes/admin/meta-boxes.php:388
 msgid "Choose a rank type"
 msgstr ""
 
-#: includes/admin/meta-boxes.php:404
+#: includes/admin/meta-boxes.php:406
 msgid "Choose a log type"
 msgstr ""
 
-#: includes/admin/meta-boxes.php:421
+#: includes/admin/meta-boxes.php:423
 #, php-format
 msgid "After (10 %s)"
 msgstr ""
 
-#: includes/admin/meta-boxes.php:422
+#: includes/admin/meta-boxes.php:424
 #, php-format
 msgid "Before (%s 10)"
 msgstr ""
 
-#: includes/admin/meta-boxes.php:437
+#: includes/admin/meta-boxes.php:439
 msgid "Choose an option"
 msgstr ""
 
-#: includes/admin/meta-boxes.php:442
-#: includes/custom-tables/user-earnings.php:440
+#: includes/admin/meta-boxes.php:444
+#: includes/custom-tables/user-earnings.php:462
 msgid "All"
 msgstr ""
 
@@ -812,13 +818,13 @@ msgid "Visibility:"
 msgstr ""
 
 #: includes/admin/meta-boxes/log-extra-data-ui.php:70
-#: includes/custom-tables/logs.php:249
+#: includes/custom-tables/logs.php:269
 #: includes/shortcodes/gamipress_logs.php:58
 msgid "Public"
 msgstr ""
 
 #: includes/admin/meta-boxes/log-extra-data-ui.php:70
-#: includes/custom-tables/logs.php:249
+#: includes/custom-tables/logs.php:269
 #: includes/shortcodes/gamipress_logs.php:59
 msgid "Private"
 msgstr ""
@@ -877,7 +883,7 @@ msgstr ""
 
 #: includes/admin/meta-boxes/log-extra-data-ui.php:184
 #: includes/admin/requirements.php:41 includes/admin/requirements.php:80
-#: includes/ajax-functions.php:564 includes/compatibility/1.2.8.php:1000
+#: includes/ajax-functions.php:575 includes/compatibility/1.2.8.php:1000
 #: includes/functions/achievement-types.php:155
 #: includes/functions/achievement-types.php:162
 #: includes/shortcodes/gamipress_achievement.php:27
@@ -900,14 +906,14 @@ msgstr ""
 #: includes/admin/tools/bulk-revokes.php:203
 #: includes/admin/tools/import-export-earnings.php:249
 #: includes/admin/tools/import-export-points.php:142
-#: includes/admin/users.php:349 includes/ajax-functions.php:769
-#: includes/ajax-functions.php:903 includes/compatibility/1.2.8.php:1021
-#: includes/custom-tables/user-earnings.php:331
-#: includes/custom-tables/user-earnings.php:337
+#: includes/admin/users.php:346 includes/ajax-functions.php:780
+#: includes/ajax-functions.php:914 includes/compatibility/1.2.8.php:1021
+#: includes/custom-tables/user-earnings.php:352
+#: includes/custom-tables/user-earnings.php:358
 #: includes/functions/points-types.php:184
 #: includes/functions/points-types.php:191
 #: includes/shortcodes/gamipress_earnings.php:41
-#: includes/shortcodes/gamipress_earnings.php:334
+#: includes/shortcodes/gamipress_earnings.php:298
 #: includes/shortcodes/gamipress_email_settings.php:131
 #: integrations/bbpress/includes/admin.php:191
 #: integrations/buddyboss/includes/community/includes/admin.php:266
@@ -966,7 +972,7 @@ msgstr ""
 #: includes/admin/meta-boxes/log-extra-data-ui.php:230
 #: includes/admin/requirements.php:43 includes/admin/requirements.php:83
 #: includes/admin/tools/import-export-ranks.php:155
-#: includes/ajax-functions.php:613 includes/functions/rank-types.php:156
+#: includes/ajax-functions.php:624 includes/functions/rank-types.php:156
 #: includes/functions/rank-types.php:163
 #: includes/shortcodes/gamipress_inline_rank.php:27
 #: includes/shortcodes/gamipress_inline_user_rank.php:47
@@ -981,8 +987,8 @@ msgid "Rank user has earned."
 msgstr ""
 
 #: includes/admin/meta-boxes/log-extra-data-ui.php:246
-#: includes/admin/settings/general.php:144
-#: includes/compatibility/1.2.8.php:1046 includes/custom-tables/logs.php:201
+#: includes/admin/settings/general.php:150
+#: includes/compatibility/1.2.8.php:1046 includes/custom-tables/logs.php:221
 msgid "Administrator"
 msgstr ""
 
@@ -1004,7 +1010,7 @@ msgstr ""
 #: includes/admin/tools/import-export-achievements.php:54
 #: includes/admin/tools/import-export-earnings.php:84
 #: includes/admin/tools/import-export-ranks.php:54
-#: includes/custom-tables/logs.php:197
+#: includes/custom-tables/logs.php:217
 #: includes/privacy/exporters/user-earnings.php:131
 #: includes/shortcodes/gamipress_achievements.php:157
 #: includes/shortcodes/gamipress_ranks.php:108
@@ -1024,12 +1030,12 @@ msgstr ""
 #: includes/admin/tools/import-export-earnings.php:246
 #: includes/admin/tools/import-export-points.php:141
 #: includes/admin/tools/import-export-ranks.php:154
-#: includes/compatibility/1.2.8.php:302 includes/custom-tables/logs.php:199
-#: includes/custom-tables/user-earnings.php:323
-#: includes/custom-tables/user-earnings.php:330
+#: includes/compatibility/1.2.8.php:302 includes/custom-tables/logs.php:219
+#: includes/custom-tables/user-earnings.php:344
+#: includes/custom-tables/user-earnings.php:351
 #: includes/shortcodes/gamipress_achievements.php:181
 #: includes/shortcodes/gamipress_earnings.php:78
-#: includes/shortcodes/gamipress_earnings.php:328
+#: includes/shortcodes/gamipress_earnings.php:292
 #: includes/shortcodes/gamipress_email_settings.php:48
 #: includes/shortcodes/gamipress_inline_last_achievements_earned.php:68
 #: includes/shortcodes/gamipress_inline_user_rank.php:89
@@ -1049,7 +1055,7 @@ msgstr ""
 
 #: includes/admin/meta-boxes/logs.php:54
 #: includes/admin/tools/logs-clean-up.php:59
-#: includes/compatibility/1.2.8.php:308 includes/custom-tables/logs.php:198
+#: includes/compatibility/1.2.8.php:308 includes/custom-tables/logs.php:218
 #: includes/privacy/exporters/logs.php:134
 #: includes/privacy/exporters/user-earnings.php:143
 #: includes/privacy/exporters/user-earnings.php:163
@@ -1228,7 +1234,7 @@ msgid "Check this option to force users to complete requirements in order."
 msgstr ""
 
 #: includes/admin/meta-boxes/requirements-ui.php:144
-#: includes/post-types.php:547 includes/post-types.php:622
+#: includes/post-types.php:553 includes/post-types.php:628
 #, php-format
 msgid "Add New %s"
 msgstr ""
@@ -1362,8 +1368,8 @@ msgstr ""
 #: includes/admin/meta-boxes/requirements-ui.php:792
 #: includes/admin/meta-boxes/requirements-ui.php:832
 #: includes/admin/meta-boxes/requirements-ui.php:878
-#: includes/admin/meta-boxes/requirements-ui.php:904
-#: includes/admin/meta-boxes/requirements-ui.php:979
+#: includes/admin/meta-boxes/requirements-ui.php:913
+#: includes/admin/meta-boxes/requirements-ui.php:988
 #: includes/admin/tools/bulk-awards.php:258
 #: includes/admin/tools/bulk-awards.php:263
 #: includes/admin/tools/bulk-revokes.php:258
@@ -1380,8 +1386,8 @@ msgstr ""
 #: includes/admin/tools/import-export-setup.php:354
 #: includes/admin/tools/logs-clean-up.php:111
 #: includes/admin/tools/recount-activity.php:95
-#: includes/admin/tools/reset-data.php:100 includes/ajax-functions.php:746
-#: includes/ajax-functions.php:871
+#: includes/admin/tools/reset-data.php:100 includes/ajax-functions.php:757
+#: includes/ajax-functions.php:882
 msgid "You are not allowed to perform this action."
 msgstr ""
 
@@ -1390,185 +1396,185 @@ msgstr ""
 msgid "Invalid post."
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1165
+#: includes/admin/meta-boxes/requirements-ui.php:1174
 msgid "post"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1180
+#: includes/admin/meta-boxes/requirements-ui.php:1189
 #, php-format
 msgid "Earn %s"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1185
+#: includes/admin/meta-boxes/requirements-ui.php:1194
 #, php-format
 msgid "Reach a balance %s %s"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1188
+#: includes/admin/meta-boxes/requirements-ui.php:1197
 #, php-format
 msgid "Expend %s"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1194
+#: includes/admin/meta-boxes/requirements-ui.php:1203
 #, php-format
 msgid "Reach %s %s"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1199
+#: includes/admin/meta-boxes/requirements-ui.php:1208
 #, php-format
 msgid "Get %s %s revoked"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1203
+#: includes/admin/meta-boxes/requirements-ui.php:1212
 #, php-format
 msgid "Unlock \"%s\""
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1206
+#: includes/admin/meta-boxes/requirements-ui.php:1215
 #, php-format
 msgid "Unlock any %s"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1209
+#: includes/admin/meta-boxes/requirements-ui.php:1218
 #, php-format
 msgid "Unlock all %s"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1212
+#: includes/admin/meta-boxes/requirements-ui.php:1221
 #, php-format
 msgid "Get \"%s\" revoked"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1215
+#: includes/admin/meta-boxes/requirements-ui.php:1224
 #, php-format
 msgid "Get any %s revoked"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1219
+#: includes/admin/meta-boxes/requirements-ui.php:1228
 #, php-format
 msgid "Comment on a %s"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1222
+#: includes/admin/meta-boxes/requirements-ui.php:1231
 #, php-format
 msgid "Get a comment on a %s"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1225
+#: includes/admin/meta-boxes/requirements-ui.php:1234
 #, php-format
 msgid "Get a comment on a %s marked as spam"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1228
+#: includes/admin/meta-boxes/requirements-ui.php:1237
 #, php-format
 msgid "Publish a new %s"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1231
+#: includes/admin/meta-boxes/requirements-ui.php:1240
 #, php-format
 msgid "Delete a %s"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1234
+#: includes/admin/meta-boxes/requirements-ui.php:1243
 #, php-format
 msgid "Daily visit a %s"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1237
+#: includes/admin/meta-boxes/requirements-ui.php:1246
 #, php-format
 msgid "Get visits on a %s"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1241
+#: includes/admin/meta-boxes/requirements-ui.php:1250
 #, php-format
 msgid "Get added to %s role"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1244
+#: includes/admin/meta-boxes/requirements-ui.php:1253
 #, php-format
 msgid "Get assigned to %s role"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1247
+#: includes/admin/meta-boxes/requirements-ui.php:1256
 #, php-format
 msgid "Get removed from %s role"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1251
+#: includes/admin/meta-boxes/requirements-ui.php:1260
 #, php-format
 msgid "Update post meta %s"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1254
+#: includes/admin/meta-boxes/requirements-ui.php:1263
 #, php-format
 msgid "Update user meta %s"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1257
+#: includes/admin/meta-boxes/requirements-ui.php:1266
 #, php-format
 msgid "Update post meta %s with %s"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1260
+#: includes/admin/meta-boxes/requirements-ui.php:1269
 #, php-format
 msgid "Update user meta %s with %s"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1299
+#: includes/admin/meta-boxes/requirements-ui.php:1308
 #, php-format
 msgid "%s for"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1301
+#: includes/admin/meta-boxes/requirements-ui.php:1310
 #, php-format
 msgid "-%s for"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1305
 #: includes/admin/meta-boxes/requirements-ui.php:1314
-#: includes/admin/meta-boxes/requirements-ui.php:1343
-#: includes/admin/meta-boxes/requirements-ui.php:1349
+#: includes/admin/meta-boxes/requirements-ui.php:1323
+#: includes/admin/meta-boxes/requirements-ui.php:1352
+#: includes/admin/meta-boxes/requirements-ui.php:1358
 #, php-format
 msgid "%1$s %2$s"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1314
+#: includes/admin/meta-boxes/requirements-ui.php:1323
 #, php-format
 msgid "%d time"
 msgid_plural "%d times"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1324
+#: includes/admin/meta-boxes/requirements-ui.php:1333
 msgid "minute"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1327
+#: includes/admin/meta-boxes/requirements-ui.php:1336
 msgid "hour"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1330
+#: includes/admin/meta-boxes/requirements-ui.php:1339
 msgid "day"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1333
+#: includes/admin/meta-boxes/requirements-ui.php:1342
 msgid "week"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1336
+#: includes/admin/meta-boxes/requirements-ui.php:1345
 msgid "month"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1339
+#: includes/admin/meta-boxes/requirements-ui.php:1348
 msgid "year"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1343
+#: includes/admin/meta-boxes/requirements-ui.php:1352
 #, php-format
 msgid "(limited to %d per %s)"
 msgstr ""
 
-#: includes/admin/meta-boxes/requirements-ui.php:1349
+#: includes/admin/meta-boxes/requirements-ui.php:1358
 msgid "(Optional)"
 msgstr ""
 
@@ -2025,8 +2031,8 @@ msgid "Next %s"
 msgstr ""
 
 #: includes/admin/ranks.php:211 includes/admin/ranks.php:234
-#: includes/admin/users.php:262 includes/admin/users.php:358
-#: includes/admin/users.php:398
+#: includes/admin/users.php:260 includes/admin/users.php:355
+#: includes/admin/users.php:395
 msgid "Edit"
 msgstr ""
 
@@ -2130,8 +2136,8 @@ msgstr ""
 #: includes/admin/settings/email.php:94 includes/admin/settings/email.php:137
 #: includes/admin/settings/email.php:181 includes/admin/settings/email.php:224
 #: includes/admin/settings/email.php:267 includes/admin/settings/email.php:310
-#: integrations/h5p/includes/triggers.php:501
-#: integrations/h5p/includes/triggers.php:561
+#: integrations/h5p/includes/triggers.php:623
+#: integrations/h5p/includes/triggers.php:689
 msgid "Content"
 msgstr ""
 
@@ -2344,13 +2350,21 @@ msgstr ""
 msgid "Check this option to enable the debug mode."
 msgstr ""
 
-#: includes/admin/settings/general.php:145
+#: includes/admin/settings/general.php:71
+msgid "Clear Cache"
+msgstr ""
+
+#: includes/admin/settings/general.php:151
 msgid "Editor"
 msgstr ""
 
-#: includes/admin/settings/general.php:146
+#: includes/admin/settings/general.php:152
 #: includes/shortcodes/gamipress_achievements.php:160
 msgid "Author"
+msgstr ""
+
+#: includes/admin/settings/general.php:169
+msgid "Clear cache now!"
 msgstr ""
 
 #: includes/admin/settings/logs.php:28
@@ -2369,7 +2383,7 @@ msgstr ""
 msgid "Used to register user activity triggered. Available tags:"
 msgstr ""
 
-#: includes/admin/settings/logs.php:36 includes/triggers.php:652
+#: includes/admin/settings/logs.php:36 includes/triggers.php:674
 msgid "{user} triggered {trigger_type} (x{count})"
 msgstr ""
 
@@ -2405,8 +2419,8 @@ msgstr ""
 msgid "Used when user expend an amount of points. Available tags:"
 msgstr ""
 
-#: includes/admin/settings/logs.php:54 includes/ajax-functions.php:802
-#: includes/ajax-functions.php:936
+#: includes/admin/settings/logs.php:54 includes/ajax-functions.php:813
+#: includes/ajax-functions.php:947
 msgid "{user} expended {points} {points_type} for a new total of {total_points} {points_type}"
 msgstr ""
 
@@ -2658,7 +2672,7 @@ msgid "Register on user earnings"
 msgstr ""
 
 #: includes/admin/tools/bulk-awards.php:52
-#: includes/admin/tools/bulk-revokes.php:52 includes/admin/users.php:411
+#: includes/admin/tools/bulk-revokes.php:52 includes/admin/users.php:408
 msgid "Check this option to register this balance movement on user earnings."
 msgstr ""
 
@@ -2668,12 +2682,12 @@ msgid "Earning entry text"
 msgstr ""
 
 #: includes/admin/tools/bulk-awards.php:58
-#: includes/admin/tools/bulk-revokes.php:58 includes/admin/users.php:417
+#: includes/admin/tools/bulk-revokes.php:58 includes/admin/users.php:414
 msgid "Enter the line text to be displayed on user earnings."
 msgstr ""
 
 #: includes/admin/tools/bulk-awards.php:60
-#: includes/admin/tools/bulk-revokes.php:60 includes/admin/users.php:416
+#: includes/admin/tools/bulk-revokes.php:60 includes/admin/users.php:413
 msgid "Manual balance adjustment"
 msgstr ""
 
@@ -3166,7 +3180,7 @@ msgid "You need to choose at least 1 type to export."
 msgstr ""
 
 #: includes/admin/tools/import-export-earnings.php:245
-#: includes/shortcodes/gamipress_earnings.php:332
+#: includes/shortcodes/gamipress_earnings.php:296
 msgid "Description"
 msgstr ""
 
@@ -3179,13 +3193,13 @@ msgid "Element Type"
 msgstr ""
 
 #: includes/admin/tools/import-export-earnings.php:251
-#: includes/custom-tables/logs.php:202
-#: includes/custom-tables/user-earnings.php:324
-#: includes/custom-tables/user-earnings.php:332
-#: includes/custom-tables/user-earnings.php:338
+#: includes/custom-tables/logs.php:222
+#: includes/custom-tables/user-earnings.php:345
+#: includes/custom-tables/user-earnings.php:353
+#: includes/custom-tables/user-earnings.php:359
 #: includes/privacy/exporters/logs.php:181
 #: includes/privacy/exporters/user-earnings.php:250
-#: includes/shortcodes/gamipress_earnings.php:333
+#: includes/shortcodes/gamipress_earnings.php:297
 #: includes/shortcodes/gamipress_logs.php:81
 msgid "Date"
 msgstr ""
@@ -3819,221 +3833,221 @@ msgstr ""
 msgid "Depending on the number of logs found, this process could take a while, but there is <strong><em>no danger</em></strong> about lose any data because this process will only <strong><em>append</em></strong> information to old entries, so is <strong><em>100% safe to upgrade</em></strong>."
 msgstr ""
 
-#: includes/admin/users.php:27
+#: includes/admin/users.php:25
 msgid "GamiPress"
 msgstr ""
 
-#: includes/admin/users.php:64 includes/admin/users.php:112
-#: includes/admin/users.php:117 includes/admin/users.php:552
-#: includes/admin/users.php:560 includes/admin/users.php:737
-#: includes/admin/users.php:745
+#: includes/admin/users.php:62 includes/admin/users.php:110
+#: includes/admin/users.php:115 includes/admin/users.php:544
+#: includes/admin/users.php:552 includes/admin/users.php:727
+#: includes/admin/users.php:735
 msgid "You can perform this action."
 msgstr ""
 
-#: includes/admin/users.php:68 includes/admin/users.php:122
+#: includes/admin/users.php:66 includes/admin/users.php:120
 #: includes/api/logs.php:209 includes/api/user-earnings.php:219
 msgid "Invalid user ID."
 msgstr ""
 
-#: includes/admin/users.php:74 includes/api/user-earnings.php:228
+#: includes/admin/users.php:72 includes/api/user-earnings.php:228
 msgid "Invalid post ID."
 msgstr ""
 
-#: includes/admin/users.php:77
+#: includes/admin/users.php:75
 msgid "Invalid rank ID."
 msgstr ""
 
-#: includes/admin/users.php:83
+#: includes/admin/users.php:81
 msgid "Rank updated successfully."
 msgstr ""
 
-#: includes/admin/users.php:127
+#: includes/admin/users.php:125
 msgid "Invalid points amount."
 msgstr ""
 
-#: includes/admin/users.php:132 includes/api/user-earnings.php:235
+#: includes/admin/users.php:130 includes/api/user-earnings.php:235
 msgid "Invalid points type."
 msgstr ""
 
-#: includes/admin/users.php:174
+#: includes/admin/users.php:172
 msgid "Points updated successfully."
 msgstr ""
 
-#: includes/admin/users.php:206
+#: includes/admin/users.php:204
 msgid "Your Ranks"
 msgstr ""
 
-#: includes/admin/users.php:214
+#: includes/admin/users.php:212
 #, php-format
 msgid "No rank types configured, visit %s to configure some rank types."
 msgstr ""
 
-#: includes/admin/users.php:214 includes/admin/users.php:256
-#: includes/admin/users.php:334
+#: includes/admin/users.php:212 includes/admin/users.php:254
+#: includes/admin/users.php:331
 msgid "this page"
 msgstr ""
 
-#: includes/admin/users.php:254
+#: includes/admin/users.php:252
 #, php-format
 msgid "No %1$s configured, visit %2$s to configure some %1$s."
 msgstr ""
 
-#: includes/admin/users.php:272
+#: includes/admin/users.php:270
 #, php-format
 msgid "%s listed are ordered by priority."
 msgstr ""
 
-#: includes/admin/users.php:275 includes/admin/users.php:367
-#: includes/admin/users.php:421
+#: includes/admin/users.php:273 includes/admin/users.php:364
+#: includes/admin/users.php:418
 msgid "Save"
 msgstr ""
 
-#: includes/admin/users.php:276 includes/admin/users.php:368
-#: includes/admin/users.php:422 includes/shortcodes/shortcodes-editor.php:107
+#: includes/admin/users.php:274 includes/admin/users.php:365
+#: includes/admin/users.php:419 includes/shortcodes/shortcodes-editor.php:107
 msgid "Cancel"
 msgstr ""
 
-#: includes/admin/users.php:327 includes/privacy/exporters/user-data.php:101
+#: includes/admin/users.php:324 includes/privacy/exporters/user-data.php:101
 msgid "Points Balances"
 msgstr ""
 
-#: includes/admin/users.php:327
+#: includes/admin/users.php:324
 msgid "Your Balances"
 msgstr ""
 
-#: includes/admin/users.php:334
+#: includes/admin/users.php:331
 #, php-format
 msgid "No points types configured, visit %s to configure some points types."
 msgstr ""
 
-#: includes/admin/users.php:364 includes/admin/users.php:405
+#: includes/admin/users.php:361 includes/admin/users.php:402
 msgid "Enter a new total will automatically log the change and difference between totals."
 msgstr ""
 
-#: includes/admin/users.php:403
+#: includes/admin/users.php:400
 msgid "New balance:"
 msgstr ""
 
-#: includes/admin/users.php:408
+#: includes/admin/users.php:405
 msgid "Register on user earnings:"
 msgstr ""
 
-#: includes/admin/users.php:415
+#: includes/admin/users.php:412
 msgid "Earning entry text:"
 msgstr ""
 
-#: includes/admin/users.php:470
+#: includes/admin/users.php:466
 msgid "Your Achievements"
 msgstr ""
 
-#: includes/admin/users.php:508
+#: includes/admin/users.php:502
 msgid "Award Achievement"
 msgstr ""
 
-#: includes/admin/users.php:513
+#: includes/admin/users.php:507
 msgid "Select an achievement type to award:"
 msgstr ""
 
-#: includes/admin/users.php:592 includes/admin/users.php:779
+#: includes/admin/users.php:584 includes/admin/users.php:769
 msgid "Actions"
 msgstr ""
 
-#: includes/admin/users.php:626 includes/admin/users.php:855
+#: includes/admin/users.php:618 includes/admin/users.php:845
 #, php-format
 msgid "Award %s"
 msgstr ""
 
-#: includes/admin/users.php:635 includes/admin/users.php:864
-#: includes/custom-tables/user-earnings.php:666
+#: includes/admin/users.php:627 includes/admin/users.php:854
+#: includes/custom-tables/user-earnings.php:688
 msgid "Revoke Award"
 msgstr ""
 
-#: includes/admin/users.php:644 includes/admin/users.php:873
+#: includes/admin/users.php:636 includes/admin/users.php:863
 #, php-format
 msgid "No %s found."
 msgstr ""
 
-#: includes/admin/users.php:663 includes/admin/users.php:892
+#: includes/admin/users.php:655 includes/admin/users.php:882
 msgid "Couldn't load this content."
 msgstr ""
 
-#: includes/admin/users.php:693
+#: includes/admin/users.php:685
 msgid "Award Requirement"
 msgstr ""
 
-#: includes/admin/users.php:698
+#: includes/admin/users.php:690
 msgid "Select a requirement type to award:"
 msgstr ""
 
-#: includes/admin/users.php:701
+#: includes/admin/users.php:693
 msgid "Choose a requirement type"
 msgstr ""
 
-#: includes/ajax-functions.php:108
+#: includes/ajax-functions.php:119
 msgid "Invalid setting key."
 msgstr ""
 
-#: includes/ajax-functions.php:112
+#: includes/ajax-functions.php:123
 msgid "Invalid setting value."
 msgstr ""
 
-#: includes/ajax-functions.php:131
+#: includes/ajax-functions.php:142
 msgid "Please, log in to update your email preferences."
 msgstr ""
 
-#: includes/ajax-functions.php:160
+#: includes/ajax-functions.php:171
 msgid "Email preferences saved successfully."
 msgstr ""
 
-#: includes/ajax-functions.php:577 includes/ajax-functions.php:649
+#: includes/ajax-functions.php:588 includes/ajax-functions.php:660
 #, php-format
 msgid "Choose the %s"
 msgstr ""
 
-#: includes/ajax-functions.php:732
+#: includes/ajax-functions.php:743
 msgid "Achievement not found."
 msgstr ""
 
-#: includes/ajax-functions.php:738
+#: includes/ajax-functions.php:749
 msgid "Invalid achievement."
 msgstr ""
 
-#: includes/ajax-functions.php:750 includes/ajax-functions.php:756
-#: includes/ajax-functions.php:876 includes/ajax-functions.php:883
-#: includes/ajax-functions.php:888
+#: includes/ajax-functions.php:761 includes/ajax-functions.php:767
+#: includes/ajax-functions.php:887 includes/ajax-functions.php:894
+#: includes/ajax-functions.php:899
 #, php-format
 msgid "You are not allowed to unlock this %s."
 msgstr ""
 
-#: includes/ajax-functions.php:762
+#: includes/ajax-functions.php:773
 #, php-format
 msgid "You already unlocked this %s."
 msgstr ""
 
-#: includes/ajax-functions.php:781 includes/ajax-functions.php:915
+#: includes/ajax-functions.php:792 includes/ajax-functions.php:926
 #, php-format
 msgid "Insufficient %s."
 msgstr ""
 
-#: includes/ajax-functions.php:811
+#: includes/ajax-functions.php:822
 #, php-format
 msgid "Congratulations! You unlocked the %s %s."
 msgstr ""
 
-#: includes/ajax-functions.php:855
+#: includes/ajax-functions.php:866
 msgid "Rank not found."
 msgstr ""
 
-#: includes/ajax-functions.php:862
+#: includes/ajax-functions.php:873
 msgid "Invalid rank."
 msgstr ""
 
-#: includes/ajax-functions.php:895
+#: includes/ajax-functions.php:906
 #, php-format
 msgid "You are already in a higher %s."
 msgstr ""
 
-#: includes/ajax-functions.php:945
+#: includes/ajax-functions.php:956
 #, php-format
 msgid "Congratulations! You reached to the %s %s."
 msgstr ""
@@ -4215,16 +4229,16 @@ msgstr ""
 msgid "<strong>GamiPress cache</strong> cleared successfully!"
 msgstr ""
 
-#: includes/compatibility/1.2.8.php:251 includes/custom-tables.php:96
+#: includes/compatibility/1.2.8.php:251 includes/custom-tables/logs.php:22
 #: includes/privacy/exporters/logs.php:125
 msgid "Log"
 msgstr ""
 
-#: includes/compatibility/1.2.8.php:252 includes/post-types.php:289
-#: includes/post-types.php:326 includes/post-types.php:360
-#: includes/post-types.php:392 includes/post-types.php:429
-#: includes/post-types.php:461 includes/post-types.php:498
-#: includes/post-types.php:546 includes/post-types.php:621
+#: includes/compatibility/1.2.8.php:252 includes/post-types.php:295
+#: includes/post-types.php:332 includes/post-types.php:366
+#: includes/post-types.php:398 includes/post-types.php:435
+#: includes/post-types.php:467 includes/post-types.php:504
+#: includes/post-types.php:552 includes/post-types.php:627
 msgid "Add New"
 msgstr ""
 
@@ -4260,39 +4274,39 @@ msgstr ""
 msgid "points"
 msgstr ""
 
-#: includes/custom-tables.php:34
-msgid "User Earning"
-msgstr ""
-
-#: includes/custom-tables.php:37
-msgid "This user has not earned anything"
-msgstr ""
-
-#: includes/custom-tables/logs.php:200
+#: includes/custom-tables/logs.php:220
 msgid "Post"
 msgstr ""
 
-#: includes/custom-tables/logs.php:265
+#: includes/custom-tables/logs.php:285
 msgid "Achievement Step Earn"
 msgstr ""
 
-#: includes/custom-tables/logs.php:267
+#: includes/custom-tables/logs.php:287
 msgid "Achievement Step Award"
 msgstr ""
 
-#: includes/custom-tables/logs.php:272
+#: includes/custom-tables/logs.php:292
 msgid "Rank Requirement Earn"
 msgstr ""
 
-#: includes/custom-tables/logs.php:274
+#: includes/custom-tables/logs.php:294
 msgid "Rank Requirement Award"
 msgstr ""
 
-#: includes/custom-tables/user-earnings.php:343
+#: includes/custom-tables/user-earnings.php:22
+msgid "User Earning"
+msgstr ""
+
+#: includes/custom-tables/user-earnings.php:25
+msgid "This user has not earned anything"
+msgstr ""
+
+#: includes/custom-tables/user-earnings.php:364
 msgid "Action"
 msgstr ""
 
-#: includes/custom-tables/user-earnings.php:599
+#: includes/custom-tables/user-earnings.php:621
 msgid "Show more details"
 msgstr ""
 
@@ -4400,7 +4414,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: includes/filters.php:516 includes/filters.php:2187
-#: includes/post-types.php:428
+#: includes/post-types.php:287 includes/post-types.php:434
 msgid "Step"
 msgid_plural "Steps"
 msgstr[0] ""
@@ -4747,7 +4761,8 @@ msgstr ""
 msgid "Points Earn"
 msgstr ""
 
-#: includes/functions/logs.php:26 includes/post-types.php:359
+#: includes/functions/logs.php:26 includes/post-types.php:286
+#: includes/post-types.php:365
 msgid "Points Deduction"
 msgstr ""
 
@@ -4755,7 +4770,8 @@ msgstr ""
 msgid "Points Expend"
 msgstr ""
 
-#: includes/functions/logs.php:28 includes/post-types.php:325
+#: includes/functions/logs.php:28 includes/post-types.php:285
+#: includes/post-types.php:331
 msgid "Points Award"
 msgstr ""
 
@@ -4858,300 +4874,300 @@ msgstr ""
 msgid "Rank Type renamed successfully. <p>All ranks of this type, and all active and earned user ranks, have been updated <strong>automatically</strong>.</p> All shortcodes, %s, and URIs that reference the old rank type slug must be updated <strong>manually</strong>."
 msgstr ""
 
-#: includes/post-types.php:290
-msgid "Add New Points Type"
-msgstr ""
-
-#: includes/post-types.php:291
-msgid "Edit Points Type"
-msgstr ""
-
-#: includes/post-types.php:292
-msgid "New Points Type"
-msgstr ""
-
-#: includes/post-types.php:294
-msgid "View Points Type"
-msgstr ""
-
-#: includes/post-types.php:295
-msgid "Search Points Types"
-msgstr ""
-
-#: includes/post-types.php:296
-msgid "No points types found"
-msgstr ""
-
-#: includes/post-types.php:297
-msgid "No points types found in Trash"
-msgstr ""
-
-#: includes/post-types.php:300
-msgid "Points Type Image"
-msgstr ""
-
-#: includes/post-types.php:301
-msgid "Set points type image"
-msgstr ""
-
-#: includes/post-types.php:302
-msgid "Remove points type image"
-msgstr ""
-
-#: includes/post-types.php:303
-msgid "Use points type image"
-msgstr ""
-
-#: includes/post-types.php:327
-msgid "Add New Points Award"
-msgstr ""
-
-#: includes/post-types.php:328
-msgid "Edit Points Award"
-msgstr ""
-
-#: includes/post-types.php:329
-msgid "New Points Award"
-msgstr ""
-
-#: includes/post-types.php:331
-msgid "View Points Award"
-msgstr ""
-
-#: includes/post-types.php:332
-msgid "Search Points Awards"
-msgstr ""
-
-#: includes/post-types.php:333
-msgid "No points awards found"
-msgstr ""
-
-#: includes/post-types.php:334
-msgid "No points awards found in Trash"
-msgstr ""
-
-#: includes/post-types.php:361
-msgid "Add New Points Deduction"
-msgstr ""
-
-#: includes/post-types.php:362
-msgid "Edit Points Deduction"
-msgstr ""
-
-#: includes/post-types.php:363
-msgid "New Points Deduction"
-msgstr ""
-
-#: includes/post-types.php:365
-msgid "View Points Deduction"
-msgstr ""
-
-#: includes/post-types.php:366
-msgid "Search Points Deductions"
-msgstr ""
-
-#: includes/post-types.php:367
-msgid "No points deductions found"
-msgstr ""
-
-#: includes/post-types.php:368
-msgid "No points deductions found in Trash"
-msgstr ""
-
-#: includes/post-types.php:393
-msgid "Add New Achievement Type"
-msgstr ""
-
-#: includes/post-types.php:394
-msgid "Edit Achievement Type"
-msgstr ""
-
-#: includes/post-types.php:395
-msgid "New Achievement Type"
-msgstr ""
-
-#: includes/post-types.php:397
-msgid "View Achievement Type"
-msgstr ""
-
-#: includes/post-types.php:398
-msgid "Search Achievement Types"
-msgstr ""
-
-#: includes/post-types.php:399
-msgid "No achievement types found"
-msgstr ""
-
-#: includes/post-types.php:400
-msgid "No achievement types found in Trash"
-msgstr ""
-
-#: includes/post-types.php:403
-msgid "Default Achievement Image"
-msgstr ""
-
-#: includes/post-types.php:404
-msgid "Set default achievement image"
-msgstr ""
-
-#: includes/post-types.php:405
-msgid "Remove default achievement image"
-msgstr ""
-
-#: includes/post-types.php:406
-msgid "Use default achievement image"
-msgstr ""
-
-#: includes/post-types.php:430
-msgid "Add New Step"
-msgstr ""
-
-#: includes/post-types.php:431
-msgid "Edit Step"
-msgstr ""
-
-#: includes/post-types.php:432
-msgid "New Step"
-msgstr ""
-
-#: includes/post-types.php:434
-msgid "View Step"
-msgstr ""
-
-#: includes/post-types.php:435
-msgid "Search Steps"
-msgstr ""
-
-#: includes/post-types.php:436
-msgid "No steps found"
-msgstr ""
-
-#: includes/post-types.php:437
-msgid "No steps found in Trash"
-msgstr ""
-
-#: includes/post-types.php:462
-msgid "Add New Rank Type"
-msgstr ""
-
-#: includes/post-types.php:463
-msgid "Edit Rank Type"
-msgstr ""
-
-#: includes/post-types.php:464
-msgid "New Rank Type"
-msgstr ""
-
-#: includes/post-types.php:466
-msgid "View Rank Type"
-msgstr ""
-
-#: includes/post-types.php:467
-msgid "Search Rank Types"
-msgstr ""
-
-#: includes/post-types.php:468
-msgid "No rank types found"
-msgstr ""
-
-#: includes/post-types.php:469
-msgid "No rank types found in Trash"
-msgstr ""
-
-#: includes/post-types.php:472
-msgid "Default Rank Image"
-msgstr ""
-
-#: includes/post-types.php:473
-msgid "Set default rank image"
-msgstr ""
-
-#: includes/post-types.php:474
-msgid "Remove default rank image"
-msgstr ""
-
-#: includes/post-types.php:475
-msgid "Use default rank image"
-msgstr ""
-
-#: includes/post-types.php:497
+#: includes/post-types.php:288 includes/post-types.php:503
 msgid "Rank Requirement"
 msgstr ""
 
-#: includes/post-types.php:499
-msgid "Add New Rank Requirement"
+#: includes/post-types.php:296
+msgid "Add New Points Type"
 msgstr ""
 
-#: includes/post-types.php:500
-msgid "Edit Rank Requirement"
+#: includes/post-types.php:297
+msgid "Edit Points Type"
 msgstr ""
 
-#: includes/post-types.php:501
-msgid "New Rank Requirement"
+#: includes/post-types.php:298
+msgid "New Points Type"
 msgstr ""
 
-#: includes/post-types.php:503
-msgid "View Rank Requirement"
+#: includes/post-types.php:300
+msgid "View Points Type"
 msgstr ""
 
-#: includes/post-types.php:504
-msgid "Search Rank Requirements"
+#: includes/post-types.php:301
+msgid "Search Points Types"
+msgstr ""
+
+#: includes/post-types.php:302
+msgid "No points types found"
+msgstr ""
+
+#: includes/post-types.php:303
+msgid "No points types found in Trash"
+msgstr ""
+
+#: includes/post-types.php:306
+msgid "Points Type Image"
+msgstr ""
+
+#: includes/post-types.php:307
+msgid "Set points type image"
+msgstr ""
+
+#: includes/post-types.php:308
+msgid "Remove points type image"
+msgstr ""
+
+#: includes/post-types.php:309
+msgid "Use points type image"
+msgstr ""
+
+#: includes/post-types.php:333
+msgid "Add New Points Award"
+msgstr ""
+
+#: includes/post-types.php:334
+msgid "Edit Points Award"
+msgstr ""
+
+#: includes/post-types.php:335
+msgid "New Points Award"
+msgstr ""
+
+#: includes/post-types.php:337
+msgid "View Points Award"
+msgstr ""
+
+#: includes/post-types.php:338
+msgid "Search Points Awards"
+msgstr ""
+
+#: includes/post-types.php:339
+msgid "No points awards found"
+msgstr ""
+
+#: includes/post-types.php:340
+msgid "No points awards found in Trash"
+msgstr ""
+
+#: includes/post-types.php:367
+msgid "Add New Points Deduction"
+msgstr ""
+
+#: includes/post-types.php:368
+msgid "Edit Points Deduction"
+msgstr ""
+
+#: includes/post-types.php:369
+msgid "New Points Deduction"
+msgstr ""
+
+#: includes/post-types.php:371
+msgid "View Points Deduction"
+msgstr ""
+
+#: includes/post-types.php:372
+msgid "Search Points Deductions"
+msgstr ""
+
+#: includes/post-types.php:373
+msgid "No points deductions found"
+msgstr ""
+
+#: includes/post-types.php:374
+msgid "No points deductions found in Trash"
+msgstr ""
+
+#: includes/post-types.php:399
+msgid "Add New Achievement Type"
+msgstr ""
+
+#: includes/post-types.php:400
+msgid "Edit Achievement Type"
+msgstr ""
+
+#: includes/post-types.php:401
+msgid "New Achievement Type"
+msgstr ""
+
+#: includes/post-types.php:403
+msgid "View Achievement Type"
+msgstr ""
+
+#: includes/post-types.php:404
+msgid "Search Achievement Types"
+msgstr ""
+
+#: includes/post-types.php:405
+msgid "No achievement types found"
+msgstr ""
+
+#: includes/post-types.php:406
+msgid "No achievement types found in Trash"
+msgstr ""
+
+#: includes/post-types.php:409
+msgid "Default Achievement Image"
+msgstr ""
+
+#: includes/post-types.php:410
+msgid "Set default achievement image"
+msgstr ""
+
+#: includes/post-types.php:411
+msgid "Remove default achievement image"
+msgstr ""
+
+#: includes/post-types.php:412
+msgid "Use default achievement image"
+msgstr ""
+
+#: includes/post-types.php:436
+msgid "Add New Step"
+msgstr ""
+
+#: includes/post-types.php:437
+msgid "Edit Step"
+msgstr ""
+
+#: includes/post-types.php:438
+msgid "New Step"
+msgstr ""
+
+#: includes/post-types.php:440
+msgid "View Step"
+msgstr ""
+
+#: includes/post-types.php:441
+msgid "Search Steps"
+msgstr ""
+
+#: includes/post-types.php:442
+msgid "No steps found"
+msgstr ""
+
+#: includes/post-types.php:443
+msgid "No steps found in Trash"
+msgstr ""
+
+#: includes/post-types.php:468
+msgid "Add New Rank Type"
+msgstr ""
+
+#: includes/post-types.php:469
+msgid "Edit Rank Type"
+msgstr ""
+
+#: includes/post-types.php:470
+msgid "New Rank Type"
+msgstr ""
+
+#: includes/post-types.php:472
+msgid "View Rank Type"
+msgstr ""
+
+#: includes/post-types.php:473
+msgid "Search Rank Types"
+msgstr ""
+
+#: includes/post-types.php:474
+msgid "No rank types found"
+msgstr ""
+
+#: includes/post-types.php:475
+msgid "No rank types found in Trash"
+msgstr ""
+
+#: includes/post-types.php:478
+msgid "Default Rank Image"
+msgstr ""
+
+#: includes/post-types.php:479
+msgid "Set default rank image"
+msgstr ""
+
+#: includes/post-types.php:480
+msgid "Remove default rank image"
+msgstr ""
+
+#: includes/post-types.php:481
+msgid "Use default rank image"
 msgstr ""
 
 #: includes/post-types.php:505
-msgid "No rank requirements found"
+msgid "Add New Rank Requirement"
 msgstr ""
 
 #: includes/post-types.php:506
+msgid "Edit Rank Requirement"
+msgstr ""
+
+#: includes/post-types.php:507
+msgid "New Rank Requirement"
+msgstr ""
+
+#: includes/post-types.php:509
+msgid "View Rank Requirement"
+msgstr ""
+
+#: includes/post-types.php:510
+msgid "Search Rank Requirements"
+msgstr ""
+
+#: includes/post-types.php:511
+msgid "No rank requirements found"
+msgstr ""
+
+#: includes/post-types.php:512
 msgid "No rank requirements found in Trash"
-msgstr ""
-
-#: includes/post-types.php:548 includes/post-types.php:623
-#, php-format
-msgid "Edit %s"
-msgstr ""
-
-#: includes/post-types.php:549 includes/post-types.php:624
-#, php-format
-msgid "New %s"
-msgstr ""
-
-#: includes/post-types.php:551 includes/post-types.php:626
-#, php-format
-msgid "View %s"
-msgstr ""
-
-#: includes/post-types.php:552 includes/post-types.php:627
-#, php-format
-msgid "Search %s"
-msgstr ""
-
-#: includes/post-types.php:553 includes/post-types.php:628
-#, php-format
-msgid "No %s found"
 msgstr ""
 
 #: includes/post-types.php:554 includes/post-types.php:629
 #, php-format
-msgid "No %s found in Trash"
+msgid "Edit %s"
+msgstr ""
+
+#: includes/post-types.php:555 includes/post-types.php:630
+#, php-format
+msgid "New %s"
 msgstr ""
 
 #: includes/post-types.php:557 includes/post-types.php:632
 #, php-format
-msgid "%s Image"
+msgid "View %s"
 msgstr ""
 
 #: includes/post-types.php:558 includes/post-types.php:633
 #, php-format
-msgid "Set %s image"
+msgid "Search %s"
 msgstr ""
 
 #: includes/post-types.php:559 includes/post-types.php:634
 #, php-format
-msgid "Remove %s image"
+msgid "No %s found"
 msgstr ""
 
 #: includes/post-types.php:560 includes/post-types.php:635
+#, php-format
+msgid "No %s found in Trash"
+msgstr ""
+
+#: includes/post-types.php:563 includes/post-types.php:638
+#, php-format
+msgid "%s Image"
+msgstr ""
+
+#: includes/post-types.php:564 includes/post-types.php:639
+#, php-format
+msgid "Set %s image"
+msgstr ""
+
+#: includes/post-types.php:565 includes/post-types.php:640
+#, php-format
+msgid "Remove %s image"
+msgstr ""
+
+#: includes/post-types.php:566 includes/post-types.php:641
 #, php-format
 msgid "Use %s image"
 msgstr ""
@@ -6263,7 +6279,7 @@ msgstr ""
 msgid "Show rank requirements completed."
 msgstr ""
 
-#: includes/shortcodes/gamipress_earnings.php:331
+#: includes/shortcodes/gamipress_earnings.php:295
 msgid "Thumbnail"
 msgstr ""
 
@@ -6570,6 +6586,10 @@ msgstr ""
 msgid "Comma-separated list of specific log entries IDs to exclude."
 msgstr ""
 
+#: includes/shortcodes/gamipress_logs.php:160
+msgid "The type provided isn't a valid registered log type."
+msgstr ""
+
 #: includes/shortcodes/gamipress_points.php:20
 msgid "Points (Old)"
 msgstr ""
@@ -6715,14 +6735,14 @@ msgstr ""
 #: includes/shortcodes/gamipress_points.php:224
 #: includes/shortcodes/gamipress_points_types.php:229
 #: includes/shortcodes/gamipress_site_points.php:209
-#: includes/shortcodes/gamipress_user_points.php:225
+#: includes/shortcodes/gamipress_user_points.php:232
 msgid "The type provided isn't a valid registered points type."
 msgstr ""
 
 #: includes/shortcodes/gamipress_points.php:240
 #: includes/shortcodes/gamipress_points_types.php:245
 #: includes/shortcodes/gamipress_site_points.php:225
-#: includes/shortcodes/gamipress_user_points.php:241
+#: includes/shortcodes/gamipress_user_points.php:248
 msgid "All types provided aren't valid registered points types."
 msgstr ""
 
@@ -6949,6 +6969,14 @@ msgstr ""
 
 #: includes/shortcodes/gamipress_user_points.php:147
 msgid "Show user points from all network sites."
+msgstr ""
+
+#: includes/shortcodes/gamipress_user_points.php:152
+msgid "Hide if no earnings"
+msgstr ""
+
+#: includes/shortcodes/gamipress_user_points.php:153
+msgid "Hide the point balance if no earnings."
 msgstr ""
 
 #: includes/shortcodes/gamipress_user_rank.php:26
@@ -7397,12 +7425,12 @@ msgstr ""
 msgid "Get a rank revoked"
 msgstr ""
 
-#: includes/triggers.php:274 includes/triggers.php:472
+#: includes/triggers.php:274
 #, php-format
 msgid "Unlocked all %s"
 msgstr ""
 
-#: includes/triggers.php:276 includes/triggers.php:471
+#: includes/triggers.php:276
 #, php-format
 msgid "Unlocked a %s"
 msgstr ""
@@ -7435,11 +7463,6 @@ msgstr ""
 #: includes/triggers.php:322
 #, php-format
 msgid "%s gets visited"
-msgstr ""
-
-#: includes/triggers.php:473
-#, php-format
-msgid "Revoked a %s"
 msgstr ""
 
 #: includes/users.php:23
@@ -8768,7 +8791,7 @@ msgid "Delete a reply"
 msgstr ""
 
 #: integrations/bbpress/includes/triggers.php:92
-#: integrations/buddyboss/includes/forums/includes/triggers.php:92
+#: integrations/buddyboss/includes/forums/includes/triggers.php:96
 #: integrations/simplepress/includes/triggers.php:78
 #: integrations/wpforo/includes/triggers.php:88
 #, php-format
@@ -8776,31 +8799,31 @@ msgid "Create a topic on %s forum"
 msgstr ""
 
 #: integrations/bbpress/includes/triggers.php:93
-#: integrations/buddyboss/includes/forums/includes/triggers.php:93
+#: integrations/buddyboss/includes/forums/includes/triggers.php:97
 #, php-format
 msgid "Reply to %s topic"
 msgstr ""
 
 #: integrations/bbpress/includes/triggers.php:94
-#: integrations/buddyboss/includes/forums/includes/triggers.php:94
+#: integrations/buddyboss/includes/forums/includes/triggers.php:98
 #, php-format
 msgid "Reply to any topic on %s forum"
 msgstr ""
 
 #: integrations/bbpress/includes/triggers.php:95
-#: integrations/buddyboss/includes/forums/includes/triggers.php:95
+#: integrations/buddyboss/includes/forums/includes/triggers.php:99
 #, php-format
 msgid "Get a reply in %s"
 msgstr ""
 
 #: integrations/bbpress/includes/triggers.php:96
-#: integrations/buddyboss/includes/forums/includes/triggers.php:96
+#: integrations/buddyboss/includes/forums/includes/triggers.php:100
 #, php-format
 msgid "Get a reply in any topic on %s forum"
 msgstr ""
 
 #: integrations/bbpress/includes/triggers.php:97
-#: integrations/buddyboss/includes/forums/includes/triggers.php:97
+#: integrations/buddyboss/includes/forums/includes/triggers.php:101
 #: integrations/easy-digital-downloads/includes/triggers.php:276
 #: integrations/favorites/includes/triggers.php:87
 #, php-format
@@ -8808,20 +8831,20 @@ msgid "Favorite %s"
 msgstr ""
 
 #: integrations/bbpress/includes/triggers.php:98
-#: integrations/buddyboss/includes/forums/includes/triggers.php:98
+#: integrations/buddyboss/includes/forums/includes/triggers.php:102
 #, php-format
 msgid "Favorite any topic on %s forum"
 msgstr ""
 
 #: integrations/bbpress/includes/triggers.php:99
-#: integrations/buddyboss/includes/forums/includes/triggers.php:99
+#: integrations/buddyboss/includes/forums/includes/triggers.php:103
 #: integrations/favorites/includes/triggers.php:89
 #, php-format
 msgid "Unfavorite %s"
 msgstr ""
 
 #: integrations/bbpress/includes/triggers.php:100
-#: integrations/buddyboss/includes/forums/includes/triggers.php:100
+#: integrations/buddyboss/includes/forums/includes/triggers.php:104
 #, php-format
 msgid "Unfavorite any topic on %s forum"
 msgstr ""
@@ -9267,7 +9290,7 @@ msgid "Recount activity favorites"
 msgstr ""
 
 #: integrations/buddyboss/includes/community/includes/admin/recount-activity.php:52
-#: integrations/buddyboss/includes/community/includes/triggers.php:78
+#: integrations/buddyboss/includes/community/includes/triggers.php:87
 msgid "BuddyBoss Groups"
 msgstr ""
 
@@ -9590,23 +9613,20 @@ msgid "Delete a reply from an activity post"
 msgstr ""
 
 #: integrations/buddyboss/includes/community/includes/triggers.php:65
-#: integrations/buddypress/includes/triggers.php:65
-msgid "Favorite an activity post"
+#: integrations/peepso/includes/triggers.php:35
+msgid "Like an activity post"
 msgstr ""
 
 #: integrations/buddyboss/includes/community/includes/triggers.php:66
-#: integrations/buddypress/includes/triggers.php:66
-msgid "Remove a favorite on an activity post"
+msgid "Remove a like on an activity post"
 msgstr ""
 
 #: integrations/buddyboss/includes/community/includes/triggers.php:67
-#: integrations/buddypress/includes/triggers.php:67
-msgid "Get a favorite on an activity post"
+msgid "Get a like on an activity post"
 msgstr ""
 
 #: integrations/buddyboss/includes/community/includes/triggers.php:68
-#: integrations/buddypress/includes/triggers.php:68
-msgid "Get a favorite removed on an activity post"
+msgid "Get a like removed on an activity post"
 msgstr ""
 
 #: integrations/buddyboss/includes/community/includes/triggers.php:69
@@ -9626,213 +9646,281 @@ msgstr ""
 msgid "Publish a document in an activity post"
 msgstr ""
 
+#: integrations/buddyboss/includes/community/includes/triggers.php:74
+msgid "React an activity post"
+msgstr ""
+
+#: integrations/buddyboss/includes/community/includes/triggers.php:75
+msgid "React with specific reaction an activity post"
+msgstr ""
+
+#: integrations/buddyboss/includes/community/includes/triggers.php:76
+msgid "Get a reaction on an activity post"
+msgstr ""
+
+#: integrations/buddyboss/includes/community/includes/triggers.php:77
+msgid "Get a specific reaction on an activity post"
+msgstr ""
+
+#: integrations/buddyboss/includes/community/includes/triggers.php:78
+msgid "Remove a reaction from an activity post"
+msgstr ""
+
 #: integrations/buddyboss/includes/community/includes/triggers.php:79
+msgid "Remove a specific reaction from an activity post"
+msgstr ""
+
+#: integrations/buddyboss/includes/community/includes/triggers.php:80
+msgid "Get a reaction removed from an activity post"
+msgstr ""
+
+#: integrations/buddyboss/includes/community/includes/triggers.php:81
+msgid "Get a specific reaction removed from an activity post"
+msgstr ""
+
+#: integrations/buddyboss/includes/community/includes/triggers.php:88
 #: integrations/buddypress/includes/triggers.php:76
 msgid "Publish an activity post in a group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:80
+#: integrations/buddyboss/includes/community/includes/triggers.php:89
 #: integrations/buddypress/includes/triggers.php:77
 msgid "Publish an activity post in a specific group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:81
+#: integrations/buddyboss/includes/community/includes/triggers.php:90
 #: integrations/buddypress/includes/triggers.php:78
 msgid "Reply a comment in a group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:82
+#: integrations/buddyboss/includes/community/includes/triggers.php:91
 #: integrations/buddypress/includes/triggers.php:79
 msgid "Reply a comment in a specific group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:83
+#: integrations/buddyboss/includes/community/includes/triggers.php:92
 #: integrations/buddypress/includes/triggers.php:80
 msgid "Get a reply on a comment in a group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:84
+#: integrations/buddyboss/includes/community/includes/triggers.php:93
 #: integrations/buddypress/includes/triggers.php:81
 msgid "Get a reply on a comment in a specific group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:85
+#: integrations/buddyboss/includes/community/includes/triggers.php:94
 #: integrations/buddypress/includes/triggers.php:82
 msgid "Remove an activity post from a group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:86
+#: integrations/buddyboss/includes/community/includes/triggers.php:95
 #: integrations/buddypress/includes/triggers.php:83
 msgid "Remove an activity post from a specific group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:87
+#: integrations/buddyboss/includes/community/includes/triggers.php:96
 #: integrations/buddypress/includes/triggers.php:84
 #: integrations/peepso/includes/triggers.php:109
 msgid "Create a group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:88
+#: integrations/buddyboss/includes/community/includes/triggers.php:97
 #: integrations/buddypress/includes/triggers.php:85
+msgid "Delete a group"
+msgstr ""
+
+#: integrations/buddyboss/includes/community/includes/triggers.php:98
+#: integrations/buddypress/includes/triggers.php:86
+msgid "Delete a specific group"
+msgstr ""
+
+#: integrations/buddyboss/includes/community/includes/triggers.php:99
+#: integrations/buddypress/includes/triggers.php:87
 #: integrations/peepso/includes/triggers.php:110
 msgid "Join a group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:89
-#: integrations/buddypress/includes/triggers.php:86
-#: integrations/learndash/includes/triggers.php:147
+#: integrations/buddyboss/includes/community/includes/triggers.php:100
+#: integrations/buddypress/includes/triggers.php:88
+#: integrations/learndash/includes/triggers.php:153
 #: integrations/peepso/includes/triggers.php:111
 #: integrations/wp-user-manager/includes/triggers.php:35
 msgid "Join a specific group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:90
-#: integrations/buddypress/includes/triggers.php:87
+#: integrations/buddyboss/includes/community/includes/triggers.php:101
+#: integrations/buddypress/includes/triggers.php:89
 msgid "Leave a group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:91
-#: integrations/buddypress/includes/triggers.php:88
+#: integrations/buddyboss/includes/community/includes/triggers.php:102
+#: integrations/buddypress/includes/triggers.php:90
 #: integrations/wp-user-manager/includes/triggers.php:37
 msgid "Leave a specific group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:92
-#: integrations/buddypress/includes/triggers.php:89
+#: integrations/buddyboss/includes/community/includes/triggers.php:103
+#: integrations/buddypress/includes/triggers.php:91
 msgid "Request to join a private group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:93
-#: integrations/buddypress/includes/triggers.php:90
+#: integrations/buddyboss/includes/community/includes/triggers.php:104
+#: integrations/buddypress/includes/triggers.php:92
 msgid "Request to join a specific private group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:94
-#: integrations/buddypress/includes/triggers.php:91
+#: integrations/buddyboss/includes/community/includes/triggers.php:105
+#: integrations/buddypress/includes/triggers.php:93
 msgid "Get accepted on a private group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:95
-#: integrations/buddypress/includes/triggers.php:92
+#: integrations/buddyboss/includes/community/includes/triggers.php:106
+#: integrations/buddypress/includes/triggers.php:94
 msgid "Get accepted on a specific private group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:96
-#: integrations/buddypress/includes/triggers.php:93
+#: integrations/buddyboss/includes/community/includes/triggers.php:107
+#: integrations/buddypress/includes/triggers.php:95
 msgid "Invite someone to join a group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:97
-#: integrations/buddypress/includes/triggers.php:94
+#: integrations/buddyboss/includes/community/includes/triggers.php:108
+#: integrations/buddypress/includes/triggers.php:96
 msgid "Invite someone to join a specific group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:98
-#: integrations/buddypress/includes/triggers.php:95
+#: integrations/buddyboss/includes/community/includes/triggers.php:109
+#: integrations/buddypress/includes/triggers.php:97
 msgid "Get promoted as moderator/administrator of a group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:99
-#: integrations/buddypress/includes/triggers.php:96
+#: integrations/buddyboss/includes/community/includes/triggers.php:110
+#: integrations/buddypress/includes/triggers.php:98
 msgid "Get promoted as moderator/administrator of a specific group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:100
-#: integrations/buddypress/includes/triggers.php:97
+#: integrations/buddyboss/includes/community/includes/triggers.php:111
+#: integrations/buddypress/includes/triggers.php:99
 msgid "Promote another member to moderator/administrator of a group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:101
-#: integrations/buddypress/includes/triggers.php:98
+#: integrations/buddyboss/includes/community/includes/triggers.php:112
+#: integrations/buddypress/includes/triggers.php:100
 msgid "Promote another member to moderator/administrator of a specific group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:137
-#: integrations/buddypress/includes/triggers.php:134
+#: integrations/buddyboss/includes/community/includes/triggers.php:148
+#: integrations/buddypress/includes/triggers.php:136
 #, php-format
 msgid "Get assigned to the %s type"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:144
-#: integrations/buddypress/includes/triggers.php:141
+#: integrations/buddyboss/includes/community/includes/triggers.php:155
+#: integrations/buddypress/includes/triggers.php:143
 #, php-format
 msgid "Update %s field with %s value"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:192
-#: integrations/buddypress/includes/triggers.php:189
+#: integrations/buddyboss/includes/community/includes/triggers.php:209
+#: integrations/buddypress/includes/triggers.php:192
 #, php-format
 msgid "Publish an activity post on %s group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:193
-#: integrations/buddypress/includes/triggers.php:190
+#: integrations/buddyboss/includes/community/includes/triggers.php:210
+#: integrations/buddypress/includes/triggers.php:193
 #, php-format
 msgid "Remove an activity post from %s group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:194
-#: integrations/buddypress/includes/triggers.php:191
+#: integrations/buddyboss/includes/community/includes/triggers.php:211
+#: integrations/buddypress/includes/triggers.php:194
 #, php-format
 msgid "Reply a comment on %s group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:195
-#: integrations/buddypress/includes/triggers.php:192
+#: integrations/buddyboss/includes/community/includes/triggers.php:212
+#: integrations/buddypress/includes/triggers.php:195
 #, php-format
 msgid "Get a reply in a comment on %s group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:196
-#: integrations/buddypress/includes/triggers.php:193
-#: integrations/learndash/includes/triggers.php:484
+#: integrations/buddyboss/includes/community/includes/triggers.php:213
+#: integrations/buddypress/includes/triggers.php:196
+#: integrations/learndash/includes/triggers.php:495
 #: integrations/peepso/includes/triggers.php:160
 #: integrations/wp-user-manager/includes/triggers.php:82
 #, php-format
 msgid "Join %s group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:197
-#: integrations/buddypress/includes/triggers.php:194
+#: integrations/buddyboss/includes/community/includes/triggers.php:214
+#: integrations/buddypress/includes/triggers.php:197
 #: integrations/wp-user-manager/includes/triggers.php:83
 #, php-format
 msgid "Leave %s group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:198
-#: integrations/buddypress/includes/triggers.php:195
+#: integrations/buddyboss/includes/community/includes/triggers.php:215
+#: integrations/buddypress/includes/triggers.php:198
 #, php-format
 msgid "Request to join %s group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:199
-#: integrations/buddypress/includes/triggers.php:196
+#: integrations/buddyboss/includes/community/includes/triggers.php:216
+#: integrations/buddypress/includes/triggers.php:199
 #, php-format
 msgid "Get accepted on %s group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:200
-#: integrations/buddypress/includes/triggers.php:197
+#: integrations/buddyboss/includes/community/includes/triggers.php:217
+#: integrations/buddypress/includes/triggers.php:200
+#, php-format
+msgid "Delete %s group"
+msgstr ""
+
+#: integrations/buddyboss/includes/community/includes/triggers.php:218
+#: integrations/buddypress/includes/triggers.php:201
 #, php-format
 msgid "Invite someone to join %s group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:201
-#: integrations/buddypress/includes/triggers.php:198
+#: integrations/buddyboss/includes/community/includes/triggers.php:219
+#: integrations/buddypress/includes/triggers.php:202
 #, php-format
 msgid "Get promoted as moderator/administrator of %s group"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:202
-#: integrations/buddypress/includes/triggers.php:200
+#: integrations/buddyboss/includes/community/includes/triggers.php:220
+#: integrations/buddypress/includes/triggers.php:204
 #, php-format
 msgid "Update %s field with any value"
 msgstr ""
 
-#: integrations/buddyboss/includes/community/includes/triggers.php:203
-#: integrations/buddypress/includes/triggers.php:201
+#: integrations/buddyboss/includes/community/includes/triggers.php:221
+#: integrations/buddypress/includes/triggers.php:205
 #, php-format
 msgid "Update %s field with specific value"
+msgstr ""
+
+#: integrations/buddyboss/includes/community/includes/triggers.php:223
+#, php-format
+msgid "React with %s reaction an activity post"
+msgstr ""
+
+#: integrations/buddyboss/includes/community/includes/triggers.php:224
+#, php-format
+msgid "Get a %s reaction on an activity post"
+msgstr ""
+
+#: integrations/buddyboss/includes/community/includes/triggers.php:225
+#, php-format
+msgid "Remove a %s reaction from an activity post"
+msgstr ""
+
+#: integrations/buddyboss/includes/community/includes/triggers.php:226
+#, php-format
+msgid "Get a %s reaction removed from an activity post"
 msgstr ""
 
 #: integrations/buddyboss/includes/forums/includes/admin.php:45
@@ -9843,6 +9931,14 @@ msgstr ""
 
 #: integrations/buddyboss/includes/forums/includes/triggers.php:42
 msgid "Lose a favorite on a topic"
+msgstr ""
+
+#: integrations/buddyboss/includes/forums/includes/triggers.php:49
+msgid "Get a topic reported"
+msgstr ""
+
+#: integrations/buddyboss/includes/forums/includes/triggers.php:50
+msgid "Get a reply in a topic reported"
 msgstr ""
 
 #: integrations/buddyboss/includes/requirements.php:45
@@ -10006,7 +10102,23 @@ msgstr ""
 msgid "BuddyPress Profile"
 msgstr ""
 
-#: integrations/buddypress/includes/triggers.php:199
+#: integrations/buddypress/includes/triggers.php:65
+msgid "Favorite an activity post"
+msgstr ""
+
+#: integrations/buddypress/includes/triggers.php:66
+msgid "Remove a favorite on an activity post"
+msgstr ""
+
+#: integrations/buddypress/includes/triggers.php:67
+msgid "Get a favorite on an activity post"
+msgstr ""
+
+#: integrations/buddypress/includes/triggers.php:68
+msgid "Get a favorite removed on an activity post"
+msgstr ""
+
+#: integrations/buddypress/includes/triggers.php:203
 #, php-format
 msgid "Promote another member to moderator/administrator of %s group"
 msgstr ""
@@ -10082,7 +10194,7 @@ msgid "Complete a unit of a specific course"
 msgstr ""
 
 #: integrations/coursepress/includes/triggers.php:34
-#: integrations/learndash/includes/triggers.php:139
+#: integrations/learndash/includes/triggers.php:145
 #: integrations/lifterlms/includes/triggers.php:44
 #: integrations/masterstudy-lms/includes/triggers.php:37
 #: integrations/memberpress/includes/triggers.php:39
@@ -10095,7 +10207,8 @@ msgid "Complete a course"
 msgstr ""
 
 #: integrations/coursepress/includes/triggers.php:35
-#: integrations/learndash/includes/triggers.php:140
+#: integrations/fluentcommunity/includes/triggers.php:59
+#: integrations/learndash/includes/triggers.php:146
 #: integrations/lifterlms/includes/triggers.php:45
 #: integrations/masterstudy-lms/includes/triggers.php:38
 #: integrations/memberpress/includes/triggers.php:40
@@ -10108,8 +10221,7 @@ msgid "Complete a specific course"
 msgstr ""
 
 #: integrations/coursepress/includes/triggers.php:80
-#: integrations/wp-courseware/includes/triggers.php:86
-#: integrations/wp-courseware/includes/triggers.php:113
+#: integrations/wp-courseware/includes/triggers.php:96
 #, php-format
 msgid "Complete the module %s"
 msgstr ""
@@ -10125,7 +10237,7 @@ msgid "Complete a module of the course %s"
 msgstr ""
 
 #: integrations/coursepress/includes/triggers.php:85
-#: integrations/wp-courseware/includes/triggers.php:112
+#: integrations/wp-courseware/includes/triggers.php:95
 #: integrations/wplms/includes/triggers.php:179
 #, php-format
 msgid "Complete the unit %s"
@@ -10137,13 +10249,13 @@ msgid "Complete a unit of the course %s"
 msgstr ""
 
 #: integrations/coursepress/includes/triggers.php:89
-#: integrations/learndash/includes/triggers.php:481
+#: integrations/learndash/includes/triggers.php:492
 #: integrations/lifterlms/includes/triggers.php:139
 #: integrations/masterstudy-lms/includes/triggers.php:93
 #: integrations/sensei/includes/triggers.php:124
-#: integrations/tutor/includes/triggers.php:123
-#: integrations/wp-courseware/includes/triggers.php:94
-#: integrations/wp-courseware/includes/triggers.php:114
+#: integrations/tutor/includes/triggers.php:126
+#: integrations/tutor/includes/triggers.php:127
+#: integrations/wp-courseware/includes/triggers.php:97
 #: integrations/wpep/includes/triggers.php:164
 #: integrations/wplms/includes/triggers.php:164
 #, php-format
@@ -10220,6 +10332,7 @@ msgstr ""
 #: integrations/memberpress/includes/triggers.php:84
 #: integrations/memberpress/includes/triggers.php:85
 #: integrations/memberpress/includes/triggers.php:86
+#: integrations/paid-membership-subscriptions/includes/triggers.php:81
 #: integrations/studiocart/includes/triggers.php:69
 #: integrations/surecart/includes/triggers.php:61
 #: integrations/surecart/includes/triggers.php:82
@@ -10235,6 +10348,7 @@ msgstr ""
 #: integrations/digimember/includes/triggers.php:86
 #: integrations/digimember/includes/triggers.php:87
 #: integrations/memberpress/includes/triggers.php:87
+#: integrations/paid-membership-subscriptions/includes/triggers.php:85
 #, php-format
 msgid "Cancel %s"
 msgstr ""
@@ -10801,6 +10915,195 @@ msgstr ""
 msgid "Fluent Support - Events for clients"
 msgstr ""
 
+#: integrations/fluentcommunity/includes/admin.php:22
+msgid "FluentCommunity integration"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:23
+msgid "FluentCommunity Spaces"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:25
+msgid "Publish a post in any space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:26
+msgid "Publish a post in a specific space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:28
+msgid "Remove a post from any space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:29
+msgid "Remove a post from a specific space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:31
+msgid "React a post of any space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:32
+msgid "React a post of specific space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:34
+msgid "Request to join any space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:35
+msgid "Request to join specific space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:37
+msgid "Join any space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:38
+msgid "Join a specific space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:40
+msgid "Leave any space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:41
+msgid "Leave a specific space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:43
+msgid "Add a comment in any space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:44
+msgid "Add a comment in a specific space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:46
+msgid "Delete a comment in any space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:47
+msgid "Delete a comment in a specific space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:49
+msgid "Create a space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:51
+msgid "Delete any space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:52
+msgid "Delete a specific space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:56
+msgid "FluentCommunity Courses"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:58
+#: integrations/thrive-apprentice/includes/triggers.php:31
+msgid "Complete any course"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:61
+msgid "Enroll in any course"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:62
+#: integrations/learndash/includes/triggers.php:141
+msgid "Enroll in a specific course"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:64
+msgid "Unroll from any course"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:65
+msgid "Unroll from a specific course"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:67
+msgid "Create a course"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:69
+msgid "Delete any course"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:70
+msgid "Delete a specific course"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:122
+#, php-format
+msgid "Publish a post in %s space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:123
+#, php-format
+msgid "Remove a post from %s space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:124
+#, php-format
+msgid "React a post of %s space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:125
+#, php-format
+msgid "Request to join %s space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:126
+#, php-format
+msgid "Join %s space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:127
+#, php-format
+msgid "Leave %s space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:128
+#, php-format
+msgid "Add a comment in %s space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:129
+#, php-format
+msgid "Delete a comment in %s space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:130
+#, php-format
+msgid "Delete %s space"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:133
+#: integrations/memberpress/includes/triggers.php:92
+#: integrations/thrive-apprentice/includes/triggers.php:71
+#, php-format
+msgid "Complete %s course"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:134
+#, php-format
+msgid "Enroll in %s course"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:135
+#, php-format
+msgid "Unroll from %s course"
+msgstr ""
+
+#: integrations/fluentcommunity/includes/triggers.php:136
+#, php-format
+msgid "Delete %s course"
+msgstr ""
+
 #: integrations/fluentcrm/includes/admin.php:22
 msgid "FluentCRM integration"
 msgstr ""
@@ -11097,238 +11400,310 @@ msgstr ""
 msgid "Complete any interactive content of a specific type"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:30
-msgid "Complete any interactive content at maximum score"
+#: integrations/h5p/includes/triggers.php:28
+msgid "Complete any interactive content of a tag"
 msgstr ""
 
 #: integrations/h5p/includes/triggers.php:31
-msgid "Complete a specific interactive content at maximum score"
+msgid "Complete any interactive content at maximum score"
 msgstr ""
 
 #: integrations/h5p/includes/triggers.php:32
+msgid "Complete a specific interactive content at maximum score"
+msgstr ""
+
+#: integrations/h5p/includes/triggers.php:33
 msgid "Complete any interactive content of a specific type at maximum score"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:35
-msgid "Complete any interactive content with a minimum score"
-msgstr ""
-
-#: integrations/h5p/includes/triggers.php:36
-msgid "Complete a specific interactive content with a minimum score"
+#: integrations/h5p/includes/triggers.php:34
+msgid "Complete any interactive content at maximum score of a tag"
 msgstr ""
 
 #: integrations/h5p/includes/triggers.php:37
+msgid "Complete any interactive content with a minimum score"
+msgstr ""
+
+#: integrations/h5p/includes/triggers.php:38
+msgid "Complete a specific interactive content with a minimum score"
+msgstr ""
+
+#: integrations/h5p/includes/triggers.php:39
 msgid "Complete any interactive content of a specific type with a minimum score"
 msgstr ""
 
 #: integrations/h5p/includes/triggers.php:40
+msgid "Complete any interactive content with a minimum score of a tag"
+msgstr ""
+
+#: integrations/h5p/includes/triggers.php:43
 msgid "Complete any interactive content with a maximum score"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:41
+#: integrations/h5p/includes/triggers.php:44
 msgid "Complete a specific interactive content with a maximum score"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:42
+#: integrations/h5p/includes/triggers.php:45
 msgid "Complete any interactive content of a specific type with a maximum score"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:45
+#: integrations/h5p/includes/triggers.php:46
+msgid "Complete any interactive content with a maximum score of a tag"
+msgstr ""
+
+#: integrations/h5p/includes/triggers.php:49
 msgid "Complete any interactive content on a range of scores"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:46
+#: integrations/h5p/includes/triggers.php:50
 msgid "Complete a specific interactive content on a range of scores"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:47
+#: integrations/h5p/includes/triggers.php:51
 msgid "Complete any interactive content of a specific type on a range of scores"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:50
-msgid "Complete any interactive content with a minimum percentage score"
-msgstr ""
-
-#: integrations/h5p/includes/triggers.php:51
-msgid "Complete a specific interactive content with a minimum percentage score"
-msgstr ""
-
 #: integrations/h5p/includes/triggers.php:52
-msgid "Complete any interactive content of a specific type with a minimum percentage score"
+msgid "Complete any interactive content on a range of scores of a tag"
 msgstr ""
 
 #: integrations/h5p/includes/triggers.php:55
-msgid "Complete any interactive content with a maximum percentage score"
+msgid "Complete any interactive content with a minimum percentage score"
 msgstr ""
 
 #: integrations/h5p/includes/triggers.php:56
-msgid "Complete a specific interactive content with a maximum percentage score"
+msgid "Complete a specific interactive content with a minimum percentage score"
 msgstr ""
 
 #: integrations/h5p/includes/triggers.php:57
-msgid "Complete any interactive content of a specific type with a maximum percentage score"
+msgid "Complete any interactive content of a specific type with a minimum percentage score"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:60
-msgid "Complete any interactive content on a range of percentages scores"
+#: integrations/h5p/includes/triggers.php:58
+msgid "Complete any interactive content with a minimum percentage score of a tag"
 msgstr ""
 
 #: integrations/h5p/includes/triggers.php:61
-msgid "Complete a specific interactive content on a range of percentages scores"
+msgid "Complete any interactive content with a maximum percentage score"
 msgstr ""
 
 #: integrations/h5p/includes/triggers.php:62
+msgid "Complete a specific interactive content with a maximum percentage score"
+msgstr ""
+
+#: integrations/h5p/includes/triggers.php:63
+msgid "Complete any interactive content of a specific type with a maximum percentage score"
+msgstr ""
+
+#: integrations/h5p/includes/triggers.php:64
+msgid "Complete any interactive content with a maximum percentage score of a tag"
+msgstr ""
+
+#: integrations/h5p/includes/triggers.php:67
+msgid "Complete any interactive content on a range of percentages scores"
+msgstr ""
+
+#: integrations/h5p/includes/triggers.php:68
+msgid "Complete a specific interactive content on a range of percentages scores"
+msgstr ""
+
+#: integrations/h5p/includes/triggers.php:69
 msgid "Complete any interactive content of a specific type on a range of percentages scores"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:98
+#: integrations/h5p/includes/triggers.php:70
+msgid "Complete any interactive content on a range of percentages scores of a tag"
+msgstr ""
+
+#: integrations/h5p/includes/triggers.php:106
 #, php-format
 msgid "Complete a %s"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:103
+#: integrations/h5p/includes/triggers.php:111
 #, php-format
 msgid "Complete a %s at maximum score"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:108
+#: integrations/h5p/includes/triggers.php:116
 #, php-format
 msgid "Completed an interactive content with a score of %d or higher"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:112
+#: integrations/h5p/includes/triggers.php:120
 #, php-format
 msgid "Complete %s with a score of %d or higher"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:116
+#: integrations/h5p/includes/triggers.php:124
 #, php-format
 msgid "Complete a %s with a score of %d or higher"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:121
+#: integrations/h5p/includes/triggers.php:128
+#, php-format
+msgid "Completed an interactive content with a score of %d or higher of %s tag"
+msgstr ""
+
+#: integrations/h5p/includes/triggers.php:133
 #, php-format
 msgid "Completed an interactive content with a score of %d or lower"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:125
+#: integrations/h5p/includes/triggers.php:137
 #, php-format
 msgid "Complete %s with a score of %d or lower"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:129
+#: integrations/h5p/includes/triggers.php:141
 #, php-format
 msgid "Complete a %s with a score of %d or lower"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:134
+#: integrations/h5p/includes/triggers.php:145
+#, php-format
+msgid "Completed an interactive content with a score of %d or lower of %s tag"
+msgstr ""
+
+#: integrations/h5p/includes/triggers.php:150
 #, php-format
 msgid "Completed an interactive content with a score between %d and %d"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:138
+#: integrations/h5p/includes/triggers.php:154
 #, php-format
 msgid "Complete %s with a score between %d and %d"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:142
+#: integrations/h5p/includes/triggers.php:158
 #, php-format
 msgid "Complete a %s with a score between %d and %d"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:147
+#: integrations/h5p/includes/triggers.php:162
+#, php-format
+msgid "Completed an interactive content with a score between %d and %d of %s tag"
+msgstr ""
+
+#: integrations/h5p/includes/triggers.php:167
 #, php-format
 msgid "Completed an interactive content with a percentage score of %d or higher"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:151
+#: integrations/h5p/includes/triggers.php:171
 #, php-format
 msgid "Complete %s with a percentage score of %d or higher"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:155
+#: integrations/h5p/includes/triggers.php:175
 #, php-format
 msgid "Complete a %s with a percentage score of %d or higher"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:160
+#: integrations/h5p/includes/triggers.php:179
+#, php-format
+msgid "Completed an interactive content with a percentage score of %d or higher of %s tag"
+msgstr ""
+
+#: integrations/h5p/includes/triggers.php:184
 #, php-format
 msgid "Completed an interactive content with a percentage score of %d or lower"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:164
+#: integrations/h5p/includes/triggers.php:188
 #, php-format
 msgid "Complete %s with a percentage score of %d or lower"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:168
+#: integrations/h5p/includes/triggers.php:192
 #, php-format
 msgid "Complete a %s with a percentage score of %d or lower"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:173
+#: integrations/h5p/includes/triggers.php:196
+#, php-format
+msgid "Completed an interactive content with a percentage score of %d or lower of %s tag"
+msgstr ""
+
+#: integrations/h5p/includes/triggers.php:201
 #, php-format
 msgid "Completed an interactive content with a percentage score between %d and %d"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:177
+#: integrations/h5p/includes/triggers.php:205
 #, php-format
 msgid "Complete %s with a percentage score between %d and %d"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:181
+#: integrations/h5p/includes/triggers.php:209
 #, php-format
 msgid "Complete a %s with a percentage score between %d and %d"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:225
+#: integrations/h5p/includes/triggers.php:213
+#, php-format
+msgid "Completed an interactive content with a percentage score between %d and %d of %s tag"
+msgstr ""
+
+#: integrations/h5p/includes/triggers.php:266
 #, php-format
 msgid "Complete %s"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:226
+#: integrations/h5p/includes/triggers.php:267
 #, php-format
 msgid "Complete %s at maximum score"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:494
-#: integrations/h5p/includes/triggers.php:554
+#: integrations/h5p/includes/triggers.php:268
+#, php-format
+msgid "Complete content of %s tag"
+msgstr ""
+
+#: integrations/h5p/includes/triggers.php:269
+#, php-format
+msgid "Complete content at maximum score of %s tag"
+msgstr ""
+
+#: integrations/h5p/includes/triggers.php:616
+#: integrations/h5p/includes/triggers.php:682
 msgid "Result"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:495
-#: integrations/h5p/includes/triggers.php:555
+#: integrations/h5p/includes/triggers.php:617
+#: integrations/h5p/includes/triggers.php:683
 msgid "Result attached to this log."
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:502
-#: integrations/h5p/includes/triggers.php:562
+#: integrations/h5p/includes/triggers.php:624
+#: integrations/h5p/includes/triggers.php:690
 msgid "Content attached to this log."
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:520
-#: integrations/h5p/includes/triggers.php:580
+#: integrations/h5p/includes/triggers.php:642
+#: integrations/h5p/includes/triggers.php:708
 msgid "Content Type"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:521
-#: integrations/h5p/includes/triggers.php:581
+#: integrations/h5p/includes/triggers.php:643
+#: integrations/h5p/includes/triggers.php:709
 msgid "Content type attached to this log."
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:588
+#: integrations/h5p/includes/triggers.php:716
 msgid "Score"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:589
+#: integrations/h5p/includes/triggers.php:717
 msgid "Score attached to this log."
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:613
+#: integrations/h5p/includes/triggers.php:744
 msgid "Percentage Score"
 msgstr ""
 
-#: integrations/h5p/includes/triggers.php:614
+#: integrations/h5p/includes/triggers.php:745
 msgid "Percentage score attached to this log."
 msgstr ""
 
@@ -11710,90 +12085,106 @@ msgid "Fail a quiz of a course of a tag"
 msgstr ""
 
 #: integrations/learndash/includes/triggers.php:89
-msgid "Complete a topic"
+msgid "Submit an essay for a quiz"
 msgstr ""
 
 #: integrations/learndash/includes/triggers.php:90
-msgid "Complete a specific topic"
-msgstr ""
-
-#: integrations/learndash/includes/triggers.php:92
-msgid "Complete a topic of a category"
+msgid "Submit an essay for a specific quiz"
 msgstr ""
 
 #: integrations/learndash/includes/triggers.php:93
-msgid "Complete a topic of a tag"
+msgid "Complete a topic"
 msgstr ""
 
 #: integrations/learndash/includes/triggers.php:94
-msgid "Complete a topic of a specific course"
+msgid "Complete a specific topic"
+msgstr ""
+
+#: integrations/learndash/includes/triggers.php:95
+msgid "Mark as incomplete a topic"
 msgstr ""
 
 #: integrations/learndash/includes/triggers.php:96
-msgid "Complete a topic of a course of a category"
+msgid "Mark as incomplete a specific topic"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:97
-msgid "Complete a topic of a course of a tag"
+#: integrations/learndash/includes/triggers.php:98
+msgid "Complete a topic of a category"
+msgstr ""
+
+#: integrations/learndash/includes/triggers.php:99
+msgid "Complete a topic of a tag"
 msgstr ""
 
 #: integrations/learndash/includes/triggers.php:100
-msgid "Upload an assignment"
+msgid "Complete a topic of a specific course"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:101
-msgid "Upload an assignment to a specific lesson"
+#: integrations/learndash/includes/triggers.php:102
+msgid "Complete a topic of a course of a category"
 msgstr ""
 
 #: integrations/learndash/includes/triggers.php:103
-msgid "Upload an assignment to a lesson of a category"
+msgid "Complete a topic of a course of a tag"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:104
-msgid "Upload an assignment to a lesson of a tag"
-msgstr ""
-
-#: integrations/learndash/includes/triggers.php:105
-msgid "Upload an assignment to a specific course"
+#: integrations/learndash/includes/triggers.php:106
+msgid "Upload an assignment"
 msgstr ""
 
 #: integrations/learndash/includes/triggers.php:107
-msgid "Upload an assignment to a course of a category"
-msgstr ""
-
-#: integrations/learndash/includes/triggers.php:108
-msgid "Upload an assignment to a course of a tag"
+msgid "Upload an assignment to a specific lesson"
 msgstr ""
 
 #: integrations/learndash/includes/triggers.php:109
-msgid "Approve an assignment"
+msgid "Upload an assignment to a lesson of a category"
 msgstr ""
 
 #: integrations/learndash/includes/triggers.php:110
-msgid "Approve an assignment of a specific lesson"
+msgid "Upload an assignment to a lesson of a tag"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:112
-msgid "Approve an assignment of a lesson of a category"
+#: integrations/learndash/includes/triggers.php:111
+msgid "Upload an assignment to a specific course"
 msgstr ""
 
 #: integrations/learndash/includes/triggers.php:113
-msgid "Approve an assignment of a lesson of a tag"
+msgid "Upload an assignment to a course of a category"
 msgstr ""
 
 #: integrations/learndash/includes/triggers.php:114
-msgid "Approve an assignment of a specific course"
+msgid "Upload an assignment to a course of a tag"
+msgstr ""
+
+#: integrations/learndash/includes/triggers.php:115
+msgid "Approve an assignment"
 msgstr ""
 
 #: integrations/learndash/includes/triggers.php:116
-msgid "Approve an assignment of a course of a category"
+msgid "Approve an assignment of a specific lesson"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:117
-msgid "Approve an assignment of a course of a tag"
+#: integrations/learndash/includes/triggers.php:118
+msgid "Approve an assignment of a lesson of a category"
+msgstr ""
+
+#: integrations/learndash/includes/triggers.php:119
+msgid "Approve an assignment of a lesson of a tag"
 msgstr ""
 
 #: integrations/learndash/includes/triggers.php:120
+msgid "Approve an assignment of a specific course"
+msgstr ""
+
+#: integrations/learndash/includes/triggers.php:122
+msgid "Approve an assignment of a course of a category"
+msgstr ""
+
+#: integrations/learndash/includes/triggers.php:123
+msgid "Approve an assignment of a course of a tag"
+msgstr ""
+
+#: integrations/learndash/includes/triggers.php:126
 #: integrations/learnpress/includes/triggers.php:27
 #: integrations/lifterlms/includes/triggers.php:34
 #: integrations/masterstudy-lms/includes/triggers.php:31
@@ -11803,7 +12194,7 @@ msgstr ""
 msgid "Complete a lesson"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:121
+#: integrations/learndash/includes/triggers.php:127
 #: integrations/learnpress/includes/triggers.php:28
 #: integrations/lifterlms/includes/triggers.php:35
 #: integrations/masterstudy-lms/includes/triggers.php:32
@@ -11814,458 +12205,461 @@ msgstr ""
 msgid "Complete a specific lesson"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:122
+#: integrations/learndash/includes/triggers.php:128
 msgid "Mark as incomplete a lesson"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:123
+#: integrations/learndash/includes/triggers.php:129
 msgid "Mark as incomplete a specific lesson"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:126
+#: integrations/learndash/includes/triggers.php:132
 msgid "Complete a lesson of a category"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:127
+#: integrations/learndash/includes/triggers.php:133
 msgid "Complete a lesson of a tag"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:128
+#: integrations/learndash/includes/triggers.php:134
 #: integrations/lifterlms/includes/triggers.php:36
 #: integrations/memberpress/includes/triggers.php:36
 #: integrations/tutor/includes/triggers.php:45
 msgid "Complete a lesson of a specific course"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:130
+#: integrations/learndash/includes/triggers.php:136
 #: integrations/tutor/includes/triggers.php:46
 msgid "Complete a lesson of a course of a category"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:131
+#: integrations/learndash/includes/triggers.php:137
 msgid "Complete a lesson of a course of a tag"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:134
+#: integrations/learndash/includes/triggers.php:140
 #: integrations/sensei/includes/triggers.php:42
 msgid "Enroll in a course"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:135
-msgid "Enroll in a specific course"
-msgstr ""
-
-#: integrations/learndash/includes/triggers.php:137
+#: integrations/learndash/includes/triggers.php:143
 msgid "Enroll in a course of a category"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:138
+#: integrations/learndash/includes/triggers.php:144
 msgid "Enroll in a course of a tag"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:142
+#: integrations/learndash/includes/triggers.php:148
 #: integrations/tutor/includes/triggers.php:54
 msgid "Complete a course of a category"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:143
+#: integrations/learndash/includes/triggers.php:149
 msgid "Complete a course of a tag"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:146
+#: integrations/learndash/includes/triggers.php:152
 #: integrations/wp-user-manager/includes/triggers.php:34
 msgid "Join any group"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:230
-#: integrations/qsm/includes/triggers.php:91
+#: integrations/learndash/includes/triggers.php:239
 #: integrations/sensei/includes/triggers.php:91
 #, php-format
 msgid "Completed a quiz with a score of %d or higher"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:234
+#: integrations/learndash/includes/triggers.php:243
 #: integrations/sensei/includes/triggers.php:95
 #, php-format
 msgid "Complete the quiz %s with a score of %d or higher"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:238
+#: integrations/learndash/includes/triggers.php:247
 #, php-format
 msgid "Complete a quiz of the course %s with a score of %d or higher"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:243
+#: integrations/learndash/includes/triggers.php:252
 #: integrations/sensei/includes/triggers.php:98
 #, php-format
 msgid "Completed a quiz with a maximum score of %d"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:247
+#: integrations/learndash/includes/triggers.php:256
 #: integrations/sensei/includes/triggers.php:102
 #, php-format
 msgid "Complete the quiz %s with a maximum score of %d"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:251
+#: integrations/learndash/includes/triggers.php:260
 #, php-format
 msgid "Complete a quiz of the course %s with a maximum score of %d"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:256
-#: integrations/qsm/includes/triggers.php:109
+#: integrations/learndash/includes/triggers.php:265
 #, php-format
 msgid "Completed a quiz with a score between %d and %d"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:260
-#: integrations/qsm/includes/triggers.php:113
+#: integrations/learndash/includes/triggers.php:269
 #, php-format
 msgid "Complete the quiz %s with a score between %d and %d"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:264
+#: integrations/learndash/includes/triggers.php:273
 #, php-format
 msgid "Complete a quiz of the course %s with a score between %d and %d"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:269
+#: integrations/learndash/includes/triggers.php:278
 #, php-format
 msgid "Complete a quiz of \"%s\" category"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:272
+#: integrations/learndash/includes/triggers.php:281
 #, php-format
 msgid "Pass a quiz of \"%s\" category"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:275
+#: integrations/learndash/includes/triggers.php:284
 #, php-format
 msgid "Fail a quiz of \"%s\" category"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:278
+#: integrations/learndash/includes/triggers.php:287
 #, php-format
 msgid "Complete a quiz of \"%s\" category with a score of %d or higher"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:281
+#: integrations/learndash/includes/triggers.php:290
 #, php-format
 msgid "Complete a quiz of \"%s\" category with a maximum score of %d"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:284
+#: integrations/learndash/includes/triggers.php:293
 #, php-format
 msgid "Complete a quiz of \"%s\" category with a score between %d and %d"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:289
+#: integrations/learndash/includes/triggers.php:298
 #, php-format
 msgid "Complete a quiz of \"%s\" tag"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:292
+#: integrations/learndash/includes/triggers.php:301
 #, php-format
 msgid "Pass a quiz of \"%s\" tag"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:295
+#: integrations/learndash/includes/triggers.php:304
 #, php-format
 msgid "Fail a quiz of \"%s\" tag"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:298
+#: integrations/learndash/includes/triggers.php:307
 #, php-format
 msgid "Complete a quiz of \"%s\" tag with a score of %d or higher"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:301
+#: integrations/learndash/includes/triggers.php:310
 #, php-format
 msgid "Complete a quiz of \"%s\" tag with a maximum score of %d"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:304
+#: integrations/learndash/includes/triggers.php:313
 #, php-format
 msgid "Complete a quiz of \"%s\" tag with a score between %d and %d"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:309
-#: integrations/tutor/includes/triggers.php:149
+#: integrations/learndash/includes/triggers.php:318
+#: integrations/tutor/includes/triggers.php:153
 #, php-format
 msgid "Complete a quiz of a course of \"%s\" category"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:312
+#: integrations/learndash/includes/triggers.php:321
 #, php-format
 msgid "Complete a quiz of a course of \"%s\" category with a score of %d or higher"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:315
+#: integrations/learndash/includes/triggers.php:324
 #, php-format
 msgid "Complete a quiz of a course of \"%s\" category with a maximum score of %d"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:318
+#: integrations/learndash/includes/triggers.php:327
 #, php-format
 msgid "Complete a quiz of a course of \"%s\" category with a score between %d and %d"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:321
+#: integrations/learndash/includes/triggers.php:330
 #, php-format
 msgid "Pass a quiz of a course of \"%s\" category"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:324
+#: integrations/learndash/includes/triggers.php:333
 #, php-format
 msgid "Fail a quiz of a course of \"%s\" category"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:327
+#: integrations/learndash/includes/triggers.php:336
 #, php-format
 msgid "Complete a topic of a course of \"%s\" category"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:330
+#: integrations/learndash/includes/triggers.php:339
 #, php-format
 msgid "Upload an assignment to a course of \"%s\" category"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:333
+#: integrations/learndash/includes/triggers.php:342
 #, php-format
 msgid "Approve an assignment of a course of \"%s\" category"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:336
+#: integrations/learndash/includes/triggers.php:345
 #, php-format
 msgid "Complete a lesson of a course of \"%s\" category"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:339
+#: integrations/learndash/includes/triggers.php:348
 #, php-format
 msgid "Enroll in a course of \"%s\" category"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:342
+#: integrations/learndash/includes/triggers.php:351
 #, php-format
 msgid "Complete a course of \"%s\" category"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:347
+#: integrations/learndash/includes/triggers.php:356
 #, php-format
 msgid "Complete a quiz of a course of \"%s\" tag"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:350
+#: integrations/learndash/includes/triggers.php:359
 #, php-format
 msgid "Complete a quiz of a course of \"%s\" tag with a score of %d or higher"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:353
+#: integrations/learndash/includes/triggers.php:362
 #, php-format
 msgid "Complete a quiz of a course of \"%s\" tag with a maximum score of %d"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:356
+#: integrations/learndash/includes/triggers.php:365
 #, php-format
 msgid "Complete a quiz of a course of \"%s\" tag with a score between %d and %d"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:359
+#: integrations/learndash/includes/triggers.php:368
 #, php-format
 msgid "Pass a quiz of a course of \"%s\" tag"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:362
+#: integrations/learndash/includes/triggers.php:371
 #, php-format
 msgid "Fail a quiz of a course of \"%s\" tag"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:365
+#: integrations/learndash/includes/triggers.php:374
 #, php-format
 msgid "Complete a topic of a course of \"%s\" tag"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:368
+#: integrations/learndash/includes/triggers.php:377
 #, php-format
 msgid "Upload an assignment to a course of \"%s\" tag"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:371
+#: integrations/learndash/includes/triggers.php:380
 #, php-format
 msgid "Approve an assignment of a course of \"%s\" tag"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:374
+#: integrations/learndash/includes/triggers.php:383
 #, php-format
 msgid "Complete a lesson of a course of \"%s\" tag"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:377
+#: integrations/learndash/includes/triggers.php:386
 #, php-format
 msgid "Enroll in a course of \"%s\" tag"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:380
+#: integrations/learndash/includes/triggers.php:389
 #, php-format
 msgid "Complete a course of \"%s\" tag"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:385
+#: integrations/learndash/includes/triggers.php:394
 #, php-format
 msgid "Complete a topic of \"%s\" category"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:390
+#: integrations/learndash/includes/triggers.php:399
 #, php-format
 msgid "Complete a topic of \"%s\" tag"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:395
+#: integrations/learndash/includes/triggers.php:404
 #, php-format
 msgid "Upload an assignment to a lesson of \"%s\" category"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:398
+#: integrations/learndash/includes/triggers.php:407
 #, php-format
 msgid "Approve an assignment of a lesson of \"%s\" category"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:401
+#: integrations/learndash/includes/triggers.php:410
 #, php-format
 msgid "Complete a lesson of \"%s\" category"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:406
+#: integrations/learndash/includes/triggers.php:415
 #, php-format
 msgid "Upload an assignment to a lesson of \"%s\" tag"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:409
+#: integrations/learndash/includes/triggers.php:418
 #, php-format
 msgid "Approve an assignment of a lesson of \"%s\" tag"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:412
+#: integrations/learndash/includes/triggers.php:421
 #, php-format
 msgid "Complete a lesson of \"%s\" tag"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:442
+#: integrations/learndash/includes/triggers.php:451
 msgid "any"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:457
+#: integrations/learndash/includes/triggers.php:466
 #: integrations/lifterlms/includes/triggers.php:128
 #: integrations/masterstudy-lms/includes/triggers.php:85
 #: integrations/sensei/includes/triggers.php:120
-#: integrations/tutor/includes/triggers.php:110
+#: integrations/tutor/includes/triggers.php:113
 #: integrations/wplms/includes/triggers.php:171
 #, php-format
 msgid "Complete the quiz %s"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:458
-#: integrations/tutor/includes/triggers.php:111
+#: integrations/learndash/includes/triggers.php:467
+#: integrations/tutor/includes/triggers.php:114
 #, php-format
 msgid "Complete any quiz of the course %s"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:459
+#: integrations/learndash/includes/triggers.php:468
 #: integrations/learnpress/includes/triggers.php:96
 #: integrations/lifterlms/includes/triggers.php:129
 #: integrations/masterstudy-lms/includes/triggers.php:86
 #: integrations/sensei/includes/triggers.php:121
-#: integrations/tutor/includes/triggers.php:112
+#: integrations/tutor/includes/triggers.php:115
 #, php-format
 msgid "Pass the quiz %s"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:460
-#: integrations/tutor/includes/triggers.php:113
+#: integrations/learndash/includes/triggers.php:469
+#: integrations/tutor/includes/triggers.php:116
 #, php-format
 msgid "Pass a quiz of the course %s"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:461
+#: integrations/learndash/includes/triggers.php:470
 #: integrations/learnpress/includes/triggers.php:99
 #: integrations/lifterlms/includes/triggers.php:130
 #: integrations/masterstudy-lms/includes/triggers.php:87
 #: integrations/sensei/includes/triggers.php:122
-#: integrations/tutor/includes/triggers.php:114
+#: integrations/tutor/includes/triggers.php:117
 #, php-format
 msgid "Fail the quiz %s"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:462
-#: integrations/tutor/includes/triggers.php:115
+#: integrations/learndash/includes/triggers.php:471
+#: integrations/tutor/includes/triggers.php:118
 #, php-format
 msgid "Fail a quiz of the course %s"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:465
+#: integrations/learndash/includes/triggers.php:472
+#, php-format
+msgid "Sumit an essay for the quiz %s"
+msgstr ""
+
+#: integrations/learndash/includes/triggers.php:475
 #, php-format
 msgid "Complete the topic %s"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:466
+#: integrations/learndash/includes/triggers.php:476
+#, php-format
+msgid "Mark as incomplete the topic %s"
+msgstr ""
+
+#: integrations/learndash/includes/triggers.php:477
 #, php-format
 msgid "Complete a topic of the course %s"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:469
+#: integrations/learndash/includes/triggers.php:480
 #, php-format
 msgid "Upload an assignment to the lesson %s"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:470
+#: integrations/learndash/includes/triggers.php:481
 #, php-format
 msgid "Upload an assignment to the course %s"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:471
+#: integrations/learndash/includes/triggers.php:482
 #, php-format
 msgid "Approve an assignment of the lesson %s"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:472
+#: integrations/learndash/includes/triggers.php:483
 #, php-format
 msgid "Approve an assignment of the course %s"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:475
+#: integrations/learndash/includes/triggers.php:486
 #: integrations/learnpress/includes/triggers.php:91
 #: integrations/lifterlms/includes/triggers.php:132
 #: integrations/masterstudy-lms/includes/triggers.php:89
 #: integrations/sensei/includes/triggers.php:123
-#: integrations/tutor/includes/triggers.php:118
+#: integrations/tutor/includes/triggers.php:121
 #: integrations/wpep/includes/triggers.php:161
 #, php-format
 msgid "Complete the lesson %s"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:476
+#: integrations/learndash/includes/triggers.php:487
 #, php-format
 msgid "Mark as incomplete the lesson %s"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:477
+#: integrations/learndash/includes/triggers.php:488
 #: integrations/lifterlms/includes/triggers.php:133
 #: integrations/masterstudy-lms/includes/triggers.php:90
-#: integrations/tutor/includes/triggers.php:119
+#: integrations/tutor/includes/triggers.php:122
 #, php-format
 msgid "Complete a lesson of the course %s"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:480
+#: integrations/learndash/includes/triggers.php:491
 #, php-format
 msgid "Enroll in course %s"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:882
+#: integrations/learndash/includes/triggers.php:909
 msgid "Grade of completion"
 msgstr ""
 
-#: integrations/learndash/includes/triggers.php:883
+#: integrations/learndash/includes/triggers.php:910
 msgid "Grade of completion the user got on complete this quiz."
 msgstr ""
 
@@ -12316,7 +12710,7 @@ msgstr ""
 #: integrations/learnpress/includes/triggers.php:88
 #: integrations/lifterlms/includes/triggers.php:138
 #: integrations/masterstudy-lms/includes/triggers.php:92
-#: integrations/tutor/includes/triggers.php:122
+#: integrations/tutor/includes/triggers.php:125
 #, php-format
 msgid "Enroll the course %s"
 msgstr ""
@@ -12603,12 +12997,6 @@ msgstr ""
 msgid "Start %s course"
 msgstr ""
 
-#: integrations/memberpress/includes/triggers.php:92
-#: integrations/thrive-apprentice/includes/triggers.php:71
-#, php-format
-msgid "Complete %s course"
-msgstr ""
-
 #: integrations/meta-box/includes/admin.php:22
 msgid "Meta Box integration"
 msgstr ""
@@ -12690,6 +13078,83 @@ msgstr ""
 
 #: integrations/ninja-forms/includes/triggers.php:22
 msgid "Ninja Forms"
+msgstr ""
+
+#: integrations/paid-membership-subscriptions/includes/admin.php:22
+msgid "Paid Membership Subscriptions integration"
+msgstr ""
+
+#: integrations/paid-membership-subscriptions/includes/triggers.php:22
+msgid "Paid Membership Subscriptions"
+msgstr ""
+
+#: integrations/paid-membership-subscriptions/includes/triggers.php:24
+msgid "Purchase a subscription"
+msgstr ""
+
+#: integrations/paid-membership-subscriptions/includes/triggers.php:25
+msgid "Purchase a specific subscription"
+msgstr ""
+
+#: integrations/paid-membership-subscriptions/includes/triggers.php:27
+msgid "Pay a subscription"
+msgstr ""
+
+#: integrations/paid-membership-subscriptions/includes/triggers.php:28
+msgid "Pay a specific subscription"
+msgstr ""
+
+#: integrations/paid-membership-subscriptions/includes/triggers.php:30
+#: integrations/wp-simple-pay/includes/triggers.php:25
+msgid "Renew a subscription"
+msgstr ""
+
+#: integrations/paid-membership-subscriptions/includes/triggers.php:31
+msgid "Renew a specific subscription"
+msgstr ""
+
+#: integrations/paid-membership-subscriptions/includes/triggers.php:33
+msgid "Change a subscription"
+msgstr ""
+
+#: integrations/paid-membership-subscriptions/includes/triggers.php:34
+msgid "Change a specific subscription"
+msgstr ""
+
+#: integrations/paid-membership-subscriptions/includes/triggers.php:36
+msgid "Cancel a subscription"
+msgstr ""
+
+#: integrations/paid-membership-subscriptions/includes/triggers.php:37
+msgid "Cancel a specific subscription"
+msgstr ""
+
+#: integrations/paid-membership-subscriptions/includes/triggers.php:39
+msgid "Abandon a subscription"
+msgstr ""
+
+#: integrations/paid-membership-subscriptions/includes/triggers.php:40
+msgid "Abandon a specific subscription"
+msgstr ""
+
+#: integrations/paid-membership-subscriptions/includes/triggers.php:82
+#, php-format
+msgid "Pay %s"
+msgstr ""
+
+#: integrations/paid-membership-subscriptions/includes/triggers.php:83
+#, php-format
+msgid "Renew %s"
+msgstr ""
+
+#: integrations/paid-membership-subscriptions/includes/triggers.php:84
+#, php-format
+msgid "Change %s"
+msgstr ""
+
+#: integrations/paid-membership-subscriptions/includes/triggers.php:86
+#, php-format
+msgid "Abandon %s"
 msgstr ""
 
 #: integrations/paid-memberships-pro/includes/admin.php:22
@@ -12947,10 +13412,6 @@ msgstr ""
 
 #: integrations/peepso/includes/triggers.php:33
 msgid "Get a like on your profile"
-msgstr ""
-
-#: integrations/peepso/includes/triggers.php:35
-msgid "Like an activity post"
 msgstr ""
 
 #: integrations/peepso/includes/triggers.php:36
@@ -13243,6 +13704,7 @@ msgid "User clicks a specific pretty link"
 msgstr ""
 
 #: integrations/pretty-link/includes/triggers.php:59
+#: integrations/shortlinkspro/includes/triggers.php:94
 #, php-format
 msgid "User clicks %s"
 msgstr ""
@@ -13287,19 +13749,34 @@ msgstr ""
 msgid "Complete a specific quiz on a range of points"
 msgstr ""
 
+#: integrations/qsm/includes/triggers.php:91
+#, php-format
+msgid "Completed a quiz with a points of %d or higher"
+msgstr ""
+
 #: integrations/qsm/includes/triggers.php:95
 #, php-format
-msgid "Completed the quiz %s with a score of %d or higher"
+msgid "Completed the quiz %s with a points of %d or higher"
 msgstr ""
 
 #: integrations/qsm/includes/triggers.php:100
 #, php-format
-msgid "Completed a quiz with a maximum score of %d or higher"
+msgid "Completed a quiz with a maximum points of %d or higher"
 msgstr ""
 
 #: integrations/qsm/includes/triggers.php:104
 #, php-format
-msgid "Completed a quiz %s with a maximum score of %d"
+msgid "Completed a quiz %s with a maximum points of %d"
+msgstr ""
+
+#: integrations/qsm/includes/triggers.php:109
+#, php-format
+msgid "Completed a quiz with a points between %d and %d"
+msgstr ""
+
+#: integrations/qsm/includes/triggers.php:113
+#, php-format
+msgid "Complete the quiz %s with a points between %d and %d"
 msgstr ""
 
 #: integrations/qsm/includes/triggers.php:264
@@ -13376,6 +13853,40 @@ msgstr ""
 
 #: integrations/sensei/includes/triggers.php:22
 msgid "Sensei"
+msgstr ""
+
+#: integrations/shortlinkspro/includes/admin.php:22
+msgid "ShortLinks Pro integration"
+msgstr ""
+
+#: integrations/shortlinkspro/includes/triggers.php:22
+msgid "ShortLinks Pro"
+msgstr ""
+
+#: integrations/shortlinkspro/includes/triggers.php:23
+msgid "User clicks a link"
+msgstr ""
+
+#: integrations/shortlinkspro/includes/triggers.php:24
+msgid "User clicks a specific link"
+msgstr ""
+
+#: integrations/shortlinkspro/includes/triggers.php:25
+msgid "User clicks a link of a category"
+msgstr ""
+
+#: integrations/shortlinkspro/includes/triggers.php:26
+msgid "User clicks a link of a tag"
+msgstr ""
+
+#: integrations/shortlinkspro/includes/triggers.php:72
+#, php-format
+msgid "User clicks a link of %s category"
+msgstr ""
+
+#: integrations/shortlinkspro/includes/triggers.php:76
+#, php-format
+msgid "User clicks a link of %s tag"
 msgstr ""
 
 #: integrations/simplepress/includes/admin.php:22
@@ -13578,10 +14089,6 @@ msgstr ""
 msgid "Complete specific module"
 msgstr ""
 
-#: integrations/thrive-apprentice/includes/triggers.php:31
-msgid "Complete any course"
-msgstr ""
-
 #: integrations/thrive-apprentice/includes/triggers.php:32
 msgid "Complete specific course"
 msgstr ""
@@ -13721,27 +14228,37 @@ msgstr ""
 msgid "Enroll a course of a category"
 msgstr ""
 
-#: integrations/tutor/includes/triggers.php:152
+#: integrations/tutor/includes/triggers.php:55
+#: integrations/wplms/includes/triggers.php:31
+msgid "Review a course"
+msgstr ""
+
+#: integrations/tutor/includes/triggers.php:56
+#: integrations/wplms/includes/triggers.php:32
+msgid "Review a specific course"
+msgstr ""
+
+#: integrations/tutor/includes/triggers.php:156
 #, php-format
 msgid "Successfully pass a quiz of a course of %s category"
 msgstr ""
 
-#: integrations/tutor/includes/triggers.php:155
+#: integrations/tutor/includes/triggers.php:159
 #, php-format
 msgid "Fail a quiz of a course of %s category"
 msgstr ""
 
-#: integrations/tutor/includes/triggers.php:158
+#: integrations/tutor/includes/triggers.php:162
 #, php-format
 msgid "Complete a lesson of a course of %s category"
 msgstr ""
 
-#: integrations/tutor/includes/triggers.php:161
+#: integrations/tutor/includes/triggers.php:165
 #, php-format
 msgid "Complete a course of %s category"
 msgstr ""
 
-#: integrations/tutor/includes/triggers.php:164
+#: integrations/tutor/includes/triggers.php:168
 #, php-format
 msgid "Enroll a course of %s category"
 msgstr ""
@@ -14553,10 +15070,6 @@ msgstr ""
 msgid "Complete a purchase through a specific form"
 msgstr ""
 
-#: integrations/wp-simple-pay/includes/triggers.php:25
-msgid "Renew a subscription"
-msgstr ""
-
 #: integrations/wp-simple-pay/includes/triggers.php:59
 #, php-format
 msgid "Complete a purchase through %s form"
@@ -14580,7 +15093,7 @@ msgid "Like a post"
 msgstr ""
 
 #: integrations/wp-ulike/includes/triggers.php:26
-#: integrations/wp-ulike/includes/triggers.php:209
+#: integrations/wp-ulike/includes/triggers.php:149
 msgid "Like a post of a type"
 msgstr ""
 
@@ -14594,7 +15107,7 @@ msgid "Get a like on a post"
 msgstr ""
 
 #: integrations/wp-ulike/includes/triggers.php:31
-#: integrations/wp-ulike/includes/triggers.php:218
+#: integrations/wp-ulike/includes/triggers.php:158
 msgid "Get a like on a post of a type"
 msgstr ""
 
@@ -14662,14 +15175,22 @@ msgstr ""
 msgid "Get an unlike on a topic"
 msgstr ""
 
-#: integrations/wp-ulike/includes/triggers.php:211
+#: integrations/wp-ulike/includes/triggers.php:151
 #, php-format
 msgid "Like a post of a %s type"
 msgstr ""
 
-#: integrations/wp-ulike/includes/triggers.php:220
+#: integrations/wp-ulike/includes/triggers.php:160
 #, php-format
 msgid "Get a like on a post of %s type"
+msgstr ""
+
+#: integrations/wp-ulike/includes/triggers.php:332
+msgid "Post type"
+msgstr ""
+
+#: integrations/wp-ulike/includes/triggers.php:333
+msgid "Post type attached to this log."
 msgstr ""
 
 #: integrations/wp-user-manager/includes/triggers.php:21
@@ -15062,14 +15583,6 @@ msgstr ""
 
 #: integrations/wplms/includes/triggers.php:30
 msgid "Complete a specific course with a minimum mark"
-msgstr ""
-
-#: integrations/wplms/includes/triggers.php:31
-msgid "Review a course"
-msgstr ""
-
-#: integrations/wplms/includes/triggers.php:32
-msgid "Review a specific course"
 msgstr ""
 
 #: integrations/wplms/includes/triggers.php:33

@@ -7,8 +7,7 @@ namespace wpdFormAttr\Login\twitter;
  *
  * @author Abraham Williams <abraham@abrah.am>
  */
-class Response
-{
+class Response {
     /** @var string|null API path from the most recent request */
     private $apiPath;
     /** @var int HTTP status code from the most recent request */
@@ -23,56 +22,49 @@ class Response
     /**
      * @param string $apiPath
      */
-    public function setApiPath($apiPath)
-    {
+    public function setApiPath($apiPath) {
         $this->apiPath = $apiPath;
     }
 
     /**
      * @return string|null
      */
-    public function getApiPath()
-    {
+    public function getApiPath() {
         return $this->apiPath;
     }
 
     /**
      * @param array|object $body
      */
-    public function setBody($body)
-    {
+    public function setBody($body) {
         $this->body = $body;
     }
 
     /**
      * @return array|object|string
      */
-    public function getBody()
-    {
+    public function getBody() {
         return $this->body;
     }
 
     /**
      * @param int $httpCode
      */
-    public function setHttpCode($httpCode)
-    {
+    public function setHttpCode($httpCode) {
         $this->httpCode = $httpCode;
     }
 
     /**
      * @return int
      */
-    public function getHttpCode()
-    {
+    public function getHttpCode() {
         return $this->httpCode;
     }
 
     /**
      * @param array $headers
      */
-    public function setHeaders(array $headers)
-    {
+    public function setHeaders(array $headers) {
         foreach ($headers as $key => $value) {
             if (substr($key, 0, 1) == 'x') {
                 $this->xHeaders[$key] = $value;
@@ -84,24 +76,21 @@ class Response
     /**
      * @return array
      */
-    public function getsHeaders()
-    {
+    public function getsHeaders() {
         return $this->headers;
     }
 
     /**
      * @param array $xHeaders
      */
-    public function setXHeaders(array $xHeaders = [])
-    {
+    public function setXHeaders(array $xHeaders = []) {
         $this->xHeaders = $xHeaders;
     }
 
     /**
      * @return array
      */
-    public function getXHeaders()
-    {
+    public function getXHeaders() {
         return $this->xHeaders;
     }
 }

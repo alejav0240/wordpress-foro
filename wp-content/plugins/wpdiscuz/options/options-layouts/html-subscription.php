@@ -14,7 +14,7 @@ if (!defined("ABSPATH")) {
     <div class="wpd-opt-doc" style="padding-top: 10px;">
         <a href="https://wpdiscuz.com/docs/wpdiscuz-7/plugin-settings/subscription-and-user-following/"
            title="<?php esc_attr_e("Read the documentation", "wpdiscuz") ?>" target="_blank"><i
-                    class="far fa-question-circle"></i></a>
+                class="far fa-question-circle"></i></a>
     </div>
 </div>
 <!-- Option end -->
@@ -315,10 +315,10 @@ if (!defined("ABSPATH")) {
                 <div class="wpd-opt-input">
                     <?php
                     wp_editor(wp_kses_post($this->subscription["emailContentPostComment"]), "emailContentPostComment", [
-                        "textarea_name" => WpdiscuzCore::TAB_SUBSCRIPTION . "[emailContentPostComment]",
-                        "textarea_rows" => 10,
-                        "teeny" => true,
-                        "media_buttons" => true,
+                        "textarea_name"  => WpdiscuzCore::TAB_SUBSCRIPTION . "[emailContentPostComment]",
+                        "textarea_rows"  => 10,
+                        "teeny"          => true,
+                        "media_buttons"  => true,
                         "default_editor" => "tmce"
                     ]);
                     ?>
@@ -377,10 +377,10 @@ if (!defined("ABSPATH")) {
                 <div class="wpd-opt-input">
                     <?php
                     wp_editor(wp_kses_post($this->subscription["emailContentAllCommentReply"]), "emailContentAllCommentReply", [
-                        "textarea_name" => WpdiscuzCore::TAB_SUBSCRIPTION . "[emailContentAllCommentReply]",
-                        "textarea_rows" => 10,
-                        "teeny" => true,
-                        "media_buttons" => true,
+                        "textarea_name"  => WpdiscuzCore::TAB_SUBSCRIPTION . "[emailContentAllCommentReply]",
+                        "textarea_rows"  => 10,
+                        "teeny"          => true,
+                        "media_buttons"  => true,
                         "default_editor" => "tmce"
                     ]);
                     ?>
@@ -439,10 +439,10 @@ if (!defined("ABSPATH")) {
                 <div class="wpd-opt-input">
                     <?php
                     wp_editor(wp_kses_post($this->subscription["emailContentCommentReply"]), "emailContentCommentReply", [
-                        "textarea_name" => WpdiscuzCore::TAB_SUBSCRIPTION . "[emailContentCommentReply]",
-                        "textarea_rows" => 10,
-                        "teeny" => true,
-                        "media_buttons" => true,
+                        "textarea_name"  => WpdiscuzCore::TAB_SUBSCRIPTION . "[emailContentCommentReply]",
+                        "textarea_rows"  => 10,
+                        "teeny"          => true,
+                        "media_buttons"  => true,
                         "default_editor" => "tmce"
                     ]);
                     ?>
@@ -496,10 +496,10 @@ if (!defined("ABSPATH")) {
                 <div class="wpd-opt-input">
                     <?php
                     wp_editor(wp_kses_post($this->subscription["emailContentSubscriptionConfirmation"]), "emailContentSubscriptionConfirmation", [
-                        "textarea_name" => WpdiscuzCore::TAB_SUBSCRIPTION . "[emailContentSubscriptionConfirmation]",
-                        "textarea_rows" => 10,
-                        "teeny" => true,
-                        "media_buttons" => true,
+                        "textarea_name"  => WpdiscuzCore::TAB_SUBSCRIPTION . "[emailContentSubscriptionConfirmation]",
+                        "textarea_rows"  => 10,
+                        "teeny"          => true,
+                        "media_buttons"  => true,
                         "default_editor" => "tmce"
                     ]);
                     ?>
@@ -566,10 +566,10 @@ if (!defined("ABSPATH")) {
                 <div class="wpd-opt-input">
                     <?php
                     wp_editor(wp_kses_post($this->subscription["emailContentCommentApproved"]), "emailContentCommentApproved", [
-                        "textarea_name" => WpdiscuzCore::TAB_SUBSCRIPTION . "[emailContentCommentApproved]",
-                        "textarea_rows" => 10,
-                        "teeny" => true,
-                        "media_buttons" => true,
+                        "textarea_name"  => WpdiscuzCore::TAB_SUBSCRIPTION . "[emailContentCommentApproved]",
+                        "textarea_rows"  => 10,
+                        "teeny"          => true,
+                        "media_buttons"  => true,
                         "default_editor" => "tmce"
                     ]);
                     ?>
@@ -636,10 +636,10 @@ if (!defined("ABSPATH")) {
                 <div class="wpd-opt-input">
                     <?php
                     wp_editor(wp_kses_post($this->subscription["emailContentUserMentioned"]), "emailContentUserMentioned", [
-                        "textarea_name" => WpdiscuzCore::TAB_SUBSCRIPTION . "[emailContentUserMentioned]",
-                        "textarea_rows" => 10,
-                        "teeny" => true,
-                        "media_buttons" => true,
+                        "textarea_name"  => WpdiscuzCore::TAB_SUBSCRIPTION . "[emailContentUserMentioned]",
+                        "textarea_rows"  => 10,
+                        "teeny"          => true,
+                        "media_buttons"  => true,
                         "default_editor" => "tmce"
                     ]);
                     ?>
@@ -705,10 +705,10 @@ if (!defined("ABSPATH")) {
                 <div class="wpd-opt-input">
                     <?php
                     wp_editor(wp_kses_post($this->subscription["emailContentFollowConfirmation"]), "emailContentFollowConfirmation", [
-                        "textarea_name" => WpdiscuzCore::TAB_SUBSCRIPTION . "[emailContentFollowConfirmation]",
-                        "textarea_rows" => 10,
-                        "teeny" => true,
-                        "media_buttons" => true,
+                        "textarea_name"  => WpdiscuzCore::TAB_SUBSCRIPTION . "[emailContentFollowConfirmation]",
+                        "textarea_rows"  => 10,
+                        "teeny"          => true,
+                        "media_buttons"  => true,
                         "default_editor" => "tmce"
                     ]);
                     ?>
@@ -766,10 +766,10 @@ if (!defined("ABSPATH")) {
                 <div class="wpd-opt-input">
                     <?php
                     wp_editor(wp_kses_post($this->subscription["emailContentFollowComment"]), "emailContentFollowComment", [
-                        "textarea_name" => WpdiscuzCore::TAB_SUBSCRIPTION . "[emailContentFollowComment]",
-                        "textarea_rows" => 10,
-                        "teeny" => true,
-                        "media_buttons" => true,
+                        "textarea_name"  => WpdiscuzCore::TAB_SUBSCRIPTION . "[emailContentFollowComment]",
+                        "textarea_rows"  => 10,
+                        "teeny"          => true,
+                        "media_buttons"  => true,
                         "default_editor" => "tmce"
                     ]);
                     ?>

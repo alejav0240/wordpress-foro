@@ -5,15 +5,13 @@ namespace wpdFormAttr\Field\DefaultField;
 use wpdFormAttr\FormConst\wpdFormConst;
 use wpdFormAttr\Field\Field;
 
-class Email extends Field
-{
+class Email extends Field {
 
     protected $name = wpdFormConst::WPDISCUZ_FORMS_EMAIL_FIELD;
     protected $isDefault = true;
     private $isAnonymous;
 
-    protected function dashboardForm()
-    {
+    protected function dashboardForm() {
         ?>
         <div class="wpd-field-body" style="display: <?php echo esc_attr($this->display); ?>">
             <div class="wpd-field-option wpdiscuz-item">
@@ -37,7 +35,7 @@ class Email extends Field
             <div class="wpd-field-option">
                 <div class="input-group">
                     <label for="<?php echo esc_attr($this->fieldInputName); ?>[icon]"><span
-                                class="input-group-addon"></span> <?php esc_html_e("Field icon", "wpdiscuz"); ?>
+                            class="input-group-addon"></span> <?php esc_html_e("Field icon", "wpdiscuz"); ?>
                         :</label>
                     <input data-placement="bottom" class="icp icp-auto"
                            value="<?php echo esc_attr($this->fieldData["icon"]); ?>" type="text"
@@ -58,15 +56,14 @@ class Email extends Field
         <?php
     }
 
-    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm)
-    {
+    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm) {
         if (!$currentUser->ID) {
             $hasIcon = $args["icon"] ? true : false;
             ?>
             <div class="wpdiscuz-item <?php echo esc_attr($name) . "-wrapper" . ($hasIcon ? " wpd-has-icon" : ""); ?>">
                 <?php if ($hasIcon) { ?>
                     <div class="wpd-field-icon"><i
-                                class="<?php echo strpos(trim($args["icon"]), " ") ? esc_attr($args["icon"]) : "fas " . esc_attr($args["icon"]); ?>"></i>
+                            class="<?php echo strpos(trim($args["icon"]), " ") ? esc_attr($args["icon"]) : "fas " . esc_attr($args["icon"]); ?>"></i>
                     </div>
                     <?php
                 }
@@ -80,7 +77,7 @@ class Email extends Field
                        class="wpdlb"><?php echo esc_attr($args["name"]) . (!empty($args["required"]) ? "*" : ""); ?></label>
                 <?php if ($args["desc"]) { ?>
                     <div class="wpd-field-desc"><i
-                                class="far fa-question-circle"></i><span><?php echo esc_html($args["desc"]); ?></span>
+                            class="far fa-question-circle"></i><span><?php echo esc_html($args["desc"]); ?></span>
                     </div>
                 <?php } ?>
             </div>
@@ -88,27 +85,24 @@ class Email extends Field
         }
     }
 
-    protected function initDefaultData()
-    {
+    protected function initDefaultData() {
         $this->fieldDefaultData = [
-            "name" => esc_html__("Email", "wpdiscuz"),
-            "desc" => "",
-            "icon" => "fas fa-at",
+            "name"     => esc_html__("Email", "wpdiscuz"),
+            "desc"     => "",
+            "icon"     => "fas fa-at",
             "required" => "0",
         ];
     }
 
-    public function isAnonymous()
-    {
+    public function isAnonymous() {
         return $this->isAnonymous;
     }
 
-    public function validateFieldData($fieldName, $args, $options, $currentUser)
-    {
+    public function validateFieldData($fieldName, $args, $options, $currentUser) {
         $email = isset($_POST[$fieldName]) ? urlencode(sanitize_email(trim($_POST[$fieldName]))) : "";
         if (!$args["required"]) {
             if (!$email) {
-                $email = uniqid() . "@example.com";
+                $email             = uniqid() . "@example.com";
                 $this->isAnonymous = true;
             }
         }
@@ -120,13 +114,11 @@ class Email extends Field
         return $email;
     }
 
-    public function frontHtml($value, $args)
-    {
+    public function frontHtml($value, $args) {
 
     }
 
-    public function editCommentHtml($key, $value, $data, $comment)
-    {
+    public function editCommentHtml($key, $value, $data, $comment) {
 
     }
 

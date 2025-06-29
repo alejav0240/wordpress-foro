@@ -9,19 +9,19 @@ if (!defined("ABSPATH")) {
         <tbody>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_comment_start_text"><?php esc_html_e("Comment Field Start", "wpdiscuz"); ?></label></th>
+                    for="wc_comment_start_text"><?php esc_html_e("Comment Field Start", "wpdiscuz"); ?></label></th>
             <td colspan="3"><input type="text" value="<?php echo esc_attr($this->phrases["wc_comment_start_text"]); ?>"
                                    name="wc_comment_start_text" id="wc_comment_start_text"/></td>
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_comment_join_text"><?php esc_html_e("Comment Field Join", "wpdiscuz"); ?></label></th>
+                    for="wc_comment_join_text"><?php esc_html_e("Comment Field Join", "wpdiscuz"); ?></label></th>
             <td colspan="3"><input type="text" value="<?php echo esc_attr($this->phrases["wc_comment_join_text"]); ?>"
                                    name="wc_comment_join_text" id="wc_comment_join_text"/></td>
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_most_reacted_comment"><?php esc_html_e("Most reacted comment", "wpdiscuz"); ?></label>
+                    for="wc_most_reacted_comment"><?php esc_html_e("Most reacted comment", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_most_reacted_comment"]); ?>"
@@ -29,7 +29,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_hottest_comment_thread"><?php esc_html_e("Hottest comment thread", "wpdiscuz"); ?></label>
+                    for="wc_hottest_comment_thread"><?php esc_html_e("Hottest comment thread", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_hottest_comment_thread"]); ?>"
@@ -58,7 +58,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_notify_on_new_comment"><?php esc_html_e("Notify on new comments", "wpdiscuz"); ?></label>
+                    for="wc_notify_on_new_comment"><?php esc_html_e("Notify on new comments", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_notify_on_new_comment"]); ?>"
@@ -66,7 +66,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_notify_on_all_new_reply"><?php esc_html_e("Notify on all new replies", "wpdiscuz"); ?></label>
+                    for="wc_notify_on_all_new_reply"><?php esc_html_e("Notify on all new replies", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_notify_on_all_new_reply"]); ?>"
@@ -74,7 +74,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_notify_on_new_reply"><?php esc_html_e("Notify on new replies to this comment", "wpdiscuz"); ?></label>
+                    for="wc_notify_on_new_reply"><?php esc_html_e("Notify on new replies to this comment", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text" value="<?php echo esc_attr($this->phrases["wc_notify_on_new_reply"]); ?>"
                                    name="wc_notify_on_new_reply" id="wc_notify_on_new_reply"/></td>
@@ -96,7 +96,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_subscribed_on_comment"><?php esc_html_e("Subscribed on this comment replies", "wpdiscuz"); ?></label>
+                    for="wc_subscribed_on_comment"><?php esc_html_e("Subscribed on this comment replies", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><textarea name="wc_subscribed_on_comment"
                                       id="wc_subscribed_on_comment"><?php echo esc_html($this->phrases["wc_subscribed_on_comment"]); ?></textarea>
@@ -104,7 +104,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_subscribed_on_all_comment"><?php esc_html_e("Subscribed on all your comments replies", "wpdiscuz"); ?></label>
+                    for="wc_subscribed_on_all_comment"><?php esc_html_e("Subscribed on all your comments replies", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><textarea name="wc_subscribed_on_all_comment"
                                       id="wc_subscribed_on_all_comment"><?php echo esc_html($this->phrases["wc_subscribed_on_all_comment"]); ?></textarea>
@@ -112,7 +112,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_subscribed_on_post"><?php esc_html_e("Subscribed on this post", "wpdiscuz"); ?></label>
+                    for="wc_subscribed_on_post"><?php esc_html_e("Subscribed on this post", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><textarea name="wc_subscribed_on_post"
                                       id="wc_subscribed_on_post"><?php echo esc_html($this->phrases["wc_subscribed_on_post"]); ?></textarea>
@@ -120,7 +120,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_form_subscription_submit"><?php esc_html_e("Form subscription button", "wpdiscuz"); ?></label>
+                    for="wc_form_subscription_submit"><?php esc_html_e("Form subscription button", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_form_subscription_submit"]); ?>"

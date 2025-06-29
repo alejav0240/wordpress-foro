@@ -2,11 +2,9 @@
 
 namespace wpdFormAttr\Field;
 
-class CheckboxField extends Field
-{
+class CheckboxField extends Field {
 
-    protected function dashboardForm()
-    {
+    protected function dashboardForm() {
         ?>
         <div class="wpd-field-body" style="display: <?php echo esc_attr($this->display); ?>">
             <div class="wpd-field-option wpdiscuz-item">
@@ -99,34 +97,32 @@ class CheckboxField extends Field
         <?php
     }
 
-    public function editCommentHtml($key, $value, $data, $comment)
-    {
+    public function editCommentHtml($key, $value, $data, $comment) {
         if (!$this->isShowForUser($data) || ($comment->comment_parent && !$data["is_show_sform"])) {
             return "";
         }
         $valuesMeta = maybe_unserialize($value);
-        $values = is_array($valuesMeta) ? $valuesMeta : [];
-        $html = "<tr class='" . esc_attr($key) . "-wrapper wpd-edit-checkbox'><td class='first'>";
-        $html .= "<label for='" . esc_attr($key) . "'>" . esc_html($data["name"]) . ": </label>";
-        $html .= "</td><td>";
-        $required = $this->isValidateRequired($data) ? " wpd-required-group" : "";
-        $html .= "<div class='wpdiscuz-item" . esc_attr($required) . " wpd-field-group'>";
+        $values     = is_array($valuesMeta) ? $valuesMeta : [];
+        $html       = "<tr class='" . esc_attr($key) . "-wrapper wpd-edit-checkbox'><td class='first'>";
+        $html       .= "<label for='" . esc_attr($key) . "'>" . esc_html($data["name"]) . ": </label>";
+        $html       .= "</td><td>";
+        $required   = $this->isValidateRequired($data) ? " wpd-required-group" : "";
+        $html       .= "<div class='wpdiscuz-item" . esc_attr($required) . " wpd-field-group'>";
         foreach ($data["values"] as $index => $val) {
             $uniqueId = uniqid();
-            $checked = in_array($val, $values) ? " checked='checked' " : "";
-            $index = $index + 1;
-            $html .= "<div class='wpd-item'><input " . $checked . "  id='" . esc_attr($key) . "-" . esc_attr($index) . "_" . esc_attr($uniqueId) . "' type='checkbox' name='" . esc_attr($key) . "[]' value='" . esc_attr($index) . "' class='" . esc_attr($key) . " wpd-field wpd-field-checkbox'> <label class='wpd-field-label wpd-cursor-pointer' for='" . esc_attr($key) . "-" . esc_attr($index) . "_" . esc_attr($uniqueId) . "'>" . esc_html($val) . "</label></div>";
+            $checked  = in_array($val, $values) ? " checked='checked' " : "";
+            $index    = $index + 1;
+            $html     .= "<div class='wpd-item'><input " . $checked . "  id='" . esc_attr($key) . "-" . esc_attr($index) . "_" . esc_attr($uniqueId) . "' type='checkbox' name='" . esc_attr($key) . "[]' value='" . esc_attr($index) . "' class='" . esc_attr($key) . " wpd-field wpd-field-checkbox'> <label class='wpd-field-label wpd-cursor-pointer' for='" . esc_attr($key) . "-" . esc_attr($index) . "_" . esc_attr($uniqueId) . "'>" . esc_html($val) . "</label></div>";
         }
         $html .= "</div>";
         $html .= "</td></tr>";
         return $html;
     }
 
-    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm)
-    {
+    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm) {
         if (empty($args["values"]) || !$this->isShowForUser($args, $currentUser) || (!$isMainForm && !$args["is_show_sform"]))
             return;
-        $hasDesc = $args["desc"] ? true : false;
+        $hasDesc  = $args["desc"] ? true : false;
         $required = $args["required"] ? " wpd-required-group" : "";
 
         if (count($args["values"]) === 1):
@@ -152,7 +148,7 @@ class CheckboxField extends Field
                 <div class="wpd-field-group-title"><?php esc_html_e($args["name"], "wpdiscuz"); ?></div>
                 <?php if ($args["desc"]) { ?>
                     <div class="wpd-field-desc"><i
-                                class="far fa-question-circle"></i><span><?php echo esc_html($args["desc"]); ?></span>
+                            class="far fa-question-circle"></i><span><?php echo esc_html($args["desc"]); ?></span>
                     </div>
                 <?php } ?>
                 <div class="wpd-item-wrap">
@@ -176,8 +172,7 @@ class CheckboxField extends Field
         <?php
     }
 
-    public function frontHtml($value, $args)
-    {
+    public function frontHtml($value, $args) {
         if (!$this->isShowForUser($args)) {
             return "";
         }
@@ -187,11 +182,10 @@ class CheckboxField extends Field
         return $html;
     }
 
-    public function validateFieldData($fieldName, $args, $options, $currentUser)
-    {
-        $values = filter_input(INPUT_POST, $fieldName, FILTER_VALIDATE_INT, FILTER_REQUIRE_ARRAY);
+    public function validateFieldData($fieldName, $args, $options, $currentUser) {
+        $values     = filter_input(INPUT_POST, $fieldName, FILTER_VALIDATE_INT, FILTER_REQUIRE_ARRAY);
         $tempValues = is_array($values) ? array_filter($values) : [];
-        $values = [];
+        $values     = [];
         foreach ($tempValues as $k => $val) {
             if ($val < 1 || !key_exists($val - 1, $args["values"])) {
                 continue;

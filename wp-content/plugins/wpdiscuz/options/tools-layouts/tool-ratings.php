@@ -3,7 +3,7 @@ if (!defined("ABSPATH")) {
     exit();
 }
 $rebuildRatingsCount = intval($this->dbManager->getRebuildRatingsCount());
-$disabledratings = $rebuildRatingsCount ? "" : "disabled='disabled'";
+$disabledratings     = $rebuildRatingsCount ? "" : "disabled='disabled'";
 ?>
 <div class="wpdtool-accordion-item">
 

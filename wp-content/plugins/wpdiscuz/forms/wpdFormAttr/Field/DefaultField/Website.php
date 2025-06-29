@@ -6,14 +6,12 @@ use wpdFormAttr\FormConst\wpdFormConst;
 use wpdFormAttr\Field\Field;
 use wpdFormAttr\Tools\Sanitizer;
 
-class Website extends Field
-{
+class Website extends Field {
 
     protected $name = wpdFormConst::WPDISCUZ_FORMS_WEBSITE_FIELD;
     protected $isDefault = true;
 
-    protected function dashboardForm()
-    {
+    protected function dashboardForm() {
         ?>
         <div class="wpd-field-body" style="display: <?php echo esc_attr($this->display); ?>">
             <div class="wpd-field-option wpdiscuz-item">
@@ -37,7 +35,7 @@ class Website extends Field
             <div class="wpd-field-option">
                 <div class="input-group">
                     <label for="<?php echo esc_attr($this->fieldInputName); ?>[icon]"><span
-                                class="input-group-addon"></span> <?php esc_html_e("Field icon", "wpdiscuz"); ?>
+                            class="input-group-addon"></span> <?php esc_html_e("Field icon", "wpdiscuz"); ?>
                         :</label>
                     <input data-placement="bottom" class="icp icp-auto"
                            value="<?php echo esc_attr($this->fieldData["icon"]); ?>" type="text"
@@ -58,8 +56,7 @@ class Website extends Field
         <?php
     }
 
-    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm)
-    {
+    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm) {
         if (!$currentUser->ID) {
             if ($args["enable"]) {
                 $hasIcon = $args["icon"] ? true : false;
@@ -67,7 +64,7 @@ class Website extends Field
                 <div class="wpdiscuz-item <?php echo esc_attr($name) . "-wrapper" . ($hasIcon ? " wpd-has-icon" : ""); ?>">
                     <?php if ($hasIcon) { ?>
                         <div class="wpd-field-icon"><i
-                                    class="<?php echo strpos(trim($args["icon"]), " ") ? esc_attr($args["icon"]) : "fas " . esc_attr($args["icon"]); ?>"></i>
+                                class="<?php echo strpos(trim($args["icon"]), " ") ? esc_attr($args["icon"]) : "fas " . esc_attr($args["icon"]); ?>"></i>
                         </div>
                     <?php } ?>
                     <input id="<?php echo esc_attr($name) . "-" . $uniqueId; ?>" value=""
@@ -78,7 +75,7 @@ class Website extends Field
                            class="wpdlb"><?php echo htmlentities($args["name"], ENT_QUOTES); ?></label>
                     <?php if ($args["desc"]) { ?>
                         <div class="wpd-field-desc"><i
-                                    class="far fa-question-circle"></i><span><?php echo esc_html($args["desc"]); ?></span>
+                                class="far fa-question-circle"></i><span><?php echo esc_html($args["desc"]); ?></span>
                         </div>
                     <?php } ?>
                 </div>
@@ -87,12 +84,11 @@ class Website extends Field
         }
     }
 
-    public function sanitizeFieldData($data)
-    {
-        $cleanData = [];
+    public function sanitizeFieldData($data) {
+        $cleanData         = [];
         $cleanData["type"] = sanitize_text_field($data["type"]);
         if (isset($data["name"])) {
-            $name = sanitize_text_field(trim(strip_tags($data["name"])));
+            $name              = sanitize_text_field(trim(strip_tags($data["name"])));
             $cleanData["name"] = $name ? $name : $this->fieldDefaultData["name"];
         }
         if (isset($data["desc"])) {
@@ -107,18 +103,16 @@ class Website extends Field
         return wp_parse_args($cleanData, $this->fieldDefaultData);
     }
 
-    protected function initDefaultData()
-    {
+    protected function initDefaultData() {
         $this->fieldDefaultData = [
-            "name" => esc_html__("Website", "wpdiscuz"),
-            "desc" => "",
-            "icon" => "fas fa-link",
+            "name"   => esc_html__("Website", "wpdiscuz"),
+            "desc"   => "",
+            "icon"   => "fas fa-link",
             "enable" => "0",
         ];
     }
 
-    public function validateFieldData($fieldName, $args, $options, $currentUser)
-    {
+    public function validateFieldData($fieldName, $args, $options, $currentUser) {
         if ($args['enable'] == 0) {
             return '';
         }
@@ -135,13 +129,11 @@ class Website extends Field
         return esc_url_raw($website_url, ["http", "https"]);
     }
 
-    public function editCommentHtml($key, $value, $data, $comment)
-    {
+    public function editCommentHtml($key, $value, $data, $comment) {
 
     }
 
-    public function frontHtml($value, $args)
-    {
+    public function frontHtml($value, $args) {
 
     }
 

@@ -35,8 +35,7 @@ use wpdFormAttr\Field\DefaultField\ReCaptcha\RequestParameters;
  * instead of get_file_contents(). This is to account for people who may be on
  * servers where allow_url_open is disabled.
  */
-class SocketPost implements RequestMethod
-{
+class SocketPost implements RequestMethod {
     /**
      * Socket to the reCAPTCHA service
      * @var Socket
@@ -49,9 +48,8 @@ class SocketPost implements RequestMethod
      * @param \ReCaptcha\RequestMethod\Socket $socket optional socket, injectable for testing
      * @param string $siteVerifyUrl URL for reCAPTCHA sitevrerify API
      */
-    public function __construct(Socket $socket = null, $siteVerifyUrl = null)
-    {
-        $this->socket = (is_null($socket)) ? new Socket() : $socket;
+    public function __construct(Socket $socket = null, $siteVerifyUrl = null) {
+        $this->socket        = (is_null($socket)) ? new Socket() : $socket;
         $this->siteVerifyUrl = (is_null($siteVerifyUrl)) ? ReCaptcha::SITE_VERIFY_URL : $siteVerifyUrl;
     }
 
@@ -61,10 +59,9 @@ class SocketPost implements RequestMethod
      * @param RequestParameters $params Request parameters
      * @return string Body of the reCAPTCHA response
      */
-    public function submit(RequestParameters $params)
-    {
-        $errno = 0;
-        $errstr = "";
+    public function submit(RequestParameters $params) {
+        $errno     = 0;
+        $errstr    = "";
         $urlParsed = parse_url($this->siteVerifyUrl);
 
         if (false === $this->socket->fsockopen('ssl://' . $urlParsed['host'], 443, $errno, $errstr, 30)) {

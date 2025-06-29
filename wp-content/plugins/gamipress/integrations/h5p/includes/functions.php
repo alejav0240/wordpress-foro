@@ -49,6 +49,35 @@ function gamipress_h5p_ajax_get_posts() {
         wp_send_json_success( $results );
         die;
 
+    } else if( isset( $_REQUEST['post_type'] ) && in_array( 'h5p_tags', $_REQUEST['post_type'] ) ) {
+
+        $results = array();
+
+        // Pull back the search string
+        $search = isset( $_REQUEST['q'] ) ? $wpdb->esc_like( $_REQUEST['q'] ) : '';
+
+        // Get the tag title
+        $tags = $wpdb->get_results( $wpdb->prepare(
+            "SELECT t.id, t.name 
+            FROM {$wpdb->prefix}h5p_tags AS t
+            WHERE t.name LIKE %s",
+            "%%{$search}%%"
+        ) );
+
+        foreach ( $tags as $tag ) {
+
+            // Results should meet same structure like posts
+            $results[] = array(
+                'ID' => $tag->id,
+                'post_title' => $tag->name,
+            );
+
+        }
+
+        // Return our results
+        wp_send_json_success( $results );
+        die;
+
     }
 
 }
@@ -82,6 +111,22 @@ function gamipress_h5p_get_content_type_title( $content_type ) {
                     FROM {$wpdb->prefix}h5p_libraries AS l
                     WHERE l.name = %s",
         $content_type
+    ) );
+
+}
+
+// Get the tag title
+function gamipress_h5p_get_tag_title( $tag_id ) {
+
+    if( absint( $tag_id ) === 0 ) return '';
+
+    global $wpdb;
+
+    return $wpdb->get_var( $wpdb->prepare(
+        "SELECT t.name
+                    FROM {$wpdb->prefix}h5p_tags t
+                    WHERE t.id = %d",
+        $tag_id
     ) );
 
 }

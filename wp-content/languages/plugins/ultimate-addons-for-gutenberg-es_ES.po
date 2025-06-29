@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Spectra Gutenberg Blocks – Website Builder for the Block Editor - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-05-01 19:29:05+0000\n"
+"PO-Revision-Date: 2025-06-17 21:37:33+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,89 +11,93 @@ msgstr ""
 "Language: es\n"
 "Project-Id-Version: Plugins - Spectra Gutenberg Blocks – Website Builder for the Block Editor - Stable (latest release)\n"
 
-#: lib/zip-ai/classes/sidebar-configurations.php:291
+#: lib/bsf-analytics/class-bsf-analytics.php:238
+msgid "Help us improve %1$s and our other products!<br><br>With your permission, we'd like to collect <strong>non-sensitive information</strong> from your website — like your PHP version and which features you use — so we can fix bugs faster, make smarter decisions, and build features that actually matter to you. <em>No personal info. Ever.</em>"
+msgstr "¡Ayúdanos a mejorar %1$s y nuestros demás productos!<br><br>Con tu permiso, nos gustaría recopilar <strong>información no confidencial</strong> de tu sitio web, como tu versión de PHP y las características que utilizas, para que podamos corregir fallos más rápido, tomar decisiones más inteligentes y crear características que realmente te importen. <em>Ninguna información personal. Nunca.</em>"
+
+#: lib/zip-ai/classes/sidebar-configurations.php:293
 msgid "Buy more credits"
 msgstr "Comprar más créditos"
 
-#: lib/zip-ai/classes/sidebar-configurations.php:289
+#: lib/zip-ai/classes/sidebar-configurations.php:291
 msgid "To continue using the assistant and access its full features, please purchase more credits."
 msgstr "Para seguir usando el asistente y acceder a sus características completas, compra más créditos."
 
-#: lib/zip-ai/classes/sidebar-configurations.php:287
+#: lib/zip-ai/classes/sidebar-configurations.php:289
 msgid "You've run out of credits."
 msgstr "Se te han acabado los créditos."
 
-#: lib/zip-ai/classes/sidebar-configurations.php:285
+#: lib/zip-ai/classes/sidebar-configurations.php:287
 msgid "Authentication failed. Invalid or missing bearer token."
 msgstr "Error de identificación. Token de portador inválido o faltante."
 
-#: lib/zip-ai/classes/helper.php:227
+#: lib/zip-ai/classes/helper.php:211
 msgid "Encountered an error while processing your request. Please try again."
 msgstr "Se ha producido un error al procesar tu solicitud. Inténtalo de nuevo."
 
-#: lib/zip-ai/classes/helper.php:216
+#: lib/zip-ai/classes/helper.php:200
 msgid "You do not have permission to perform this action."
 msgstr "No tienes permisos para realizar esta acción."
 
-#: lib/zip-ai/classes/helper.php:196
+#: lib/zip-ai/classes/helper.php:180
 msgid "empty_response"
 msgstr "empty_response"
 
-#: lib/zip-ai/classes/helper.php:195
+#: lib/zip-ai/classes/helper.php:179
 msgid "Empty response from API."
 msgstr "Respuesta vacía de la API."
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:308
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:313
 msgid "Other"
 msgstr "Otro"
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:303
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:308
 msgid "Please tell us more about the feature."
 msgstr "Por favor, cuéntanos más sobre esa característica."
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:302
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:307
 msgid "It's missing a specific feature."
 msgstr "Le falta una característica específica."
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:297
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:302
 msgid "Could you please specify which plugin?"
 msgstr "¿Podrías especificar qué plugin?"
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:296
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:301
 msgid "I found a better alternative plugin."
 msgstr "He encontrado un plugin que es una mejor alternativa."
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:291
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:296
 msgid "Please tell us more about what went wrong?"
 msgstr "Por favor, cuéntanos más sobre qué salió mal"
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:290
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:295
 msgid "The plugin isn't working properly."
 msgstr "El plugin no está funcionando correctamente."
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:285
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:290
 msgid "How can we assist you?"
 msgstr "¿Cómo podemos ayudarte?"
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:284
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:289
 msgid "This is a temporary deactivation for testing."
 msgstr "Es una desactivación temporal para hacer pruebas."
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:155
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:160
 msgid "Skip & Deactivate"
 msgstr "Omitir y desactivar"
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:154
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:159
 msgid "Submit & Deactivate"
 msgstr "Enviar y desactivar"
 
 #. translators: %1$s: link html start, %2$s: link html end
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:143
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:148
 msgid "Need help from our experts? %1$sClick here to contact us.%2$s"
 msgstr "¿Necesitas ayuda de nuestros expertos? %1$sHaz clic aquí para contactar con nosotros.%2$s"
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:134
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:309
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:139
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:314
 msgid "Please tell us more details."
 msgstr "Por favor, cuéntanos más detalles."
 
@@ -109,7 +113,7 @@ msgstr "Comentario rápido"
 msgid "Oops! Something went wrong. Please refresh the page and try again."
 msgstr "¡Vaya! Algo ha ido mal. Por favor, recarga la página e inténtalo de nuevo."
 
-#: lib/bsf-analytics/class-bsf-analytics.php:439
+#: lib/bsf-analytics/class-bsf-analytics.php:466
 msgid "Learn More."
 msgstr "Aprende más."
 
@@ -304,19 +308,19 @@ msgstr "Spectra IA"
 msgid "The message array was not supplied"
 msgstr "No se ha proporcionado el array de mensajes"
 
-#: lib/zip-ai/classes/helper.php:295
+#: lib/zip-ai/classes/helper.php:279
 msgid "The ZipWP API server encountered an error."
 msgstr "El servidor API de ZipWP ha encontrado un error."
 
-#: lib/zip-ai/classes/helper.php:285
+#: lib/zip-ai/classes/helper.php:269
 msgid "The ZipWP API server is not responding."
 msgstr "El servidor API de ZipWP no responde."
 
-#: lib/zip-ai/classes/helper.php:261
+#: lib/zip-ai/classes/helper.php:245
 msgid "The ZipWP Token is not set."
 msgstr "El token de ZipWP no está configurado."
 
-#: lib/zip-ai/classes/helper.php:251
+#: lib/zip-ai/classes/helper.php:235
 msgid "The ZipWP Endpoint was not declared"
 msgstr "No se ha declarado la variable de ZipWP"
 
@@ -334,12 +338,12 @@ msgid "The Zip AI Middleware is not responding."
 msgstr "Zip AI Middleware no responde."
 
 #: lib/gutenberg-templates/inc/traits/helper.php:235
-#: lib/zip-ai/classes/helper.php:161
+#: lib/zip-ai/classes/helper.php:145
 msgid "The Zip AI Auth Token is not set."
 msgstr "El token de identificación de Zip AI no está configurado."
 
 #: lib/gutenberg-templates/inc/traits/helper.php:225
-#: lib/zip-ai/classes/helper.php:151
+#: lib/zip-ai/classes/helper.php:135
 msgid "The Zip AI Endpoint was not declared"
 msgstr "No se ha declarado la variable de Zip AI"
 
@@ -359,7 +363,7 @@ msgstr "No tienes permisos para realizar esta acción."
 #: lib/gutenberg-templates/inc/importer/plugin.php:270
 #: lib/gutenberg-templates/inc/importer/plugin.php:274
 #: lib/gutenberg-templates/inc/importer/plugin.php:445
-#: lib/zip-ai/classes/sidebar-configurations.php:268
+#: lib/zip-ai/classes/sidebar-configurations.php:270
 msgid "Something went wrong"
 msgstr "Algo salió mal"
 
@@ -8262,7 +8266,7 @@ msgid "Spectra <p>Rollback to Previous Version</p>"
 msgstr "Spectra <p>Retroceso a versión anterior</p>"
 
 #. translators: %s: html tags
-#: classes/class-uagb-loader.php:440
+#: classes/class-uagb-loader.php:441
 msgid "The %1$sSpectra%2$s plugin requires %1$sGutenberg%2$s plugin installed & activated."
 msgstr "El plugin %1$sSpectra%2$s requiere que el plugin %1$sGutenberg%2$s esté instalado y activo."
 
@@ -8295,12 +8299,12 @@ msgid "Sorry, something went wrong."
 msgstr "Lo siento, algo ha salido mal."
 
 #: admin-core/ajax/ajax-errors.php:83
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:237
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:242
 msgid "Nonce validation failed"
 msgstr "La validación del nonce falló"
 
 #: admin-core/ajax/ajax-errors.php:82
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:224
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:229
 msgid "Sorry, you are not allowed to do this operation."
 msgstr "Lo siento, no tienes permisos para realizar esta operación."
 
@@ -8520,7 +8524,7 @@ msgid "Rocket"
 msgstr "Cohete"
 
 #. translators: %s Product title
-#: lib/bsf-analytics/class-bsf-analytics.php:431
+#: lib/bsf-analytics/class-bsf-analytics.php:458
 msgid "Allow %s products to track non-sensitive usage tracking data."
 msgstr "Permite a los productos de %s hacer el seguimiento del rastreo de datos de uso no sensibles."
 
@@ -8583,36 +8587,30 @@ msgstr "Lorem fistrum ese pedazo de torpedo diodeno. Se calle ustée al ataquerl
 msgid "What is FAQ?"
 msgstr "¿Qué es FAQ?"
 
-#: lib/bsf-analytics/class-bsf-analytics.php:434
+#: lib/bsf-analytics/class-bsf-analytics.php:461
 msgid " This will be applicable for all sites from the network."
 msgstr "Esto será aplicable a todos los sitios de la red."
 
-#: lib/bsf-analytics/class-bsf-analytics.php:387
-#: admin-core/assets/build/dashboard-app.js:14
+#: lib/bsf-analytics/class-bsf-analytics.php:414
 msgid "Usage Tracking"
 msgstr "Seguimiento de uso"
 
-#: lib/bsf-analytics/class-bsf-analytics.php:276
+#: lib/bsf-analytics/class-bsf-analytics.php:289
 msgid "No Thanks"
 msgstr "No, gracias"
 
-#: lib/bsf-analytics/class-bsf-analytics.php:265
+#: lib/bsf-analytics/class-bsf-analytics.php:278
 msgid "Yes! Allow it"
 msgstr "¡Sí! Lo permito"
 
 #. translators: %s usage doc link
-#: lib/bsf-analytics/class-bsf-analytics.php:255
+#: lib/bsf-analytics/class-bsf-analytics.php:268
 msgid " Know More."
 msgstr "Saber más."
 
-#: lib/bsf-analytics/class-bsf-analytics.php:231
+#: lib/bsf-analytics/class-bsf-analytics.php:244
 msgid "This will be applicable for all sites from the network."
 msgstr "Esto será aplicable a todos los sitios de la red."
-
-#. translators: %s product name
-#: lib/bsf-analytics/class-bsf-analytics.php:228
-msgid "Want to help make %1s even more awesome? Allow us to collect non-sensitive diagnostic data and usage information. "
-msgstr "¿Quieres ayudar a hacer que %1s sea aún más fantástico? Permítenos recopilar datos no sensibles de diagnóstico e información del uso. "
 
 #: includes/blocks/inline-notice/block.php:16 dist/blocks-placeholder.js:25
 msgid "Inline Notice"
@@ -8721,7 +8719,7 @@ msgstr "Nombre"
 
 #: includes/blocks/icon-list-child/block.php:14
 #: includes/blocks/icon/block.php:16
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:109
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:112
 #: dist/blocks-placeholder.js:21
 msgid "Icon"
 msgstr "Icono"
@@ -8974,6 +8972,6 @@ msgstr "https://www.brainstormforce.com"
 msgid "Brainstorm Force"
 msgstr "Brainstorm Force"
 
-#: classes/class-uagb-loader.php:443
+#: classes/class-uagb-loader.php:444
 msgid "Install Gutenberg"
 msgstr "Instalar Gutenberg"

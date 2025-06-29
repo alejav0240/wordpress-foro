@@ -14,7 +14,7 @@ if (!defined("ABSPATH")) {
     <div class="wpd-opt-doc" style="padding-top: 10px;">
         <a href="https://wpdiscuz.com/docs/wpdiscuz-7/plugin-settings/styles-and-colors/"
            title="<?php esc_attr_e("Read the documentation", "wpdiscuz") ?>" target="_blank"><i
-                    class="far fa-question-circle"></i></a>
+                class="far fa-question-circle"></i></a>
     </div>
 </div>
 <!-- Option end -->
@@ -31,16 +31,16 @@ if (!defined("ABSPATH")) {
                                                                                       name="<?php echo esc_attr(WpdiscuzCore::TAB_THREAD_STYLES); ?>[theme]"
                                                                                       id="themeMinimal"
                                                                                       type="radio"><label
-                    for="themeMinimal"><?php esc_html_e("Off", "wpdiscuz"); ?></label>
+                for="themeMinimal"><?php esc_html_e("Off", "wpdiscuz"); ?></label>
             <input <?php checked($this->thread_styles["theme"] === "wpd-default"); ?> value="wpd-default"
                                                                                       name="<?php echo esc_attr(WpdiscuzCore::TAB_THREAD_STYLES); ?>[theme]"
                                                                                       id="themeDefault"
                                                                                       type="radio"><label
-                    for="themeDefault"><?php esc_html_e("Default", "wpdiscuz"); ?></label>
+                for="themeDefault"><?php esc_html_e("Default", "wpdiscuz"); ?></label>
             <input <?php checked($this->thread_styles["theme"] === "wpd-dark"); ?> value="wpd-dark"
                                                                                    name="<?php echo esc_attr(WpdiscuzCore::TAB_THREAD_STYLES); ?>[theme]"
                                                                                    id="themeDark" type="radio"><label
-                    for="themeDark"><?php esc_html_e("Dark", "wpdiscuz"); ?></label>
+                for="themeDark"><?php esc_html_e("Dark", "wpdiscuz"); ?></label>
         </div>
     </div>
     <div class="wpd-opt-doc">

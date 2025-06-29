@@ -702,7 +702,7 @@ jQuery(document).ready(function ($) {
                             }, animateDelay);
                         }
                         runCallbacks(r, wcForm);
-                        $(document.body).trigger('wpdiscuz_comment_posted', [currentSubmitBtn, wcForm, r.data.new_comment_id, r.data.wc_all_comments_count_new]);
+                        $(document.body).trigger('wpdiscuz_comment_posted', [wcForm, data, currentSubmitBtn, r.data]);
                     } else if (r.data) {
                         wpdiscuzAjaxObj.setCommentMessage(wpdiscuzAjaxObj.applyFilterOnPhrase(wpdiscuzAjaxObj[r.data], r.data, wcForm), 'error');
                         runCallbacks(r, wcForm);
@@ -720,10 +720,10 @@ jQuery(document).ready(function ($) {
             });
     }
 
-    $(document.body).on('wpdiscuz_comment_posted', function (e, currentSubmitBtn, wcForm, commentID, commentsCount) {
+    $(document.body).on('wpdiscuz_comment_posted', function (e, wcForm, data, currentSubmitBtn, response) {
         const threadFilter = $('.wpd-thread-filter');
 
-        if (isNaN(commentsCount) || (typeof commentsCount === 'undefined') || !commentsCount) {
+        if ((typeof response === 'undefined') || isNaN(response.wc_all_comments_count_new) || (typeof response.wc_all_comments_count_new === 'undefined') || !response.wc_all_comments_count_new) {
             threadFilter.find('.wpd-filter').addClass('wpdiscuz-hidden');
         } else {
             threadFilter.find('.wpd-filter').removeClass('wpdiscuz-hidden');

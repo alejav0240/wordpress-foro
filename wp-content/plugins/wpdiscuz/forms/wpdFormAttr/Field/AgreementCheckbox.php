@@ -2,11 +2,9 @@
 
 namespace wpdFormAttr\Field;
 
-class AgreementCheckbox extends Field
-{
+class AgreementCheckbox extends Field {
 
-    protected function dashboardForm()
-    {
+    protected function dashboardForm() {
         ?>
         <div class="wpd-field-body" style="display: <?php echo esc_attr($this->display); ?>">
             <div class="wpd-field-option wpdiscuz-item">
@@ -80,31 +78,29 @@ class AgreementCheckbox extends Field
         <?php
     }
 
-    public function editCommentHtml($key, $value, $data, $comment)
-    {
+    public function editCommentHtml($key, $value, $data, $comment) {
         if (current_user_can("moderate_comments") || !$this->isShowForUser($data) || ($comment->comment_parent && !$data["is_show_sform"]) || !$this->displayField($key, $data)) {
             return "";
         }
         $showAgainClass = $data["donot_show_again_if_checked"] == 1 ? " wpd_agreement_hide " : "";
-        $uniqueId = uniqid();
-        $html = "<tr class='" . esc_attr($key) . "-wrapper'><td class='first'>";
-        $html .= "</td><td>";
-        $required = $this->isValidateRequired($data) ? " wpd-required-group" : "";
-        $html .= "<div class='wpdiscuz-item" . esc_attr($required) . " wpd-field-group'>";
-        $html .= "<input checked='checked'  id='" . esc_attr($key) . "-1_" . esc_attr($uniqueId) . "' type='checkbox' name='" . esc_attr($key) . "' value='1' class='" . esc_attr($key) . " wpd-field wpd-agreement-checkbox " . esc_attr($showAgainClass) . "' > <label class='wpd-field-label wpd-cursor-pointer' for='" . esc_attr($key) . "-1_" . esc_attr($uniqueId) . "'>" . $data["label"] . "</label>";
-        $html .= "</div>";
-        $html .= "</td></tr>";
+        $uniqueId       = uniqid();
+        $html           = "<tr class='" . esc_attr($key) . "-wrapper'><td class='first'>";
+        $html           .= "</td><td>";
+        $required       = $this->isValidateRequired($data) ? " wpd-required-group" : "";
+        $html           .= "<div class='wpdiscuz-item" . esc_attr($required) . " wpd-field-group'>";
+        $html           .= "<input checked='checked'  id='" . esc_attr($key) . "-1_" . esc_attr($uniqueId) . "' type='checkbox' name='" . esc_attr($key) . "' value='1' class='" . esc_attr($key) . " wpd-field wpd-agreement-checkbox " . esc_attr($showAgainClass) . "' > <label class='wpd-field-label wpd-cursor-pointer' for='" . esc_attr($key) . "-1_" . esc_attr($uniqueId) . "'>" . $data["label"] . "</label>";
+        $html           .= "</div>";
+        $html           .= "</td></tr>";
         return $html;
     }
 
-    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm)
-    {
+    public function frontFormHtml($name, $args, $options, $currentUser, $uniqueId, $isMainForm) {
         if (empty($args["label"]) || !$this->isShowForUser($args, $currentUser) || (!$isMainForm && !$args["is_show_sform"]) || !$this->displayField($name, $args)) {
             return;
         }
         $showAagainClass = $args["donot_show_again_if_checked"] == 1 ? " wpd_agreement_hide " : "";
-        $hasDesc = $args["desc"] ? true : false;
-        $required = $args["required"] ? " wpd-required-group" : "";
+        $hasDesc         = $args["desc"] ? true : false;
+        $required        = $args["required"] ? " wpd-required-group" : "";
         ?>
         <div class="wpdiscuz-item wpd-field-group wpd-field-checkbox wpd-field-agreement wpd-field-single <?php echo esc_attr($name) . "-wrapper" . esc_attr($required) . ($hasDesc ? " wpd-has-desc" : ""); ?>">
             <div class="wpd-field-group-title">
@@ -125,13 +121,11 @@ class AgreementCheckbox extends Field
         <?php
     }
 
-    public function frontHtml($value, $args)
-    {
+    public function frontHtml($value, $args) {
 
     }
 
-    public function validateFieldData($fieldName, $args, $options, $currentUser)
-    {
+    public function validateFieldData($fieldName, $args, $options, $currentUser) {
         if (current_user_can("moderate_comments") || !$this->displayField($fieldName, $args)) {
             return;
         }
@@ -141,12 +135,11 @@ class AgreementCheckbox extends Field
         }
     }
 
-    public function sanitizeFieldData($data)
-    {
-        $cleanData = [];
+    public function sanitizeFieldData($data) {
+        $cleanData         = [];
         $cleanData["type"] = sanitize_text_field($data["type"]);
         if (isset($data["name"])) {
-            $name = sanitize_text_field(trim(strip_tags($data["name"])));
+            $name              = sanitize_text_field(trim(strip_tags($data["name"])));
             $cleanData["name"] = $name ? $name : $this->fieldDefaultData["name"];
         }
         if (isset($data["desc"])) {
@@ -181,27 +174,25 @@ class AgreementCheckbox extends Field
         return wp_parse_args($cleanData, $this->fieldDefaultData);
     }
 
-    private function displayField($name, $args)
-    {
+    private function displayField($name, $args) {
         if ($args["donot_show_again_if_checked"] == 1 && key_exists($name . "_" . COOKIEHASH, $_COOKIE)) {
             return false;
         }
         return true;
     }
 
-    protected function initDefaultData()
-    {
+    protected function initDefaultData() {
         $this->fieldDefaultData = [
-            "name" => "",
-            "label" => "",
-            "desc" => "",
-            "required" => "1",
-            "show_for_guests" => "1",
-            "show_for_users" => "0",
-            "is_show_on_comment" => "0",
-            "is_show_sform" => "1",
+            "name"                        => "",
+            "label"                       => "",
+            "desc"                        => "",
+            "required"                    => "1",
+            "show_for_guests"             => "1",
+            "show_for_users"              => "0",
+            "is_show_on_comment"          => "0",
+            "is_show_sform"               => "1",
             "donot_show_again_if_checked" => "1",
-            "no_insert_meta" => "1",
+            "no_insert_meta"              => "1",
         ];
     }
 

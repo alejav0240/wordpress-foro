@@ -14,7 +14,7 @@ if (!defined("ABSPATH")) {
     <div class="wpd-opt-doc" style="padding-top: 10px;">
         <a href="https://wpdiscuz.com/docs/wpdiscuz-7/plugin-settings/comment-form/"
            title="<?php esc_attr_e("Read the documentation", "wpdiscuz") ?>" target="_blank"><i
-                    class="far fa-question-circle"></i></a>
+                class="far fa-question-circle"></i></a>
     </div>
 </div>
 <!-- Option end -->
@@ -165,7 +165,7 @@ if (!defined("ABSPATH")) {
             <div style="flex-basis: 2%;">&nbsp;</div>
             <a href="<?php echo esc_url_raw(admin_url("admin.php?page=wpdiscuz_options_page&wpd_tab=content#wmuIsEnabled")); ?>"
                title="<?php echo esc_html__('Go to "Comment Content and Media" admin page to manage image attachment settings', 'wpdiscuz') ?>"><span
-                        class="wpd-editor-attachment"></span></a>
+                    class="wpd-editor-attachment"></span></a>
         </div>
     </div>
     <div class="wpd-opt-doc">

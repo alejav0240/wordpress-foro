@@ -14,7 +14,7 @@ if (!defined("ABSPATH")) {
     <div class="wpd-opt-doc" style="padding-top: 10px;">
         <a href="https://wpdiscuz.com/docs/wpdiscuz-7/plugin-settings/user-labels-and-badges/"
            title="<?php esc_attr_e("Read the documentation", "wpdiscuz") ?>" target="_blank"><i
-                    class="far fa-question-circle"></i></a>
+                class="far fa-question-circle"></i></a>
     </div>
 </div>
 <!-- Option end -->
@@ -64,7 +64,7 @@ if (!defined("ABSPATH")) {
                        name="<?php echo esc_attr(WpdiscuzCore::TAB_LABELS); ?>[blogRoles][<?php echo esc_attr($roleName); ?>]"
                        placeholder="<?php esc_attr_e("Example: #00FF00", "wpdiscuz"); ?>"/>
                 <label><span
-                            style='color:<?php echo esc_attr($color); ?>'><?php echo esc_html(ucfirst(str_replace("_", " ", $roleName))); ?></span></label>
+                        style='color:<?php echo esc_attr($color); ?>'><?php echo esc_html(ucfirst(str_replace("_", " ", $roleName))); ?></span></label>
             </div>
             <?php
         }

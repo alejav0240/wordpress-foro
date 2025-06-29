@@ -21,21 +21,21 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_follow_success"><?php esc_html_e("You started following this comment author", "wpdiscuz"); ?></label>
+                    for="wc_follow_success"><?php esc_html_e("You started following this comment author", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text" value="<?php echo esc_attr($this->phrases["wc_follow_success"]); ?>"
                                    name="wc_follow_success" id="wc_follow_success"/></td>
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_follow_canceled"><?php esc_html_e("You stopped following this comment author", "wpdiscuz"); ?></label>
+                    for="wc_follow_canceled"><?php esc_html_e("You stopped following this comment author", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text" value="<?php echo esc_attr($this->phrases["wc_follow_canceled"]); ?>"
                                    name="wc_follow_canceled" id="wc_follow_canceled"/></td>
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_follow_email_confirm"><?php esc_html_e("Please check your email and confirm the follow", "wpdiscuz"); ?></label>
+                    for="wc_follow_email_confirm"><?php esc_html_e("Please check your email and confirm the follow", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_follow_email_confirm"]); ?>"
@@ -43,7 +43,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_follow_email_confirm_fail"><?php esc_html_e("Sorry, we couldn't send confirmation email", "wpdiscuz"); ?></label>
+                    for="wc_follow_email_confirm_fail"><?php esc_html_e("Sorry, we couldn't send confirmation email", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_follow_email_confirm_fail"]); ?>"
@@ -51,7 +51,7 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_follow_login_to_follow"><?php esc_html_e("Please login to follow users", "wpdiscuz"); ?></label>
+                    for="wc_follow_login_to_follow"><?php esc_html_e("Please login to follow users", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text"
                                    value="<?php echo esc_attr($this->phrases["wc_follow_login_to_follow"]); ?>"
@@ -59,28 +59,28 @@ if (!defined("ABSPATH")) {
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_follow_impossible"><?php esc_html_e("We are sorry, following this user is impossible", "wpdiscuz"); ?></label>
+                    for="wc_follow_impossible"><?php esc_html_e("We are sorry, following this user is impossible", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text" value="<?php echo esc_attr($this->phrases["wc_follow_impossible"]); ?>"
                                    name="wc_follow_impossible" id="wc_follow_impossible"/></td>
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_follow_not_added"><?php esc_html_e("We are sorry, following failed. Please try again later.", "wpdiscuz"); ?></label>
+                    for="wc_follow_not_added"><?php esc_html_e("We are sorry, following failed. Please try again later.", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text" value="<?php echo esc_attr($this->phrases["wc_follow_not_added"]); ?>"
                                    name="wc_follow_not_added" id="wc_follow_not_added"/></td>
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_follow_confirm"><?php esc_html_e("Confirm following link text", "wpdiscuz"); ?></label>
+                    for="wc_follow_confirm"><?php esc_html_e("Confirm following link text", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text" value="<?php echo esc_attr($this->phrases["wc_follow_confirm"]); ?>"
                                    name="wc_follow_confirm" id="wc_follow_confirm"/></td>
         </tr>
         <tr valign="top">
             <th scope="row"><label
-                        for="wc_follow_cancel"><?php esc_html_e("Cancel following link text", "wpdiscuz"); ?></label>
+                    for="wc_follow_cancel"><?php esc_html_e("Cancel following link text", "wpdiscuz"); ?></label>
             </th>
             <td colspan="3"><input type="text" value="<?php echo esc_attr($this->phrases["wc_follow_cancel"]); ?>"
                                    name="wc_follow_cancel" id="wc_follow_cancel"/></td>

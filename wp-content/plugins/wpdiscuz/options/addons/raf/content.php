@@ -135,7 +135,7 @@ if (!$isRafExists) {
                 </th>
                 <td>
                     <input name="" checked="checked" value="unapprove" id="wpdiscuz_unapprove" type="radio"> <label
-                            for="wpdiscuz_unapprove"> unapprove </label>
+                        for="wpdiscuz_unapprove"> unapprove </label>
                     <input name="" value="trash" id="wpdiscuz_trash" type="radio"> <label for="wpdiscuz_trash">
                         trash </label>
                 </td>
@@ -148,7 +148,7 @@ if (!$isRafExists) {
                 </th>
                 <td>
                     <input name="" value="5" id="wpdiscuz_flag_count" type="number"> <span
-                            style="display:inline-block; vertical-align:bottom; font-size:14px; padding:5px;">times</span>
+                        style="display:inline-block; vertical-align:bottom; font-size:14px; padding:5px;">times</span>
                 </td>
             </tr>
             <tr valign="top">
@@ -159,7 +159,7 @@ if (!$isRafExists) {
                 </th>
                 <td>
                     <input name="" value="10" id="wpdiscuz_vote_count" type="number"> <span
-                            style="display:inline-block; vertical-align:bottom; font-size:14px; padding:5px;">times</span>
+                        style="display:inline-block; vertical-align:bottom; font-size:14px; padding:5px;">times</span>
                 </td>
             </tr>
             <tr valign="top">

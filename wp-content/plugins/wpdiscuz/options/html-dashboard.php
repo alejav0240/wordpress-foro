@@ -32,7 +32,7 @@ if (!defined("ABSPATH")) {
         $showNews = isset($_COOKIE["wpd_show_news"]) ? intval($_COOKIE["wpd_show_news"]) : 1;
         ?>
         <div class="wpd-close wpd-toggle-news"><span
-                    class="dashicons dashicons-arrow-<?php echo $showNews ? "up" : "down" ?>"></span> <?php esc_html_e("Close", "wpdiscuz") ?>
+                class="dashicons dashicons-arrow-<?php echo $showNews ? "up" : "down" ?>"></span> <?php esc_html_e("Close", "wpdiscuz") ?>
         </div>
     </div>
 
@@ -79,30 +79,30 @@ if (!defined("ABSPATH")) {
                 <div id="wpd_comment_layouts">
                     <div class="wpd-box-layout">
                         <a href="#img1"><img
-                                    src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/layout-1s.png")); ?>"
-                                    class="wpd-com-layout-1"/></a>
+                                src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/layout-1s.png")); ?>"
+                                class="wpd-com-layout-1"/></a>
                         <a href="#_" class="wpd-lightbox" id="img1"><img
-                                    src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/layout-1.png")); ?>"/></a>
+                                src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/layout-1.png")); ?>"/></a>
                         <h4><?php esc_html_e("Comment Layout #1", "wpdiscuz") ?><br>
                             <hr style="width: 30%; margin-top: 10px; border-bottom: 1px dashed #07B290;">
                         </h4>
                     </div>
                     <div class="wpd-box-layout">
                         <a href="#img2"><img
-                                    src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/layout-2s.png")); ?>"
-                                    class="wpd-com-layout-2"/></a>
+                                src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/layout-2s.png")); ?>"
+                                class="wpd-com-layout-2"/></a>
                         <a href="#_" class="wpd-lightbox" id="img2"><img
-                                    src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/layout-2.png")); ?>"/></a>
+                                src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/layout-2.png")); ?>"/></a>
                         <h4><?php esc_html_e("Comment Layout #2", "wpdiscuz") ?><br>
                             <hr style="width: 30%; margin-top: 10px; border-bottom: 1px dashed #07B290;">
                         </h4>
                     </div>
                     <div class="wpd-box-layout">
                         <a href="#img3"><img
-                                    src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/layout-3s.png")); ?>"
-                                    class="wpd-com-layout-3"/></a>
+                                src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/layout-3s.png")); ?>"
+                                class="wpd-com-layout-3"/></a>
                         <a href="#_" class="wpd-lightbox" id="img3"><img
-                                    src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/layout-3.png")); ?>"/></a>
+                                src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/layout-3.png")); ?>"/></a>
                         <h4><?php esc_html_e("Comment Layout #3", "wpdiscuz") ?><br>
                             <hr style="width: 30%; margin-top: 10px; border-bottom: 1px dashed #07B290;">
                         </h4>
@@ -131,10 +131,10 @@ if (!defined("ABSPATH")) {
                 <p><?php esc_html_e("Before, you had to create a Rating field in comment form to allow users rate article while they post a comment, there was no way to rate without commenting. Now you can allow users rate your articles without leavening a comment. wpDiscuz 7 has a built-in Post Rating system which is not based on comment form custom fields. You can see that on top of comment section like the left one on the screenshot below:", "wpdiscuz") ?></p>
                 <div class="wpd-zoom-image" style="width: 98%; margin: 10px auto;">
                     <a href="#img5"><img
-                                src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/news/rating-vs.png")); ?>"
-                                style="width: 100%;"/></a>
+                            src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/news/rating-vs.png")); ?>"
+                            style="width: 100%;"/></a>
                     <a href="#_" class="wpd-lightbox" id="img5"><img
-                                src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/news/rating-vs-v.png")); ?>"/></a>
+                            src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/news/rating-vs-v.png")); ?>"/></a>
                 </div>
             </div>
         </div>
@@ -154,52 +154,52 @@ if (!defined("ABSPATH")) {
             <div class="wpd-stat-box wpd-box wpd-stat-brief-top">
                 <div class="wpd-stat-cell">
                     <div class="wpd-cell-icon"><img
-                                src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/icon-comment.png")); ?>"
-                                width="30"></div>
+                            src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/icon-comment.png")); ?>"
+                            width="30"></div>
                     <div class="wpd-cell-text"><span
-                                class="wpd-cell-num wpd-stat-brief-all"><strong>0</strong></span><span
-                                class="wpd-cell-label"><?php esc_html_e("All Comments", "wpdiscuz") ?></span></div>
+                            class="wpd-cell-num wpd-stat-brief-all"><strong>0</strong></span><span
+                            class="wpd-cell-label"><?php esc_html_e("All Comments", "wpdiscuz") ?></span></div>
                 </div>
                 <div class="wpd-stat-cell">
                     <div class="wpd-cell-icon"><img
-                                src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/icon-comment-inlinepng.png")); ?>"
-                                width="36"></div>
+                            src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/icon-comment-inlinepng.png")); ?>"
+                            width="36"></div>
                     <div class="wpd-cell-text"><span
-                                class="wpd-cell-num wpd-stat-brief-inline"><strong>0</strong></span><span
-                                class="wpd-cell-label"><?php esc_html_e("Inline Feedbacks", "wpdiscuz") ?></span></div>
+                            class="wpd-cell-num wpd-stat-brief-inline"><strong>0</strong></span><span
+                            class="wpd-cell-label"><?php esc_html_e("Inline Feedbacks", "wpdiscuz") ?></span></div>
                 </div>
                 <div class="wpd-stat-cell">
                     <div class="wpd-cell-icon"><img
-                                src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/icon-threads.png")); ?>">
+                            src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/icon-threads.png")); ?>">
                     </div>
                     <div class="wpd-cell-text"><span
-                                class="wpd-cell-num wpd-stat-brief-threads"><strong>0</strong></span><span
-                                class="wpd-cell-label"><?php esc_html_e("Comment Threads", "wpdiscuz") ?></span></div>
+                            class="wpd-cell-num wpd-stat-brief-threads"><strong>0</strong></span><span
+                            class="wpd-cell-label"><?php esc_html_e("Comment Threads", "wpdiscuz") ?></span></div>
                 </div>
                 <div class="wpd-stat-cell">
                     <div class="wpd-cell-icon"><img
-                                src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/icon-replies.png")); ?>"
-                                width="30"></div>
+                            src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/icon-replies.png")); ?>"
+                            width="30"></div>
                     <div class="wpd-cell-text"><span
-                                class="wpd-cell-num wpd-stat-brief-replies"><strong>0</strong></span><span
-                                class="wpd-cell-label"><?php esc_html_e("Thread Replies", "wpdiscuz") ?></span></div>
+                            class="wpd-cell-num wpd-stat-brief-replies"><strong>0</strong></span><span
+                            class="wpd-cell-label"><?php esc_html_e("Thread Replies", "wpdiscuz") ?></span></div>
                 </div>
             </div>
             <div class="wpd-stat-box wpd-box wpd-stat-brief-bottom">
                 <div class="wpd-stat-cell">
                     <div class="wpd-cell-icon"><img
-                                src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/icon-users.png")); ?>"
-                                width="24"></div>
+                            src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/icon-users.png")); ?>"
+                            width="24"></div>
                     <div class="wpd-cell-text"><span class="wpd-cell-num wpd-stat-brief-users"><strong>0</strong></span><span
-                                class="wpd-cell-label"><?php esc_html_e("User Commenters", "wpdiscuz") ?></span></div>
+                            class="wpd-cell-label"><?php esc_html_e("User Commenters", "wpdiscuz") ?></span></div>
                 </div>
                 <div class="wpd-stat-cell">
                     <div class="wpd-cell-icon"><img
-                                src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/icon-guests.png")); ?>"
-                                width="24"></div>
+                            src="<?php echo esc_url_raw(plugins_url(WPDISCUZ_DIR_NAME . "/assets/img/dashboard/icon-guests.png")); ?>"
+                            width="24"></div>
                     <div class="wpd-cell-text"><span
-                                class="wpd-cell-num wpd-stat-brief-guests"><strong>0</strong></span><span
-                                class="wpd-cell-label"><?php esc_html_e("Guest Commenters", "wpdiscuz") ?></span></div>
+                            class="wpd-cell-num wpd-stat-brief-guests"><strong>0</strong></span><span
+                            class="wpd-cell-label"><?php esc_html_e("Guest Commenters", "wpdiscuz") ?></span></div>
                 </div>
             </div>
         </div>
@@ -287,25 +287,25 @@ if (!defined("ABSPATH")) {
                 <ul>
                     <li><a href="https://wpdiscuz.com/docs/wpdiscuz-7/getting-started/comment-forms/"
                            target="_blank"><span
-                                    class="dashicons dashicons-editor-help"></span> <?php esc_html_e("Getting Started", "wpdiscuz") ?>
+                                class="dashicons dashicons-editor-help"></span> <?php esc_html_e("Getting Started", "wpdiscuz") ?>
                         </a></li>
                     <li><a href="https://wpdiscuz.com/docs/wpdiscuz-7/getting-started/manage-comment-forms/"
                            target="_blank"><span
-                                    class="dashicons dashicons-editor-help"></span> <?php esc_html_e("Manage Comment Forms", "wpdiscuz") ?>
+                                class="dashicons dashicons-editor-help"></span> <?php esc_html_e("Manage Comment Forms", "wpdiscuz") ?>
                         </a></li>
                     <li><a href="https://wpdiscuz.com/docs/wpdiscuz-7/customization/comment-layouts/"
                            target="_blank"><span
-                                    class="dashicons dashicons-editor-help"></span> <?php esc_html_e("Manage Comment Layout", "wpdiscuz") ?>
+                                class="dashicons dashicons-editor-help"></span> <?php esc_html_e("Manage Comment Layout", "wpdiscuz") ?>
                         </a></li>
                     <li><a href="https://wpdiscuz.com/docs/wpdiscuz-7/customization/custom-template-and-style/"
                            target="_blank"><span
-                                    class="dashicons dashicons-editor-help"></span> <?php esc_html_e("Plugin Customization", "wpdiscuz") ?>
+                                class="dashicons dashicons-editor-help"></span> <?php esc_html_e("Plugin Customization", "wpdiscuz") ?>
                         </a></li>
                     <li><a href="https://wpdiscuz.com/docs/wpdiscuz-7/translation/translation-methods/" target="_blank"><span
-                                    class="dashicons dashicons-editor-help"></span> <?php esc_html_e("Translation", "wpdiscuz") ?>
+                                class="dashicons dashicons-editor-help"></span> <?php esc_html_e("Translation", "wpdiscuz") ?>
                         </a></li>
                     <li><a href="https://wpdiscuz.com/docs/wpdiscuz-7/privacy-and-gdpr/" target="_blank"><span
-                                    class="dashicons dashicons-editor-help"></span> <?php esc_html_e("Privacy and GDPR", "wpdiscuz") ?>
+                                class="dashicons dashicons-editor-help"></span> <?php esc_html_e("Privacy and GDPR", "wpdiscuz") ?>
                         </a></li>
                 </ul>
             </div>
@@ -315,16 +315,16 @@ if (!defined("ABSPATH")) {
             <div class="wpd-widget-body">
                 <ul>
                     <li><a href="https://wpdiscuz.com/demo/" target="_blank"><span
-                                    class="dashicons dashicons-admin-links"></span> <?php esc_html_e("wpDiscuz Demo", "wpdiscuz") ?>
+                                class="dashicons dashicons-admin-links"></span> <?php esc_html_e("wpDiscuz Demo", "wpdiscuz") ?>
                         </a></li>
                     <li><a href="https://wpdiscuz.com/support/" target="_blank"><span
-                                    class="dashicons dashicons-admin-links"></span> <?php esc_html_e("wpDiscuz Support", "wpdiscuz") ?>
+                                class="dashicons dashicons-admin-links"></span> <?php esc_html_e("wpDiscuz Support", "wpdiscuz") ?>
                         </a></li>
                     <li><a href="https://gvectors.com/forum/official-wpdiscuz-add-ons/" target="_blank"><span
-                                    class="dashicons dashicons-admin-links"></span> <?php esc_html_e("wpDiscuz Addons Support", "wpdiscuz") ?>
+                                class="dashicons dashicons-admin-links"></span> <?php esc_html_e("wpDiscuz Addons Support", "wpdiscuz") ?>
                         </a></li>
                     <li><a href="https://wordpress.org/plugins/wpdiscuz/" target="_blank"><span
-                                    class="dashicons dashicons-admin-links"></span> <?php esc_html_e("wpDiscuz Plugin Page", "wpdiscuz") ?>
+                                class="dashicons dashicons-admin-links"></span> <?php esc_html_e("wpDiscuz Plugin Page", "wpdiscuz") ?>
                         </a></li>
                 </ul>
             </div>
@@ -333,7 +333,7 @@ if (!defined("ABSPATH")) {
             <div class="wpd-widget-head"><?php esc_html_e("wpDiscuz Addons", "wpdiscuz") ?></div>
             <div class="wpd-widget-body">
                 <p><a href="https://gvectors.com/product-category/wpdiscuz/" target="_blank"><span
-                                class="dashicons dashicons-admin-plugins"></span> <?php esc_html_e("wpDiscuz Addons", "wpdiscuz") ?>
+                            class="dashicons dashicons-admin-plugins"></span> <?php esc_html_e("wpDiscuz Addons", "wpdiscuz") ?>
                     </a></p>
                 <p><?php esc_html_e("Get all wpDiscuz premium addons with unlimited site license and save 90% with", "wpdiscuz"); ?>
                     <a href="https://gvectors.com/product/wpdiscuz-addons-bundle/" target="_blank">wpDiscuz Addons
@@ -344,7 +344,7 @@ if (!defined("ABSPATH")) {
             <div class="wpd-widget-head"><?php esc_html_e("Contribute", "wpdiscuz") ?></div>
             <div class="wpd-widget-body">
                 <h4 style="margin: 12px 0px 0px; color:#DD0000"><span
-                            class="dashicons dashicons-translation"></span> <?php esc_html_e("Help to Translate wpDiscuz", "wpdiscuz") ?>
+                        class="dashicons dashicons-translation"></span> <?php esc_html_e("Help to Translate wpDiscuz", "wpdiscuz") ?>
                 </h4>
                 <p style="margin-top:0px;"><?php esc_html_e("We'd really appreciate if you could help translating wpDiscuz to your language.", "wpdiscuz") ?>
                     <a href="https://translate.wordpress.org/projects/wp-plugins/wpdiscuz/"
@@ -354,10 +354,10 @@ if (!defined("ABSPATH")) {
                     <?php esc_html_e("Leave a Good Review", "wpdiscuz") ?> &nbsp;
                     <a href="https://wordpress.org/support/plugin/wpdiscuz/reviews/?filter=5" target="_blank"
                        title="View wpDiscuz Reviews"><span class="dashicons dashicons-star-filled"></span><span
-                                class="dashicons dashicons-star-filled"></span><span
-                                class="dashicons dashicons-star-filled"></span><span
-                                class="dashicons dashicons-star-filled"></span><span
-                                class="dashicons dashicons-star-filled"></span></a>
+                            class="dashicons dashicons-star-filled"></span><span
+                            class="dashicons dashicons-star-filled"></span><span
+                            class="dashicons dashicons-star-filled"></span><span
+                            class="dashicons dashicons-star-filled"></span></a>
                 </h4>
                 <p style="margin-top:0px;"><?php esc_html_e("We love your reviews. This is the best way to say thank you to developers and support team.", "wpdiscuz") ?></p>
             </div>

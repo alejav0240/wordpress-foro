@@ -1,0 +1,52 @@
+tipo,nombre_categoria,descripcion
+pregunta,Fundamentos de la Computación,Dudas sobre conceptos básicos de ciencias de la computación.
+pregunta,Lógica y Algoritmos,Preguntas sobre resolución algorítmica y estructuras básicas.
+pregunta,Programación I,Preguntas relacionadas al curso de Programación I.
+pregunta,Programación II,Preguntas relacionadas al curso de Programación II.
+pregunta,Programación III,Preguntas relacionadas al curso de Programación III.
+pregunta,Programación Web,Preguntas sobre HTML CSS JavaScript y frameworks web.
+pregunta,Programación Móvil,Preguntas sobre desarrollo de apps móviles (Android/iOS).
+pregunta,Ingeniería de Software,Metodologías de desarrollo análisis y diseño de sistemas.
+pregunta,Taller de Sistemas,Preguntas prácticas de desarrollo integrador de sistemas.
+pregunta,Proyecto de Sistemas,Preguntas sobre gestión planificación y desarrollo de proyectos.
+pregunta,Software Quality Assurance,Preguntas sobre pruebas de software y aseguramiento de calidad.
+pregunta,Software Project Management,Gestión de equipos tiempos y proyectos de software.
+pregunta,Base de Datos,Preguntas sobre diseño modelado y uso de bases de datos relacionales.
+pregunta,Data Warehousing,Preguntas sobre almacenes de datos OLAP ETL.
+pregunta,Redes y Comunicación de Datos,Preguntas sobre protocolos cableado routers TCP/IP.
+pregunta,IoT y Robótica,Dudas sobre Internet de las cosas y automatización.
+pregunta,Sistemas Distribuidos,Procesos concurrentes sincronización redes distribuidas.
+pregunta,Sistemas Operativos,Procesos memoria planificación y sistemas UNIX/Linux.
+pregunta,Tecnologías Emergentes,Tendencias y nuevas tecnologías en computación.
+pregunta,Animación Digital,Técnicas de modelado animación 2D/3D.
+pregunta,Game Development,Dudas sobre motores de juego y desarrollo interactivo.
+pregunta,Realidad Virtual y Aumentada,Preguntas sobre XR interfaces inmersivas y dispositivos.
+pregunta,Procesamiento de Imágenes,Preguntas sobre visión por computadora filtros y análisis digital.
+pregunta,Auditoría y Seguridad Informática,Preguntas sobre ética seguridad ataques y defensa.
+pregunta,Estadística Computacional,Preguntas sobre análisis estadístico con enfoque informático.
+pregunta,Inglés Técnico,Dudas sobre terminología técnica en inglés.
+pregunta,Metodología de la Investigación,Preguntas sobre estructura métodos y enfoques investigativos.
+pregunta,Práctica Profesional,Dudas sobre experiencia laboral y requisitos.
+pregunta,Proyecto de Grado,Orientación sobre la elaboración del proyecto final.
+
+publicacion,Artículos de Investigación,Publicaciones sobre trabajos académicos y científicos.
+publicacion,Proyectos de Aula,Desarrollos realizados en el contexto de asignaturas.
+publicacion,Proyecto de Grado,Avances y entregas del proyecto final de carrera.
+publicacion,Aplicaciones Web,Presentación de sistemas web funcionales.
+publicacion,Aplicaciones Móviles,Apps creadas para Android o iOS.
+publicacion,Sistemas Distribuidos,Desarrollo de arquitecturas distribuidas y microservicios.
+publicacion,Soluciones con IoT / Robótica,Proyectos con sensores actuadores y controladores.
+publicacion,Juegos y Realidad Virtual,Proyectos interactivos de VR AR o videojuegos.
+publicacion,Estadísticas y Datos,Análisis con herramientas estadísticas Python o R.
+publicacion,Machine Learning / IA,Modelos predictivos clasificadores aprendizaje automático.
+publicacion,Seguridad Informática,Protocolos firewalls criptografía protección de sistemas.
+publicacion,Frameworks Web,Tecnologías como React Angular Laravel etc.
+publicacion,APIs y Servicios REST,Desarrollo e integración de APIs.
+publicacion,Pruebas y Calidad de Software,Estrategias de testing automatizado o manual.
+publicacion,Innovaciones Tecnológicas,Nuevas herramientas plataformas o metodologías emergentes.
+publicacion,Guías paso a paso,Tutoriales y walkthroughs sobre temas técnicos.
+publicacion,Recursos didácticos,Material útil para el aprendizaje (libros links PDFs).
+publicacion,Buenas prácticas,Recomendaciones y estándares de desarrollo.
+publicacion,Concursos / Hackathons,Experiencias en eventos tecnológicos.
+publicacion,Actividades Estudiantiles,Difusión de actividades organizadas por estudiantes.
+publicacion,Experiencias Profesionales,Testimonios de prácticas trabajos o egresados.

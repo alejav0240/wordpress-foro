@@ -3,11 +3,11 @@ if (!defined("ABSPATH")) {
     exit();
 }
 $stcrSubscriptionsCount = intval($this->dbManager->getStcrAllSubscriptions());
-$stcrDisabled = $stcrSubscriptionsCount ? "" : "disabled='disabled'";
+$stcrDisabled           = $stcrSubscriptionsCount ? "" : "disabled='disabled'";
 
-$isLstcExists = $this->dbManager->isTableExists("comment_notifier", false);
+$isLstcExists           = $this->dbManager->isTableExists("comment_notifier", false);
 $lstcSubscriptionsCount = $isLstcExists ? intval($this->dbManager->getLstcAllSubscriptions()) : false;
-$lstcDisabled = $lstcSubscriptionsCount ? "" : "disabled='disabled'";
+$lstcDisabled           = $lstcSubscriptionsCount ? "" : "disabled='disabled'";
 ?>
 <div class="wpdtool-accordion-item">
 

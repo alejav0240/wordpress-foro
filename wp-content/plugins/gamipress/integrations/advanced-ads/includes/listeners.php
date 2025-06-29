@@ -18,7 +18,9 @@ if( !defined( 'ABSPATH' ) ) exit;
  */
 function gamipress_advanced_ads_ad_published( $ad ) {
 
-    $post = get_post( $ad->id );
+    $ad_id = $ad->get_id( $ad );
+
+    $post = get_post( $ad_id );
 
     // Bail if post does not exists
     if( ! $post ) {
@@ -32,7 +34,7 @@ function gamipress_advanced_ads_ad_published( $ad ) {
         return;
     }
 
-    do_action( 'gamipress_advanced_ads_ad_published', $ad->id, $user_id );
+    do_action( 'gamipress_advanced_ads_ad_published', $ad_id, $user_id );
 
 }
 add_action( 'advanced-ads-ad-status-published', 'gamipress_advanced_ads_ad_published', 10 );
@@ -46,7 +48,9 @@ add_action( 'advanced-ads-ad-status-published', 'gamipress_advanced_ads_ad_publi
  */
 function gamipress_advanced_ads_ad_unpublished( $ad ) {
 
-    $post = get_post( $ad->id );
+    $ad_id = $ad->get_id( $ad );
+
+    $post = get_post( $ad_id );
 
     // Bail if post does not exists
     if( ! $post ) {
@@ -60,7 +64,7 @@ function gamipress_advanced_ads_ad_unpublished( $ad ) {
         return;
     }
 
-    do_action( 'gamipress_advanced_ads_ad_unpublished', $ad->id, $user_id );
+    do_action( 'gamipress_advanced_ads_ad_unpublished', $ad_id, $user_id );
 
 }
 add_action( 'advanced-ads-ad-status-unpublished', 'gamipress_advanced_ads_ad_unpublished', 10 );
@@ -75,7 +79,7 @@ add_action( 'advanced-ads-ad-status-unpublished', 'gamipress_advanced_ads_ad_unp
  */
 function gamipress_advanced_ads_ad_expired( $ad_id, $ad ) {
 
-    $post = get_post( $ad->id );
+    $post = get_post( $ad_id );
 
     // Bail if post does not exists
     if( ! $post ) {
@@ -89,7 +93,7 @@ function gamipress_advanced_ads_ad_expired( $ad_id, $ad ) {
         return;
     }
 
-    do_action( 'gamipress_advanced_ads_ad_expired', $ad->id, $user_id );
+    do_action( 'gamipress_advanced_ads_ad_expired', $ad_id, $user_id );
 
 }
 add_action( 'advanced-ads-ad-expired', 'gamipress_advanced_ads_ad_expired', 10, 2 );
