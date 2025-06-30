@@ -33,8 +33,6 @@ function limitar_busqueda_post_y_question($query)
 }
 add_action('pre_get_posts', 'limitar_busqueda_post_y_question');
 
-add_filter('ap_user_link', 'custom_ap_user_link', 10, 3);
-
 function custom_ap_user_link($link, $user_id, $sub)
 {
     // Dividir la URL en partes
@@ -59,7 +57,7 @@ function custom_ap_user_link($link, $user_id, $sub)
 
     return $link;
 }
-
+add_filter('ap_user_link', 'custom_ap_user_link', 10, 3);
 function generate_user_profile_url()
 {
     // Obtener el enlace del perfil del usuario
@@ -78,7 +76,6 @@ function generate_user_profile_url()
 
     return $new_url;
 }
-
 function custom_login_redirect($login_url, $redirect)
 {
     $page_id = UM()->options()->get('core_login');
@@ -88,8 +85,6 @@ function custom_login_redirect($login_url, $redirect)
     return $login_url;
 }
 add_filter('login_url', 'custom_login_redirect', 10, 2);
-
-add_filter('anspress_user_profile_url', 'custom_profile_redirect', 10, 2);
 
 /**
  * Maneja el envío del formulario de Forminator para crear una publicación en WordPress.
@@ -164,12 +159,6 @@ add_action('forminator_form_after_save_entry', 'handle_forminator_submission');
  * @param array $files Archivos subidos (estructura de Forminator).
  * @return string HTML.
  */
-/**
- * Genera una lista HTML de archivos adjuntos.
- *
- * @param array $files Archivos subidos (estructura de Forminator).
- * @return string HTML.
- */
 function generate_attachment_list($files)
 {
     $html = '<h3>📌 <strong>Archivos Adjuntos</strong></h3>';
@@ -197,8 +186,6 @@ function generate_attachment_list($files)
     return $html;
 }
 
-
-
 /**
  * Asigna una imagen destacada al post desde una URL.
  *
@@ -214,8 +201,6 @@ function attach_featured_image($image_url, $post_id)
         error_log('Error al asignar imagen destacada: ' . $image_id->get_error_message());
     }
 }
-
-
 
 /**
  * Summary of listar_publicaciones_pendientes
@@ -339,7 +324,6 @@ function add_rating_to_comment($comment_id, $rating)
     // Asignar puntos con GamiPress
     gamipress_award_points_to_user($comment_author_id, $puntos, 'nombre_del_tipo_de_puntos');
 }
-
 add_action("wpdiscuz_add_rating", "add_rating_to_comment", 10, 2);
 
 
@@ -505,7 +489,6 @@ function mostrar_top_usuarios_por_puntos($atts)
 }
 add_shortcode('top_usuarios_puntos', 'mostrar_top_usuarios_por_puntos');
 
-add_filter('ap_question_form_fields', 'my_custom_anspress_category_dropdown');
 function my_custom_anspress_category_dropdown($fields)
 {
     $fields['category'] = array(
@@ -518,7 +501,7 @@ function my_custom_anspress_category_dropdown($fields)
     );
     return $fields;
 }
-
+add_filter('ap_question_form_fields', 'my_custom_anspress_category_dropdown');
 
 // 1. Registrar el trigger personalizado para GamiPress
 function my_prefix_custom_activity_triggers_for_anspress_category($triggers)
@@ -555,8 +538,6 @@ function my_prefix_trigger_gamipress_on_anspress_question($post_id)
 }
 add_action('save_post_question', 'my_prefix_trigger_gamipress_on_anspress_question', 20);
 
-
-// Agrega soporte para /perfil/usuario
 function perfil_rewrite_rules()
 {
     add_rewrite_rule(
@@ -698,8 +679,6 @@ function anspress_force_cpt_public_property() {
 }
 
 // Hacer que las taxonomías de AnsPress sean públicamente consultables y visibles
-add_action( 'init', 'anspress_make_taxonomies_public', 999 ); // Prioridad alta para ejecutar al final
-
 function anspress_make_taxonomies_public() {
     global $wp_taxonomies;
 
@@ -721,26 +700,4 @@ function anspress_make_taxonomies_public() {
         $wp_taxonomies['question_tag']->show_in_rest = true; // Crucial si el frontend usa REST API
     }
 }
-
-/**
- * Filtra la consulta del Post Grid de UAG para mostrar solo las entradas del usuario logueado.
- * El nombre del filtro (e.g., 'uagb_post_grid_query_args') es hipotético y debe confirmarse con la doc de UAG.
- */
-function my_uagb_post_grid_logged_in_user_posts( $query_args, $attributes ) {
-    if ( is_user_logged_in() ) {
-        $current_user = wp_get_current_user();
-
-        // Opcional: Si quieres aplicar esto a un bloque UAG Post Grid específico.
-        // Necesitarías el block_id que está en tu código: "block_id":"32626711"
-        if ( isset( $attributes['block_id'] ) && '32626711' === $attributes['block_id'] ) {
-            $query_args['author'] = $current_user->ID;
-        } else {
-        //      // Si no usas el block_id, se aplicará a todos los UAG Post Grid
-            $query_args['author'] = $current_user->ID;
-        }
-
-         $query_args['author'] = $current_user->ID; // Aplica a todos los UAG Post Grid
-    }
-    return $query_args;
-}
-add_filter( 'uagb_post_grid_query_args', 'my_uagb_post_grid_logged_in_user_posts', 10, 2 ); // Reemplaza 'uagb_post_grid_query_args' con el filtro real
+add_action( 'init', 'anspress_make_taxonomies_public', 999 ); // Prioridad alta para ejecutar al final
