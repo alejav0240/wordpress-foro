@@ -21,4 +21,7 @@ window.addEventListener( 'load', function() {
 						}
 		});
 				} );
-			 });
+			window.addEventListener( 'load', function() {
+	UAGBCounter.init( '.uagb-block-b136a7cf', {"layout":"number","heading":"Nivel 1 de 10 \u2013 \u00a1Sigue adelante!","numberPrefix":"","numberSuffix":"%","startNumber":0,"endNumber":100,"totalNumber":100,"decimalPlaces":2,"animationDuration":2400,"thousandSeparator":"'","circleSize":230,"circleStokeSize":8,"isFrontend":true} );
+});
+ });

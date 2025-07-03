@@ -33,59 +33,6 @@ function limitar_busqueda_post_y_question($query)
 }
 add_action('pre_get_posts', 'limitar_busqueda_post_y_question');
 
-function custom_ap_user_link($link, $user_id, $sub)
-{
-    // Dividir la URL en partes
-    $url_parts = explode('/', $link);
-
-    // Asegurarse de que las posiciones necesarias existan
-    if (isset($url_parts[0], $url_parts[1], $url_parts[2])) {
-        // Cambiar la posición 3 a 'user'
-        $url_parts[3] = 'user';
-
-        // Si hay una subpágina, usarla directamente después de 'user'
-        if (!empty($sub)) {
-            $url_parts[4] = $sub;
-        } else {
-            // Si no hay subpágina, eliminar cualquier valor adicional
-            unset($url_parts[4]);
-        }
-
-        // Reconstruir la URL
-        $link = implode('/', $url_parts);
-    }
-
-    return $link;
-}
-add_filter('ap_user_link', 'custom_ap_user_link', 10, 3);
-//function generate_user_profile_url()
-//{
-//    // Obtener el enlace del perfil del usuario
-//    $perfil_url = ap_get_profile_link();
-//    $perfil_url_parts = explode('/', $perfil_url);
-//
-//    // Asegurarse de que las posiciones necesarias existan
-//    if (isset($perfil_url_parts[0], $perfil_url_parts[1], $perfil_url_parts[2], $perfil_url_parts[5])) {
-//        // Construir la nueva URL
-//        $perfil_url_parts[3] = 'user'; // Cambiar la posición 3 a 'user'
-//        $new_url = $perfil_url_parts[0] . '//' . $perfil_url_parts[2] . '/' . $perfil_url_parts[3] . '/' . $perfil_url_parts[5];
-//    } else {
-//        // Manejar el caso en que las posiciones no existan
-//        $new_url = "http://vallecode.local/user";
-//    }
-//
-//    return $new_url;
-//}
-//function custom_login_redirect($login_url, $redirect)
-//{
-//    $page_id = UM()->options()->get('core_login');
-//    if (get_post($page_id)) {
-//        $login_url = 'http://vallecode.local/login';
-//    }
-//    return $login_url;
-//}
-//add_filter('login_url', 'custom_login_redirect', 10, 2);
-
 /**
  * Maneja el envío del formulario de Forminator para crear una publicación en WordPress.
  *
@@ -497,7 +444,6 @@ function perfil_rewrite_rules()
         'top'
     );
 }
-
 add_action('init', 'perfil_rewrite_rules');
 
 // Permitir que se use el query var "user"
@@ -592,15 +538,6 @@ function obtener_datos_gamipress_usuario($user_id) {
     return $datos;
 }
 
-add_action('template_redirect', function() {
-    if (preg_match('#^/mi-perfil/([^/]+)/?#', $_SERVER['REQUEST_URI'], $matches)) {
-        $username = $matches[1];
-        $new_url = home_url('/perfil/' . $username . '/');
-        wp_redirect($new_url, 301);
-        exit;
-    }
-});
-
 // Intentar forzar la propiedad 'public' a true para los CPTs de AnsPress
 add_action( 'init', 'anspress_force_cpt_public_property', 999 ); // Prioridad alta para asegurar que se ejecute tarde
 
@@ -684,21 +621,43 @@ add_action('after_switch_theme', 'flush_rewrite_rules');
 // 🔁 Redireccionar /questions/categories/{slug} → /question-category/{slug}
 // 🔁 Redireccionar /questions/tags/{slug} → /question_tag/{slug}
 add_action('template_redirect', function () {
-    $request_uri = $_SERVER['REQUEST_URI'];
+    $request_uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
 
     // Redirección para categorías
-    if (preg_match('#^/questions/categories/([^/]+)/?#', $request_uri, $matches)) {
+    if (preg_match('#^questions/categories/([^/]+)#', $request_uri, $matches)) {
         $slug = sanitize_title($matches[1]);
-        $new_url = home_url('/question-category/' . $slug . '/');
-        wp_redirect($new_url, 301);
+        wp_redirect(home_url('/question-category/' . $slug . '/'), 301);
         exit;
     }
 
     // Redirección para etiquetas
-    if (preg_match('#^/questions/tags/([^/]+)/?#', $request_uri, $matches)) {
+    if (preg_match('#^questions/tags/([^/]+)#', $request_uri, $matches)) {
         $slug = sanitize_title($matches[1]);
-        $new_url = home_url('/question_tag/' . $slug . '/');
+        wp_redirect(home_url('/question_tag/' . $slug . '/'), 301);
+        exit;
+    }
+
+    // Redirección para mi-perfil
+    if (preg_match('#^mi-perfil(?:/([^/]+))?#', $request_uri, $matches)) {
+        $new_url = !empty($matches[1])
+            ? home_url('/perfil/' . sanitize_user($matches[1]) . '/')
+            : home_url('/perfil/');
         wp_redirect($new_url, 301);
         exit;
+    }
+
+    // Redirecciones directas simples
+    switch ($request_uri) {
+        case 'proyectos-academicos':
+            wp_redirect(home_url('/proyectos-academicos/proyectos/'), 301);
+            exit;
+
+        case 'ranking-y-reputacion':
+            wp_redirect(home_url('/ranking-y-reputacion/top-usuarios/'), 301);
+            exit;
+
+        case 'comunidad':
+            wp_redirect(home_url('/comunidad/preguntas/'), 301);
+            exit;
     }
 });

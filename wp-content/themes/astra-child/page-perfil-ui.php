@@ -147,33 +147,38 @@ if (!$user) {
 
     <!-- LOGROS -->
     <?php if (!empty($datos_usuario['logros'])): ?>
-    <section class="bloque">
-        <h2>Logros</h2>
-        <div class="items">
-            <?php foreach ($datos_usuario['logros'] as $tipo_logro): ?>
-            <div class="grupo-logros">
-                <h3><?php echo esc_html($tipo_logro['nombre']['plural_name']); ?></h3>
-                <?php if (!empty($tipo_logro['lista'])): ?>
-                <?php foreach ($tipo_logro['lista'] as $logro): ?>
-                <a class="item" href="<?php echo esc_url($logro['enlace']); ?>">
-                    <?php if (!empty($logro['icono'])): ?>
-                    <img src="<?php echo esc_url($logro['icono']); ?>" alt="<?php echo esc_attr($logro['titulo']); ?>">
-                    <?php else: ?>
-                    <div class="icono-fallback">🏆</div>
-                    <?php endif; ?>
-                    <div class="info">
-                        <strong><?php echo esc_html($logro['titulo']); ?></strong>
-                    </div>
-                </a>
-                <?php endforeach; ?>
-                <?php else: ?>
-                <p class="vacio">Sin logros aún.</p>
-                <?php endif; ?>
-            </div>
-            <?php endforeach; ?>
-        </div>
-    </section>
+        <?php
+        // Filtra los logros con lista no vacía
+        $logros_con_datos = array_filter($datos_usuario['logros'], function($tipo) {
+            return !empty($tipo['lista']);
+        });
+        ?>
+        <?php if (!empty($logros_con_datos)): ?>
+            <section class="bloque">
+                <h2>Logros</h2>
+                <div class="items">
+                    <?php foreach ($logros_con_datos as $tipo_logro): ?>
+                        <div class="grupo-logros">
+                            <h3><?php echo esc_html($tipo_logro['nombre']['plural_name']); ?></h3>
+                            <?php foreach ($tipo_logro['lista'] as $logro): ?>
+                                <a class="item" href="<?php echo esc_url($logro['enlace']); ?>">
+                                    <?php if (!empty($logro['icono'])): ?>
+                                        <img src="<?php echo esc_url($logro['icono']); ?>" alt="<?php echo esc_attr($logro['titulo']); ?>">
+                                    <?php else: ?>
+                                        <div class="icono-fallback">🏆</div>
+                                    <?php endif; ?>
+                                    <div class="info">
+                                        <strong><?php echo esc_html($logro['titulo']); ?></strong>
+                                    </div>
+                                </a>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </section>
+        <?php endif; ?>
     <?php endif; ?>
+
 </div>
 <?php
 get_footer();
