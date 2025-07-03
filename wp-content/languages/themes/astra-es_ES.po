@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Astra package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-06-17 06:57:03+0000\n"
+"PO-Revision-Date: 2025-07-01 13:56:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,7 +20,6 @@ msgstr "El tema Astra WordPress es rápido como el rayo y altamente personalizab
 #. Theme Name of the theme
 #: style.css admin/includes/class-astra-menu.php:162
 #: inc/lib/class-astra-nps-notice.php:108
-#: admin/assets/build/dashboard-app.js:15
 #, gp-priority: high
 msgid "Astra"
 msgstr "Astra"
@@ -8419,7 +8418,8 @@ msgid "Note:"
 msgstr "Nota:"
 
 #: inc/addons/transparent-header/classes/sections/class-astra-customizer-transparent-header-configs.php:98
-#: admin/assets/theme-builder/build/index.js:1
+#: admin/assets/theme-builder/build/index.js:61093
+#: admin/assets/theme-builder/build/index.js:61223
 msgid "404 Page"
 msgstr "Página 404"
 
@@ -8608,7 +8608,7 @@ msgstr "TikTok"
 #: admin/includes/class-astra-theme-builder-free.php:151
 #: admin/includes/class-astra-theme-builder-free.php:152
 #: admin/assets/build/dashboard-app.js:15
-#: admin/assets/theme-builder/build/index.js:1
+#: admin/assets/theme-builder/build/index.js:60268
 msgid "Site Builder"
 msgstr "Maquetador del sitio"
 
@@ -8842,12 +8842,14 @@ msgid "Scroll to Top"
 msgstr "Scroll al inicio"
 
 #: inc/modules/posts-structures/customizer/class-astra-posts-structures-configs.php:122
-#: admin/assets/theme-builder/build/index.js:1
+#: admin/assets/theme-builder/build/index.js:60977
+#: admin/assets/theme-builder/build/index.js:61209
 msgid "Single"
 msgstr "Individual"
 
 #: inc/modules/posts-structures/customizer/class-astra-posts-structures-configs.php:113
-#: admin/assets/theme-builder/build/index.js:1
+#: admin/assets/theme-builder/build/index.js:61030
+#: admin/assets/theme-builder/build/index.js:61216
 msgid "Archive"
 msgstr "Archivo"
 
@@ -9116,7 +9118,7 @@ msgid "Installing"
 msgstr "Instalando"
 
 #: admin/includes/class-astra-menu.php:226
-#: admin/assets/theme-builder/build/index.js:1
+#: admin/assets/theme-builder/build/index.js:60264
 msgid "Dashboard"
 msgstr "Escritorio"
 
@@ -9290,7 +9292,7 @@ msgstr "¡Astra funciona a la perfección con WooCommerce!"
 #: inc/core/class-astra-admin-settings.php:289
 #: inc/metabox/class-astra-elementor-editor-settings.php:536
 #: admin/assets/build/dashboard-app.js:1 admin/assets/build/dashboard-app.js:15
-#: admin/assets/theme-builder/build/index.js:1
+#: admin/assets/theme-builder/build/index.js:1483
 #: admin/assets/utils/helpers.js:107
 #: inc/metabox/extend-metabox/build/index.js:1
 msgid "Upgrade Now"
@@ -11679,14 +11681,14 @@ msgid "W"
 msgstr "W"
 
 #: inc/addons/breadcrumbs/class-astra-breadcrumb-trail.php:925
-#: inc/addons/breadcrumbs/class-astra-breadcrumb-trail.php:1351
+#: inc/addons/breadcrumbs/class-astra-breadcrumb-trail.php:1356
 msgctxt "daily archives date format"
 msgid "j"
 msgstr "j"
 
 #: inc/addons/breadcrumbs/class-astra-breadcrumb-trail.php:924
 #: inc/addons/breadcrumbs/class-astra-breadcrumb-trail.php:981
-#: inc/addons/breadcrumbs/class-astra-breadcrumb-trail.php:1347
+#: inc/addons/breadcrumbs/class-astra-breadcrumb-trail.php:1352
 msgctxt "monthly archives date format"
 msgid "F"
 msgstr "F"
@@ -11695,7 +11697,7 @@ msgstr "F"
 #: inc/addons/breadcrumbs/class-astra-breadcrumb-trail.php:952
 #: inc/addons/breadcrumbs/class-astra-breadcrumb-trail.php:980
 #: inc/addons/breadcrumbs/class-astra-breadcrumb-trail.php:1007
-#: inc/addons/breadcrumbs/class-astra-breadcrumb-trail.php:1343
+#: inc/addons/breadcrumbs/class-astra-breadcrumb-trail.php:1348
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr "Y"
@@ -11782,7 +11784,6 @@ msgstr "Desactivar"
 #: admin/includes/class-astra-menu.php:338
 #: admin/includes/class-astra-theme-builder-free.php:105
 #: inc/core/class-astra-admin-settings.php:146
-#: admin/assets/build/dashboard-app.js:12
 msgid "Activate"
 msgstr "Activar"
 
@@ -13777,7 +13778,8 @@ msgstr "Blog / Archivo"
 #: inc/customizer/configurations/builder/footer/configs/footer-builder.php:138
 #: inc/customizer/configurations/builder/footer/configs/footer-builder.php:171
 #: admin/assets/build/dashboard-app.js:10
-#: admin/assets/theme-builder/build/index.js:1
+#: admin/assets/theme-builder/build/index.js:60795
+#: admin/assets/theme-builder/build/index.js:61188
 msgid "Footer"
 msgstr "Pie de página"
 
@@ -13785,7 +13787,8 @@ msgstr "Pie de página"
 #: inc/customizer/class-astra-customizer-register-sections-panels.php:80
 #: inc/customizer/configurations/builder/header/configs/primary-header.php:34
 #: inc/widgets.php:107 admin/assets/build/dashboard-app.js:10
-#: admin/assets/theme-builder/build/index.js:1
+#: admin/assets/theme-builder/build/index.js:60752
+#: admin/assets/theme-builder/build/index.js:61181
 msgid "Header"
 msgstr "Cabecera"
 

@@ -58,33 +58,33 @@ function custom_ap_user_link($link, $user_id, $sub)
     return $link;
 }
 add_filter('ap_user_link', 'custom_ap_user_link', 10, 3);
-function generate_user_profile_url()
-{
-    // Obtener el enlace del perfil del usuario
-    $perfil_url = ap_get_profile_link();
-    $perfil_url_parts = explode('/', $perfil_url);
-
-    // Asegurarse de que las posiciones necesarias existan
-    if (isset($perfil_url_parts[0], $perfil_url_parts[1], $perfil_url_parts[2], $perfil_url_parts[5])) {
-        // Construir la nueva URL
-        $perfil_url_parts[3] = 'user'; // Cambiar la posición 3 a 'user'
-        $new_url = $perfil_url_parts[0] . '//' . $perfil_url_parts[2] . '/' . $perfil_url_parts[3] . '/' . $perfil_url_parts[5];
-    } else {
-        // Manejar el caso en que las posiciones no existan
-        $new_url = "http://vallecode.local/user";
-    }
-
-    return $new_url;
-}
-function custom_login_redirect($login_url, $redirect)
-{
-    $page_id = UM()->options()->get('core_login');
-    if (get_post($page_id)) {
-        $login_url = 'http://vallecode.local/login';
-    }
-    return $login_url;
-}
-add_filter('login_url', 'custom_login_redirect', 10, 2);
+//function generate_user_profile_url()
+//{
+//    // Obtener el enlace del perfil del usuario
+//    $perfil_url = ap_get_profile_link();
+//    $perfil_url_parts = explode('/', $perfil_url);
+//
+//    // Asegurarse de que las posiciones necesarias existan
+//    if (isset($perfil_url_parts[0], $perfil_url_parts[1], $perfil_url_parts[2], $perfil_url_parts[5])) {
+//        // Construir la nueva URL
+//        $perfil_url_parts[3] = 'user'; // Cambiar la posición 3 a 'user'
+//        $new_url = $perfil_url_parts[0] . '//' . $perfil_url_parts[2] . '/' . $perfil_url_parts[3] . '/' . $perfil_url_parts[5];
+//    } else {
+//        // Manejar el caso en que las posiciones no existan
+//        $new_url = "http://vallecode.local/user";
+//    }
+//
+//    return $new_url;
+//}
+//function custom_login_redirect($login_url, $redirect)
+//{
+//    $page_id = UM()->options()->get('core_login');
+//    if (get_post($page_id)) {
+//        $login_url = 'http://vallecode.local/login';
+//    }
+//    return $login_url;
+//}
+//add_filter('login_url', 'custom_login_redirect', 10, 2);
 
 /**
  * Maneja el envío del formulario de Forminator para crear una publicación en WordPress.
@@ -489,55 +489,6 @@ function mostrar_top_usuarios_por_puntos($atts)
 }
 add_shortcode('top_usuarios_puntos', 'mostrar_top_usuarios_por_puntos');
 
-function my_custom_anspress_category_dropdown($fields)
-{
-    $fields['category'] = array(
-        'type' => 'term-select',
-        'label' => __('Categoría', 'anspress-question-answer'),
-        'desc' => __('Selecciona la categoría de tu pregunta.', 'anspress-question-answer'),
-        'taxonomy' => 'question_category',
-        'required' => true,
-        'placeholder' => __('Selecciona una categoría', 'anspress-question-answer'),
-    );
-    return $fields;
-}
-add_filter('ap_question_form_fields', 'my_custom_anspress_category_dropdown');
-
-// 1. Registrar el trigger personalizado para GamiPress
-function my_prefix_custom_activity_triggers_for_anspress_category($triggers)
-{
-    $triggers['AnsPress Events'] = array(
-        'my_prefix_anspress_category_event' => __('Publicar una pregunta en la categoría Programación', 'gamipress'),
-    );
-    return $triggers;
-}
-add_filter('gamipress_activity_triggers', 'my_prefix_custom_activity_triggers_for_anspress_category');
-
-// 2. Escuchar el hook que se ejecuta al publicar una pregunta
-function my_prefix_trigger_gamipress_on_anspress_question($post_id)
-{
-    // Verificar que sea una pregunta de AnsPress
-    if (get_post_type($post_id) !== 'question') {
-        return;
-    }
-
-    // Obtener las categorías asignadas a la pregunta
-    $categories = wp_get_post_terms($post_id, 'question_category', array('fields' => 'slugs'));
-
-    // Aquí defines el slug de la categoría que quieres rastrear
-    $categoria_objetivo = 'programacion'; // Cambia esto por el slug real de tu categoría
-
-    if (in_array($categoria_objetivo, $categories)) {
-        // Disparar el evento de GamiPress
-        gamipress_trigger_event(array(
-            'event' => 'my_prefix_anspress_category_event',
-            'user_id' => get_post_field('post_author', $post_id),
-            'post_id' => $post_id,
-        ));
-    }
-}
-add_action('save_post_question', 'my_prefix_trigger_gamipress_on_anspress_question', 20);
-
 function perfil_rewrite_rules()
 {
     add_rewrite_rule(
@@ -546,6 +497,7 @@ function perfil_rewrite_rules()
         'top'
     );
 }
+
 add_action('init', 'perfil_rewrite_rules');
 
 // Permitir que se use el query var "user"
@@ -701,3 +653,52 @@ function anspress_make_taxonomies_public() {
     }
 }
 add_action( 'init', 'anspress_make_taxonomies_public', 999 ); // Prioridad alta para ejecutar al final
+
+
+// 🔁 Reforzar registro de taxonomías de AnsPress
+add_action('init', function () {
+    register_taxonomy('question_category', 'question', [
+        'labels' => [
+            'name' => 'Categorías de Preguntas',
+            'singular_name' => 'Categoría de Pregunta'
+        ],
+        'public' => true,
+        'rewrite' => ['slug' => 'question-category'],
+        'hierarchical' => true,
+    ]);
+
+    register_taxonomy('question_tag', 'question', [
+        'labels' => [
+            'name' => 'Etiquetas de Preguntas',
+            'singular_name' => 'Etiqueta de Pregunta'
+        ],
+        'public' => true,
+        'rewrite' => ['slug' => 'question_tag'],
+        'hierarchical' => false,
+    ]);
+}, 5);
+
+// 🔄 Regenerar reglas de reescritura al activar el tema
+add_action('after_switch_theme', 'flush_rewrite_rules');
+
+// 🔁 Redireccionar /questions/categories/{slug} → /question-category/{slug}
+// 🔁 Redireccionar /questions/tags/{slug} → /question_tag/{slug}
+add_action('template_redirect', function () {
+    $request_uri = $_SERVER['REQUEST_URI'];
+
+    // Redirección para categorías
+    if (preg_match('#^/questions/categories/([^/]+)/?#', $request_uri, $matches)) {
+        $slug = sanitize_title($matches[1]);
+        $new_url = home_url('/question-category/' . $slug . '/');
+        wp_redirect($new_url, 301);
+        exit;
+    }
+
+    // Redirección para etiquetas
+    if (preg_match('#^/questions/tags/([^/]+)/?#', $request_uri, $matches)) {
+        $slug = sanitize_title($matches[1]);
+        $new_url = home_url('/question_tag/' . $slug . '/');
+        wp_redirect($new_url, 301);
+        exit;
+    }
+});

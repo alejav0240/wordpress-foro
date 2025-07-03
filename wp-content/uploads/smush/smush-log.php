@@ -279,3 +279,9 @@
 [2025-06-30T12:53:09+00:00] Notice: File saved successfully in 0.02 seconds
 [2025-06-30T12:53:11+00:00] Notice: File saved successfully in 0.02 seconds
 [2025-06-30T12:53:11+00:00] Notice: File saved successfully in 0.02 seconds
+[2025-07-02T23:38:06+00:00] Error: [ast-logo-size] La compresión fue correcta pero no pudimos guardar desde la URL: Error fetching image from URL.
+[2025-07-02T23:38:06+00:00] Notice: File saved successfully in 0 seconds
+[2025-07-02T23:38:06+00:00] Notice: File saved successfully in 0 seconds
+[2025-07-02T23:38:06+00:00] Notice: File saved successfully in 0 seconds
+[2025-07-02T23:38:07+00:00] Notice: File saved successfully in 0 seconds
+[2025-07-02T23:38:07+00:00] Notice: File saved successfully in 0 seconds

@@ -119,3 +119,5 @@
 [2025-06-30T12:53:02+00:00] Info: Found an existing backed up file [cropped-isiquizySF.bak.png] for attachment [97].
 [2025-06-30T12:53:09+00:00] Notice: File saved successfully in 0.03 seconds
 [2025-06-30T13:03:14+00:00] Info: Found an existing backed up file [cropped-isiquizySF.bak.png] for attachment [97].
+[2025-07-02T23:37:56+00:00] Info: Found an existing backed up file [cropped-isiquizySF.bak.png] for attachment [97].
+[2025-07-02T23:38:06+00:00] Error: Error fetching image from URL: Connection refused for URI https://smush-post-optimization-bucket.nyc3.digitaloceanspaces.com/c24f2a987cce8300384a81023911aac8-690077f3a4b20223e1183840647c44a4.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=7XMML7HXTM5EWJ4LZFIP%2F20250702%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250702T233757Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Signature=8653c017439251c56b5bf46a4b466a6deeabacaffc316436dd04b0cc6dfc702e
