@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Smush Image Optimization – Optimize Images | Compress &amp; Lazy Load Images | Convert WebP &amp; AVIF | Image CDN - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-05-06 19:13:51+0000\n"
+"PO-Revision-Date: 2025-07-03 11:41:52+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,175 @@ msgstr ""
 "X-Generator: GlotPress/4.0.1\n"
 "Language: es\n"
 "Project-Id-Version: Plugins - Smush Image Optimization – Optimize Images | Compress &amp; Lazy Load Images | Convert WebP &amp; AVIF | Image CDN - Stable (latest release)\n"
+
+#: core/smush/class-smusher.php:498
+msgid "The request is taking longer than expected. Please check back in a few moments."
+msgstr "La solicitud está tardando más de lo esperado. Vuelve a comprobarlo dentro de unos instantes."
+
+#: core/lcp/class-lcp-controller.php:120
+msgid "LCP data is already up to date"
+msgstr "Los datos de LCP ya están actualizados"
+
+#: core/lcp/class-lcp-controller.php:114
+msgid "Error in processing LCP data, fields empty."
+msgstr "Error al procesar datos LCP, campos vacíos."
+
+#: core/lcp/class-lcp-controller.php:110
+msgid "LCP element is not an image."
+msgstr "El elemento LCP no es una imagen."
+
+#: core/lcp/class-lcp-controller.php:85
+msgid "Error in processing LCP data, nonce verification failed."
+msgstr "Error al procesar datos LCP, falló la verificación nonce."
+
+#: core/lazy-load/class-lazy-load-video-embed.php:326
+msgid "Play video"
+msgstr "Reproducir vídeo"
+
+#: core/class-settings.php:316
+msgid "Enable this feature to disable automatic resizing of images above the threshold, keeping only your original uploaded images."
+msgstr "Activa esta función para desactivar el redimensionamiento automático de las imágenes que superen el umbral, manteniendo sólo las imágenes originales que hayas subido."
+
+#: core/class-configs.php:829
+msgid "Replace Video Embed with preview images"
+msgstr "Sustituir la incrustación de vídeo por imágenes de previsualización"
+
+#: app/views/preload/meta-box.php:135
+msgid "Note: This will not affect your images, but it will clear the stored LCP data across your entire site."
+msgstr "Nota: Esto no afectará a tus imágenes, pero borrará los datos LCP almacenados en todo tu sitio."
+
+#: app/views/preload/meta-box.php:119
+msgid "Remove all LCP data from the database. Use this option if you've made image optimisations and want to ensure Smush identifies new critical images."
+msgstr "Eliminar todos los datos LCP de la base de datos. Utiliza esta opción si has realizado optimizaciones de imagen y quieres asegurarte de que Smush identifica las nuevas imágenes críticas."
+
+#: app/views/preload/meta-box.php:115 app/views/preload/meta-box.php:129
+msgid "Clear LCP Data"
+msgstr "Borrar datos LCP"
+
+#. translators: %1$s - opening strong tag, %2$s - closing strong tag
+#: app/views/preload/meta-box.php:102
+msgid "Add one page or post URL per line in relative format. I.e. %1$s/example-page%2$s or %1$s/example-page/sub-page/%2$s."
+msgstr "Añade una URL de página o de entrada por línea en formato relativo. Es decir, %1$s/página-ejemplo%2$s o %1$s/página-ejemplo/subpágina/%2$s."
+
+#: app/views/preload/meta-box.php:89
+msgid "Specify URLs of the pages or posts you want to disable preload on."
+msgstr "Especifica las URL de las páginas o entradas en las que quieres desactivar la precarga."
+
+#: app/views/preload/meta-box.php:81
+msgid "Disable preload for specific pages or posts that you wish to prevent preload on"
+msgstr "Desactiva la precarga para páginas o entradas específicas en las que quieras evitar la precarga"
+
+#: app/views/preload/meta-box.php:78
+msgid "Exclude"
+msgstr "Excluir"
+
+#. translators: %s: Discount
+#: app/views/preload/meta-box.php:64
+msgid "Get %s OFF when you upgrade to Pro️"
+msgstr "Obtén un %s de DESCUENTO al mejorar a Pro️"
+
+#: app/views/preload/meta-box.php:47
+msgid "Enable Preloading Critical Images"
+msgstr "Activar la precarga de imágenes críticas"
+
+#: app/views/preload/meta-box.php:29
+msgid "Get a faster initial load and optimize your LCP audit by automatically preloading your most critical image."
+msgstr "Consigue una carga inicial más rápida y optimiza tu auditoría LCP precargando automáticamente tu imagen más crítica."
+
+#. translators: %1$s - opening strong tag, %2$s - closing strong tag
+#: app/views/lazyload/meta-box.php:711
+msgid "%1$sNote:%2$s Video iframes will continue using JavaScript lazy loading even when this is enabled."
+msgstr "%1$sNota:%2$s Los iframes de vídeo seguirán utilizando la carga lenta de JavaScript aunque esté activada."
+
+#: app/views/lazyload/meta-box.php:154
+msgid "This can significantly improve loading time if there are a lot of embedded videos on a page."
+msgstr "Esto puede mejorar significativamente el tiempo de carga si hay muchos vídeos incrustados en una página."
+
+#: app/views/lazyload/meta-box.php:150
+msgid "Replace YouTube or Vimeo iframes with preview images"
+msgstr "Sustituye los iframes de YouTube o Vimeo por imágenes de previsualización"
+
+#: app/views/lazyload/meta-box.php:133
+msgid "Enable lazy loading for iframes"
+msgstr "Activar la carga diferida de iframes"
+
+#: app/views/lazyload/meta-box.php:116
+msgid "Choose lazy load options for videos and iframes."
+msgstr "Elige opciones de carga diferida para vídeos e iframes."
+
+#: app/views/lazyload/meta-box.php:106 core/class-configs.php:820
+msgid "Embedded Content"
+msgstr "Contenido incrustado"
+
+#: app/views/dashboard/upsell/meta-box.php:52
+msgid "Optimize Largest Contentful Paint (LCP) images"
+msgstr "Optimizar las imágenes de mayor contenido (LCP)"
+
+#: app/views/dashboard/lazy-load-meta-box.php:26
+msgid "Available Features"
+msgstr "Características disponibles"
+
+#: app/views/dashboard/lazy-load-meta-box.php:18
+msgid "Boost your site’s speed and PageSpeed scores with smart image loading. Lazy Load delays offscreen images for faster initial loads, while Preload Critical Images ensures key above-the-fold content loads instantly—improving LCP and perceived performance."
+msgstr "Aumenta la velocidad de tu sitio y las puntuaciones PageSpeed con la carga inteligente de imágenes. La carga perezosa retrasa las imágenes fuera de pantalla para que las cargas iniciales sean más rápidas, mientras que la precarga de imágenes críticas garantiza que el contenido clave por encima de la página se cargue al instante, mejorando el LCP y el rendimiento percibido."
+
+#: app/pages/class-lazy-preload.php:28
+msgid "Preload"
+msgstr "Precarga"
+
+#: app/modals/updated.php:50
+msgid "Go to Lazy Load"
+msgstr "Ir a carga diferida"
+
+#: app/modals/updated.php:46
+msgid "Speed up your site with smarter video loading! YouTube and Vimeo embeds now load only when needed—boosting initial page speed and helping you pass audits like Defer offscreen images and Reduce render-blocking resources."
+msgstr "¡Acelera tu sitio con una carga de vídeo más inteligente! Las incrustaciones de YouTube y Vimeo ahora sólo se cargan cuando es necesario, lo que aumenta la velocidad inicial de la página y te ayuda a superar auditorías como las de aplazamiento imágenes fuera de pantalla y de reducción recursos que bloquean la renderización."
+
+#: app/modals/updated.php:42
+msgid "New: Lazy Loading for Videos"
+msgstr "Novedad: Carga diferida de vídeos"
+
+#: app/modals/onboarding.php:164
+msgid "Enable Preload Critical Images"
+msgstr "Activar la precarga de imágenes críticas"
+
+#: app/modals/onboarding.php:112
+msgid "Automatically identify and immediately preload important above-the-fold images, like your Largest Contentful Paint element. This ensures your key visuals appear instantly, which can significantly improve perceived page load speed and your Google PageSpeed LCP score."
+msgstr "Identifica automáticamente y precarga inmediatamente las imágenes importantes por encima de la página, como tu elemento de pintura de mayor contenido. Esto garantiza que tus elementos visuales clave aparezcan al instante, lo que puede mejorar significativamente la velocidad de carga percibida de la página y tu puntuación LCP de Google PageSpeed."
+
+#: app/modals/onboarding.php:55
+msgid "Identifies and immediately preloads important above-the-fold images."
+msgstr "Identifica y precarga inmediatamente las imágenes importantes de la mitad superior de la página."
+
+#: app/class-admin.php:336 app/pages/class-dashboard.php:123
+#: app/views/settings/permissions-meta-box.php:82
+#: _src/react/modules/configs.jsx:149
+#: app/assets/js/smush-react-configs.min.js:6731
+msgid "Lazy Load & Preload"
+msgstr "Carga diferida y precarga"
+
+#: app/class-abstract-summary-page.php:124 app/views/preload/meta-box.php:19
+msgid "Preload helps to improve the Largest Contentful Paint (LCP) metric by optimizing images that often form the main viewport content. Since LCP measures the rendering time of the largest visible element, Smush helps to achieve Google's recommended 2.5-second benchmark for good user experience."
+msgstr "La precarga ayuda a mejorar la métrica de la imagen de contenido más grande (LCP) optimizando las imágenes que a menudo forman el contenido principal de la ventana gráfica. Dado que LCP mide el tiempo de renderizado del elemento visible más grande, Smush ayuda a alcanzar el valor de referencia de 2,5 segundos recomendado por Google para una buena experiencia de usuario."
+
+#: app/class-abstract-summary-page.php:117 app/modals/onboarding.php:54
+#: app/modals/onboarding.php:91 app/modals/onboarding.php:256
+#: app/pages/class-lazy-preload.php:47
+#: app/views/dashboard/lazy-load-meta-box.php:46
+#: app/views/preload/meta-box-header.php:14 app/views/preload/meta-box.php:26
+#: core/class-configs.php:732
+msgid "Preload Critical Images"
+msgstr "Carga previa de imágenes críticas"
+
+#. Author URI of the plugin
+#: wp-smush.php
+msgid "https://wpmudev.com/"
+msgstr "https://wpmudev.com/"
+
+#. Plugin URI of the plugin
+#: wp-smush.php
+msgid "https://wpmudev.com/project/wp-smush-pro/"
+msgstr "https://wpmudev.com/project/wp-smush-pro/"
 
 #: core/external/plugins-cross-sell-page/core/plugins-list.php:276
 msgid "Store backups for 50 days"

@@ -167,10 +167,6 @@ function listar_publicaciones_pendientes()
 
     $user = wp_get_current_user();
 
-    if (!in_array('moderador', $user->roles) && !in_array('administrator', $user->roles)) {
-        return '<div class="moderation-message error">No tienes permisos para ver esta página.</div>';
-    }
-
     $mensajes = '';
 
     if (isset($_GET['aprobar_post']) && is_numeric($_GET['aprobar_post'])) {

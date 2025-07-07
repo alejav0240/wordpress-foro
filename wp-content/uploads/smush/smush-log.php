@@ -285,3 +285,44 @@
 [2025-07-02T23:38:06+00:00] Notice: File saved successfully in 0 seconds
 [2025-07-02T23:38:07+00:00] Notice: File saved successfully in 0 seconds
 [2025-07-02T23:38:07+00:00] Notice: File saved successfully in 0 seconds
+[2025-07-03T23:50:39+00:00] Warning: [medium] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-03T23:50:39+00:00] Warning: [thumbnail] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-03T23:50:39+00:00] Warning: [gamipress-rank] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-03T23:50:39+00:00] Warning: [gamipress-achievement] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-03T23:50:39+00:00] Warning: [ast-logo-size] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-03T23:50:39+00:00] Warning: [full] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-03T23:51:00+00:00] Error: [gamipress-rank] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com
+[2025-07-03T23:51:28+00:00] Error: [full] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com
+[2025-07-03T23:53:17+00:00] Error: [thumbnail] La compresión fue correcta pero no pudimos guardar desde la URL: Error fetching image from URL.
+[2025-07-03T23:53:21+00:00] Error: Error fetching image from URL: Connection refused for URI https://smush-post-optimization-bucket.nyc3.digitaloceanspaces.com/41d8805c5f46db7c1461987b2697a8ba-690077f3a4b20223e1183840647c44a4.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=7XMML7HXTM5EWJ4LZFIP%2F20250703%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250703T235313Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Signature=4798f53a5ee5218825a290e064d60294bf720764de2b7577a54168e624a4f564
+[2025-07-03T23:53:21+00:00] Error: [gamipress-rank] La compresión fue correcta pero no pudimos guardar desde la URL: Error fetching image from URL.
+[2025-07-03T23:53:22+00:00] Notice: File saved successfully in 0.68 seconds
+[2025-07-03T23:53:23+00:00] Notice: File saved successfully in 0 seconds
+[2025-07-03T23:53:25+00:00] Notice: File saved successfully in 0 seconds
+[2025-07-03T23:53:26+00:00] Notice: File saved successfully in 0 seconds
+[2025-07-03T23:54:02+00:00] Notice: File saved successfully in 0 seconds
+[2025-07-03T23:54:02+00:00] Notice: File saved successfully in 0 seconds
+[2025-07-03T23:54:06+00:00] Error: Error fetching image from URL: Connection refused for URI https://smush-post-optimization-bucket.nyc3.digitaloceanspaces.com/41d8805c5f46db7c1461987b2697a8ba-690077f3a4b20223e1183840647c44a4.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=7XMML7HXTM5EWJ4LZFIP%2F20250703%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250703T235359Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Signature=7545ed9618e36ebc6aa892930e241c0a842314be45ba25e961a1fb3e80e62e8a
+[2025-07-03T23:54:06+00:00] Error: [gamipress-achievement] La compresión fue correcta pero no pudimos guardar desde la URL: Error fetching image from URL.
+[2025-07-03T23:54:07+00:00] Notice: File saved successfully in 0 seconds
+[2025-07-03T23:54:09+00:00] Notice: File saved successfully in 0.01 seconds
+[2025-07-04T22:15:56+00:00] Warning: [thumbnail] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-04T22:15:56+00:00] Warning: [medium_large] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-04T22:15:56+00:00] Warning: [gamipress-points] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-04T22:15:56+00:00] Warning: [gamipress-achievement] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-04T22:15:56+00:00] Warning: [medium] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-04T22:15:56+00:00] Warning: [1536x1536] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-04T22:15:56+00:00] Warning: [2048x2048] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-04T22:15:56+00:00] Warning: [full] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-04T22:15:56+00:00] Warning: [gamipress-rank] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-04T22:16:08+00:00] Error: [large] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com
+[2025-07-04T22:43:31+00:00] Error: Count not delete webp versions of the media item [356]
+[2025-07-04T22:43:31+00:00] Error: Count not delete webp versions of the media item [355]
+[2025-07-07T21:08:47+00:00] Warning: [gamipress-points] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-07T21:08:47+00:00] Warning: [gamipress-achievement] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-07T21:08:47+00:00] Warning: [medium] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-07T21:08:47+00:00] Warning: [large] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-07T21:08:47+00:00] Warning: [thumbnail] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-07T21:08:47+00:00] Warning: [medium_large] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-07T21:08:47+00:00] Warning: [gamipress-rank] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-07T21:08:47+00:00] Warning: [full] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
