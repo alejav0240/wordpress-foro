@@ -125,14 +125,16 @@ get_header();
     echo '<div class="lista-preguntas">';
     while ($preguntas->have_posts()):
       $preguntas->the_post();
-
       $autor = get_the_author();
       $fecha = get_the_date();
       $link = get_permalink();
-      $votos = function_exists('ap_get_vote_count') ? ap_get_vote_count(get_the_ID()) : 0;
-      $respuestas = function_exists('ap_get_answer_count') ? ap_get_answer_count(get_the_ID()) : 0;
+      $votos = ap_get_votes($preguntas->post->ID);
+      $views= ap_get_post_field( 'views' );
+      $last_active = ap_get_recent_activity();
+      $respuestas = ap_get_answers_count();
       $excerpt = wp_trim_words(get_the_content(), 25);
-
+      $last_active_fecha = ap_get_last_active( get_question_id() );
+      $activity_name = get_user($last_active->user_id)->user_nicename;
       $categorias = get_the_term_list(get_the_ID(), 'question_category', '', ', ');
       $etiquetas = get_the_term_list(get_the_ID(), 'question_tag', '', ', ');
       ?>
@@ -143,15 +145,17 @@ get_header();
           </a>
           <div class="meta-pregunta">
             <span>Publicado por <strong><?php echo esc_html($autor); ?></strong></span> |
-            <span><?php echo esc_html($fecha); ?></span>
+              <span><?php echo ($fecha); ?></span> |
+            <span><?php echo ($last_active_fecha); ?> <strong><?php echo ($last_active->action['verb']); ?></strong> por  <?php echo ($activity_name); ?></span>
           </div>
         </header>
 
         <div class="contenido-pregunta">
           <p class="descripcion-pregunta"><?php echo esc_html($excerpt); ?></p>
           <div class="informacion-pregunta">
-            <span class="info-item">🔼 <?php echo intval($votos); ?> votos</span>
+            <span class="info-item">🔼 <?php echo intval(count($votos)); ?> votos</span>
             <span class="info-item">💬 <?php echo intval($respuestas); ?> respuestas</span>
+            <span class="info-item">👁️ <?php echo intval($views); ?> vistas </span>
             <?php if (!is_wp_error($categorias) && $categorias): ?>
               <span class="info-item">📂 <?php echo $categorias; ?></span>
             <?php endif; ?>
