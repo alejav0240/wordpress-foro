@@ -40,6 +40,8 @@ define('DB_COLLATE', '');
 
 define('WP_HOME', 'http://localhost     ');
 define('WP_SITEURL', 'http://localhost');
+define('FS_METHOD', 'direct');
+
 
 /**#@+
  * Authentication unique keys and salts.

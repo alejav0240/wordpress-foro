@@ -38,6 +38,10 @@ define( 'DB_CHARSET', 'utf8' );
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
+
+define('WP_HOME', 'http://198.211.105.197');
+define('WP_SITEURL', 'http://198.211.105.197');
+define('FS_METHOD', 'direct');
 /**#@+
  * Authentication unique keys and salts.
  *
@@ -88,17 +92,17 @@ $table_prefix = 'wp_';
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
 
-// if ( ! defined( 'WP_DEBUG' ) ) {
-// 	define( 'WP_DEBUG', false );
-// }
+ if ( ! defined( 'WP_DEBUG' ) ) {
+ 	define( 'WP_DEBUG', false );
+ }
 
-if (!defined('WP_DEBUG')) {
-    /* 	define( 'WP_DEBUG', false ); */
-    define('WP_DEBUG', true);
-    define('WP_DEBUG_LOG', true);
-    define('WP_DEBUG_DISPLAY', false);
-
-}
+//if (!defined('WP_DEBUG')) {
+//    /* 	define( 'WP_DEBUG', false ); */
+//    define('WP_DEBUG', true);
+//    define('WP_DEBUG_LOG', true);
+//    define('WP_DEBUG_DISPLAY', false);
+//
+//}
 
 define('WP_ENVIRONMENT_TYPE', 'local');
 /* That's all, stop editing! Happy publishing. */

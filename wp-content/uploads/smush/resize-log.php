@@ -136,3 +136,7 @@
 [2025-07-04T22:45:19+00:00] Error: Count not delete webp versions of the media item [89]
 [2025-07-07T21:08:43+00:00] Setting transparent meta value
 [2025-07-07T21:08:47+00:00] Warning: [1536x1536] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-10T20:28:25+00:00] Error: Tried to check transparent value but encountered a problem with the media item
+[2025-07-10T21:02:14+00:00] Error: Tried to check transparent value but encountered a problem with the media item
+[2025-07-10T21:20:15+00:00] Error: Tried to check transparent value but encountered a problem with the media item
+[2025-07-10T21:41:58+00:00] Error: Tried to check transparent value but encountered a problem with the media item

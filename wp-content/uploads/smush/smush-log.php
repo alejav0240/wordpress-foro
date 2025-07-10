@@ -326,3 +326,11 @@
 [2025-07-07T21:08:47+00:00] Warning: [medium_large] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
 [2025-07-07T21:08:47+00:00] Warning: [gamipress-rank] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
 [2025-07-07T21:08:47+00:00] Warning: [full] Envío de errores a la  API: cURL error 6: Could not resolve host: smushpro.wpmudev.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://smushpro.wpmudev.com/1.0/
+[2025-07-10T20:28:24+00:00] Info: File [/var/www/html/wp-content/uploads/forminator/153_9961fbcca049ae044d0e1e7a1044cf71/uploads/XLsq33mApqSN-Captura-desde-2025-07-09-10-41-32.png] is a PNG 32-bit.
+[2025-07-10T20:28:25+00:00] Error: Tried to check animated value but encountered an problem with the media item
+[2025-07-10T21:02:12+00:00] Info: File [/var/www/html/wp-content/uploads/forminator/153_9961fbcca049ae044d0e1e7a1044cf71/uploads/y0lhKROnzO9e-Captura-desde-2025-07-08-22-21-00.png] is a PNG 32-bit.
+[2025-07-10T21:02:14+00:00] Error: Tried to check animated value but encountered an problem with the media item
+[2025-07-10T21:20:09+00:00] Info: File [/var/www/html/wp-content/uploads/forminator/153_9961fbcca049ae044d0e1e7a1044cf71/uploads/ug5HW6WDJBMz-Captura-desde-2025-07-09-17-53-36.png] is a PNG 32-bit.
+[2025-07-10T21:20:15+00:00] Error: Tried to check animated value but encountered an problem with the media item
+[2025-07-10T21:41:56+00:00] Info: File [/var/www/html/wp-content/uploads/forminator/153_9961fbcca049ae044d0e1e7a1044cf71/uploads/mAr2pfF4PuIr-Captura-desde-2025-07-09-10-41-32.png] is a PNG 32-bit.
+[2025-07-10T21:41:58+00:00] Error: Tried to check animated value but encountered an problem with the media item

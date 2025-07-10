@@ -120,10 +120,13 @@ function generate_attachment_list($files)
         $parts = explode('-', $basename, 2);
         $display_name = $parts[1] ?? $basename;
 
+        
+        error_log('pdf info : '.strtolower(pathinfo($file_url, PATHINFO_EXTENSION)));
         // Si es PDF, usar iframe para mostrar vista previa
         if (strtolower(pathinfo($file_url, PATHINFO_EXTENSION)) === 'pdf') {
             $html .= '<h4>' . esc_html($display_name) . '</h4>';
             $html .= '<iframe src="' . esc_url($file_url) . '" width="100%" height="600px" style="border:1px solid #ccc;"></iframe>';
+            error_log("PDF HTMl: ".$html);
         } else {
             // Otros archivos como enlaces normales
             $html .= '<ul><li><a href="' . esc_url($file_url) . '" target="_blank" rel="noopener">' . esc_html($display_name) . '</a></li></ul>';
