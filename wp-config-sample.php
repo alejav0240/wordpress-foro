@@ -41,7 +41,8 @@ define( 'DB_COLLATE', '' );
 
 define('WP_HOME', 'http://198.211.105.197');
 define('WP_SITEURL', 'http://198.211.105.197');
-define('FS_METHOD', 'direct');
+// define('FS_METHOD', 'direct');
+
 /**#@+
  * Authentication unique keys and salts.
  *
@@ -104,7 +105,7 @@ $table_prefix = 'wp_';
 //
 //}
 
-define('WP_ENVIRONMENT_TYPE', 'local');
+define('WP_ENVIRONMENT_TYPE', 'production');
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
