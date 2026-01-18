@@ -30,8 +30,8 @@ Sigue estos pasos para configurar el proyecto en tu entorno local o servidor:
 
 1.  **Clonar el Repositorio:**
     ```bash
-    git clone https://github.com/tu-usuario/nombre-del-repositorio.git
-    cd nombre-del-repositorio # Asume el nombre de tu directorio de proyecto
+    git clone https://github.com/alejav0240/wordpress-foro.git
+    cd wordpress-foro
     ```
     *Si no usas Git, simplemente copia todos los archivos del proyecto al directorio raíz de tu servidor web (ej. `htdocs` para Apache, `www` para Nginx).*
 
